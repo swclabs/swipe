@@ -28,21 +28,23 @@ export default function NavbarComponent() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <Image
-                        className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-                        src="/swiftcart.svg"
-                        alt="Next.js Logo"
-                        width={50}
-                        height={50}
-                        priority
-                    />
+                    <Link href='/'>
+                        <Image
+                            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+                            src="/swiftcart.svg"
+                            alt="Next.js Logo"
+                            width={50}
+                            height={50}
+                            priority
+                        />
+                    </Link>
                 </NavbarBrand>
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-12" justify="center">
                 <NavbarItem>
                     <div className='medium-container'>
-                        <Link color="foreground" href="#">
+                        <Link color="foreground" href="/store">
                             <p className=" text-xs">Cửa hàng</p>
                         </Link>
                         <div className="overlay">
