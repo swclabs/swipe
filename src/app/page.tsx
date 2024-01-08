@@ -1,4 +1,5 @@
 import Banner from "@/components/banner"
+import ShortCut from "@/components/shortcut"
 import { Card, CardHeader, Image } from "@nextui-org/react"
 import Link from "next/link"
 import React from "react"
@@ -62,6 +63,7 @@ export default function Home() {
           />
         </Card>
       </div>
+      <ShortCut />
     </>
   )
 }

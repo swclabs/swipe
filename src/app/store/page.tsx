@@ -1,9 +1,10 @@
 import Banner from "@/components/banner"
-import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
+import { Button, Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import React from "react"
 import { IoCartOutline } from "react-icons/io5";
 import { TbCurrencyDong } from "react-icons/tb";
 import { RiBox3Line } from "react-icons/ri";
+import ShortCut from "@/components/shortcut";
 
 export default function Store() {
     return (
@@ -97,10 +98,10 @@ export default function Store() {
                 </div>
                 <div className=" flex justify-center">
                     <div className=" w-4/5 p-12 flex justify-between">
-                        <Card className="col-span-12 sm:col-span-4 h-[400px]">
+                        <Card className="col-span-12 sm:col-span-4 h-[400px] max-w-[300px]">
                             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                                 <p className="text-tiny text-white/60 uppercase font-bold">iPhone 15 Pro</p>
-                                <h4 className="text-white font-semibold text-2xl pt-2 pb-2">Titan</h4>
+                                <h4 className="text-white font-semibold text-xl pt-2 pb-2">Titan</h4>
                                 <h4 className="text-white font-normal text-sm">Từ 28.999.000đ hoặc 1.181.000đ/tháng mỗi tháng trong 24 tháng*</h4>
                             </CardHeader>
                             <Image
@@ -110,11 +111,11 @@ export default function Store() {
                                 src="/img/store/iphone.jpg"
                             />
                         </Card>
-                        <Card className="col-span-12 sm:col-span-4 h-[400px]">
+                        <Card className="col-span-12 sm:col-span-4 h-[400px] max-w-[300px]">
                             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                                 <p className="text-tiny text-black uppercase font-bold">KHOẢN THANH TOÁN <br /> HÀNG THÁNG THẤP</p>
-                                <h4 className=" text-black font-semibold text-2xl pt-2 pb-2">Trả Góp Hàng Tháng với MoMo.</h4>
-                                <h4 className="text-black font-normal text-sm">Trả dần, thời hạn đến 24 tháng và chỉ trả trước 20%*</h4>
+                                <h4 className=" text-black font-semibold text-xl pt-2 pb-2">Trả Góp Hàng Tháng <br /> với MoMo.</h4>
+                                <h4 className="text-black font-normal text-sm">Trả dần, thời hạn đến 24 tháng và chỉ <br /> trả trước 20%*</h4>
                             </CardHeader>
                             <Image
                                 removeWrapper
@@ -123,10 +124,10 @@ export default function Store() {
                                 src="/img/store/iphone2.jpg"
                             />
                         </Card>
-                        <Card className="col-span-12 sm:col-span-4 h-[400px]">
+                        <Card className="col-span-12 sm:col-span-4 h-[400px] max-w-[300px]">
                             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                                 <p className="text-tiny text-black uppercase font-bold">Macbook Pro 14 và 16</p>
-                                <h4 className=" text-black font-semibold text-2xl pt-2 pb-2">Chấn động, ấn tượng</h4>
+                                <h4 className=" text-black font-semibold text-xl pt-2 pb-2">Chấn động, ấn tượng</h4>
                                 <h4 className="text-black font-normal text-sm">Từ 39.999.000đ hoặc 1.629.000đ/thángmỗi tháng trong 24 tháng*</h4>
                             </CardHeader>
                             <Image
@@ -139,7 +140,7 @@ export default function Store() {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <div className="w-4/5 pt-12 pl-12 pr-12">
+                    <div className="w-4/5 pl-12 pr-12">
                         <h1 className=" text-2xl font-semibold">
                             <span>Swiftcart.</span>
                             <span className=" text-gray-500"> Tạo nên nhiều sự khác biệt</span>
@@ -180,6 +181,63 @@ export default function Store() {
                         </Card>
                     </div>
                 </div>
+                <div className="flex justify-center">
+                    <div className="w-4/5 pl-12 pr-12">
+                        <h1 className=" text-2xl font-semibold">
+                            <span>Phụ kiện.</span>
+                            <span className=" text-gray-500"> Tạo nét riêng</span>
+                        </h1>
+                    </div>
+                </div>
+                <div className=" flex justify-center">
+                    <div className=" w-4/5 p-12 flex justify-between">
+                        <Card className="col-span-12 sm:col-span-4 h-[400px]">
+                            <CardHeader className="absolute z-10 top-1 flex-col !items-start">
+                                <h4 className="text-black font-semibold text-2xl pt-2 pb-2">Đón máy mới về</h4>
+                                <h4 className="text-black font-normal text-sm">Khám phá màu sắc mới cho phụ kiện yêu thích của bạn</h4>
+                            </CardHeader>
+                            <Image
+                                removeWrapper
+                                alt="Card background"
+                                className="z-0 w-full h-full object-cover"
+                                src="/img/store/phukien1.jpg"
+                            />
+                        </Card>
+                        <Card className="col-span-12 sm:col-span-4 h-[400px]">
+                            <CardBody className="p-5">
+                                <div className="flex-col">
+                                    <Image
+                                        alt="pencil"
+                                        src="/img/store/pencil.jpg"
+                                        className="w-full h-[250px]"
+                                    />
+                                    <div className=" p-3 h-[104px] relative ">
+                                        <p className=" text-xs text-red-600 pb-1">Mới</p>
+                                        <p className=" font-medium">Apple Pencil (USB-C)</p>
+                                        <p className=" font-normal text-sm absolute bottom-0">2.099.000đ</p>
+                                    </div>
+                                </div>
+                            </CardBody>
+                        </Card>
+                        <Card className="col-span-12 sm:col-span-4 h-[400px]">
+                            <CardBody className="p-5 flex-col">
+                                <div className="flex-col">
+                                    <Image
+                                        alt="pencil"
+                                        src="/img/store/oplung.jpg"
+                                        className="w-full h-[250px]"
+                                    />
+                                    <div className="p-3 h-[104px] relative">
+                                        <p className=" text-xs text-red-600 pb-1">Mới</p>
+                                        <p className=" font-medium">Ốp Lưng Vải Tinh Dệt MagSafe <br /> cho iPhone 15 Pro - Nâu Xám</p>
+                                        <p className=" font-normal text-sm absolute bottom-0">1.699.000đ</p>
+                                    </div>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </div>
+                </div>
+                <ShortCut />
             </div>
         </>
     )
