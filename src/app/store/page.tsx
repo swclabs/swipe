@@ -125,7 +125,7 @@ export default function Store() {
                         </Card>
                         <Card className="col-span-12 sm:col-span-4 h-[400px]">
                             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                                <p className="text-tiny text-black uppercase font-bold">Macbook Pro 14'' và 16''</p>
+                                <p className="text-tiny text-black uppercase font-bold">Macbook Pro 14 và 16</p>
                                 <h4 className=" text-black font-semibold text-2xl pt-2 pb-2">Chấn động, ấn tượng</h4>
                                 <h4 className="text-black font-normal text-sm">Từ 39.999.000đ hoặc 1.629.000đ/thángmỗi tháng trong 24 tháng*</h4>
                             </CardHeader>
