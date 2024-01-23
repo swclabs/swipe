@@ -26,7 +26,7 @@ export default function Banner() {
     return (
         <div className={`${height} ${text} transition duration-1000 ease-in-out ${backgroundColor}`}>
             <div className="flex justify-center">
-                <p className="text-xs pt-6">
+                <p className="text-xs sm:pt-6 p-6">
                     Nhận 4.500.000 - 25.200.000đ dưới hình thức điểm tín dụng để mua iPhone 15 hoặc iPhone 15 Pro khi bạn trao đổi iPhone 11 trở lên.
                 </p>
             </div>

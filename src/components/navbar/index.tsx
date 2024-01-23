@@ -5,6 +5,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMen
 import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
+import Search from './search';
 
 export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -551,6 +552,10 @@ export default function NavbarComponent() {
                         </Link>
                         <div className="overlay">
                             <div className=' container p-8 flex absolute'>
+                                <div className=' container'>
+                                    <Search />
+                                    <p className=' text-xs pt-3'>Liên kết nhanh</p>
+                                </div>
                             </div>
                         </div>
                     </div>
