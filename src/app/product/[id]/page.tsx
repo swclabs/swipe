@@ -85,6 +85,7 @@ export default function ProductPage() {
                     </div>
                 </div>
             </div>
+            
             <Product />
 
             <div className=" w-full bg-gray-50">
@@ -93,7 +94,7 @@ export default function ProductPage() {
                         <span className=" text-xl sm:text-5xl font-medium">Khám phá các mẫu Mac</span>
                     </div>
                 </div>
-            </div>
+            </div> 
         </>
     )
 }
