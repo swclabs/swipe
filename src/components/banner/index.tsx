@@ -17,16 +17,16 @@ export default function Banner() {
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            setHeight('h-16 ');
+            setHeight('h-[70px] ');
         }, 400);
         return () => clearTimeout(timeoutId);
 
     }, []);
 
     return (
-        <div className={`${height} ${text} transition duration-1000 ease-in-out ${backgroundColor}`}>
-            <div className="flex justify-center">
-                <p className="text-xs sm:pt-6 p-6">
+        <div className={`${height} ${text} relative transition duration-1000 ease-in-out ${backgroundColor}`}>
+            <div className="flex justify-center h-full">
+                <p className="text-xs pl-6 pr-6 flex items-center">
                     Nhận 4.500.000 - 25.200.000đ dưới hình thức điểm tín dụng để mua iPhone 15 hoặc iPhone 15 Pro khi bạn trao đổi iPhone 11 trở lên.
                 </p>
             </div>
