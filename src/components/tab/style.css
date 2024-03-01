@@ -1,0 +1,56 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    justify-content: 'center';
+    /* transition: transform 0.3s ease; */
+    /* animation: fadeIn 1s ease-in; */
+}
+
+.tab-item:hover {
+    /* transform: scale(1.05); */
+    /* background-color: #f0f0f0;
+    replace with your desired color */
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tab-item-selected {
+    border: 2px solid #000;
+    /* replace with your desired color and border width */
+}
+
+/* .image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.image {
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}

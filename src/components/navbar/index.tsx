@@ -101,7 +101,7 @@ export default function NavbarComponent() {
                 </NavbarItem>
                 <NavbarItem>
                     <div className='large-container'>
-                        <Link color="foreground" href="/product/mac">
+                        <Link color="foreground" href="/mac">
                             <p className=" text-xs">Mac</p>
                         </Link>
                         <div className="overlay">
