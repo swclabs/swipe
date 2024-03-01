@@ -1,13 +1,12 @@
-"use client";
-
+"use client"
 import React, { useEffect } from 'react';
 import Banner from "@/components/banner"
 import { useRef, useState } from 'react';
 import VideoPlayerControls from '@/components/control/VideoPlayerControls';
 import Product from '@/components/store/product';
+import TabsComponent from '@/components/tab/TabsComponent';
 
-
-export default function ProductPage() {
+function ProductPage() {
     const [isPaused, setIsPaused] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
     const [videoDuration, setVideoDuration] = useState<number>();
@@ -64,7 +63,6 @@ export default function ProductPage() {
                 </div>
             </div>
 
-            {/* <button onClick={togglePlayPause}>Play/Pause</button> */}
             <div className="relative w-[90%] max-w-6xl mx-auto my-8 rounded-xl overflow-hidden">
                 <div className="absolute top-4 right-4 z-10">
                     <VideoPlayerControls
@@ -85,7 +83,7 @@ export default function ProductPage() {
                     </div>
                 </div>
             </div>
-            
+
             <Product />
 
             <div className=" w-full bg-gray-50">
@@ -94,7 +92,11 @@ export default function ProductPage() {
                         <span className=" text-xl sm:text-5xl font-medium">Khám phá các mẫu Mac</span>
                     </div>
                 </div>
-            </div> 
+            </div>
+
+            <TabsComponent />
         </>
     )
 }
+
+export default ProductPage;

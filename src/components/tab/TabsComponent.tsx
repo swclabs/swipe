@@ -1,0 +1,71 @@
+"use client"
+import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
+import './style.css';
+import { Image } from "@nextui-org/react";
+
+export default function TabsComponent() {
+    const data = [
+        {
+            id: 'laptop',
+            label: 'Laptop',
+            subItems: [
+                { name: "MacBook Air 13”", price: "From $999 or $83.25/mo. for 12 mo.*", content: "The most affordable Mac laptop to get things done on the go.", image: "/img/product/mac13.png" },
+                { name: "MacBook Air 13” and 15”", price: "From $1099 or $91.58/mo. for 12 mo.*", content: "Strikingly thin and fast so you can work, play, or create anywhere.", image: "/img/product/mac13-15.png" },
+                { name: "MacBook Pro 14” and 16”", price: "From $1599 or $133.25/mo. for 12 mo.*", content: "The most advanced Mac laptops for demanding workflows.", image: "/img/product/mac14-16.png" }
+            ]
+        },
+        {
+            id: 'desktop',
+            label: 'Desktop',
+            subItems: [
+                { name: "iMac", price: 'From $1299 or $108.25/mo. for 12 mo.*', content: "A stunning all-in-one desktop for creativity and productivity.", image: "/img/product/imac.png" },
+                { name: "Mac mini", price: 'From $599 or $49.91/mo. for 12 mo.*', content: "he most affordable Mac desktop with outsized performance.", image: "/img/product/macmini.png" },
+                { name: "Mac Studio", price: 'From $1999 or $166.58/mo. for 12 mo.*', content: "Powerful performance and extensive connectivity for pro workflows.", image: "/img/product/macstudio.png" },
+                { name: "Mac Pro", price: 'From $6999 or $583.25/mo. for 12 mo.*', content: "A pro workstation with PCIe expansion for demanding workflows.", image: "/img/product/macpro.png" }
+            ]
+        },
+        {
+            id: 'display',
+            label: 'Display',
+            subItems: [
+                { name: "Studio Display", price: 'From $1599 or $133.25/mo. for 12 mo.*', content: "A 5K Retina display with stellar camera and audio.", image: "/img/product/studiodisplay.png" },
+                { name: "Pro Display XDR", price: 'From $4999 or $416.58/mo. for 12 mo.*', content: "An advanced 6K XDR display for pro workflows.", image: "/img/product/xdrdisplay.png" }
+            ]
+        }
+    ];
+
+    // const [selectedTab, setSelectedTab] = useState<number | null>(null);
+
+    return (
+        <div className="flex w-full flex-col" >
+            <Tabs aria-label="Dynamic tabs" items={data}>
+                {(item) => (
+                    <Tab key={item.id} title={item.label} className="tab-container">
+                        {item.subItems.map((subItem, subIndex) => (
+                            <Card
+                                key={subIndex}
+                            // className={`tab-item ${selectedTab === subIndex ? 'tab-item-selected' : ''}`}
+                            // onClick={() => setSelectedTab(subIndex)}
+                            // className="tab-item"
+
+                            >
+                                <CardBody style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                    {/* <img src={subItem.image}></img> */}
+                                    <Image
+                                        width={300}
+                                        src={subItem.image}
+                                        className="image"
+                                    />
+                                    <h3 style={{ color: '#000', fontSize: '20px', margin: '10px 0' }}>{subItem.name}</h3>
+                                    <p style={{ color: '#666', fontSize: '16px', margin: '10px 0' }}>{subItem.content}</p>
+                                    <p style={{ color: '#000', fontSize: '18px', fontWeight: 'bold', margin: '10px 0' }}>{subItem.price}</p>
+                                    <a href="#" style={{ color: '#0070f3', textDecoration: 'none', fontSize: '16px', margin: '10px 0' }}>Learn More</a>
+                                </CardBody>
+                            </Card>
+                        ))}
+                    </Tab>
+                )}
+            </Tabs>
+        </div>
+    );
+};
