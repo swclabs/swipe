@@ -180,7 +180,7 @@ export default function NavbarComponent() {
                 </NavbarItem>
                 <NavbarItem>
                     <div className='large-container'>
-                        <Link color="foreground" href="#">
+                        <Link color="foreground" href="/ipad">
                             <p className=" text-xs">iPad</p>
                         </Link>
                         <div className="overlay">
