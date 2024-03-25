@@ -4,7 +4,7 @@ import Banner from "@/components/banner"
 import './style.css';
 import Image from 'next/image'
 
-const Page = () => {
+function IpadPage() {
     return (
         <>
             <Banner />
@@ -560,4 +560,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default IpadPage;
