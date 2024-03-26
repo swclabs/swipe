@@ -4,7 +4,7 @@ import Banner from "@/components/banner"
 import { useRef, useState } from 'react';
 import VideoPlayerControls from '@/components/control/VideoPlayerControls';
 import Product from '@/components/store/product';
-import TabsComponent from '@/components/tab/TabsComponent';
+import TabsComponent from '@/components/tab';
 
 function ProductPage() {
     const [isPaused, setIsPaused] = useState(false);
@@ -51,14 +51,14 @@ function ProductPage() {
     return (
         <>
             <Banner />
-            <div className=" w-full bg-gray-50">
+            <div className=" w-ful">
                 <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 p-5">
-                        <span className=" text-xl sm:text-5xl font-medium">MAC</span>
-                        <p>
-                            "If you can dream it,"
-                            "Mac can do it"
-                        </p>
+                    <div className=" sm:w-4/5 sm:p-12 p-5 flex justify-between">
+                        <span className=" text-xl sm:text-6xl font-semibold">MAC</span>
+                        <div className=' font-semibold text-2xl'>
+                            <p>If you can dream it</p>
+                            <p>Mac can do it </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@ function ProductPage() {
                 </video>
             </div>
 
-            <div className=" w-full bg-gray-50">
+            <div className=" w-full pb-10 pt-10">
                 <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 p-5">
                         <span className=" text-xl sm:text-5xl font-medium">Tìm hiểu về Mac</span>
@@ -86,7 +86,7 @@ function ProductPage() {
 
             <Product />
 
-            <div className=" w-full bg-gray-50">
+            <div className=" w-full bg-gray-50 pb-10 pt-10">
                 <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 p-5">
                         <span className=" text-xl sm:text-5xl font-medium">Khám phá các mẫu Mac</span>
