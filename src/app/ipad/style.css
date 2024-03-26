@@ -1,0 +1,1052 @@
+/* body */
+
+body {
+    background-color: #f5f5f7;
+}
+
+body {
+    min-width: 320px;
+}
+
+body {
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    direction: ltr;
+    text-align: left;
+}
+
+/* -- main -- */
+main {
+    position: relative;
+}
+
+main {
+    display: block;
+}
+
+/* style */
+
+.section-compare .section-content {
+    overflow: hidden;
+    position: relative;
+    margin: 30px auto;
+}
+
+.section-compare {
+    text-align: center;
+}
+
+.section-content-oversized {
+    width: auto;
+    max-width: 1440px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.section-compare .wrapper {
+    background: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* section ipad-pro */
+
+.section-ipad-pro {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #000;
+}
+
+.hero-section {
+    position: relative;
+}
+
+.section {
+    overflow: hidden;
+}
+
+.section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+}
+
+.hero-section .row {
+    position: relative;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.hero-section .text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.theme-dark {
+    background-color: #000;
+    color: #f5f5f7;
+}
+
+.large-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.column {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0px;
+}
+
+.theme-dark {
+    --sk-body-background-color: rgb(0, 0, 0);
+    --sk-body-text-color: rgb(245, 245, 247);
+    --sk-headline-text-color: rgb(245, 245, 247);
+    --sk-body-link-color: rgb(41, 151, 255);
+}
+
+.medium-4 {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+}
+
+.medium-offset-0 {
+    margin-left: 0;
+}
+
+.section-ipad-pro .text-content {
+    margin-top: 34px;
+    margin-left: 28px;
+}
+
+.hero-section .text-content {
+    z-index: 2;
+}
+
+.hero-section .text-content {
+    text-align: center;
+}
+
+.section-ipad-pro .typography-hero-headline {
+    color: #fff;
+}
+
+.hero-section .typography-hero-headline {
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.typography-hero-headline {
+    font-size: 48px;
+    line-height: 1.08349;
+    font-weight: 600;
+    letter-spacing: -.003em;
+    font-family: "SF Pro Display",
+        "SF Pro Icons",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        sans-serif;
+}
+
+.section-ipad-pro .typography-hero-eyebrow {
+    margin-top: 11px;
+    margin-left: -44px;
+}
+
+.section-ipad-pro .typography-hero-eyebrow {
+    display: inline-block;
+}
+
+.section-ipad-pro .typography-hero-eyebrow {
+    color: #fff;
+}
+
+.typography-hero-eyebrow {
+    font-size: 21px;
+    line-height: 1.19048;
+    font-weight: 600;
+    letter-spacing: .011em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.visuallyhidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+
+.section-ipad-pro .image-pro-chip {
+    margin-top: -2px;
+}
+
+.section-ipad-pro .image-pro-chip {
+    width: 52px;
+    height: 53px;
+    background-size: 52px 53px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/m2_chip.png");
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.section-ipad-pro .typography-body:not(.availability) {
+    color: #fff;
+}
+
+.hero-section .typography-body {
+    margin-top: 19px;
+}
+
+.typography-body {
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.hero-section .button {
+    margin-top: 11px;
+    margin-bottom: 8px;
+}
+
+.theme-dark .button {
+    background: #0071e3;
+    color: #fff;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    min-width: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 980px;
+    --sk-button-margin-horizontal: 14px;
+    --sk-button-margin-vertical: 14px;
+}
+
+.section-ipad-pro .image-ipad-pro {
+    left: 50%;
+    margin-left: -284px;
+}
+
+.section-ipad-pro .image-ipad-pro {
+    width: 580px;
+    height: 500px;
+    background-size: 580px 500px;
+    background-repeat: no-repeat;
+    background-image: url('/img/ipad/ipad_pro_hero.jpg');
+}
+
+.section-ipad-pro .image-ipad-pro {
+    position: relative;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* Section ipad-10-9 */
+
+.section-ipad-10-9 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* .hero-section {
+    position: relative;
+    background-color: #fff;
+} */
+
+/* .section {
+    overflow: hidden;
+} */
+
+.large-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.large-offset-1 {
+    margin-left: 8.33333%;
+}
+
+.column {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0px;
+}
+
+.section-ipad-10-9 .image-ipad-10-9 {
+    left: 50%;
+    margin-left: -149px;
+}
+
+.section-ipad-10-9 .image-ipad-10-9 {
+    width: 422px;
+    height: 483px;
+    background-size: 422px 483px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/ipad_hero_medium.jpg");
+}
+
+.section-ipad-10-9 .image-ipad-10-9 {
+    position: relative;
+}
+
+.section-ipad-10-9 .text-col {
+    margin-left: 2px;
+}
+
+.hero-section .text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.column {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0px;
+}
+
+.hero-section .typography-body {
+    margin-top: 19px;
+}
+
+.typography-body {
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.hero-section .button {
+    margin-top: 11px;
+    margin-bottom: 8px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    min-width: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 980px;
+    background: #0071e3;
+    color: #fff;
+    --sk-button-margin-horizontal: 14px;
+    --sk-button-margin-vertical: 14px;
+}
+
+/* Section compare */
+
+.section-compare .section-content {
+    overflow: hidden;
+    position: relative;
+    margin: 30px auto;
+}
+
+.section-compare {
+    text-align: center;
+}
+
+.section-content-oversized {
+    width: auto;
+    max-width: 1440px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.section-compare .wrapper {
+    background: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-compare .typography-compare-section-headline {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+}
+
+.typography-compare-section-headline {
+    font-size: 56px;
+    line-height: 1.07143;
+    font-weight: 600;
+    letter-spacing: -.005em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.section-compare .compare-grid {
+    --row-gap: 7px;
+    --column-gap: 34px;
+    margin-top: 72px;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(20, auto);
+    grid-row-gap: var(--row-gap);
+    grid-column-gap: var(--column-gap);
+    grid-auto-flow: column;
+}
+
+.section-compare .device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-compare .device .product {
+    position: relative;
+    order: 3;
+}
+
+.typography-compare-device-headline {
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 600;
+    letter-spacing: .009em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.section-compare .device .image-wrap {
+    min-height: 191px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 23px;
+}
+
+.section-compare .image-ipad-pro {
+    width: 167px;
+    height: 191px;
+    background-size: 167px 191px;
+    background-image: url("/img/ipad/compare_ipad_pro.png");
+}
+
+.section-compare .device .image-swatches {
+    margin-bottom: 31px;
+}
+
+.section-compare .image-ipad-pro-swatches {
+    width: 32px;
+    height: 14px;
+    background-size: 32px 14px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_pro_swatches_large.png");
+}
+
+.section-compare .tagline {
+    --air-tagline-max-width: 150px;
+    --ipad-10-9-tagline-max-width: none;
+    --ipad-10-2-tagline-max-width: none;
+    --mini-tagline-max-width: 150px;
+    margin-top: 5px;
+    padding: 0;
+}
+
+.section-compare .tagline .typography-compare-tagline {
+    margin: 0 auto;
+}
+
+.typography-compare-tagline {
+    font-size: 14px;
+    line-height: 1.42859;
+    font-weight: 400;
+    letter-spacing: -.016em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.section-compare .buy {
+    padding-bottom: 30px;
+    margin-top: 16px;
+    border-bottom: 1px solid #d2d2d7;
+}
+
+.section-compare .typography-compare-copy {
+    flex-basis: auto;
+}
+
+.typography-compare-copy {
+    font-size: 12px;
+    line-height: 1.33337;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.section-compare .buy .button {
+    margin-top: 14px;
+    margin-bottom: 12px;
+}
+
+.button-reduced {
+    font-size: 12px;
+    line-height: 1.33337;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    min-width: 23px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    --sk-button-margin-horizontal: 10px;
+    --sk-button-margin-vertical: 10px;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 980px;
+    background: #0071e3;
+    color: #fff;
+    --sk-button-margin-horizontal: 14px;
+    --sk-button-margin-vertical: 14px;
+}
+
+.section-compare .display {
+    margin-top: 24px;
+}
+
+.section-compare .feature-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+compare-features-headline {
+    font-size: 21px;
+    line-height: 1.19048;
+    font-weight: 600;
+    letter-spacing: .011em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+h4 {
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.section-compare .feature-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.typography-caption {
+    font-size: 12px;
+    line-height: 1.33337;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+sup.footnote-number {
+    top: initial;
+}
+
+.footnote-number {
+    position: relative;
+    vertical-align: baseline;
+    font-size: 1em;
+}
+
+.section-compare [class*="-row2"] {
+    margin-top: 3px;
+}
+
+.section-compare [class*="-row3"] {
+    margin-top: 3px;
+}
+
+.section-compare [class*="-row4"] {
+    margin-top: 3px;
+}
+
+.section-compare [class*="-row5"] {
+    margin-top: 3px;
+}
+
+.section-compare .chip {
+    margin-top: 38px;
+}
+
+.section-compare .image-icon-chip-m2 {
+    width: 39px;
+    height: 39px;
+    background-size: 39px 39px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_chip_m2.jpg");
+}
+
+.section-compare .front-camera {
+    margin-top: 38px;
+}
+
+.section-compare .feature-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.section-compare .front-camera figure {
+    height: 42px;
+}
+
+.section-compare .image-icon-camera-front-portrait {
+    width: 32px;
+    height: 42px;
+    background-size: 32px 42px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_camera_front_portrait_large.png");
+}
+
+.section-compare .wide-camera {
+    margin-top: 38px;
+}
+
+.section-compare .wide-camera figure {
+    height: 39px;
+}
+
+.section-compare .image-icon-camera-dual-lens-1 {
+    width: 39px;
+    height: 39px;
+    background-size: 39px 39px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_camera_dual_lens_1_large.jpg");
+}
+
+.section-compare .image-icon {
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.section-compare .authentication {
+    margin-top: 38px;
+}
+
+.section-compare .authentication figure {
+    height: 47px;
+}
+
+.section-compare .image-icon-authentication-face {
+    width: 39px;
+    height: 39px;
+    background-size: 39px 39px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_authentication_face_large.jpg");
+}
+
+.section-compare .image-icon {
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.section-compare .connector {
+    margin-top: 38px;
+}
+
+.section-compare .connector figure {
+    height: 31px;
+}
+
+.section-compare .image-icon-connector-thunderbolt-usb-c {
+    width: 56px;
+    /* height: 31px; */
+    background-size: 56px 31px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_connector_thunderbolt_usb_c.png");
+}
+
+.section-compare .image-icon {
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.section-compare .cellular {
+    margin-top: 38px;
+}
+
+.section-compare .cellular figure {
+    height: 35px;
+}
+
+.section-compare .image-icon-cellular-5g {
+    width: 48px;
+    /* height: 34px; */
+    background-size: 48px 34px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_cellular_5g.jpg");
+}
+
+.section-compare .image-icon {
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.section-compare .pencil {
+    max-width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 38px;
+}
+
+.section-compare .pencil .image-icon {
+    background-position-y: bottom;
+}
+
+.section-compare .pencil figure {
+    height: 49px;
+}
+
+.section-compare .image-icon-pencil-2ndgen-usbc {
+    width: 17px;
+    /* height: 45px; */
+    background-size: 17px 45px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_pencil_2ndgen_usbc.png");
+}
+
+.section-compare .image-icon {
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.section-compare .pencil-row2 {
+    max-width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-compare .keyboard {
+    margin-top: 38px;
+}
+
+.section-compare .keyboard figure {
+    height: 46px;
+}
+
+.section-compare .image-icon-keyboard-magic {
+    width: 57px;
+    height: 43px;
+    background-size: 57px 43px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_keyboard_magic_large.jpg");
+}
+
+.section-compare .image-icon {
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.section-compare .image-ipad-air {
+    width: 122px;
+    height: 168px;
+    background-size: 122px 168px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_air.png");
+}
+
+.section-compare .image-ipad-air-swatches {
+    width: 85px;
+    height: 14px;
+    background-size: 85px 14px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_air_swatches_large.png");
+}
+
+.section-compare .image-icon-chip-m1 {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_chip_m1_large.jpg");
+}
+
+.section-compare .image-icon-camera-front-portrait {
+    width: 32px;
+    height: 42px;
+    background-size: 32px 42px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_camera_front_portrait_large.png");
+}
+
+.section-compare .image-icon-camera-single-lens-6 {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_camera_single_lens_6_large.jpg");
+}
+
+.section-compare .image-icon-authentication-vertical-touch {
+    width: 28px;
+    height: 47px;
+    background-size: 28px 47px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_authentication_vertical_touch_large.jpg");
+}
+
+.section-compare .image-icon-connector-usb-c {
+    width: 48px;
+    height: 19px;
+    background-size: 48px 19px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_connector_usb_c_large.png");
+}
+
+sup.footnote-number {
+    top: initial;
+}
+
+.footnote-number {
+    position: relative;
+    vertical-align: baseline;
+    font-feature-settings: "numr";
+    font-size: 1em;
+}
+
+.section-compare .image-ipad-10-9 {
+    width: 122px;
+    height: 168px;
+    background-size: 122px 168px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_10_9_large.png");
+}
+
+.section-compare .image-ipad-10-9-swatches {
+    width: 68px;
+    height: 14px;
+    background-size: 68px 14px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_10_9_swatches_large.png");
+}
+
+.section-compare .device .generation {
+    display: block;
+    margin-top: 1px;
+}
+
+.typography-compare-generation {
+    font-size: 14px;
+    line-height: 1.42859;
+    font-weight: 600;
+    letter-spacing: -.008em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.section-compare .image-icon-chip-a14 {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_chip_a14_large.jpg");
+}
+
+.section-compare .image-icon-camera-front-landscape {
+    width: 44px;
+    height: 34px;
+    background-size: 44px 34px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_camera_front_landscape_large.png");
+}
+
+.section-compare .image-icon-pencil-usbc-1stgen {
+    width: 17px;
+    height: 49px;
+    background-size: 17px 49px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_pencil_usbc_1stgen_large.png");
+}
+
+.section-compare .image-icon-keyboard-magic-folio {
+    width: 56px;
+    height: 46px;
+    background-size: 56px 46px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_keyboard_magic_folio_large.jpg");
+}
+
+.section-compare .image-ipad-10-2 {
+    width: 119px;
+    height: 170px;
+    background-size: 119px 170px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_10_2_large.png");
+}
+
+.section-compare .image-ipad-10-2-swatches {
+    width: 32px;
+    height: 14px;
+    background-size: 32px 14px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_10_2_swatches_large.png");
+}
+
+.section-compare .image-icon-chip-a13 {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_chip_a13_large.jpg");
+}
+
+.section-compare .image-icon-camera-single-lens-3 {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_camera_single_lens_3_large.jpg");
+}
+
+.section-compare .image-icon-authentication-touch {
+    width: 41px;
+    height: 40px;
+    background-size: 41px 40px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_authentication_touch_large.jpg");
+}
+
+.section-compare .image-icon-connector-lightning {
+    width: 48px;
+    height: 19px;
+    background-size: 48px 19px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_connector_lightning_large.png");
+}
+
+.section-compare .image-icon-cellular-4g {
+    width: 48px;
+    height: 35px;
+    background-size: 48px 35px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_cellular_4g_large.jpg");
+}
+
+.section-compare .image-icon-pencil-1stgen {
+    width: 17px;
+    height: 45px;
+    background-size: 17px 45px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_pencil_1stgen_large.png");
+}
+
+.section-compare .image-icon-keyboard-smart {
+    width: 57px;
+    height: 34px;
+    background-size: 57px 34px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_keyboard_smart_large.jpg");
+}
+
+.section-compare .image-ipad-mini {
+    width: 122px;
+    height: 168px;
+    background-size: 122px 168px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_mini_large.png");
+}
+
+.section-compare .image-ipad-mini-swatches {
+    width: 85px;
+    height: 14px;
+    background-size: 85px 14px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/compare_ipad_mini_swatches_large.png");
+}
+
+.section-compare .image-icon-chip-a15 {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_chip_a15_large.jpg");
+}
+
+.section-compare .image-icon-camera-single-lens-7 {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_camera_single_lens_7_large.jpg");
+}
+
+.section-compare .image-icon-keyboard-bluetooth {
+    width: 48px;
+    height: 26px;
+    background-size: 48px 26px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ipad/icon_keyboard_bluetooth_large.jpg");
+}
