@@ -4,6 +4,9 @@ export default function FooterComponent() {
     return (
         <div className="w-full flex justify-center bg-gray-50">
             <div className=" h-[300px] w-4/5">
+                <div className=" ml-8 mr-8">
+                    <Divider />
+                </div>
                 <div className="flex p-8 h-[250px]">
                     <div className="container">
                         <p className=" text-xs font-semibold">Shop</p>

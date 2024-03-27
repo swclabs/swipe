@@ -59,7 +59,7 @@ export default function NavbarComponent() {
                                             </Link>
                                         </li>
                                         <li className=' pt-1 pb-1'>
-                                            <Link className=' text-2xl font-semibold' color="foreground">
+                                            <Link className=' text-2xl font-semibold' color="foreground" href='/mac'>
                                                 Mac
                                             </Link>
                                         </li>
