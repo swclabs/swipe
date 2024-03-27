@@ -24,6 +24,7 @@ export default function TabsComponent() {
                                             <CardBody className="flex flex-col h-full relative">
                                                 <div className="h-[300px] flex items-center">
                                                     <Image
+                                                        alt="img"
                                                         src={subItem.image}
                                                         className="z-0 object-cover max-h-[300px]"
                                                     />
