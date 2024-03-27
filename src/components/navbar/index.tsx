@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
+import NotLoggedIn from '../cart/not-logged';
 
 export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -32,7 +33,7 @@ export default function NavbarComponent() {
                     <Link href='/'>
                         <Image
                             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-                            src="/swiftcart.svg"
+                            src="/ico/swiftcart.svg"
                             alt="Next.js Logo"
                             width={50}
                             height={50}
@@ -566,7 +567,8 @@ export default function NavbarComponent() {
                             <IoBagOutline />
                         </Link>
                         <div className="overlay">
-                            <div className=' container p-8 flex absolute'>
+                            <div className=' container p-10 pl-20 absolute'>
+                                <NotLoggedIn />
                             </div>
                         </div>
                     </div>
