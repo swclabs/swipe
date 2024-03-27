@@ -5,7 +5,7 @@ export default function ProductBar() {
         <div className="flex justify-center">
             <div className=" flex w-full sm:w-4/5 sm:p-12 sm:justify-between overflow-auto no-scrollbar">
                 <div className=" flex">
-                    <div className=" w-[100px] mr-[10px]">
+                    <a className=" w-[100px] mr-[10px]" href="/mac">
                         <Image
                             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                             src="/img/mac.png"
@@ -15,7 +15,7 @@ export default function ProductBar() {
 
                         />
                         <p className=" text-sm font-semibold text-center pt-4">Mac</p>
-                    </div>
+                    </a>
                 </div>
                 <div className=" flex">
                     <div className=" w-[100px] mr-[10px]">
