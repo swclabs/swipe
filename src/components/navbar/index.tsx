@@ -252,7 +252,7 @@ export default function NavbarComponent() {
                 </NavbarItem>
                 <NavbarItem>
                     <div className='medium-container'>
-                        <Link color="foreground" href="#">
+                        <Link color="foreground" href="/iphone">
                             <p className=" text-xs">iPhone</p>
                         </Link>
                         <div className="overlay">
