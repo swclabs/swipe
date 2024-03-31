@@ -103,36 +103,35 @@ export default function ProductCompare() {
 
                         <div className="border-b-4"></div>
 
-                        <div className="product-tile-plus product-tile-padding">
-                            <div className="grid grid-rows-3 grid-flow-col gap-4">
-                                <div className="h-20 flex flex-col items-center justify-center py-20">
 
-                                    <img
-                                        className="object-center"
-                                        src="/img/iphone/product_tile_icon_a16_large.png"
-                                    >
-                                    </img>
-                                    <p className="font-thin text-sm">Chip A16 Bionic với GPU 5 lõi</p>
-                                </div>
-                                <div className="h-20 flex flex-col items-center justify-center py-20">
-                                    <img
-                                        className="object-center"
-                                        src="/img/iphone/product_tile_icon_iphone_15_camera_large.png"
-                                    >
-                                    </img>
-                                    <p className="font-thin text-sm">Hệ thống camera kép tiên tiến</p>
-                                    <p className="font-thin text-sm">Camera Chính 48MP</p>
-                                    <p className="font-thin text-sm">Telephoto 2x</p>
-                                    <p className="font-thin text-sm">UCamera Ultra Wide</p>
-                                </div>
-                                <div className="h-20 flex flex-col items-center justify-center py-20">
-                                    <img
-                                        className="object-center"
-                                        src="/img/iphone/product_tile_icon_battery_100_large.png"
-                                    >
-                                    </img>
-                                    <p className="font-thin text-sm">Thời gian xem video lên đến 26 giờ</p>
-                                </div>
+                        <div className="grid grid-rows-3 grid-flow-col gap-4">
+                            <div className="h-20 flex flex-col items-center justify-center py-20">
+
+                                <img
+                                    className="object-center"
+                                    src="/img/iphone/product_tile_icon_a16_large.png"
+                                >
+                                </img>
+                                <p className="font-thin text-sm">Chip A16 Bionic với GPU 5 lõi</p>
+                            </div>
+                            <div className="h-20 flex flex-col items-center justify-center py-20">
+                                <img
+                                    className="object-center"
+                                    src="/img/iphone/product_tile_icon_iphone_15_camera_large.png"
+                                >
+                                </img>
+                                <p className="font-thin text-sm">Hệ thống camera kép tiên tiến</p>
+                                <p className="font-thin text-sm">Camera Chính 48MP</p>
+                                <p className="font-thin text-sm">Telephoto 2x</p>
+                                <p className="font-thin text-sm">UCamera Ultra Wide</p>
+                            </div>
+                            <div className="h-20 flex flex-col items-center justify-center py-20">
+                                <img
+                                    className="object-center"
+                                    src="/img/iphone/product_tile_icon_battery_100_large.png"
+                                >
+                                </img>
+                                <p className="font-thin text-sm">Thời gian xem video lên đến 26 giờ</p>
                             </div>
                         </div>
                     </div>
@@ -167,35 +166,34 @@ export default function ProductCompare() {
 
                         <div className="border-b-4"></div>
 
-                        <div className="product-tile-plus product-tile-padding">
-                            <div className="grid grid-rows-3 grid-flow-col gap-4">
-                                <div className="h-20 flex flex-col items-center justify-center py-20">
-                                    <img
-                                        className="object-center"
-                                        src="/img/iphone/product_tile_icon_a15_large.png"
-                                    >
-                                    </img>
-                                    <p className="font-thin text-sm">Chip A15 Bionic với GPU 5 lõi</p>
-                                </div>
-                                <div className="h-20 flex flex-col items-center justify-center py-20">
-                                    <img
-                                        className="object-center"
-                                        src="/img/iphone/product_tile_icon_iphone_15_camera_large.png"
-                                    >
-                                    </img>
-                                    <p className="font-thin text-sm">Hệ thống camera kép</p>
-                                    <p className="font-thin text-sm">Camera Chính 12MP</p>
-                                    <p className="font-thin text-sm">-</p>
-                                    <p className="font-thin text-sm">Camera Ultra Wide</p>
-                                </div>
-                                <div className="h-20 flex flex-col items-center justify-center py-20">
-                                    <img
-                                        className="object-center"
-                                        src="/img/iphone/product_tile_icon_battery_100_large.png"
-                                    >
-                                    </img>
-                                    <p className="font-thin text-sm">Thời gian xem video lên đến 26 giờ</p>
-                                </div>
+
+                        <div className="grid grid-rows-3 grid-flow-col gap-4">
+                            <div className="h-20 flex flex-col items-center justify-center py-20">
+                                <img
+                                    className="object-center"
+                                    src="/img/iphone/product_tile_icon_a15_large.png"
+                                >
+                                </img>
+                                <p className="font-thin text-sm">Chip A15 Bionic với GPU 5 lõi</p>
+                            </div>
+                            <div className="h-20 flex flex-col items-center justify-center py-20">
+                                <img
+                                    className="object-center"
+                                    src="/img/iphone/product_tile_icon_iphone_15_camera_large.png"
+                                >
+                                </img>
+                                <p className="font-thin text-sm">Hệ thống camera kép</p>
+                                <p className="font-thin text-sm">Camera Chính 12MP</p>
+                                <p className="font-thin text-sm">-</p>
+                                <p className="font-thin text-sm">Camera Ultra Wide</p>
+                            </div>
+                            <div className="h-20 flex flex-col items-center justify-center py-20">
+                                <img
+                                    className="object-center"
+                                    src="/img/iphone/product_tile_icon_battery_100_large.png"
+                                >
+                                </img>
+                                <p className="font-thin text-sm">Thời gian xem video lên đến 26 giờ</p>
                             </div>
                         </div>
                     </div>
