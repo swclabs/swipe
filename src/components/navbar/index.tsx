@@ -319,7 +319,7 @@ export default function NavbarComponent() {
                 </NavbarItem>
                 <NavbarItem>
                     <div className='medium-container'>
-                        <Link color="foreground" href="#">
+                        <Link color="foreground" href="/watch">
                             <p className=" text-xs">Watch</p>
                         </Link>
                         <div className="overlay">

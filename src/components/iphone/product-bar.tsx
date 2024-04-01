@@ -1,5 +1,4 @@
 'use client';
-import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
 import './style.css'
 
 export default function ProductBar() {
