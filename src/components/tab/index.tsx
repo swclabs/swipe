@@ -2,7 +2,7 @@
 import { Tabs, Tab, Card, CardBody, Button } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
 import './style.css'
-import data from "@/data/mac";
+import data from "@/faker/mac";
 
 export default function TabsComponent() {
 
