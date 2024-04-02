@@ -1,5 +1,6 @@
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
 import './style.css'
+import accessoryData from "@/faker/accessory-news";
 
 export default function Accessory() {
     return (
@@ -22,60 +23,26 @@ export default function Accessory() {
                         />
                     </Card>
                 </div>
-                <div className=" flex snap-center">
-                    <Card className="h-[500px] sm:w-[400px] m-5 w-[300px]">
-                        <CardBody className="p-5">
-                            <div className=" flex-col h-full relative">
-                                <Image
-                                    alt="pencil"
-                                    src="/img/store/pencil.jpg"
-                                    className="z-0 w-full h-full object-cover"
-                                />
-                                <div className=" container">
-                                    <div className=" text-xs text-red-600 pb-1">Mới</div>
-                                    <div className=" font-medium">Apple Pencil (USB-C)</div>
-                                    <div className=" font-normal text-sm absolute bottom-0">2.099.000đ</div>
+                {accessoryData.map((value, index) => (
+                    <div className=" flex snap-center" key={index}>
+                        <Card className="h-[500px] sm:w-[400px] m-5 w-[300px]">
+                            <CardBody className="p-5">
+                                <div className=" flex-col h-full relative">
+                                    <Image
+                                        alt="img"
+                                        src={value.img}
+                                        className="z-0 w-full h-full object-cover"
+                                    />
+                                    <div className=" container">
+                                        <div className=" text-xs text-red-600 pb-1">{value.new}</div>
+                                        <div className=" font-medium">{value.name}</div>
+                                        <div className=" font-normal text-sm absolute bottom-0">{value.price}</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </div>
-                <div className=" flex snap-center">
-                    <Card className="h-[500px] sm:w-[400px] m-5 w-[300px]">
-                        <CardBody className="p-5">
-                            <div className="flex-col h-full relative">
-                                <Image
-                                    alt="pencil"
-                                    src="/img/store/oplung.jpg"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className=" container">
-                                    <div className=" text-xs text-red-600 pb-1">Mới</div>
-                                    <div className=" font-medium">Ốp Lưng Vải Tinh Dệt MagSafe <br /> cho iPhone 15 Pro - Nâu Xám</div>
-                                    <div className=" font-normal text-sm absolute bottom-0">1.699.000đ</div>
-                                </div>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </div>
-                <div className=" flex snap-center">
-                    <Card className="h-[500px] sm:w-[400px] m-5 w-[300px]">
-                        <CardBody className="p-5">
-                            <div className="flex-col h-full relative">
-                                <Image
-                                    alt="pencil"
-                                    src="/img/store/oplung.jpg"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className=" container">
-                                    <div className=" text-xs text-red-600 pb-1">Mới</div>
-                                    <div className=" font-medium">Ốp Lưng Vải Tinh Dệt MagSafe <br /> cho iPhone 15 Pro - Nâu Xám</div>
-                                    <div className=" font-normal text-sm absolute bottom-0">1.699.000đ</div>
-                                </div>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </div>
+                            </CardBody>
+                        </Card>
+                    </div>
+                ))}
                 <div className=" sm:w-1/12 shrink-0 snap-center">
                     <div className="shrink-0"></div>
                 </div>

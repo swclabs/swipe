@@ -4,6 +4,8 @@ import { Card, CardHeader, Image } from "@nextui-org/react"
 import Link from "next/link"
 import React from "react"
 
+import homeBanner from "@/faker/home-banner"
+
 export default function Home() {
   return (
     <>
@@ -27,42 +29,35 @@ export default function Home() {
           <Link href="#"><p className=" text-center p-1 text-blue-600">Mua ngay</p></Link>
         </div>
 
-        <Card className="col-span-12 sm:col-span-4 h-[650px] mt-4" radius="none">
-          <CardHeader className="absolute z-10 top-1 flex-col">
-            <p className="text-5xl text-white font-semibold pt-7">iPhone 15 Pro</p>
-            <h4 className="text-white font-medium text-3xl pt-3">Titan. Thật bền chắc. Thật nhẹ. Thật Pro.</h4>
-            <div className="flex">
-              <Link href="#"><p className=" text-center text-lg p-1 text-blue-500">Tìm hiểu thêm</p></Link>
-              <Link href="#"><p className=" text-center text-lg p-1 text-blue-500">Mua ngay</p></Link>
-            </div>
-          </CardHeader>
-          <Image
-            radius="none"
-            removeWrapper
-            alt="Card background"
-            className="z-0 w-full h-full object-cover"
-            src="/img/iphone15pro.jpg"
-          />
-        </Card>
+        {homeBanner.map((val, index) => (
+          <Card className="col-span-12 sm:col-span-4 h-[650px] mt-4" radius="none" key={index}>
+            <CardHeader className="absolute z-10 top-1 flex-col">
+              <div className="text-5xl font-semibold pt-7">
+                <p className={val.text}>
+                  {val.name}
+                </p>
+              </div>
+              <h4 className="font-medium text-3xl pt-3">
+                <p className={val.text}>
+                  {val.sub_title}
+                </p>
+              </h4>
+              <div className="flex">
+                <Link href="#"><p className=" text-center text-lg p-1 text-blue-500">Tìm hiểu thêm</p></Link>
+                <Link href="#"><p className=" text-center text-lg p-1 text-blue-500">Mua ngay</p></Link>
+              </div>
+            </CardHeader>
+            <Image
+              radius="none"
+              removeWrapper
+              alt="Card background"
+              className="z-0 w-full h-full object-cover"
+              src={val.img}
+            />
+          </Card>
+        ))}
 
-        <Card className="col-span-12 sm:col-span-4 h-[650px] mt-4" radius="none">
-          <CardHeader className="absolute z-10 top-1 flex-col">
-            <p className="text-5xl text-black font-semibold pt-7">iPhone 15</p>
-            <h4 className="text-black font-medium text-3xl pt-3">Camera mới. Thiết kế mới. Mới lịm tim</h4>
-            <div className="flex">
-              <Link href="#"><p className=" text-center text-lg p-1 text-blue-500">Tìm hiểu thêm</p></Link>
-              <Link href="#"><p className=" text-center text-lg p-1 text-blue-500">Mua ngay</p></Link>
-            </div>
-          </CardHeader>
-          <Image
-            radius="none"
-            removeWrapper
-            alt="Card background"
-            className="z-0 w-full h-full object-cover"
-            src="/img/iphone15.jpg"
-          />
-        </Card>
-      </div>
+      </div >
       <ShortCut />
     </>
   )

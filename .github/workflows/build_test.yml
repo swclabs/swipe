@@ -1,4 +1,4 @@
-name: Build API Server
+name: Build swipe application
 
 on:
   push:
