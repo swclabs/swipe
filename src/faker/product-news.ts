@@ -1,12 +1,24 @@
 const productNews = [
     {
-        id: 'laptop',
-        label: 'Laptop',
-        subItems: [
-            { name: "MacBook Air 13”", price: "From $999 or $83.25/mo. for 12 mo.*", content: "The most affordable Mac laptop to get things done on the go.", image: "/img/product/mac13.png" },
-            { name: "MacBook Air 13” and 15”", price: "From $1099 or $91.58/mo. for 12 mo.*", content: "Strikingly thin and fast so you can work, play, or create anywhere.", image: "/img/product/mac13-15.png" },
-            { name: "MacBook Pro 14” and 16”", price: "From $1599 or $133.25/mo. for 12 mo.*", content: "The most advanced Mac laptops for demanding workflows.", image: "/img/product/mac14-16.png" }
-        ]
+        title: "iPhone 15 Pro",
+        sub_title: "Titan",
+        desc: "Từ 28.999.000đ hoặc 1.181.000đ/tháng mỗi tháng trong 24 tháng*",
+        img: "/img/store/iphone.jpg",
+        text_color: "text-white/60"
+    },
+    {
+        title: "KHOẢN THANH TOÁN HÀNG THÁNG THẤP",
+        sub_title: "Trả Góp Hàng Tháng với MoMo.",
+        desc: "Trả dần, thời hạn đến 24 tháng và chỉ trả trước 20%*",
+        img: "/img/store/iphone2.jpg",
+        text_color: "text-black"
+    },
+    {
+        title: "Macbook Pro 14 và 16",
+        sub_title: "Chấn động, ấn tượng",
+        desc: "Từ 39.999.000đ hoặc 1.629.000đ/thángmỗi tháng trong 24 tháng*",
+        img: "/img/store/mac.jpg",
+        text_color: "text-black"
     },
 
 ]
