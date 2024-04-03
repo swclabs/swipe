@@ -45,13 +45,13 @@ function IphonePage() {
                 <News />
 
                 {/* Section Compare Item */}
-                <div className="flex justify-center">
+                {/* <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
                         <span className=" text-xl sm:text-5xl font-medium">Khám phá dòng sản phẩm.</span>
                     </div>
                 </div>
 
-                {/* <ProductCompare /> */}
+                <ProductCompare /> */}
 
                 {/* Section Accessories */}
                 <div className="flex justify-center">
