@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
-import NotLoggedIn from '../cart/not-logged';
+import NotLoggedIn, { LoggedIn } from '../cart/cart';
 
 export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -568,7 +568,7 @@ export default function NavbarComponent() {
                         </Link>
                         <div className="overlay">
                             <div className=' container p-10 pl-20 absolute'>
-                                <NotLoggedIn />
+                                <LoggedIn />
                             </div>
                         </div>
                     </div>
