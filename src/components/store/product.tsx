@@ -14,11 +14,11 @@ export default function Product() {
                     <div className="flex snap-center" key={index}>
                         <Card className="h-[500px] sm:w-[400px] m-5 w-[300px]">
                             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                                <div className={value.text_color}>
+                                <div className={value.textcolor}>
                                     <p className="text-tiny uppercase font-bold">
                                         {value.title}
                                     </p>
-                                    <h4 className="font-semibold text-xl pt-2 pb-2">{value.sub_title}</h4>
+                                    <h4 className="font-semibold text-xl pt-2 pb-2">{value.subtitle}</h4>
                                     <h4 className="font-normal text-sm text-left">{value.desc}</h4>
                                 </div>
                             </CardHeader>
