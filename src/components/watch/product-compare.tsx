@@ -55,10 +55,10 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_carbon_neutral_large.png"
                                 >
                                 </img>
-                                <p className="font-normal text-base">
+                                <p className="font-normal text-sm pb-2">
                                     Có sẵn các cách kết hợp
                                     <br />
-                                    trung hòa carbon1
+                                    trung hòa carbon
                                 </p>
 
                             </div>
@@ -80,9 +80,9 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_s8_sip_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">S8 SiP</p>
-                                <p className="font-base text-sm pb-2">-</p>
-                                <p className="font-base text-sm pb-2">Tìm iPhone</p>
+                                <p className="font-normal text-sm pb-2">S8 SiP</p>
+                                <p className="font-normal text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">Tìm iPhone</p>
                             </div>
                             <div className="h-96 flex flex-col items-center justify-center text-center">
                                 <img
@@ -90,19 +90,19 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_heart_rate_notifications_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">-</p>
-                                <p className="font-base text-sm pb-2">-</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     nhịp tim cao và thấp
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     nhịp không đều
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     thể chất tim mạch thấp
@@ -114,8 +114,8 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_temperature_sensing_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">-</p>
-                                <p className="font-base text-sm pb-2">Theo Dõi Chu Kỳ</p>
+                                <p className="font-normal text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">Theo Dõi Chu Kỳ</p>
                             </div>
                             <div className="h-64 flex flex-col items-center justify-center text-center">
                                 <img
@@ -123,9 +123,9 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_sos_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">SOS Khẩn Cấp</p>
-                                <p className="font-base text-sm pb-2">Gọi khẩn cấp quốc tế</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">SOS Khẩn Cấp</p>
+                                <p className="font-normal text-sm pb-2">Gọi khẩn cấp quốc tế</p>
+                                <p className="font-normal text-sm pb-2">
                                     Phát Hiện Ngã và
                                     <br />
                                     Phát Hiện Va Chạm
@@ -138,10 +138,10 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_water_resistant_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Chống nước</p>
-                                <p className="font-base text-sm pb-2">Chống nước khi bơi</p>
-                                <p className="font-base text-sm pb-2">-</p>
-                                <p className="font-base text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">Chống nước</p>
+                                <p className="font-normal text-sm pb-2">Chống nước khi bơi</p>
+                                <p className="font-normal text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">-</p>
                             </div>
                             <div className="h-52 flex flex-col items-center justify-center text-center">
                                 <img
@@ -149,8 +149,8 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_cellular_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">GPS</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">GPS</p>
+                                <p className="font-normal text-sm pb-2">
                                     Có kết nối bằng dữ liệu
                                     <br />
                                     di động
@@ -162,9 +162,9 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_battery_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Lên đến 18 giờ</p>
-                                <p className="font-base text-sm pb-2">Chế Độ Nguồn Điện Thấp</p>
-                                <p className="font-base text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">Lên đến 18 giờ</p>
+                                <p className="font-normal text-sm pb-2">Chế Độ Nguồn Điện Thấp</p>
+                                <p className="font-normal text-sm pb-2">-</p>
                             </div>
                         </div>
 
@@ -216,7 +216,7 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_carbon_neutral_large.png"
                                 >
                                 </img>
-                                <p className="font-normal text-base">
+                                <p className="font-normal text-sm pb-2">
                                     Có sẵn các cách kết hợp
                                     <br />
                                     trung hòa carbon
@@ -241,9 +241,9 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_s9_sip_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">S9 SiP</p>
-                                <p className="font-base text-sm pb-2">Thao tác chạm hai lần</p>
-                                <p className="font-base text-sm pb-2">Tìm Chính Xác
+                                <p className="font-normal text-sm pb-2">S9 SiP</p>
+                                <p className="font-normal text-sm pb-2">Thao tác chạm hai lần</p>
+                                <p className="font-normal text-sm pb-2">Tìm Chính Xác
                                     <br />
                                     cho iPhone
                                 </p>
@@ -254,23 +254,23 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_heart_rate_notifications_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Ứng dụng
                                     <br />
                                     Ôxi Trong Máu
                                 </p>
-                                <p className="font-base text-sm pb-2">Ứng dụng ECG</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Ứng dụng ECG</p>
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     nhịp tim cao và thấp
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     nhịp không đều
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     thể chất tim mạch thấp
@@ -282,8 +282,8 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_temperature_sensing_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Cảm biến nhiệt độ</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Cảm biến nhiệt độ</p>
+                                <p className="font-normal text-sm pb-2">
                                     Theo Dõi Chu Kỳ
                                     <br />
                                     với các dự đoán
@@ -299,9 +299,9 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_sos_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Cảm biến nhiệt độ</p>
-                                <p className="font-base text-sm pb-2">Gọi khẩn cấp quốc tế</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Cảm biến nhiệt độ</p>
+                                <p className="font-normal text-sm pb-2">Gọi khẩn cấp quốc tế</p>
+                                <p className="font-normal text-sm pb-2">
                                     Phát Hiện Ngã và
                                     <br />
                                     Phát Hiện Va Chạm
@@ -314,10 +314,10 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_water_resistant_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Chống nước</p>
-                                <p className="font-base text-sm pb-2">Chống nước khi bơi</p>
-                                <p className="font-base text-sm pb-2">-</p>
-                                <p className="font-base text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">Chống nước</p>
+                                <p className="font-normal text-sm pb-2">Chống nước khi bơi</p>
+                                <p className="font-normal text-sm pb-2">-</p>
+                                <p className="font-normal text-sm pb-2">-</p>
                             </div>
                             <div className="h-52 flex flex-col items-center justify-center text-center">
                                 <img
@@ -325,8 +325,8 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_cellular_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">GPS</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">GPS</p>
+                                <p className="font-normal text-sm pb-2">
                                     Có kết nối bằng dữ liệu
                                     <br />
                                     di động
@@ -338,13 +338,13 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_battery_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Lên đến 18 giờ</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Lên đến 18 giờ</p>
+                                <p className="font-normal text-sm pb-2">
                                     Lên đến 36 giờ ở Chế Độ
                                     <br />
                                     Nguồn Điện Thấp
                                 </p>
-                                <p className="font-base text-sm pb-2">Sạc nhanh</p>
+                                <p className="font-normal text-sm pb-2">Sạc nhanh</p>
                             </div>
                         </div>
 
@@ -394,7 +394,7 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_carbon_neutral_large.png"
                                 >
                                 </img>
-                                <p className="font-normal text-base">
+                                <p className="font-normal text-sm pb-2">
                                     Có sẵn các cách kết hợp
                                     <br />
                                     trung hòa carbon
@@ -419,9 +419,9 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_s9_sip_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">S9 SiP</p>
-                                <p className="font-base text-sm pb-2">Thao tác chạm hai lần</p>
-                                <p className="font-base text-sm pb-2">Tìm Chính Xác
+                                <p className="font-normal text-sm pb-2">S9 SiP</p>
+                                <p className="font-normal text-sm pb-2">Thao tác chạm hai lần</p>
+                                <p className="font-normal text-sm pb-2">Tìm Chính Xác
                                     <br />
                                     cho iPhone
                                 </p>
@@ -432,23 +432,23 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_heart_rate_notifications_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Ứng dụng
                                     <br />
                                     Ôxi Trong Máu
                                 </p>
-                                <p className="font-base text-sm pb-2">Ứng dụng ECG</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Ứng dụng ECG</p>
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     nhịp tim cao và thấp
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     nhịp không đều
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Thông báo
                                     <br />
                                     thể chất tim mạch thấp
@@ -460,8 +460,8 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_temperature_sensing_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Cảm biến nhiệt độ</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Cảm biến nhiệt độ</p>
+                                <p className="font-normal text-sm pb-2">
                                     Theo Dõi Chu Kỳ
                                     <br />
                                     với các dự đoán
@@ -477,9 +477,9 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_sos_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Cảm biến nhiệt độ</p>
-                                <p className="font-base text-sm pb-2">Gọi khẩn cấp quốc tế</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Cảm biến nhiệt độ</p>
+                                <p className="font-normal text-sm pb-2">Gọi khẩn cấp quốc tế</p>
+                                <p className="font-normal text-sm pb-2">
                                     Phát Hiện Ngã và
                                     <br />
                                     Phát Hiện Va Chạm
@@ -492,14 +492,14 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_water_resistant_100m_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Chống nước</p>
-                                <p className="font-base text-sm pb-2">Chống nước khi bơi</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Chống nước</p>
+                                <p className="font-normal text-sm pb-2">Chống nước khi bơi</p>
+                                <p className="font-normal text-sm pb-2">
                                     Các môn thể thao
                                     <br />
                                     dưới nước tốc độ cao
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Lặn giải trí ở độ sâu
                                     <br />
                                     đến 40m
@@ -511,12 +511,12 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_cellular_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     GPS tần số kép
                                     <br />
                                     chuẩn xác
                                 </p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">
                                     Có kết nối bằng dữ liệu
                                     <br />
                                     di động
@@ -528,13 +528,13 @@ export default function ProductCompare() {
                                     src="/img/watch/quicklook_battery_large.png"
                                 >
                                 </img>
-                                <p className="font-base text-sm pb-2">Lên đến 36 giờ</p>
-                                <p className="font-base text-sm pb-2">
+                                <p className="font-normal text-sm pb-2">Lên đến 36 giờ</p>
+                                <p className="font-normal text-sm pb-2">
                                     Lên đến 72 giờ ở Chế Độ
                                     <br />
                                     Nguồn Điện Thấp
                                 </p>
-                                <p className="font-base text-sm pb-2">Sạc nhanh</p>
+                                <p className="font-normal text-sm pb-2">Sạc nhanh</p>
                             </div>
                         </div>
 
