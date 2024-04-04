@@ -41,7 +41,7 @@ function IphonePage() {
                 {/* News */}
                 <div className="flex justify-center text-center">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className=" text-xl sm:text-6xl font-bold">
+                        <span className=" text-lg sm:text-6xl font-semibold">
                             Kết nối tuyệt diệu với <br />
                             các thiết bị của bạn.
                         </span>
@@ -53,7 +53,7 @@ function IphonePage() {
                 {/* Section Products */}
                 <div className="flex justify-center text-center">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className=" text-xl sm:text-6xl font-bold">
+                        <span className=" text-lg sm:text-6xl font-semibold">
                             AirPods nào <br />
                             phù hợp với bạn?
                         </span>
