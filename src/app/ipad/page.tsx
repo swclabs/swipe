@@ -22,7 +22,7 @@ function IpadPage() {
 
             <ProductBar />
             <Banner />
-            <div className=" w-full bg-gray-50">
+            <div className=" w-full bg-white">
 
                 {/* News */}
                 <div className="flex justify-center">
