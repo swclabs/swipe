@@ -1,7 +1,7 @@
 "use client"
 import './style.css'
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenuItem, NavbarMenu } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, Badge } from "@nextui-org/react";
 import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
@@ -564,7 +564,9 @@ export default function NavbarComponent() {
                 <NavbarItem>
                     <div className='medium-container'>
                         <Link color="foreground" href="#">
-                            <IoBagOutline />
+                            <Badge content={3} color='primary'>
+                                <IoBagOutline />
+                            </Badge>
                         </Link>
                         <div className="overlay">
                             <div className=' container p-10 pl-20 absolute'>
