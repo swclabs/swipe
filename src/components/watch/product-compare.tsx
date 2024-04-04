@@ -1,5 +1,5 @@
 'use client';
-import { Card, CardHeader, Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import './style.css'
 
 export default function ProductCompare() {

@@ -12,7 +12,7 @@ export default function Product() {
                     <div className="shrink-0"></div>
                 </div>
 
-                <div className="grid grid-cols-5">
+                <div className="grid grid-cols-3 gap-4">
                     {watch.map((value) => (
 
                         <div className="container mx-auto h-full w-full border bg-white">

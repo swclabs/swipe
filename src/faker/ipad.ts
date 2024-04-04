@@ -16,7 +16,7 @@ const ipad = [
         swatch: "/img/ipad/compare_ipad_air_swatches_large.png",
     },
     {
-        title: "iPhone 14",
+        title: "iPad",
         subtitle: "thế hệ thứ 10",
         price: "Từ 11.499.000đ",
         desc: "iPad màn hình toàn phần, đầy màu sắc. Cho mọi tác vụ hàng ngày.",

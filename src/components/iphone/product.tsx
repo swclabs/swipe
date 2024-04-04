@@ -11,7 +11,7 @@ export default function Product() {
                 <div className=" sm:w-1/12 shrink-0 snap-center">
                     <div className="shrink-0"></div>
                 </div>
-                <div className="grid grid-cols-5">
+                <div className="grid grid-cols-5 gap-4">
                     {iphone.map((value) => (
 
                         <div className="container mx-auto h-full w-full border bg-white">
