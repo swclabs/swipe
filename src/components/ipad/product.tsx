@@ -1,7 +1,7 @@
 'use client';
 import { Image } from "@nextui-org/react";
 import './style.css'
-import iphone from "@/faker/iphone";
+import ipad from "@/faker/ipad";
 
 export default function Product() {
     return (
@@ -12,29 +12,44 @@ export default function Product() {
                     <div className="shrink-0"></div>
                 </div>
                 <div className="grid grid-cols-5">
-                    {iphone.map((value) => (
+                    {ipad.map((value) => (
 
                         <div className="container mx-auto h-full w-full border bg-white">
                             <div className="flex flex-col justify-center items-center text-center gap-y-4">
                                 <div className="h-full pt-4">
-                                    <div className="h-full content-end">
+
+                                    <div className="h-48 content-end">
                                         <a href="#">
                                             <Image
                                                 alt="Card background"
-                                                className="z-0 object-cover"
+                                                className="z-0 w-full h-full object-cover"
                                                 src={value.img}
                                             />
                                         </a>
                                     </div>
 
-                                    <div className="h-full py-4">
+                                    <div className="flex justify-center pt-4 h-full">
+                                        <Image
+                                            removeWrapper
+                                            alt="Swatch Items"
+                                            className="z-0 object-cover"
+                                            src={value.swatch}
+                                        />
+                                    </div>
+
+                                    <div className="h-full">
                                         <h1 className="font-semibold text-2xl pt-4">{value.title}</h1>
                                     </div>
+
                                 </div>
 
                                 <div className="h-full">
-                                    <p className="text-center"> {value.desc}</p>
-                                    <h4 className="font-semibold text-lg py-2">{value.price}</h4>
+                                    <div className="h-full pl-2 pr-2">
+                                        <p className="text-center"> {value.desc}</p>
+                                    </div>
+                                    <div className="h-full">
+                                        <h4 className="font-semibold text-lg py-2">{value.price}</h4>
+                                    </div>
                                 </div>
 
                                 <div className="h-full pb-4">
