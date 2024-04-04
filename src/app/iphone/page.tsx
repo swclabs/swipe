@@ -1,16 +1,25 @@
 "use client"
 import React from 'react';
 import Banner from "@/components/banner"
-import './style.css';
 import News from '@/components/iphone/new';
-import ProductCompare from '@/components/iphone/product-compare';
 import Accessories from '@/components/iphone/accessories';
 import ProductBar from '@/components/iphone/product-bar';
+import Product from '@/components/iphone/product';
 
 
 function IphonePage() {
     return (
         <>
+            {/* 
+            |
+            |--- news 
+            |
+            |--- sản phẩm cụ thể
+            |
+            |--- phụ kiện cho sản phẩm
+            |
+            */}
+
             <ProductBar />
             <Banner />
             <div className=" w-full bg-gray-50">
@@ -25,7 +34,7 @@ function IphonePage() {
                     </div>
                 </div>
 
-                {/* Section News */}
+                {/* News */}
                 <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
                         <span className=" text-xl sm:text-5xl font-medium">Tin tức.</span>
@@ -36,20 +45,27 @@ function IphonePage() {
                 <News />
 
                 {/* Section Compare Item */}
-                <div className="flex justify-center">
+                {/* <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
                         <span className=" text-xl sm:text-5xl font-medium">Khám phá dòng sản phẩm.</span>
-                        {/* <span className=" text-xl sm:text-5xl font-medium text-gray-500">Tìm hiểu thêm về iPhone</span> */}
                     </div>
                 </div>
 
-                <ProductCompare />
+                <ProductCompare /> */}
+
+                {/* Section Products */}
+                <div className="flex justify-center">
+                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
+                        <span className=" text-xl sm:text-5xl font-medium">Khám phá dòng sản phẩm.</span>
+                    </div>
+                </div>
+
+                <Product />
 
                 {/* Section Accessories */}
                 <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
                         <span className=" text-xl sm:text-5xl font-medium">Phụ kiện thiết yếu cho iPhone.</span>
-                        {/* <span className=" text-xl sm:text-5xl font-medium text-gray-500">Tìm hiểu thêm về iPhone</span> */}
                     </div>
                 </div>
 

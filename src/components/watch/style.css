@@ -28,18 +28,6 @@
     background: #8b8b8b;
 }
 
-
-.product-tile-header {
-    display: grid;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.product-tile-header .product-image-link {
-    justify-self: center;
-    align-self: flex-end;
-}
-
 .buy::after {
     border: solid rgb(37 99 235);
     border-width: 0 1px 1px 0;
