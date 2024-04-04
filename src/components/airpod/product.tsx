@@ -13,9 +13,8 @@ export default function Product() {
                 </div>
 
                 <div className="grid grid-cols-4 gap-6">
-                    {airpod.map((value) => (
-
-                        <div className="container mx-auto h-full w-full border bg-white">
+                    {airpod.map((value, index) => (
+                        <div className="container mx-auto h-full w-full border bg-white" key={index}>
                             <div className="flex flex-col justify-center items-center text-center gap-y-4">
 
                                 <div className="h-60 pt-4">

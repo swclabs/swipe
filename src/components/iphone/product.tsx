@@ -12,9 +12,9 @@ export default function Product() {
                     <div className="shrink-0"></div>
                 </div>
                 <div className="grid grid-cols-5 gap-4">
-                    {iphone.map((value) => (
+                    {iphone.map((value, index) => (
 
-                        <div className="container mx-auto h-full w-full border bg-white">
+                        <div className="container mx-auto h-full w-full border bg-white" key={index}>
                             <div className="flex flex-col justify-center items-center text-center gap-y-4">
                                 <div className="h-full pt-4">
                                     <div className="h-full content-end">

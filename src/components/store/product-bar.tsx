@@ -18,7 +18,7 @@ export default function ProductBar() {
                     </a>
                 </div>
                 <div className=" flex">
-                    <div className=" w-[100px] mr-[10px]">
+                    <a className=" w-[100px] mr-[10px]" href="/iphone">
                         <Image
                             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                             src="/img/iphone.png"
@@ -28,10 +28,10 @@ export default function ProductBar() {
 
                         />
                         <p className=" text-sm font-semibold text-center pt-4">iPhone</p>
-                    </div>
+                    </a>
                 </div>
                 <div className=" flex">
-                    <div className=" w-[100px] mr-[10px]">
+                    <a className=" w-[100px] mr-[10px]" href="/ipad">
                         <Image
                             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                             src="/img/ipad.png"
@@ -41,10 +41,10 @@ export default function ProductBar() {
 
                         />
                         <p className=" text-sm font-semibold text-center pt-4">iPad</p>
-                    </div>
+                    </a>
                 </div>
                 <div className=" flex">
-                    <div className=" w-[100px] mr-[10px]">
+                    <a className=" w-[100px] mr-[10px]" href="/watch">
                         <Image
                             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                             src="/img/watch.png"
@@ -54,10 +54,10 @@ export default function ProductBar() {
 
                         />
                         <p className=" text-sm font-semibold text-center pt-4">Apple Watch</p>
-                    </div>
+                    </a>
                 </div>
                 <div className=" flex">
-                    <div className=" w-[100px] mr-[10px]">
+                    <a className=" w-[100px] mr-[10px]" href="/airpod">
                         <Image
                             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                             src="/img/airpods.png"
@@ -67,7 +67,7 @@ export default function ProductBar() {
 
                         />
                         <p className=" text-sm font-semibold text-center pt-4">AirPods</p>
-                    </div>
+                    </a>
                 </div>
                 <div className=" flex">
                     <div className=" w-[100px] mr-[10px]">
