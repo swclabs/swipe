@@ -2,7 +2,6 @@
 import React from 'react';
 import Banner from "@/components/banner"
 import News from '@/components/iphone/new';
-import ProductCompare from '@/components/iphone/product-compare';
 import Accessories from '@/components/iphone/accessories';
 import ProductBar from '@/components/iphone/product-bar';
 import Product from '@/components/iphone/product';

@@ -1,8 +1,6 @@
 "use client"
-import React, { useEffect } from 'react';
+import React from 'react';
 import Banner from "@/components/banner"
-import { useRef, useState } from 'react';
-// import VideoPlayerControls from '@/components/control/VideoPlayerControls';
 import TabsComponent from '@/components/tab';
 import News from '@/components/mac/new';
 import Accessories from '@/components/mac/accessories';

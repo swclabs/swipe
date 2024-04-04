@@ -2,8 +2,7 @@
 import React from 'react';
 import Banner from "@/components/banner"
 import ProductBar from '@/components/watch/product-bar';
-import ProductCompare from '@/components/watch/product-compare';
-
+import Product from '@/components/watch/product';
 
 function WatchPage() {
     return (
@@ -92,6 +91,7 @@ function WatchPage() {
                 </div>
 
                 {/* <ProductCompare /> */}
+                <Product />
 
                 <div className="flex justify-center text-center">
                     <div className=" pt-12 pb-12">
