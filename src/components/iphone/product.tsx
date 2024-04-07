@@ -2,6 +2,7 @@
 import { Button, Chip, Image } from "@nextui-org/react";
 import './style.css'
 import iphone from "@/faker/iphone";
+import Link from "next/link";
 
 export default function Product() {
     return (
@@ -50,7 +51,9 @@ export default function Product() {
                                 </div>
 
                                 <div className="w-full p-5 absolute bottom-0">
-                                    <Button color="primary" className=" w-full">Mua</Button>
+                                    <Link href={value.src}>
+                                        <Button color="primary" className=" w-full">Mua</Button>
+                                    </Link>
                                     <p className=" text-left pt-4 text-xs">Đặt hàng hôm nay, giao hàng đến Hồ Chí Minh</p>
                                 </div>
                             </div>

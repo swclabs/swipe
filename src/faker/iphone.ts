@@ -8,7 +8,8 @@ const iphone = [
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
-        }
+        },
+        src: "/shop/buy_iphone/iphone_15_pro",
     },
     {
         title: "iPhone 15",
@@ -19,7 +20,8 @@ const iphone = [
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
-        }
+        },
+        src: "/shop/buy_iphone/iphone_15",
     },
     {
         title: "iPhone 14",
@@ -30,7 +32,8 @@ const iphone = [
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
-        }
+        },
+        src: "/shop/buy_iphone/iphone_14",
     },
     {
         title: "iPhone 13",
@@ -41,7 +44,8 @@ const iphone = [
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
-        }
+        },
+        src: "/shop/buy_iphone/iphone_13",
     },
     {
         title: "iPhone SE",
@@ -52,7 +56,8 @@ const iphone = [
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
-        }
+        },
+        src: "/shop/buy_iphone/iphone_se",
     },
 ]
 export default iphone;
