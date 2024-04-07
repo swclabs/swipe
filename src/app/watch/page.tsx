@@ -3,6 +3,7 @@ import React from 'react';
 import Banner from "@/components/banner"
 import ProductBar from '@/components/watch/product-bar';
 import Product from '@/components/watch/product';
+import { Image } from '@nextui-org/react';
 
 function WatchPage() {
     return (
@@ -23,11 +24,12 @@ function WatchPage() {
 
                 <div className='bg-black mb-8'>
                     <div className='flex flex-col items-center justify-center text-center pt-8'>
-                        <img
-                            src="/img/watch/logo_watch_s9_large.png"
+                        <Image
+                            alt='logo_war_watch_s9'
                             className='object-center'
+                            src='/img/watch/logo_watch_s9_large.png'
                         >
-                        </img>
+                        </Image>
                     </div>
                     <div className='flex items-center justify-center text-center py-4'>
                         <h2 className=" text-xl sm:text-5xl font-medium text-white">Thông minh hơn. Sáng hơn. Quyền năng hơn.</h2>
@@ -42,21 +44,23 @@ function WatchPage() {
                     </div>
 
                     <div className="flex justify-center">
-                        <img
+                        <Image
+                            alt='tile_s9_avail'
                             className='object-center'
                             src='/img/watch/tile_s9_avail_large.jpg'
                         >
-                        </img>
+                        </Image>
                     </div>
                 </div>
 
                 <div className='bg-gray-100 mb-8'>
                     <div className='flex flex-col items-center justify-center text-center pt-8'>
-                        <img
-                            src="/img/watch/logo_watch_ultra_2_large.png"
+                        <Image
+                            alt='logo_watch_ultra_2'
                             className='object-center'
+                            src='/img/watch/logo_watch_ultra_2_large.png'
                         >
-                        </img>
+                        </Image>
                     </div>
                     <div className='flex items-center justify-center text-center py-4'>
                         <h2 className=" text-xl sm:text-5xl font-medium">
@@ -75,11 +79,12 @@ function WatchPage() {
                     </div>
 
                     <div className="flex justify-center">
-                        <img
+                        <Image
+                            alt='tile_ultra_2'
                             className='object-center'
                             src='/img/watch/tile_ultra_2_large.jpg'
                         >
-                        </img>
+                        </Image>
                     </div>
                 </div>
 
@@ -125,11 +130,12 @@ function WatchPage() {
                                 <a className="text-blue-600 text-xl" href="#">
                                     <span className="buy"> Tìm hiểu thêm </span>
                                 </a>
-                                <img
+                                <Image
+                                    alt='tile_why_watch'
                                     className='object-center pt-8'
                                     src='/img/watch/tile_why_watch_large.jpg'
                                 >
-                                </img>
+                                </Image>
                             </div>
                             <div className='container mx-auto bg-gray-100'>
                                 <p className='text-xl sm:text-2xl font-medium pt-10 pb-4'>watchOS 10</p>
@@ -143,11 +149,12 @@ function WatchPage() {
                                 <a className="text-blue-600 text-xl" href="#">
                                     <span className="buy"> Tìm hiểu thêm </span>
                                 </a>
-                                <img
+                                <Image
+                                    alt='watchos_banner'
                                     className='object-center pt-8'
                                     src='/img/watch/watchos_banner_large.jpg'
                                 >
-                                </img>
+                                </Image>
                             </div>
                         </div>
                     </div>
@@ -176,11 +183,12 @@ function WatchPage() {
                                     </a>
                                 </div>
                                 <div>
-                                    <img
+                                    <Image
+                                        alt='tile_bands'
                                         className='w-full h-full object-cover'
                                         src='/img/watch/tile_bands_large.jpg'
                                     >
-                                    </img>
+                                    </Image>
                                 </div>
                             </div>
 
@@ -205,11 +213,12 @@ function WatchPage() {
                                     </a>
                                 </div>
                                 <div>
-                                    <img
+                                    <Image
                                         className='w-full h-full object-cover'
+                                        alt='airpods_large'
                                         src='/img/watch/airpods_large.jpg'
                                     >
-                                    </img>
+                                    </Image>
                                 </div>
                             </div>
                         </div>
