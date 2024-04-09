@@ -4,7 +4,7 @@ const ipad = [
         subtitle: "",
         price: "Từ 21.199.000đ",
         desc: "Trải nghiệm iPad cực đỉnh với công nghệ tiên tiến nhất.",
-        img: "/img/iphone/iphone_14_large.png",
+        img: "/img/ipad/compare_ipad_pro.png",
         swatch: "/img/ipad/compare_ipad_pro_swatches_large.png",
         specifications: {
             screen: "6.71",
