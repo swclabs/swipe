@@ -8,8 +8,8 @@ import FooterComponent from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Swiftcart",
-  description: "Swiftcart",
+  title: "Swipe",
+  description: "Swipe",
 };
 
 export default function RootLayout({

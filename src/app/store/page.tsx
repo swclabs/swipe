@@ -35,7 +35,7 @@ export default function Store() {
                 <div className="flex justify-center">
                     <div className="w-4/5 sm:pt-12 sm:pl-12 sm:pr-12 pt-10">
                         <h1 className=" sm:text-2xl font-semibold">
-                            <span>Swiftcart.</span>
+                            <span>Swipe.</span>
                             <span className=" text-gray-500"> Tạo nên nhiều sự khác biệt</span>
                         </h1>
                     </div>
