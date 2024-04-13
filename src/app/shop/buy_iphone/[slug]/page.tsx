@@ -20,7 +20,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     return (
         <>
 
-            <Banner />
+            {/* <Banner /> */}
             <div className=" w-full bg-white">
 
                 {/* Section Welcome */}

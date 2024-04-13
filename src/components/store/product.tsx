@@ -18,7 +18,7 @@ export default function Product() {
                                     <p className="text-tiny uppercase font-bold">
                                         {value.title}
                                     </p>
-                                    <h4 className="font-semibold text-xl pt-2 pb-2">{value.subtitle}</h4>
+                                    <h4 className="font-semibold text-2xl pt-2 pb-2">{value.subtitle}</h4>
                                     <h4 className="font-normal text-sm text-left">{value.desc}</h4>
                                 </div>
                             </CardHeader>

@@ -19,7 +19,7 @@ function WatchPage() {
             */}
 
             <ProductBar />
-            <Banner />
+            {/* <Banner /> */}
             <div className=" w-full bg-white">
 
                 <div className='bg-black mb-8'>

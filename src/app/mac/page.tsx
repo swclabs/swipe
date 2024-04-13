@@ -2,7 +2,7 @@
 import React from 'react';
 import Banner from "@/components/banner"
 import TabsComponent from '@/components/tab';
-import News from '@/components/mac/new';
+import News from '@/components/mac/news';
 import Accessories from '@/components/mac/accessories';
 import ProductBar from '@/components/mac/product-bar';
 
@@ -20,7 +20,7 @@ function ProductPage() {
             */}
 
             <ProductBar />
-            <Banner />
+            {/* <Banner /> */}
             {/* News */}
             <div className=" w-full pb-10 pt-10">
                 <div className="flex justify-center">

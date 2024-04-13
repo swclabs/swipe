@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Banner from "@/components/banner"
-import News from '@/components/iphone/new';
+import News from '@/components/iphone/news';
 import Accessories from '@/components/iphone/accessories';
 import ProductBar from '@/components/iphone/product-bar';
 import Product from '@/components/iphone/product';
@@ -21,7 +21,7 @@ function IphonePage() {
             */}
 
             <ProductBar />
-            <Banner />
+            {/* <Banner /> */}
             <div className=" w-full bg-gray-50">
 
                 {/* Section Welcome */}
