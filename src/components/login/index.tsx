@@ -14,8 +14,8 @@ export default function LoginComponent() {
                     width={40}
                 />
                 <div className="flex flex-col">
-                    <p className="text-md">Swiftcart</p>
-                    <p className="text-small text-default-500">admin.swiftcart.com</p>
+                    <p className="text-md">Swipe</p>
+                    <p className="text-small text-default-500">admin.swipe.com</p>
                 </div>
             </CardHeader>
             <Divider />

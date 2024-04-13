@@ -26,7 +26,7 @@ export default function FooterComponent() {
                         </ul>
                     </div>
                     <div className="container">
-                        <p className=" text-xs font-semibold">Swifcart</p>
+                        <p className=" text-xs font-semibold">Swipe</p>
                         <ul className=" pt-3">
                             <li className=" text-xs font-extralight">Hệ thống cửa hàng</li>
                         </ul>
@@ -45,7 +45,7 @@ export default function FooterComponent() {
                 </div>
                 <div className=" ml-8 mr-8">
                     <Divider />
-                    <p className=" font-light text-xs pt-1">2024@Swifcart</p>
+                    <p className=" font-light text-xs pt-1">2024@Swipe</p>
                 </div>
             </div>
         </div>
