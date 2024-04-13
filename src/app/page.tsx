@@ -39,7 +39,7 @@ export default function Home() {
               </div>
               <h4 className="font-medium text-3xl pt-3">
                 <p className={val.text}>
-                  {val.sub_title}
+                  {val.subtitle}
                 </p>
               </h4>
               <div className="flex">

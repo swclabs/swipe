@@ -14,9 +14,8 @@ export default function Product() {
 
                 <div className="grid grid-cols-4 gap-6">
                     {airpod.map((value, index) => (
-                        <div className="container mx-auto h-full w-full border bg-white" key={index}>
+                        <div className="container mx-auto h-[500px] border bg-white rounded-xl w-[300px]" key={index}>
                             <div className="flex flex-col justify-center items-center text-center gap-y-4">
-
                                 <div className="h-60 pt-4">
                                     <div className="h-full content-end">
                                         <a href="#">
@@ -33,7 +32,6 @@ export default function Product() {
                                     <div className="h-20">
                                         <h1 className="font-semibold text-2xl pt-4">{value.title}</h1>
                                         <p>{value.subtitle}</p>
-                                        <p>{value.subtitle2}</p>
                                     </div>
 
                                     <div className="h-full pt-4">

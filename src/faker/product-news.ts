@@ -4,11 +4,11 @@ const productNews = [
         subtitle: "Titan",
         desc: "Từ 28.999.000đ hoặc 1.181.000đ/tháng mỗi tháng trong 24 tháng*",
         img: "/img/store/iphone.jpg",
-        textcolor: "text-white/60"
+        textcolor: "text-white"
     },
     {
         title: "KHOẢN THANH TOÁN HÀNG THÁNG THẤP",
-        sub_title: "Trả Góp Hàng Tháng với MoMo.",
+        subtitle: "Trả Góp Hàng Tháng với MoMo.",
         desc: "Trả dần, thời hạn đến 24 tháng và chỉ trả trước 20%*",
         img: "/img/store/iphone2.jpg",
         textcolor: "text-black"

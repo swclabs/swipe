@@ -2,7 +2,7 @@
 import React from 'react';
 import Banner from "@/components/banner"
 import ProductBar from '@/components/airpod/product-bar';
-import News from '@/components/airpod/new';
+import News from '@/components/airpod/news';
 import Product from '@/components/airpod/product';
 import Accessories from '@/components/airpod/accessories';
 import Service from "@/components/store/service";
@@ -24,7 +24,7 @@ function IphonePage() {
             */}
 
             <ProductBar />
-            <Banner />
+            {/* <Banner /> */}
 
             <div className=" w-full bg-gray-50">
 
@@ -62,6 +62,9 @@ function IphonePage() {
 
                 <Product />
 
+                {/* Section Service */}
+                <Service />
+
                 {/* Section Accessories */}
                 <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
@@ -70,9 +73,6 @@ function IphonePage() {
                 </div>
 
                 <Accessories />
-
-                {/* Section Service */}
-                <Service />
             </div>
         </>
     );

@@ -20,8 +20,7 @@ yarn install
 4. Running the app
 
 - Type `yarn run dev` to start the local server
-  Open `http://localhost:3000/` in your browser
-
+- Open `http://localhost:3000/` in your browser
 
 ![home](docs/assets/home.png)
 
