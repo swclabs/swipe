@@ -3,7 +3,7 @@ import React from 'react';
 import Banner from "@/components/banner"
 // import ProductCompare from '@/components/ipad/product-compare';
 import ProductBar from '@/components/ipad/product-bar';
-import News from '@/components/ipad/new';
+import News from '@/components/ipad/news';
 import Accessories from '@/components/ipad/accessories';
 import Product from '@/components/ipad/product';
 
@@ -21,7 +21,7 @@ function IpadPage() {
             */}
 
             <ProductBar />
-            <Banner />
+            {/* <Banner /> */}
             <div className=" w-full bg-white">
 
                 {/* News */}

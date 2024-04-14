@@ -20,7 +20,7 @@ export default function Service() {
                                 <div className=" text-blue-500 text-3xl pb-3">
                                     <IoCartOutline />
                                 </div>
-                                <p className=" text-xl font-semibold">Trải nghiệm <span className=" text-blue-500">mua sắm</span> được <span className=" text-blue-500" >cá nhân hóa</span> bởi ứng dụng <span className=" text-blue-500">SwiftCart</span></p>
+                                <p className=" text-xl font-semibold">Trải nghiệm <span className=" text-blue-500">mua sắm</span> được <span className=" text-blue-500" >cá nhân hóa</span> bởi ứng dụng <span className=" text-blue-500">Swipe</span></p>
                             </div>
                         </CardBody>
                     </Card>
