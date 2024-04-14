@@ -1,14 +1,18 @@
+'use client'
+
 import Banner from "@/components/banner"
 import ShortCut from "@/components/shortcut"
 import { Card, CardHeader, Image } from "@nextui-org/react"
 import Link from "next/link"
 import React from "react"
 
+import { motion } from "framer-motion"
+
 import homeBanner from "@/faker/home-banner"
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Banner />
       <div className=" bg-gray-50 w-full">
         <div className="w-full flex justify-center">
@@ -56,9 +60,8 @@ export default function Home() {
             />
           </Card>
         ))}
-
       </div >
       <ShortCut />
-    </>
+    </div>
   )
 }

@@ -6,7 +6,7 @@ import ProductBar from '@/components/ipad/product-bar';
 import News from '@/components/ipad/news';
 import Accessories from '@/components/ipad/accessories';
 import Product from '@/components/ipad/product';
-
+import Welcome from '@/components/common/welcome-section';
 function IpadPage() {
     return (
         <>
@@ -20,9 +20,13 @@ function IpadPage() {
             |
             */}
 
-            <ProductBar />
-            {/* <Banner /> */}
             <div className=" w-full bg-white">
+                <ProductBar />
+                <Banner />
+                
+                {/* Section Welcome */}
+                <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
+
 
                 {/* News */}
                 <div className="flex justify-center">

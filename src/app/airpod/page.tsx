@@ -6,7 +6,8 @@ import News from '@/components/airpod/news';
 import Product from '@/components/airpod/product';
 import Accessories from '@/components/airpod/accessories';
 import Service from "@/components/store/service";
-
+import { motion } from "framer-motion"
+import Welcome from '@/components/common/welcome-section';
 
 function IphonePage() {
     return (
@@ -23,20 +24,12 @@ function IphonePage() {
             |
             */}
 
-            <ProductBar />
-            {/* <Banner /> */}
-
             <div className=" w-full bg-gray-50">
+                <ProductBar />
+                <Banner />
 
                 {/* Section Welcome */}
-                <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <div className='grid grid-cols-2 gap-4'>
-                            <span className=" text-xl sm:text-7xl font-medium">Airpods.</span>
-                            <h4 className="font-semibold text-xl text-right py-12">Nơi âm nhạc trở nên sống động.</h4>
-                        </div>
-                    </div>
-                </div>
+                <Welcome title='Airpods' subtitle='Nơi âm nhạc trở nên sống động.' />
 
                 {/* News */}
                 <div className="flex justify-center text-center">

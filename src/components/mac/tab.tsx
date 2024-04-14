@@ -4,7 +4,7 @@ import { Image } from "@nextui-org/react";
 import './style.css'
 import data from "@/faker/mac";
 
-export default function TabsComponent() {
+export default function ProductTabs() {
 
     // const [selectedTab, setSelectedTab] = useState<number | null>(null);
 

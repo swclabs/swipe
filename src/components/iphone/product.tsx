@@ -43,7 +43,10 @@ export default function Product() {
 
                                 <div className="h-full">
                                     <div className="h-full">
-                                        <p className="text-left"> {value.desc}</p>
+                                        <p className="text-left font-semibold text-xl pb-5"> {value.title}</p>
+                                    </div>
+                                    <div className="h-full">
+                                        <p className="text-left text-sm"> {value.desc}</p>
                                     </div>
                                     <div className="h-full">
                                         <h4 className="font-semibold text-lg py-2 text-left">{value.price}</h4>

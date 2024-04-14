@@ -5,7 +5,8 @@ import News from '@/components/iphone/news';
 import Accessories from '@/components/iphone/accessories';
 import ProductBar from '@/components/iphone/product-bar';
 import Product from '@/components/iphone/product';
-
+import { motion } from "framer-motion"
+import Welcome from '@/components/common/welcome-section';
 
 function IphonePage() {
     return (
@@ -20,19 +21,13 @@ function IphonePage() {
             |
             */}
 
-            <ProductBar />
-            {/* <Banner /> */}
             <div className=" w-full bg-gray-50">
+                <ProductBar />
+                <Banner />
 
                 {/* Section Welcome */}
-                <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <div className='grid grid-cols-2 gap-4'>
-                            <span className=" text-xl sm:text-7xl font-medium">iPhone.</span>
-                            <h4 className="font-semibold text-xl text-right py-12">Được thiết kế để ai cũng mê.</h4>
-                        </div>
-                    </div>
-                </div>
+                <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
+
 
                 {/* News */}
                 <div className="flex justify-center">

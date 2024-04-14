@@ -1,14 +1,15 @@
 "use client"
 import React from 'react';
 import Banner from "@/components/banner"
-import TabsComponent from '@/components/tab';
 import News from '@/components/mac/news';
 import Accessories from '@/components/mac/accessories';
 import ProductBar from '@/components/mac/product-bar';
+import Welcome from '@/components/common/welcome-section';
+import ProductTabs from '@/components/mac/tab';
 
 function ProductPage() {
     return (
-        <>
+        <div>
             {/* 
             |
             |--- news (tin tức sản phẩm)
@@ -20,7 +21,11 @@ function ProductPage() {
             */}
 
             <ProductBar />
-            {/* <Banner /> */}
+            <Banner />
+
+            <Welcome title='Mac' subtitle='If you can dream it, Mac can do it' />
+
+
             {/* News */}
             <div className=" w-full pb-10 pt-10">
                 <div className="flex justify-center">
@@ -41,7 +46,7 @@ function ProductPage() {
                 </div>
             </div>
 
-            <TabsComponent />
+            <ProductTabs />
 
             {/* Section Accessories */}
             {/* Section Accessories */}
@@ -52,7 +57,7 @@ function ProductPage() {
             </div>
 
             <Accessories />
-        </>
+        </div>
     )
 }
 

@@ -10,4 +10,9 @@ export default class APIEndpoint {
         AUTH: `${APIEndpoint.BASE_URL}/auth`,
         LOGOUT: `${APIEndpoint.BASE_URL}/auth/logout`,
     }
+
+    static readonly PRODUCTS = {
+        GET_NEWSLETTERS: `${APIEndpoint.BASE_URL}/newsletters`,
+        GET_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`
+    }
 }

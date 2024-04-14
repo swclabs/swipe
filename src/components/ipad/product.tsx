@@ -1,5 +1,5 @@
 'use client';
-import { Button, Card, CardBody, CardFooter, Chip, Image } from "@nextui-org/react";
+import { Button, Chip, Image } from "@nextui-org/react";
 import './style.css'
 import ipad from "@/faker/ipad";
 
@@ -44,11 +44,11 @@ export default function Product() {
 
                                 <div className=" w-full">
                                     <div className=" flex">
-                                        <Chip radius="sm" className="text-xs m-1">{value.specifications.screen}</Chip>
-                                        <Chip radius="sm" className="text-xs m-1">{value.specifications.display}</Chip>
+                                        <Chip radius="sm" className="text-xs m-1">{value.spec?.screen}</Chip>
+                                        <Chip radius="sm" className="text-xs m-1">{value.spec?.display}</Chip>
                                     </div>
                                     <div className=" flex">
-                                        {value.specifications.SSD.map((item, idx) => (
+                                        {value.spec?.SSD.map((item, idx) => (
                                             <Chip radius="sm" className="text-xs m-1" key={idx}>{item}</Chip>
                                         ))}
                                     </div>
@@ -69,10 +69,8 @@ export default function Product() {
                                 </div>
                             </div>
                         </div>
-
                     ))}
                 </div>
-
                 <div className=" sm:w-1/12 shrink-0 snap-center">
                     <div className="shrink-0"></div>
                 </div>

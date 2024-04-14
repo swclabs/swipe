@@ -1,3 +1,5 @@
+'use client'
+
 import Banner from "@/components/banner"
 import React from "react"
 import './style.css'
@@ -5,19 +7,26 @@ import Product from "@/components/store/product";
 import Accessory from "@/components/store/accessory";
 import Service from "@/components/store/service";
 import ProductBar from "@/components/store/product-bar";
+import {motion} from "framer-motion"
 
 export default function Store() {
     return (
         <>
             <Banner />
             <div className=" w-full bg-gray-50">
-                <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className=" text-xl sm:text-5xl font-medium">Cửa hàng.</span>
-                        <span className=" text-xl sm:text-5xl font-medium text-gray-500">Cách tốt nhất để</span>
-                        <p className=" text-xl sm:text-5xl font-medium text-gray-500">Mua sản phẩm mà bạn thích</p>
+                <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.75 }}
+                >
+                    <div className="flex justify-center">
+                        <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
+                            <span className=" text-xl sm:text-5xl font-medium">Cửa hàng.</span>
+                            <span className=" text-xl sm:text-5xl font-medium text-gray-500">Cách tốt nhất để</span>
+                            <p className=" text-xl sm:text-5xl font-medium text-gray-500">Mua sản phẩm mà bạn thích</p>
+                        </div>
                     </div>
-                </div>
+                </motion.div>
 
                 <ProductBar />
 
