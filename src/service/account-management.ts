@@ -7,7 +7,7 @@ import { AxiosResponse } from "axios";
 
 
 export class AccountManagement {
-    static async signUp(req: SignUpRequest): Promise<AxiosResponse<SignUpResponse> | AxiosResponse<Error>> {
+    static async signUp(req: SignUpRequest): Promise<AxiosResponse<SignUpResponse>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<SignUpResponse> = await axiosInstance.post(
             APIEndpoint.ACCOUNT_MANAGEMENT.SIGN_UP,
@@ -16,7 +16,7 @@ export class AccountManagement {
         return response;
     }
 
-    static async login(req: LoginRequest): Promise<AxiosResponse<LoginResponse> | AxiosResponse<Error>> {
+    static async login(req: LoginRequest): Promise<AxiosResponse<LoginResponse>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<LoginResponse> = await axiosInstance.post(
             APIEndpoint.ACCOUNT_MANAGEMENT.LOGIN,
@@ -25,7 +25,7 @@ export class AccountManagement {
         return response;
     }
 
-    static async logout(): Promise<AxiosResponse<LogoutResponse> | AxiosResponse<Error>> {
+    static async logout(): Promise<AxiosResponse<LogoutResponse>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<LogoutResponse> = await axiosInstance.get(
             APIEndpoint.ACCOUNT_MANAGEMENT.LOGOUT,
@@ -33,7 +33,7 @@ export class AccountManagement {
         return response;
     }
 
-    static async auth(email: string): Promise<AxiosResponse<Auth> | AxiosResponse<Error>> {
+    static async auth(email: string): Promise<AxiosResponse<Auth>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<LogoutResponse> = await axiosInstance.get(
             `${APIEndpoint.ACCOUNT_MANAGEMENT.AUTH}?email=${email}`,

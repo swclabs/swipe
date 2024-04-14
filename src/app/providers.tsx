@@ -1,7 +1,7 @@
 "use client";
 import { NextUIProvider } from "@nextui-org/react";
 import { isMobile } from 'react-device-detect';
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useAnimation } from "framer-motion"
 
 const Providers = ({ children }: any) => {
     if (isMobile) {

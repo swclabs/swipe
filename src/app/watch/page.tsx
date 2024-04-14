@@ -18,9 +18,9 @@ function WatchPage() {
             |
             */}
 
-            <ProductBar />
-            {/* <Banner /> */}
             <div className=" w-full bg-white">
+                <ProductBar />
+                {/* <Banner /> */}
 
                 <div className='bg-black mb-8'>
                     <div className='flex flex-col items-center justify-center text-center pt-8'>

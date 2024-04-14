@@ -6,7 +6,7 @@ const ipad = [
         desc: "Trải nghiệm iPad cực đỉnh với công nghệ tiên tiến nhất.",
         img: "/img/ipad/compare_ipad_pro.png",
         swatch: "/img/ipad/compare_ipad_pro_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -19,7 +19,7 @@ const ipad = [
         desc: "Hiệu năng mạnh mẽ trong một thiết kế mỏng nhẹ.",
         img: "/img/ipad/compare_ipad_air.png",
         swatch: "/img/ipad/compare_ipad_air_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -32,7 +32,7 @@ const ipad = [
         desc: "iPad màn hình toàn phần, đầy màu sắc. Cho mọi tác vụ hàng ngày.",
         img: "/img/ipad/compare_ipad_10_9_large.png",
         swatch: "/img/ipad/compare_ipad_10_9_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -45,7 +45,7 @@ const ipad = [
         desc: "Tất cả tính năng bạn cần gói gọn trong chiếc iPad vừa túi tiền nhất.",
         img: "/img/ipad/compare_ipad_10_2_large.png",
         swatch: "/img/ipad/compare_ipad_10_2_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -58,7 +58,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -71,7 +71,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -84,7 +84,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -97,7 +97,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -110,7 +110,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -123,7 +123,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -136,7 +136,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -149,7 +149,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -162,7 +162,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -175,7 +175,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]
@@ -188,7 +188,7 @@ const ipad = [
         desc: "Trọn vẹn trải nghiệm iPad nằm gọn trên tay.",
         img: "/img/ipad/compare_ipad_mini_large.png",
         swatch: "/img/ipad/compare_ipad_mini_swatches_large.png",
-        specifications: {
+        spec: {
             screen: "6.71",
             display: "Super Retina XDR",
             SSD: [128, 256, 512]

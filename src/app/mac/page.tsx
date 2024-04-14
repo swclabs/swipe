@@ -1,15 +1,15 @@
 "use client"
 import React from 'react';
-import { motion } from "framer-motion";
 import Banner from "@/components/banner"
-import TabsComponent from '@/components/tab';
 import News from '@/components/mac/news';
 import Accessories from '@/components/mac/accessories';
 import ProductBar from '@/components/mac/product-bar';
+import Welcome from '@/components/common/welcome-section';
+import ProductTabs from '@/components/mac/tab';
 
 function ProductPage() {
     return (
-        <>
+        <div>
             {/* 
             |
             |--- news (tin tức sản phẩm)
@@ -23,23 +23,8 @@ function ProductPage() {
             <ProductBar />
             <Banner />
 
-            <motion.div
-                initial={{ opacity: 0, y: 50 }} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.75 }} 
-            >
-                <div className=" w-ful">
-                    <div className="flex justify-center">
-                        <div className=" sm:w-4/5 sm:p-12 p-5 flex justify-between">
-                            <span className=" text-xl sm:text-6xl font-bold">MAC</span>
-                            <div className=' font-semibold text-2xl'>
-                                <p>If you can dream it</p>
-                                <p>Mac can do it </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </motion.div>
+            <Welcome title='Mac' subtitle='If you can dream it, Mac can do it' />
+
 
             {/* News */}
             <div className=" w-full pb-10 pt-10">
@@ -61,7 +46,7 @@ function ProductPage() {
                 </div>
             </div>
 
-            <TabsComponent />
+            <ProductTabs />
 
             {/* Section Accessories */}
             {/* Section Accessories */}
@@ -72,7 +57,7 @@ function ProductPage() {
             </div>
 
             <Accessories />
-        </>
+        </div>
     )
 }
 
