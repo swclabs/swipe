@@ -6,3 +6,7 @@
 .swatch-button:hover {
     border: 2px solid grey;
 }
+
+.active {
+    border: 2px solid lightblue;
+}
