@@ -15,7 +15,7 @@ export default function Accessories() {
                                 <h2 className="font-semibold text-3xl pt-8 pb-2">
                                     MagSafe
                                 </h2>
-                                <p className="px-4 text-lg text-center">
+                                <p className="px-4 text-base text-center">
                                     Gắn thêm một ốp lưng, một ví da từ tính hay cả hai. Để sạc không dây nhanh và hiệu quả.
                                 </p>
                             </CardHeader>
@@ -35,7 +35,7 @@ export default function Accessories() {
                                 <h2 className="font-semibold text-3xl pt-8 pb-2">
                                     AirTag
                                 </h2>
-                                <p className="px-4 text-lg text-center">
+                                <p className="px-4 text-base text-center">
                                     Gắn một cái vào chìa khóa của bạn. Đặt một cái khác vào ba lô. Nhỡ có thất lạc, chỉ cần dùng ứng dụng Tìm.
                                 </p>
                             </CardHeader>
