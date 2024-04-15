@@ -8,7 +8,7 @@ export default function ProductBar() {
         <motion.div
             initial={{ opacity: 0, x: '100vw' }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75 }}
+            transition={{ duration: 1.5 }}
         >
             <div className="flex justify-center h-full bg-gray-50">
                 <div className="pl-6 pr-6 pt-6 pb-6 flex items-center">
