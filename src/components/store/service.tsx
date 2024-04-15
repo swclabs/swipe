@@ -1,15 +1,28 @@
-import { Card, CardBody } from "@nextui-org/react";
+import { Button, Card, CardBody } from "@nextui-org/react";
 import { CiCreditCard1 } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { RiBox3Line } from "react-icons/ri";
 import { TbCurrencyDong } from "react-icons/tb";
 
 import './style.css'
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { useRef } from "react";
 
 export default function Service() {
+    const ref = useRef<HTMLDivElement>(null);
+    const scroll = (scrollOffset: number) => {
+
+        if (ref.current) {
+            ref.current.scrollLeft += scrollOffset
+        }
+    };
     return (
-        <div className=" w-full pt-12 pb-[10px] hover:pb-0 hover:overflow-auto scrollbar overflow-hidden">
-            <div className=" relative snap-x snap-mandatory flex justify-between">
+        <div className=" w-full pt-12 pb-[10px]">
+            <div
+                className=" relative flex justify-between overflow-auto scroll-smooth"
+                style={{ scrollbarWidth: "none" }}
+                ref={ref}
+            >
                 <div className=" sm:w-1/12 shrink-0 snap-center">
                     <div className="shrink-0"></div>
                 </div>
@@ -64,6 +77,14 @@ export default function Service() {
                 <div className=" sm:w-1/12 shrink-0 snap-center">
                     <div className="shrink-0"></div>
                 </div>
+            </div>
+            <div className=" flex justify-end">
+                <Button radius="full" isIconOnly className=" mr-3" onClick={() => scroll(-400)}>
+                    <FaAngleLeft />
+                </Button>
+                <Button radius="full" isIconOnly className=" mr-10" onClick={() => scroll(400)}>
+                    <FaAngleRight />
+                </Button>
             </div>
         </div>
     )

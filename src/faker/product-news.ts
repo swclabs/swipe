@@ -20,6 +20,13 @@ const productNews = [
         img: "/img/store/mac.jpg",
         textcolor: "text-black"
     },
+    {
+        title: "Macbook Pro 14 và 16",
+        subtitle: "Chấn động, ấn tượng",
+        desc: "Từ 39.999.000đ hoặc 1.629.000đ/thángmỗi tháng trong 24 tháng*",
+        img: "/img/store/mac.jpg",
+        textcolor: "text-black"
+    },
 
 ]
 export default productNews;
