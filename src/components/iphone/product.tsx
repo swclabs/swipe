@@ -3,8 +3,12 @@ import { Button, Chip, Image } from "@nextui-org/react";
 import './style.css'
 import iphone from "@/faker/iphone";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Product() {
+
+    useEffect(() => { }, [])
+
     return (
         <div className="w-full pb-[10px] hover:pb-0 scrollbar hover:overflow-x-auto overflow-hidden">
             <div className=" relative flex snap-x snap-mandatory 2xl:justify-between">
@@ -54,7 +58,7 @@ export default function Product() {
                                 </div>
 
                                 <div className="w-full p-5 absolute bottom-0">
-                                    <Link href={value.src}>
+                                    <Link href={"shop/buy_iphone/" + value.title.toLowerCase().replaceAll(" ", "_")}>
                                         <Button color="primary" className=" w-full">Mua</Button>
                                     </Link>
                                     <p className=" text-left pt-4 text-xs">Đặt hàng hôm nay, giao hàng đến Hồ Chí Minh</p>
