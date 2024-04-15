@@ -1,11 +1,23 @@
-import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
+import { Button, Card, CardBody, CardHeader, Image } from "@nextui-org/react";
 import './style.css'
 import accessoryData from "@/faker/accessory-news";
+import { useRef } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 export default function Accessory() {
+    const ref = useRef<HTMLDivElement>(null);
+    const scroll = (scrollOffset: number) => {
+        if (ref.current) {
+            ref.current.scrollLeft += scrollOffset
+        }
+    };
     return (
-        <div className="w-full pb-[10px] hover:pb-0 scrollbar hover:overflow-x-auto overflow-hidden">
-            <div className=" relative flex snap-x snap-mandatory 2xl:justify-between">
+        <div className="w-full pb-[10px]">
+            <div
+                className=" relative flex 2xl:justify-between overflow-auto scroll-smooth"
+                style={{ scrollbarWidth: "none" }}
+                ref={ref}
+            >
                 <div className=" sm:w-1/12 shrink-0 snap-center">
                     <div className="shrink-0"></div>
                 </div>
@@ -46,6 +58,14 @@ export default function Accessory() {
                 <div className=" sm:w-1/12 shrink-0 snap-center">
                     <div className="shrink-0"></div>
                 </div>
+            </div>
+            <div className=" flex justify-end">
+                <Button radius="full" isIconOnly className=" mr-3" onClick={() => scroll(-400)}>
+                    <FaAngleLeft />
+                </Button>
+                <Button radius="full" isIconOnly className=" mr-10" onClick={() => scroll(400)}>
+                    <FaAngleRight />
+                </Button>
             </div>
         </div>
     )
