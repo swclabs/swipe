@@ -6,13 +6,13 @@ export default function Welcome({ title, subtitle }: { title: string, subtitle: 
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75 }}
+            transition={{ duration: 1.5 }}
         >
             <div className="flex justify-center">
                 <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
                     <div className='grid grid-cols-2 gap-4'>
                         <span className=" text-xl sm:text-7xl font-medium">{title}</span>
-                        <h4 className="font-semibold text-xl text-right py-12">{subtitle}</h4>
+                        <h4 className="font-semibold text-2xl text-right py-12">{subtitle}</h4>
                     </div>
                 </div>
             </div>

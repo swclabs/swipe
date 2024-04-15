@@ -7,7 +7,7 @@ export default function Banner() {
         <motion.div
             initial={{ opacity: 0, y: -50 }} // Khởi tạo ẩn và nằm ngoài màn hình phía trên
             animate={{ opacity: 1, y: 0 }} // Hiệu ứng xuất hiện từ trên xuống dưới
-            transition={{ duration: 0.75 }} // Thời gian hoàn thành hiệu ứng
+            transition={{ duration: 1.5 }} // Thời gian hoàn thành hiệu ứng
         >
             <div className={`relative transition duration-1000 ease-in-out h-[70px]`}>
                 <div className="flex justify-center h-full">

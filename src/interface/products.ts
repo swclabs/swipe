@@ -40,3 +40,10 @@ export interface Newsletters {
     data: Newsletter[];
 }
 
+export interface IPosts {
+    title: string;
+    subtitle: string;
+    img: string;
+    textcolor: string;
+}
+
