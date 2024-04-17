@@ -436,7 +436,7 @@ export default function NavbarComponent() {
                 </NavbarItem>
                 <NavbarItem>
                     <div className='medium-container'>
-                        <Link color="foreground" href="#">
+                        <Link color="foreground" href="/accessories">
                             <p className=" text-xs">Phụ kiện</p>
                         </Link>
                         <div className="overlay">
