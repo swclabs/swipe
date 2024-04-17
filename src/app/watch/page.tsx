@@ -88,14 +88,12 @@ function WatchPage() {
                     </div>
                 </div>
 
-                {/* Product Compare */}
+                {/* Section Product */}
                 <div className="flex justify-center">
                     <div className=" pt-12 pb-12">
                         <span className=" text-xl sm:text-5xl font-medium">Apple Watch nào phù hợp với bạn?</span>
                     </div>
                 </div>
-
-                {/* <ProductCompare /> */}
                 <Product />
 
                 <div className="flex justify-center text-center">
