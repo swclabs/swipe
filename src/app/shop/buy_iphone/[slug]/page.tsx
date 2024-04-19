@@ -81,7 +81,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         <p className="text-base text-red-600">
                             Mới
                         </p>
-                        <span className=" text-xl sm:text-5xl font-medium">
+                        <span className=" text-xl sm:text-5xl font-semibold">
                             Mua {iphone + " " + param[1].toUpperCase() + " " + pro}
                         </span>
                         <p className="font-normal text-sm pt-6" id="price-title">
