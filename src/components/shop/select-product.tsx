@@ -83,7 +83,7 @@ export default function SelectProduct({ slug, getData }: { slug: string, getData
                 {slug === "iphone_15_pro" ? (
                     <div className="flex flex-row">
                         {/* Carousel */}
-                        <div className="h-[100%] w-[100%] pr-16">
+                        <div className="h-[100%] max-w-[60vw] pr-16 sticky top-[309px]">
                             {combination === "iPhone_15_Pro-Default" ? (
                                 <Carousel>
                                     <Image
