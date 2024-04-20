@@ -1,4 +1,5 @@
-export interface productNews {
+
+export interface IProductNews {
     title: string;
     subtitle: string;
     desc: string;
@@ -6,7 +7,7 @@ export interface productNews {
     textcolor: string;
 }
 
-export interface productData {
+export interface IProductData {
     title: string;
     subtitle: string;
     price: string;
@@ -20,13 +21,13 @@ export interface productData {
     };
 }
 
-export interface accessory {
+export interface IAccessory {
     title: string;
     desc: string;
     img: string;
 }
 
-export interface Newsletter {
+export interface INewsletter {
     id: string;
     type: string;
     title: string;
@@ -36,8 +37,8 @@ export interface Newsletter {
     textcolor: string;
 }
 
-export interface Newsletters {
-    data: Newsletter[];
+export interface INewsletters {
+    data: INewsletter[];
 }
 
 export interface IPosts {
@@ -47,3 +48,17 @@ export interface IPosts {
     textcolor: string;
 }
 
+export interface IProductDetail {
+    name: string;
+    screen: string;
+    img: string[]
+    SSD: {
+        value: string;
+        price: string;
+    }[];
+    color: {
+        name: string;
+        img: string;
+        product: string[];
+    }[];
+}
