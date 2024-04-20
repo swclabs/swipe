@@ -53,7 +53,7 @@ export default function Product() {
                                 </div>
 
                                 <div className="h-full pb-4">
-                                    <a className=" text-blue-600" href="/shop/goto/buy_iphone/iphone_15_pro">
+                                    <a className=" text-blue-600" href="/shop/goto/buy-iphone/iphone-15-pro">
                                         <span className="buy"> Mua </span>
                                     </a>
                                 </div>

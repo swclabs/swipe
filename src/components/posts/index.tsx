@@ -1,4 +1,4 @@
-import { IPosts, productNews } from "@/interface/products";
+import { IPosts, IProductNews } from "@/interface/products";
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
 import { useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";

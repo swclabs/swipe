@@ -1,8 +1,8 @@
-import { accessory } from "@/interface/products";
+import { IAccessory } from "@/interface/products";
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
 
 
-export default function Accessory({ data }: { data: accessory[] }) {
+export default function Accessory({ data }: { data: IAccessory[] }) {
     return (
         <div className="flex justify-center">
             <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
