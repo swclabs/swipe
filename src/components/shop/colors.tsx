@@ -37,6 +37,7 @@ export default function Colors({ product, version, color, setVersion, setColor }
                         onClick={() => setColor(index)}
                     >
                         <Image
+                            alt="img"
                             src={value.img}
                         />
                     </Button>

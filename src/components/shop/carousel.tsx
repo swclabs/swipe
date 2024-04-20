@@ -29,13 +29,13 @@ export default function ShopCarousel({ product, version, color, setVersion, setC
             setImages(product[version].color[color].product)
         }
         else setImages(product[0].img)
-    }, [color, version])
+    }, [color, version, product])
 
     return (
         <div className="h-56 sm:h-64 xl:h-[500px] 2xl:h-[500px]">
             <Carousel slide={false} theme={carouselTheme}>
                 {images.map((value, index) => (
-                    <div className=" h-full w-full ">
+                    <div className=" h-full w-full " key={index}>
                         <Image
                             key={index}
                             removeWrapper
