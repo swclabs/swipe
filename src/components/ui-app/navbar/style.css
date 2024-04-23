@@ -28,3 +28,8 @@
   bottom: 0;
   height: 70vh;
 }
+
+.cart-container:hover .overlay {
+  bottom: 0;
+  height: 70vh;
+}

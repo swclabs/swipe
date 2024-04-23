@@ -1,12 +1,12 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/banner"
+import Banner from "@/components/ui-app/banner"
 // import ProductCompare from '@/components/ipad/product-compare';
 import ProductBar from '@/components/ipad/product-bar';
 import News from '@/components/ipad/news';
 import Accessories from '@/components/ipad/accessories';
 import Product from '@/components/ipad/product';
-import Welcome from '@/components/common/welcome-section';
+import Welcome from '@/components/ui-app/common/welcome-section';
 function IpadPage() {
     return (
         <>
@@ -23,7 +23,7 @@ function IpadPage() {
             <div className=" w-full bg-white">
                 <ProductBar />
                 <Banner />
-                
+
                 {/* Section Welcome */}
                 <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
 

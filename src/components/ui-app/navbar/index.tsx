@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
-import NotLoggedIn, { LoggedIn } from '../cart/cart';
+import NotLoggedIn, { LoggedIn } from '../../cart/cart';
 
 export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -562,14 +562,14 @@ export default function NavbarComponent() {
                     </div>
                 </NavbarItem>
                 <NavbarItem>
-                    <div className='medium-container'>
+                    <div className='cart-container'>
                         <Link color="foreground" href="#">
                             <Badge content={3} color='primary'>
                                 <IoBagOutline />
                             </Badge>
                         </Link>
                         <div className="overlay">
-                            <div className=' container p-10 pl-20 absolute'>
+                            <div className=' container pl-20 pb-10 absolute'>
                                 <LoggedIn />
                             </div>
                         </div>

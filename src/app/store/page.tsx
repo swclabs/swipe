@@ -1,13 +1,13 @@
 'use client'
 
-import Banner from "@/components/banner"
+import Banner from "@/components/ui-app/banner"
 import React from "react"
 import './style.css'
 import Product from "@/components/store/product";
 import Accessory from "@/components/store/accessory";
 import Service from "@/components/store/service";
 import ProductBar from "@/components/store/product-bar";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function Store() {
     return (

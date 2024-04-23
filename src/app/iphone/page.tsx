@@ -1,12 +1,12 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/banner"
+import Banner from "@/components/ui-app/banner"
 import News from '@/components/iphone/news';
 import Accessories from '@/components/iphone/accessories';
 import ProductBar from '@/components/iphone/product-bar';
 import Product from '@/components/iphone/product';
-import Welcome from '@/components/common/welcome-section';
-import Posts from '@/components/posts';
+import Welcome from '@/components/ui-app/common/welcome-section';
+import Posts from '@/components/ui-app/posts';
 import posts from '@/faker/posts';
 
 function IphonePage() {
@@ -30,7 +30,7 @@ function IphonePage() {
                 <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
 
                 {/* Posts Section */}
-                <Posts data={posts}/>
+                <Posts data={posts} />
 
                 {/* News */}
                 <div className="flex justify-center">

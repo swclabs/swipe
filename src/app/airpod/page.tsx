@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/banner"
+import Banner from "@/components/ui-app/banner"
 import ProductBar from '@/components/airpod/product-bar';
 import News from '@/components/airpod/news';
 import Product from '@/components/airpod/product';
 import Accessories from '@/components/airpod/accessories';
 import Service from "@/components/store/service";
 import { motion } from "framer-motion"
-import Welcome from '@/components/common/welcome-section';
+import Welcome from '@/components/ui-app/common/welcome-section';
 
 function IphonePage() {
     return (

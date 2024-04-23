@@ -1,10 +1,10 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/banner"
+import Banner from "@/components/ui-app/banner"
 import News from '@/components/mac/news';
 import Accessories from '@/components/mac/accessories';
 import ProductBar from '@/components/mac/product-bar';
-import Welcome from '@/components/common/welcome-section';
+import Welcome from '@/components/ui-app/common/welcome-section';
 import ProductTabs from '@/components/mac/tab';
 
 function ProductPage() {
