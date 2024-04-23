@@ -6,7 +6,7 @@ import './style.css'
 import Product from "@/components/store/product";
 import Accessory from "@/components/store/accessory";
 import Service from "@/components/store/service";
-import ProductBar from "@/components/store/product-bar";
+import ProductTypes from "@/components/store/product-types";
 import { motion } from "framer-motion"
 
 export default function Store() {
@@ -28,7 +28,7 @@ export default function Store() {
                     </div>
                 </motion.div>
 
-                <ProductBar />
+                <ProductTypes />
 
                 <div className="flex justify-center">
                     <div className="sm:w-4/5 sm:pt-12 pb-10 sm:pb-12 sm:pl-12 sm:pr-12 pt-10">

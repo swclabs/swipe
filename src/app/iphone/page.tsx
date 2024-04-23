@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/ui-app/banner"
+import Banner, { BannerPlugin } from "@/components/ui-app/banner"
 import News from '@/components/iphone/news';
 import Accessories from '@/components/iphone/accessories';
 import ProductBar from '@/components/iphone/product-bar';
@@ -8,6 +8,8 @@ import Product from '@/components/iphone/product';
 import Welcome from '@/components/ui-app/common/welcome-section';
 import Posts from '@/components/ui-app/posts';
 import posts from '@/faker/posts';
+import ProductIphoneTypes from '@/components/iphone/product-types';
+import { motion } from "framer-motion"
 
 function IphonePage() {
     return (
@@ -23,8 +25,17 @@ function IphonePage() {
             */}
 
             <div className=" w-full bg-gray-50">
-                <ProductBar />
-                <Banner />
+                <div className=' w-full flex justify-center p-5 bg-gray-50'>
+                    <motion.div
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.75 }}
+                        className='w-4/5'
+                    >
+                        <ProductIphoneTypes />
+                    </motion.div>
+                </div>
+                <BannerPlugin />
 
                 {/* Section Welcome */}
                 <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
