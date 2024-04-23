@@ -10,13 +10,13 @@ export default function FooterComponent() {
                 <div className="flex p-8 h-[250px]">
                     <div className="container">
                         <p className=" text-xs font-semibold">Shop</p>
-                        <ul className=" pt-3">
-                            <li className=" text-xs font-extralight">Mac</li>
-                            <li className=" text-xs font-extralight">iPad</li>
-                            <li className=" text-xs font-extralight">iPhone</li>
-                            <li className=" text-xs font-extralight">Watch</li>
-                            <li className=" text-xs font-extralight">AirPods</li>
-                            <li className=" text-xs font-extralight">Phụ kiện</li>
+                        <ul className=" pt-3 font-extralight">
+                            <li className=" text-xs">Mac</li>
+                            <li className=" text-xs">iPad</li>
+                            <li className=" text-xs">iPhone</li>
+                            <li className=" text-xs">Watch</li>
+                            <li className=" text-xs">AirPods</li>
+                            <li className=" text-xs">Phụ kiện</li>
                         </ul>
                     </div>
                     <div className="container">

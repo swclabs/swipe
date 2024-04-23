@@ -1,7 +1,7 @@
 'use client'
 
-import Banner from "@/components/banner"
-import ShortCut from "@/components/shortcut"
+import Banner from "@/components/ui-app/banner"
+import ShortCut from "@/components/ui-app/shortcut"
 import { Card, CardHeader, Image } from "@nextui-org/react"
 import Link from "next/link"
 import React from "react"

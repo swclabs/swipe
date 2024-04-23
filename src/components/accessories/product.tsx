@@ -2,7 +2,6 @@
 import { Button, Image } from "@nextui-org/react";
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import { useState } from "react";
-import './style.css'
 
 export default function Product() {
     const [activeTab, setActiveTab] = useState('products');

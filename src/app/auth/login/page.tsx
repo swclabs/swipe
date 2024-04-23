@@ -1,4 +1,4 @@
-import LoginComponent from "@/components/login"
+import LoginComponent from "@/components/ui-app/login"
 export default function Login() {
     return (
         <div className="flex justify-center h-[100vh]">
