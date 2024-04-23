@@ -4,13 +4,13 @@ import { isMobile } from 'react-device-detect';
 import { motion, AnimatePresence, useAnimation } from "framer-motion"
 
 const Providers = ({ children }: any) => {
-    if (isMobile) {
-        return (
-            <div className=" flex h-[100vh] flex-col text-center justify-center text-xs">
-                <p className="">Application does not support this device</p>
-            </div>
-        );
-    }
+    // if (isMobile) {
+    //     return (
+    //         <div className=" flex h-[100vh] flex-col text-center justify-center text-xs">
+    //             <p className="">Application does not support this device</p>
+    //         </div>
+    //     );
+    // }
     return (
         <NextUIProvider>
             <AnimatePresence>

@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/ui-app/banner"
+import Banner, { BannerPlugin } from "@/components/ui-app/banner"
 import ProductBar from '@/components/airpod/product-bar';
 import News from '@/components/airpod/news';
 import Product from '@/components/airpod/product';
@@ -8,6 +8,7 @@ import Accessories from '@/components/airpod/accessories';
 import Service from "@/components/store/service";
 import { motion } from "framer-motion"
 import Welcome from '@/components/ui-app/common/welcome-section';
+import ProductAirpodTypes from '@/components/airpod/product-types';
 
 function IphonePage() {
     return (
@@ -24,9 +25,18 @@ function IphonePage() {
             |
             */}
 
-            <div className=" w-full bg-gray-50">
-                <ProductBar />
-                <Banner />
+            <div className=" w-full bg-white">
+                <div className=' w-full flex justify-center p-5 bg-gray-50'>
+                    <motion.div
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.75 }}
+                        className='w-4/5'
+                    >
+                        <ProductAirpodTypes />
+                    </motion.div>
+                </div>
+                <BannerPlugin />
 
                 {/* Section Welcome */}
                 <Welcome title='Airpods' subtitle='Nơi âm nhạc trở nên sống động.' />
