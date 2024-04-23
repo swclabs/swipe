@@ -2,7 +2,6 @@
 import { Button, Image } from "@nextui-org/react";
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import { useState } from "react";
-import './style.css'
 
 export default function Product() {
     const [activeTab, setActiveTab] = useState('products');
@@ -135,7 +134,8 @@ export default function Product() {
                     </div>
                 </div>
             }
-            {activeTab === 'types' &&
+            {
+                activeTab === 'types' &&
                 <div className="flex flex-wrap justify-center items-center w-[1100px] gap-8 border-y-2 py-8 relative">
                     {objectMapping.filter((item, index) => isCollapsed ? index < 13 : index < 5).map((item, index) => (
                         <div key={index} className="flex flex-col justify-center items-center w-[180px]">
