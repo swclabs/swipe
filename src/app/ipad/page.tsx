@@ -1,12 +1,14 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/ui-app/banner"
+import Banner, { BannerPlugin } from "@/components/ui-app/banner"
 // import ProductCompare from '@/components/ipad/product-compare';
 import ProductBar from '@/components/ipad/product-bar';
 import News from '@/components/ipad/news';
 import Accessories from '@/components/ipad/accessories';
 import Product from '@/components/ipad/product';
 import Welcome from '@/components/ui-app/common/welcome-section';
+import ProductIpadTypes from '@/components/ipad/product-types';
+import { motion } from "framer-motion"
 function IpadPage() {
     return (
         <>
@@ -21,8 +23,17 @@ function IpadPage() {
             */}
 
             <div className=" w-full bg-white">
-                <ProductBar />
-                <Banner />
+                <div className=' w-full flex justify-center p-5 bg-black'>
+                    <motion.div
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.75 }}
+                        className='w-4/5'
+                    >
+                        <ProductIpadTypes />
+                    </motion.div>
+                </div>
+                <BannerPlugin />
 
                 {/* Section Welcome */}
                 <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
