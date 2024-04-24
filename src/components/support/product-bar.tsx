@@ -6,7 +6,7 @@ import './style.css';
 export default function ProductBar() {
 
     return (
-        <div className='w-ful bg-white'>
+        <div className='w-full bg-white'>
             <div className='w-1/2 m-auto flex flex-row'>
                 <Link href="" className='flex flex-col justify-center items-center w-[140px] h-[109px]'>
                     <div>
@@ -100,7 +100,7 @@ export default function ProductBar() {
                     </div>
                 </Link>
             </div>
-            <div className='w-1/2 m-auto flex flex-row my-12 gap-x-6'>
+            <div className='w-1/2 m-auto mt-12 flex flex-row gap-x-6'>
                 <div className='flex justify-center items-center'>
                     <Link
                         href=""
