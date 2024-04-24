@@ -29,6 +29,7 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: run lint # will run `yarn test` command
+
   admin:
     name: build-admin
     runs-on: ubuntu-latest
@@ -46,10 +47,10 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
-          dir: "./x/admin"
+          dir: "x/admin"
 
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
           cmd: run lint # will run `yarn test` command
-          dir: "./x/admin"
+          dir: "x/admin"
