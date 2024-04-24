@@ -1,15 +1,15 @@
 'use client';
 import { Image } from "@nextui-org/react";
-import { WatchAccessories } from "@/faker/watch-accessory";
+import { IpadAccessories } from "@/faker/ipad-accessory";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 
 
-export default function AccessoryWatch() {
+export default function AccessoryIpad() {
     return (
         <div className="w-1/2 m-auto">
             <Carousel className="w-full">
                 <CarouselContent>
-                    {WatchAccessories.map((value, index) => (
+                    {IpadAccessories.map((value, index) => (
                         <CarouselItem key={index} className="basis-1/3">
                             <div className="bg-slate-100 h-[450px] text-black rounded-xl" key={index}>
                                 <div className="flex justify-center items-center content-center">

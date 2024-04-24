@@ -10,6 +10,9 @@ import posts from '@/faker/posts';
 import { Image } from '@nextui-org/react';
 import AccessoryIphone from '@/components/accessories/iphone-accessories';
 import AccessoryWatch from '@/components/accessories/watch-accessories';
+import AccessoryIpad from '@/components/accessories/ipad-accessories';
+import AccessoryMac from '@/components/accessories/mac-accessories';
+import AccessoryAirtag from '@/components/accessories/airtag-accessories';
 
 function AccessoriesPage() {
     return (
@@ -90,11 +93,11 @@ function AccessoriesPage() {
 
                 <div className="flex justify-center mt-12">
                     <div className=" pt-12 pb-12">
-                        <span className=" text-xl sm:text-5xl font-medium">Phụ Kiện Thiết Yếu Cho Âm Thanh</span>
+                        <span className=" text-xl sm:text-5xl font-medium">Phụ Kiện iPad Nổi Bật</span>
                     </div>
                 </div>
 
-                <AccessoryIphone />
+                <AccessoryIpad />
 
                 <div className="flex justify-center mt-12">
                     <div className=" pt-12 pb-12">
@@ -102,7 +105,7 @@ function AccessoriesPage() {
                     </div>
                 </div>
 
-                <AccessoryIphone />
+                <AccessoryMac />
 
                 <div className="flex justify-center mt-12">
                     <div className=" pt-12 pb-12">
@@ -110,7 +113,7 @@ function AccessoriesPage() {
                     </div>
                 </div>
 
-                <AccessoryIphone />
+                <AccessoryAirtag />
 
                 <div className='w-full bg-gray-100'>
                     <div className='w-1/2 m-auto mt-12'>
@@ -122,9 +125,12 @@ function AccessoriesPage() {
                                     src="/img/accessory/icon-shipping-grey-2017.png"
                                 />
                             </div>
-                            <div className='flex justify-center items-center w-[216px]'>
-                                <p className='text-center'>
+                            <div className='flex flex-col justify-center items-center text-center w-[216px]'>
+                                <h2 className='text-base font-semibold'>
                                     Giao hàng miễn phí ngày làm việc tiếp theo
+                                </h2>
+                                <p className='text-sm font-light m-2'>
+                                    Chỉ khả dụng tại Thành Phố Hồ Chí Minh đối với một số sản phẩm Apple có sẵn nhất định được đặt hàng trước 15:00.
                                 </p>
                             </div>
                         </div>
