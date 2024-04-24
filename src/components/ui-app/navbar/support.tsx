@@ -4,7 +4,7 @@ import { Link } from "@nextui-org/react";
 export default function NavbarItemSupport() {
     return (
         <div className='medium-container'>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/support">
                 <p className=" text-xs">Hỗ trợ</p>
             </Link>
             <div className="overlay">
