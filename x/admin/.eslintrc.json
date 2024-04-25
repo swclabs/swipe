@@ -1,9 +1,0 @@
-{
-  "extends": "next",
-  "root": true,
-  "settings": {
-    "next": {
-      "rootDir": ["./"]
-    }
-  }
-}
