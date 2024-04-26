@@ -60,11 +60,17 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import BreadCrumb from "@/components/dashboard/breadcrumb"
 
-export default function Dashboard() {
+const breadcrumbItems = [{ title: "Product", link: "/dashboard/product" }];
+
+export default function Page() {
     return (
         <ScrollArea className="h-full">
-            <div className="flex min-h-screen w-full flex-col bg-muted/40 pt-10">
+            <div className=" pl-6 pt-6 bg-muted/40">
+                <BreadCrumb items={breadcrumbItems} />
+            </div>
+            <div className="flex min-h-screen w-full flex-col bg-muted/40">
                 <div className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
                     <Tabs defaultValue="all">
                         <div className="flex items-center">
@@ -92,7 +98,9 @@ export default function Dashboard() {
                                         <DropdownMenuCheckboxItem checked>
                                             Active
                                         </DropdownMenuCheckboxItem>
-                                        <DropdownMenuCheckboxItem>Draft</DropdownMenuCheckboxItem>
+                                        <DropdownMenuCheckboxItem>
+                                            Draft
+                                        </DropdownMenuCheckboxItem>
                                         <DropdownMenuCheckboxItem>
                                             Archived
                                         </DropdownMenuCheckboxItem>
@@ -104,12 +112,14 @@ export default function Dashboard() {
                                         Export
                                     </span>
                                 </Button>
-                                <Button size="sm" className="h-8 gap-1">
-                                    <PlusCircle className="h-3.5 w-3.5" />
-                                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                                        Add Product
-                                    </span>
-                                </Button>
+                                <a href="/dashboard/product/upload">
+                                    <Button size="sm" className="h-8 gap-1">
+                                        <PlusCircle className="h-3.5 w-3.5" />
+                                        <div className="sr-only sm:not-sr-only sm:whitespace-nowrap">
+                                            Add Product
+                                        </div>
+                                    </Button>
+                                </a>
                             </div>
                         </div>
                         <TabsContent value="all">

@@ -1,4 +1,4 @@
-import { Icons } from "@/components/icons";
+import { Icons } from "@/components/dashboard/icons";
 import { NavItem, SidebarNavItem } from "@/types";
 
 export type User = {
@@ -143,12 +143,6 @@ export const navItems: NavItem[] = [
     label: "kanban",
   },
   {
-    title: "Login",
-    href: "/",
-    icon: "login",
-    label: "login",
-  },
-  {
     title: "Orders",
     href: "/dashboard/orders",
     icon: "post",
@@ -161,9 +155,9 @@ export const navItems: NavItem[] = [
     label: "product",
   },
   {
-    title: "Upload product",
-    href: "/dashboard/upload-product",
-    icon: "post",
-    label: "product",
+    title: "Login",
+    href: "/",
+    icon: "login",
+    label: "login",
   },
 ];
