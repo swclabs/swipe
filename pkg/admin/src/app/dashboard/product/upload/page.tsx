@@ -65,10 +65,17 @@ import {
   ToggleGroupItem,
 } from "@/components/ui/toggle-group"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import ImageUploader from "@/components/dashboard/image-upload"
+import BreadCrumb from "@/components/dashboard/breadcrumb"
 
-export default function Dashboard() {
+const breadcrumbItems = [{ title: "Product", link: "/dashboard/product" }, { title: "Upload", link: "/dashboard/product/upload" }];
+
+export default function Page() {
   return (
     <ScrollArea className="h-full">
+      <div className=" pl-6 pt-6 bg-muted/40">
+        <BreadCrumb items={breadcrumbItems} />
+      </div>
       <div className="flex min-h-screen w-full flex-col bg-muted/40 p-5">
         <div className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
           <div className="mx-auto grid max-w-[59rem] flex-1 auto-rows-max gap-4">
@@ -306,6 +313,55 @@ export default function Dashboard() {
                     </div>
                   </CardContent>
                 </Card>
+                <Card x-chunk="dashboard-07-chunk-2">
+                  <CardHeader>
+                    <CardTitle>Product Supplier</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-6 sm:grid-cols-3">
+                      <div className="grid gap-3">
+                        <Label htmlFor="category">Supplier</Label>
+                        <Select>
+                          <SelectTrigger
+                            id="category"
+                            aria-label="Select category"
+                          >
+                            <SelectValue placeholder="Select category" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="clothing">Clothing</SelectItem>
+                            <SelectItem value="electronics">
+                              Electronics
+                            </SelectItem>
+                            <SelectItem value="accessories">
+                              Accessories
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="grid gap-3">
+                        <Label htmlFor="subcategory">
+                          Subcategory (optional)
+                        </Label>
+                        <Select>
+                          <SelectTrigger
+                            id="subcategory"
+                            aria-label="Select subcategory"
+                          >
+                            <SelectValue placeholder="Select subcategory" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="t-shirts">T-Shirts</SelectItem>
+                            <SelectItem value="hoodies">Hoodies</SelectItem>
+                            <SelectItem value="sweatshirts">
+                              Sweatshirts
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
               <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
                 <Card x-chunk="dashboard-07-chunk-3">
@@ -330,9 +386,29 @@ export default function Dashboard() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card
-                  className="overflow-hidden" x-chunk="dashboard-07-chunk-4"
-                >
+                <Card x-chunk="dashboard-07-chunk-3">
+                  <CardHeader>
+                    <CardTitle>Product Status</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-6">
+                      <div className="grid gap-3">
+                        <Label htmlFor="status">Status</Label>
+                        <Select>
+                          <SelectTrigger id="status" aria-label="Select status">
+                            <SelectValue placeholder="Select status" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="draft">Draft</SelectItem>
+                            <SelectItem value="published">Active</SelectItem>
+                            <SelectItem value="archived">Archived</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden" x-chunk="dashboard-07-chunk-4">
                   <CardHeader>
                     <CardTitle>Product Images</CardTitle>
                     <CardDescription>
@@ -341,37 +417,7 @@ export default function Dashboard() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-2">
-                      <Image
-                        alt="Product image"
-                        className="aspect-square w-full rounded-md object-cover"
-                        height="300"
-                        src="/img/placeholder.svg"
-                        width="300"
-                      />
-                      <div className="grid grid-cols-3 gap-2">
-                        <button>
-                          <Image
-                            alt="Product image"
-                            className="aspect-square w-full rounded-md object-cover"
-                            height="84"
-                            src="/img/placeholder.svg"
-                            width="84"
-                          />
-                        </button>
-                        <button>
-                          <Image
-                            alt="Product image"
-                            className="aspect-square w-full rounded-md object-cover"
-                            height="84"
-                            src="/img/placeholder.svg"
-                            width="84"
-                          />
-                        </button>
-                        <button className="flex aspect-square w-full items-center justify-center rounded-md border border-dashed">
-                          <Upload className="h-4 w-4 text-muted-foreground" />
-                          <span className="sr-only">Upload</span>
-                        </button>
-                      </div>
+                      <ImageUploader />
                     </div>
                   </CardContent>
                 </Card>

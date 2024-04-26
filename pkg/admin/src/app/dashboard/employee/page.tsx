@@ -1,6 +1,6 @@
-import BreadCrumb from "@/components/breadcrumb";
-import { columns } from "@/components/tables/employee-tables/columns";
-import { EmployeeTable } from "@/components/tables/employee-tables/employee-table";
+import BreadCrumb from "@/components/dashboard/breadcrumb";
+import { columns } from "@/components/dashboard/tables/employee-tables/columns";
+import { EmployeeTable } from "@/components/dashboard/tables/employee-tables/employee-table";
 import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
@@ -25,7 +25,7 @@ export default async function page({ searchParams }: paramsProps) {
 
   const res = await fetch(
     `https://api.slingacademy.com/v1/sample-data/users?offset=${offset}&limit=${pageLimit}` +
-      (country ? `&search=${country}` : ""),
+    (country ? `&search=${country}` : ""),
   );
   const employeeRes = await res.json();
   const totalUsers = employeeRes.total_users; //1000

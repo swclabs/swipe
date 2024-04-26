@@ -1,15 +1,23 @@
 "use client";
+import * as z from "zod";
+import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Trash } from "lucide-react";
+import { useParams, useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Separator } from "@/components/ui/separator";
 import { Heading } from "@/components/ui/heading";
-import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -17,14 +25,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Trash } from "lucide-react";
-import { useParams, useRouter } from "next/navigation";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { useToast } from "../ui/use-toast";
+import { Checkbox } from "@/components/ui/checkbox";
+// import FileUpload from "@/components/FileUpload";
+import { useToast } from "@/components/ui/use-toast";
 const ImgSchema = z.object({
   fileName: z.string(),
   name: z.string(),
@@ -58,7 +61,7 @@ interface ProductFormProps {
   categories: any;
 }
 
-export const EmployeeForm: React.FC<ProductFormProps> = ({
+export const ProductForm: React.FC<ProductFormProps> = ({
   initialData,
   categories,
 }) => {
@@ -67,6 +70,7 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
   const { toast } = useToast();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [imgLoading, setImgLoading] = useState(false);
   const title = initialData ? "Edit product" : "Create product";
   const description = initialData ? "Edit a product." : "Add a new product";
   const toastMessage = initialData ? "Product updated." : "Product created.";
@@ -163,7 +167,11 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
               <FormItem>
                 <FormLabel>Images</FormLabel>
                 <FormControl>
-
+                  {/* <FileUpload
+                    onChange={field.onChange}
+                    value={field.value}
+                    onRemove={field.onChange}
+                  /> */}
                 </FormControl>
                 <FormMessage />
               </FormItem>

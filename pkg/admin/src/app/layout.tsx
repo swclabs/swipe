@@ -1,6 +1,5 @@
-import Providers from "@/components/layout/providers";
+import Providers from "@/components/dashboard/layout/providers";
 import { Toaster } from "@/components/ui/toaster";
-import "@uploadthing/react/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -9,8 +8,8 @@ import { getServerSession } from "next-auth";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next Shadcn",
-  description: "Basic dashboard with Next.js and Shadcn",
+  title: "Swipe Admin",
+  description: "Swipe Admin",
 };
 
 export default async function RootLayout({
