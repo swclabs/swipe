@@ -68,7 +68,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import ImageUploader from "@/components/dashboard/image-upload"
 import BreadCrumb from "@/components/dashboard/breadcrumb"
 
-const breadcrumbItems = [{ title: "Product", link: "/dashboard/product" }, { title: "Upload", link: "/dashboard/product/upload" }];
+const breadcrumbItems = [{ title: "Products", link: "/dashboard/products" }, { title: "Upload", link: "/dashboard/product/upload" }];
 
 export default function Page() {
   return (
