@@ -1,6 +1,6 @@
 'use client';
 import './style.css'
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 import { Image } from "@nextui-org/react";
 
 export default function ProductBar() {

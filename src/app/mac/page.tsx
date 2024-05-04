@@ -8,6 +8,8 @@ import Welcome from '@/components/ui-app/common/welcome-section';
 import ProductTabs from '@/components/mac/tab';
 import ProductMacTypes from '@/components/mac/product-types';
 import { motion } from "framer-motion"
+import ProductCard from '@/components/mac/card';
+import { desktop, display, laptop } from '@/faker/mac';
 
 function ProductPage() {
     return (
@@ -48,7 +50,7 @@ function ProductPage() {
             <News />
 
             {/* Product */}
-            <div className=" w-full bg-gray-50 pb-10 pt-10">
+            <div className=" w-full pt-10">
                 <div className="flex justify-center">
                     <div className=" sm:w-4/5 sm:p-12 p-5">
                         <span className=" text-xl sm:text-5xl font-medium">Khám phá các mẫu Mac</span>
@@ -56,9 +58,38 @@ function ProductPage() {
                 </div>
             </div>
 
-            <ProductTabs />
+            {/* <ProductTabs /> */}
 
-            {/* Section Accessories */}
+            <div className=" w-full" id='laptop'>
+                <div className="flex justify-center">
+                    <div className=" sm:w-4/5 sm:p-12 p-5">
+                        <p className=" text-xl sm:text-3xl font-semibold">Laptop</p>
+                        <p className=' text-sm font-light'>Nhanh và tiện lợi</p>
+                    </div>
+                </div>
+            </div>
+            <ProductCard product={laptop} />
+
+            <div className=" w-full" id='desktop'>
+                <div className="flex justify-center">
+                    <div className=" sm:w-4/5 sm:p-12 p-5">
+                        <p className=" text-xl sm:text-3xl font-semibold">Desktop</p>
+                        <p className=' text-sm font-light'>Sức mạnh tối đa</p>
+                    </div>
+                </div>
+            </div>
+            <ProductCard product={desktop} />
+
+            <div className=" w-full" id='display'>
+                <div className="flex justify-center">
+                    <div className=" sm:w-4/5 sm:p-12 p-5">
+                        <p className=" text-xl sm:text-3xl font-semibold">Display</p>
+                        <p className=' text-sm font-light'>Sắc màu rực rỡ</p>
+                    </div>
+                </div>
+            </div>
+            <ProductCard product={display} />
+
             {/* Section Accessories */}
             <div className="flex justify-center">
                 <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">

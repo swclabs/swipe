@@ -6,7 +6,7 @@ export default function ProductMacTypes() {
         <Carousel className="w-full ">
             <CarouselContent>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="">
+                    <a className="flex flex-col items-center justify-center" href="#laptop">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
                                 src="/img/mac/macbookair_light_large.svg"
@@ -21,7 +21,7 @@ export default function ProductMacTypes() {
                     </a>
                 </CarouselItem>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="">
+                    <a className="flex flex-col items-center justify-center" href="#laptop">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
                                 src="/img/mac/macbook_pro_light_large.svg"
@@ -36,7 +36,7 @@ export default function ProductMacTypes() {
                     </a>
                 </CarouselItem>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="">
+                    <a className="flex flex-col items-center justify-center" href="#desktop">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
                                 src="/img/mac/imac_light_large.svg"
@@ -51,7 +51,7 @@ export default function ProductMacTypes() {
                     </a>
                 </CarouselItem>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="">
+                    <a className="flex flex-col items-center justify-center" href="#desktop">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
                                 src="/img/mac/mac_mini_light_large.svg"
@@ -66,7 +66,7 @@ export default function ProductMacTypes() {
                     </a>
                 </CarouselItem>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="">
+                    <a className="flex flex-col items-center justify-center" href="#desktop">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
                                 src="/img/mac/mac_studio_light_large.svg"
@@ -81,7 +81,7 @@ export default function ProductMacTypes() {
                     </a>
                 </CarouselItem>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="">
+                    <a className="flex flex-col items-center justify-center" href="#desktop">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
                                 src="/img/mac/mac_pro_light_large.svg"
@@ -96,7 +96,7 @@ export default function ProductMacTypes() {
                     </a>
                 </CarouselItem>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="">
+                    <a className="flex flex-col items-center justify-center" href="#display">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
                                 src="/img/mac/displays_light_large.svg"

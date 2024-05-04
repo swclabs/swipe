@@ -14,7 +14,7 @@ export default function Accessory({ data }: { data: IAccessory[] }) {
                                     <h2 className="font-semibold text-3xl pt-8 pb-2">
                                         {value.title}
                                     </h2>
-                                    <p className="px-4 text-base text-center">
+                                    <p className="px-4 text-sm text-center">
                                         {value.desc}
                                     </p>
                                 </CardHeader>
