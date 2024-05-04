@@ -5,6 +5,47 @@ import cartData from "@/faker/cart";
 import { Button } from "@nextui-org/react";
 
 
+import { FiUser } from "react-icons/fi";
+import { FiBookmark } from "react-icons/fi";
+import { FiBox } from "react-icons/fi";
+import { FiSettings } from "react-icons/fi";
+
+
+
+function MenuShortcuts() {
+    return (
+        <div className=' container pt-10 text-xs'>
+            <p>Hồ sơ của tôi</p>
+            <div className=' container flex flex-col'>
+                <a className=' pt-2 font-semibold flex items-center'>
+                    <FiBox />
+                    <p className="pl-2">
+                        Đơn hàng
+                    </p>
+                </a>
+                <a className=' pt-2 font-semibold flex items-center'>
+                    <FiBookmark />
+                    <p className=" pl-2">
+                        Mục đã lưu
+                    </p>
+                </a>
+                <a className=' pt-2 font-semibold flex items-center'>
+                    <FiUser />
+                    <p className=" pl-2">
+                        Tài khoản
+                    </p>
+                </a>
+                <a className=' pt-2 font-semibold flex items-center'>
+                    <FiSettings />
+                    <p className=" pl-2">
+                        Đăng nhập
+                    </p>
+                </a>
+            </div>
+        </div>
+    )
+}
+
 export default function NotLoggedIn() {
     return (
         <div className=' container'>
@@ -12,15 +53,7 @@ export default function NotLoggedIn() {
             <div className=' pt-5 text-sm'>
                 <Link href='/auth/login' className=' text-sm underline font-semibold'>Đăng nhập</Link> để xem sản phẩm của bạn
             </div>
-            <div className=' container pt-10 text-xs'>
-                <p>Hồ sơ của tôi</p>
-                <div className=' container flex flex-col'>
-                    <a className=' pt-2 font-semibold'>Đơn hàng</a>
-                    <a className=' pt-2 font-semibold'>Mục đã lưu</a>
-                    <a className=' pt-2 font-semibold'>Tài khoản</a>
-                    <a className=' pt-2 font-semibold'>Đăng nhập</a>
-                </div>
-            </div>
+            <MenuShortcuts />
         </div>
     )
 }
@@ -47,15 +80,7 @@ export function LoggedIn() {
                     </div>
                 ))}
             </div>
-            <div className=' container pt-10 text-xs'>
-                <p>Hồ sơ của tôi</p>
-                <div className=' container flex flex-col'>
-                    <a className=' pt-2 font-semibold'>Đơn hàng</a>
-                    <a className=' pt-2 font-semibold'>Mục đã lưu</a>
-                    <a className=' pt-2 font-semibold'>Tài khoản</a>
-                    <a className=' pt-2 font-semibold'>Đăng nhập</a>
-                </div>
-            </div>
+            <MenuShortcuts />
         </div>
     )
 }
