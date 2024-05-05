@@ -2,7 +2,7 @@ import React from "react";
 import { Divider } from "@nextui-org/react";
 export default function FooterComponent() {
     return (
-        <div className="w-full flex justify-center bg-gray-50 mt-10">
+        <div className="w-full flex justify-center bg-gray-50">
             <div className=" h-[300px] w-4/5">
                 <div className=" ml-8 mr-8">
                     <Divider />

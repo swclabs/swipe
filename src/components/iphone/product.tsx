@@ -4,13 +4,16 @@ import './style.css'
 import iphone from "@/faker/iphone";
 import Link from "next/link";
 import { useEffect } from "react";
+import { FiTruck } from "react-icons/fi";
+
+
 
 export default function Product() {
 
     useEffect(() => { }, [])
 
     return (
-        <div className="w-full pb-[10px] hover:pb-0 scrollbar hover:overflow-x-auto overflow-hidden">
+        <div className="w-full pb-[10px] scrollbar hover:overflow-x-auto overflow-hidden">
             <div className=" relative flex snap-x snap-mandatory 2xl:justify-between">
 
                 <div className=" sm:w-1/12 shrink-0 snap-center">
@@ -61,7 +64,10 @@ export default function Product() {
                                     <Link href={"shop/buy-iphone/" + value.title.toLowerCase().replaceAll(" ", "-")}>
                                         <Button color="primary" className=" w-full">Mua</Button>
                                     </Link>
-                                    <p className=" text-left pt-4 text-xs">Đặt hàng hôm nay, giao hàng đến Hồ Chí Minh</p>
+                                    <div className=" flex items-center pt-4">
+                                        <FiTruck />
+                                        <p className=" pl-2 text-left text-xs">Đặt hàng hôm nay, giao hàng đến Hồ Chí Minh</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
