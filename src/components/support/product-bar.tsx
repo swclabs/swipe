@@ -7,7 +7,7 @@ export default function ProductBar() {
 
     return (
         <div className='w-full bg-white'>
-            <div className='w-1/2 m-auto flex flex-row'>
+            <div className='w-3/4 m-auto flex flex-row justify-between items-center'>
                 <Link href="" className='flex flex-col justify-center items-center w-[140px] h-[109px]'>
                     <div>
                         <Image
@@ -107,22 +107,20 @@ export default function ProductBar() {
                         className='
                         title-wrapper bg-gray-100 rounded-lg 
                         flex flex-col justify-center items-center 
-                        h-[180px]  aspect-[5/3] duration-500
+                        h-[20vh]  aspect-[5/3]
                     '>
-                        <div className='flex flex-col justify-center items-center rounded'>
-                            <div className='w-[60px] h-[60px] mb-4'>
-                                <Image
-                                    alt=""
-                                    src="/img/support/tile-topic-password_2x.svg"
-                                    className='h-full w-full object-cover'
-                                    radius='none'
-                                />
-                            </div>
-                            <div className='m-2'>
-                                <p className='text-center text-blue-500'>
-                                    Quên mật khẩu ID Apple
-                                </p>
-                            </div>
+                        <div className='h-[40%] aspect-square mb-4'>
+                            <Image
+                                alt=""
+                                src="/img/support/tile-topic-password_2x.svg"
+                                className='h-full w-full object-cover'
+                                radius='none'
+                            />
+                        </div>
+                        <div className='m-2'>
+                            <p className='h-[60%] 2xl:text-base text-xs text-center text-blue-500'>
+                                Quên mật khẩu ID Apple
+                            </p>
                         </div>
                     </Link >
                 </div>
@@ -132,22 +130,20 @@ export default function ProductBar() {
                         className='
                         title-wrapper bg-gray-100 rounded-lg 
                         flex flex-col justify-center items-center 
-                        h-[180px]  aspect-[5/3] duration-500
+                        h-[20vh]  aspect-[5/3]
                     '>
-                        <div className='flex flex-col justify-center items-center rounded'>
-                            <div className='w-[60px] h-[60px] mb-4'>
-                                <Image
-                                    alt=""
-                                    src="/img/support/tile-topic-repair_2x.svg"
-                                    className='h-full w-full object-cover'
-                                    radius='none'
-                                />
-                            </div>
-                            <div className='m-2'>
-                                <p className='text-center text-blue-500'>
-                                    Dịch vụ sửa chữa của Apple
-                                </p>
-                            </div>
+                        <div className='h-[40%] aspect-square mb-4'>
+                            <Image
+                                alt=""
+                                src="/img/support/tile-topic-repair_2x.svg"
+                                className='h-full w-full object-cover'
+                                radius='none'
+                            />
+                        </div>
+                        <div className='m-2'>
+                            <p className='h-[60%] 2xl:text-base text-xs text-center text-blue-500'>
+                                Dịch vụ sửa chữa của Apple
+                            </p>
                         </div>
                     </Link >
                 </div>
@@ -157,22 +153,20 @@ export default function ProductBar() {
                         className='
                         title-wrapper bg-gray-100 rounded-lg 
                         flex flex-col justify-center items-center 
-                        h-[180px]  aspect-[5/3] duration-500
+                        h-[20vh]  aspect-[5/3]
                     '>
-                        <div className='flex flex-col justify-center items-center rounded'>
-                            <div className='w-[60px] h-[60px] mb-4'>
-                                <Image
-                                    alt=""
-                                    src="/img/support/tile-topic-billing_2x.svg"
-                                    className='h-full w-full object-cover'
-                                    radius='none'
-                                />
-                            </div>
-                            <div className='m-2'>
-                                <p className='text-center text-blue-500'>
-                                    Thanh toán và đăng ký
-                                </p>
-                            </div>
+                        <div className='h-[40%] aspect-square mb-4'>
+                            <Image
+                                alt=""
+                                src="/img/support/tile-topic-billing_2x.svg"
+                                className='h-full w-full object-cover'
+                                radius='none'
+                            />
+                        </div>
+                        <div className='m-2'>
+                            <p className='h-[60%] 2xl:text-base text-xs text-center text-blue-500'>
+                                Thanh toán và đăng ký
+                            </p>
                         </div>
                     </Link >
                 </div>

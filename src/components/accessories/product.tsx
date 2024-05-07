@@ -81,7 +81,7 @@ export default function Product() {
 
             {
                 activeTab === 'products' &&
-                <div className="flex flex-row gap-x-12 border-y-1 justify-center items-center py-8 w-fit">
+                <div className="flex flex-row border-y-1 justify-between items-center py-8 w-3/5">
                     <div className="flex flex-col justify-center items-center">
                         <div className="flex items-center justify-center border rounded-full w-[143px] h-[143px] mb-4">
                             <Image
@@ -136,7 +136,7 @@ export default function Product() {
             }
             {
                 activeTab === 'types' &&
-                <div className="flex flex-wrap justify-center items-center w-[1100px] gap-8 border-y-2 py-8 relative">
+                <div className="flex flex-wrap justify-center items-center w-3/5 gap-8 border-y-1 py-8 relative">
                     {objectMapping.filter((item, index) => isCollapsed ? index < 13 : index < 5).map((item, index) => (
                         <div key={index} className="flex flex-col justify-center items-center w-[180px]">
                             <div className="flex items-center justify-center border rounded-full w-[143px] h-[143px] mb-4 py-4">
