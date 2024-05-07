@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import Banner, { BannerPlugin } from "@/components/ui-app/banner"
-// import ProductCompare from '@/components/ipad/product-compare';
 import ProductBar from '@/components/ipad/product-bar';
 import News from '@/components/ipad/news';
 import Accessories from '@/components/ipad/accessories';
@@ -82,6 +81,6 @@ function IpadPage() {
             </div >
         </>
     );
-};
+}
 
 export default IpadPage;

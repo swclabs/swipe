@@ -82,6 +82,6 @@ function IphonePage() {
             </div>
         </>
     );
-};
+}
 
 export default IphonePage;

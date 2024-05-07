@@ -226,6 +226,6 @@ function WatchPage() {
             </div>
         </>
     );
-};
+}
 
 export default WatchPage;

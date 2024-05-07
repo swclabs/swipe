@@ -4,7 +4,7 @@ import { deleteCookie, getCookie, setCookie } from 'cookies-next';
 import { toast } from "react-toastify"
 
 const createAxiosInstance = (): AxiosInstance => {
-    let accessToken = getCookie('accessToken');
+    const accessToken = getCookie('accessToken');
     // let refreshToken = getCookie('refreshToken');
     const instance = axios.create({
         baseURL: APIEndpoint.BASE_URL,

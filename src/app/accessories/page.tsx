@@ -140,6 +140,6 @@ function AccessoriesPage() {
             </div>
         </>
     );
-};
+}
 
 export default AccessoriesPage;
