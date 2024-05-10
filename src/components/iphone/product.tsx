@@ -10,7 +10,7 @@ import { FiTruck } from "react-icons/fi";
 
 export default function Product() {
 
-    useEffect(() => { }, [])
+    // useEffect(() => { }, [])
 
     return (
         <div className="w-full pb-[10px] scrollbar hover:overflow-x-auto overflow-hidden">

@@ -58,6 +58,6 @@ function SupportPage() {
             </div>
         </>
     );
-};
+}
 
 export default SupportPage;

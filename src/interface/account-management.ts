@@ -26,10 +26,6 @@ export interface ILoginResponse {
     token: string
 }
 
-export interface ILogoutResponse extends IError {
+export type ILogoutResponse = IError
 
-}
-
-export interface IAuth extends IError {
-
-}
+export type IAuth = IError
