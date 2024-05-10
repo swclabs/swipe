@@ -48,7 +48,7 @@ function AccessoriesPage() {
                 <News /> */}
 
                 {/* Section Search Products */}
-                <div className="flex flex-col justify-center items-center mb-12">
+                {/* <div className="flex flex-col justify-center items-center mb-12">
                     <div className=" pt-12 pb-12">
                         <span className=" text-4xl font-semibold">Tìm phụ kiện mong muốn.</span>
                     </div>
@@ -68,7 +68,7 @@ function AccessoriesPage() {
                             className='text-lg w-full p-2 outline-none border-none bg-transparent'
                         />
                     </span>
-                </div>
+                </div> */}
 
                 {/* Section Products */}
                 <Product />
