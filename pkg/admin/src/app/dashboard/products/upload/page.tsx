@@ -36,6 +36,9 @@ import ImageUploader from "@/components/dashboard/image-upload"
 import BreadCrumb from "@/components/dashboard/breadcrumb"
 
 import { useFormik } from "formik"
+import { useSuppliers } from "@/state/products";
+import { useEffect } from "react";
+import { Categories, Suppliers } from "@/faker";
 
 const breadcrumbItems = [{ title: "Products", link: "/dashboard/products" }, { title: "Upload", link: "/dashboard/product/upload" }];
 
@@ -61,6 +64,7 @@ export default function Page() {
     },
   });
 
+
   return (
     <ScrollArea className="h-full">
       <div className=" pl-6 pt-6 bg-muted/40">
@@ -68,14 +72,14 @@ export default function Page() {
       </div>
       <div className="flex min-h-screen w-full flex-col bg-muted/40 p-5">
         <div className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-          <div className="mx-auto grid w-full flex-1 auto-rows-max gap-4">
+          <div className="mx-auto grid max-w-[1000px] w-full flex-1 auto-rows-max gap-4">
             <div className="flex items-center gap-4">
               <Button variant="outline" size="icon" className="h-7 w-7">
                 <ChevronLeft className="h-4 w-4" />
                 <span className="sr-only">Back</span>
               </Button>
               <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
-                Upload
+                Upload New Product
               </h1>
               <Badge variant="outline" className="ml-auto sm:ml-0">
                 products
@@ -87,7 +91,7 @@ export default function Page() {
                 <Button size="sm">Save Product</Button>
               </div>
             </div>
-            <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
+            <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-4 lg:gap-8">
               <div className="grid auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
                 <Card x-chunk="dashboard-07-chunk-0">
                   <CardHeader>
@@ -124,19 +128,6 @@ export default function Page() {
                           className="min-h-32"
                         />
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader x-chunk="dashboard-07-chunk-1">
-                    <CardTitle>Product Images</CardTitle>
-                    <CardDescription>
-                      Lipsum dolor sit amet, consectetur adipiscing elit
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-2">
-                      <ImageUploader />
                     </div>
                   </CardContent>
                 </Card>
@@ -221,7 +212,20 @@ export default function Page() {
                   </CardContent>
                 </Card>
               </div>
-              <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+              <div className="grid auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
+                <Card>
+                  <CardHeader x-chunk="dashboard-07-chunk-1">
+                    <CardTitle>Product Images</CardTitle>
+                    <CardDescription>
+                      Lipsum dolor sit amet, consectetur adipiscing elit
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-2">
+                      <ImageUploader />
+                    </div>
+                  </CardContent>
+                </Card>
                 <Card x-chunk="dashboard-07-chunk-3">
                   <CardHeader>
                     <CardTitle>Product Supplier</CardTitle>
@@ -232,12 +236,12 @@ export default function Page() {
                         <Label htmlFor="status">Suppliers</Label>
                         <Select>
                           <SelectTrigger id="status" aria-label="Select status">
-                            <SelectValue placeholder="Select status" />
+                            <SelectValue placeholder="Select suppliers" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="draft">Draft</SelectItem>
-                            <SelectItem value="published">Active</SelectItem>
-                            <SelectItem value="archived">Archived</SelectItem>
+                            {Suppliers.map((value, index) => (
+                              <SelectItem value={value} key={index}>{value}</SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                       </div>
@@ -254,12 +258,12 @@ export default function Page() {
                         <Label htmlFor="status">Categories</Label>
                         <Select>
                           <SelectTrigger id="status" aria-label="Select status">
-                            <SelectValue placeholder="Select status" />
+                            <SelectValue placeholder="Select category" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="draft">Draft</SelectItem>
-                            <SelectItem value="published">Active</SelectItem>
-                            <SelectItem value="archived">Archived</SelectItem>
+                            {Categories.map((value, index) => (
+                              <SelectItem value={value} key={index}>{value}</SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                       </div>

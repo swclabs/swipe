@@ -1,8 +1,13 @@
 'use client'
 
-import { useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import { FileInput, FileUploader, FileUploaderContent, FileUploaderItem } from "@/components/ui/file-upload";
-import { Paperclip } from "lucide-react";
+import { Paperclip, Trash2 } from "lucide-react";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import Image from "next/image";
+import { useDropzone } from "react-dropzone";
+import { Button } from "../ui/button";
 
 const FileSvgDraw = () => {
     return (
@@ -33,8 +38,72 @@ const FileSvgDraw = () => {
     );
 };
 
+function getImageData(event: ChangeEvent<HTMLInputElement>) {
+    // FileList is immutable, so we need to create a new one
+    const dataTransfer = new DataTransfer();
+
+    // Add newly uploaded images
+    Array.from(event.target.files!).forEach((image) =>
+        dataTransfer.items.add(image)
+    );
+
+    const files = dataTransfer.files;
+    const displayUrl = URL.createObjectURL(event.target.files![0]);
+
+    return { files, displayUrl };
+}
+
 
 const ImageUploader = () => {
+    const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+    const onDrop = useCallback((acceptedFiles: File[]) => {
+        setUploadedFiles(acceptedFiles)
+    }, [])
+    const { getRootProps, getInputProps } = useDropzone({ onDrop })
+
+    const deletefile = (index: number) => {
+        const upload = [...uploadedFiles]
+        upload.splice(index, 1)
+        setUploadedFiles(upload)
+    }
+    return (
+        <div className="w-full">
+            <label {...getRootProps()} className="flex items-center justify-center flex-col pt-3 pb-4 w-full ">
+                <FileSvgDraw />
+            </label>
+            <Input
+                {...getInputProps()}
+                id="dropzone-file"
+                accept="image/png, image/jpeg"
+                type="file"
+                className="hidden"
+            />
+            {uploadedFiles &&
+                uploadedFiles.map((file, index) => (
+                    <div className="flex justify-between items-center p-3" key={index}>
+                        <div className=" flex justify-start gap-4">
+                            <Image
+                                key={index}
+                                alt="pic"
+                                src={URL.createObjectURL(file)}
+                                width={70}
+                                height={70}
+                                className=" rounded-md"
+                            />
+                            <div className=" text-xs">
+                                <p>{file.name}</p>
+                                <p>{file.type}</p>
+                            </div>
+                        </div>
+                        <Button size="icon" variant="ghost" onClick={() => { deletefile(index) }}><Trash2 /></Button>
+                    </div>
+                ))
+            }
+        </div>
+    )
+};
+
+export const ImageUploaderOld = () => {
     const [files, setFiles] = useState<File[] | null>(null);
 
     const dropZoneConfig = {
@@ -67,6 +136,6 @@ const ImageUploader = () => {
             </FileUploaderContent>
         </FileUploader>
     );
-};
+}
 
 export default ImageUploader;
