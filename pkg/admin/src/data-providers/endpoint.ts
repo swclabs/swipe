@@ -5,5 +5,6 @@ export default class APIEndpoint {
 
     static readonly PRODUCTS = {
         POST_PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
+        GET_SUPPLIERS: `${APIEndpoint.BASE_URL}/suppliers`
     }
 }
