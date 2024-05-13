@@ -1,8 +1,8 @@
-export interface IError {
+export interface Error {
     msg: string;
 }
 
-export interface ISignUpRequest {
+export interface SignUpReq {
     email: string
     first_name: string
     last_name: string
@@ -10,22 +10,22 @@ export interface ISignUpRequest {
     phone_number: string
 }
 
-export interface ISignUpResponse {
+export interface SignUpRes {
     msg: string,
     success: boolean
 }
 
-export interface ILoginRequest {
+export interface LoginReq {
     email: string
     password: string
 }
 
-export interface ILoginResponse {
+export interface LoginRes {
     email: string,
     success: boolean,
     token: string
 }
 
-export type ILogoutResponse = IError
+export type LogoutRes = Error
 
-export type IAuth = IError
+export type Auth = Error

@@ -1,33 +1,41 @@
-export interface IProducts {
+export interface Products {
     price: string;
     description: string;
     name: string;
-    available: string;
-    supplierID: string;
-    categoryID: string;
+    supplier_id: string;
+    category_id: string;
+    status: string;
+    RAM: number[];
+    SSD: number[];
+    display: string;
+    screen: string;
 }
 
-export interface IBaseResponse {
+export interface BaseResponse {
     msg: string;
 }
 
-export interface ISupplier {
+export interface NewProductRes extends BaseResponse {
+    id: string;
+}
+
+export interface Supplier {
     id: string;
     email: string;
     name: string;
     phone_number: string;
 }
 
-export interface ISuppliers {
-    data: ISupplier[];
+export interface Suppliers {
+    data: Supplier[];
 }
 
-export interface ICategory {
+export interface Category {
     id: string;
     description: string;
     name: string;
 }
 
-export interface ICategories {
-    data: ICategory[];
+export interface Categories {
+    data: Category[];
 }

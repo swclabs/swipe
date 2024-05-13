@@ -1,14 +1,14 @@
 "use client"
 import React from 'react';
 import Banner, { BannerPlugin } from "@/components/ui-app/banner"
-import News from '@/components/iphone/news';
-import Accessories from '@/components/iphone/accessories';
-import ProductBar from '@/components/iphone/product-bar';
-import Product from '@/components/iphone/product';
+import News from '@/components/phone/news';
+import Accessories from '@/components/phone/accessories';
+import ProductBar from '@/components/phone/product-bar';
+import Product from '@/components/phone/product';
 import Welcome from '@/components/ui-app/common/welcome-section';
 import Posts from '@/components/ui-app/posts';
 import posts from '@/faker/posts';
-import ProductIphoneTypes from '@/components/iphone/product-types';
+import ProductIphoneTypes from '@/components/phone/product-types';
 import { motion } from "framer-motion"
 
 function IphonePage() {

@@ -1,14 +1,14 @@
 "use client"
 import React from 'react';
 import Banner, { BannerPlugin } from "@/components/ui-app/banner"
-import News from '@/components/mac/news';
-import Accessories from '@/components/mac/accessories';
-import ProductBar from '@/components/mac/product-bar';
+import News from '@/components/computer/news';
+import Accessories from '@/components/computer/accessories';
+import ProductBar from '@/components/computer/product-bar';
 import Welcome from '@/components/ui-app/common/welcome-section';
-import ProductTabs from '@/components/mac/tab';
-import ProductMacTypes from '@/components/mac/product-types';
+import ProductTabs from '@/components/computer/tab';
+import ProductMacTypes from '@/components/computer/product-types';
 import { motion } from "framer-motion"
-import ProductCard from '@/components/mac/card';
+import ProductCard from '@/components/computer/card';
 import { desktop, display, laptop } from '@/faker/mac';
 
 function ProductPage() {

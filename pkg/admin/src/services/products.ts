@@ -1,31 +1,48 @@
 import APIEndpoint from "@/data-providers/endpoint";
-import { IBaseResponse, ICategories, IProducts, ISuppliers } from "@/types/products";
+import { BaseResponse, Categories, NewProductRes, Products, Suppliers } from "@/types/products";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";
 
 
-export class Products {
-    static async NewProduct(data: IProducts): Promise<AxiosResponse<IBaseResponse>> {
+export class ProductService {
+    static async NewProduct(data: Products): Promise<AxiosResponse<NewProductRes>> {
         const axiosInstance = createAxiosInstance();
-        const response: AxiosResponse<IBaseResponse> = await axiosInstance.post(
+        const response: AxiosResponse<NewProductRes> = await axiosInstance.post(
             APIEndpoint.PRODUCTS.POST_PRODUCTS,
             data
         );
         return response;
     }
 
-    static async GetSuppliers(): Promise<AxiosResponse<ISuppliers>> {
+    static async NewProductImage(files: File[], id: string): Promise<AxiosResponse<BaseResponse>> {
+        const form = new FormData();
+        files.map((value) => form.append("img", value))
         const axiosInstance = createAxiosInstance();
-        const response: AxiosResponse<ISuppliers> = await axiosInstance.get(
-            `APIEndpoint.PRODUCTS.GET_SUPPLIERS?limit=${10}`,
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
+            `${APIEndpoint.PRODUCTS.POST_PRODUCTS_IMG}?id=${id}`,
+            form,
+            config
         );
         return response;
     }
 
-    static async GetCategory(): Promise<AxiosResponse<ICategories>> {
+    static async GetSuppliers(limit: number): Promise<AxiosResponse<Suppliers>> {
         const axiosInstance = createAxiosInstance();
-        const response: AxiosResponse<ICategories> = await axiosInstance.get(
-            `APIEndpoint.PRODUCTS.GET_SUPPLIERS?limit=${10}`,
+        const response: AxiosResponse<Suppliers> = await axiosInstance.get(
+            `${APIEndpoint.PRODUCTS.GET_SUPPLIERS}?limit=${limit}`,
+        );
+        return response;
+    }
+
+    static async GetCategory(limit: number): Promise<AxiosResponse<Categories>> {
+        const axiosInstance = createAxiosInstance();
+        const response: AxiosResponse<Categories> = await axiosInstance.get(
+            `${APIEndpoint.PRODUCTS.GET_CATEGORIES}?limit=${limit}`,
         );
         return response;
     }

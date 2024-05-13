@@ -4,7 +4,7 @@ import Colors from "@/components/shop/colors";
 import Spec from "@/components/shop/spec";
 import Version from "@/components/shop/version";
 import iphoneDetail from "@/faker/iphone-detail";
-import { IProductDetail } from "@/interface/products";
+import { IProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 

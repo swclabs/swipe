@@ -1,10 +1,10 @@
-import { IPosts, IProductNews } from "@/interface/products";
+import { Posts, ProductNews } from "@/types/products";
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
 import { useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { motion } from "framer-motion"
 
-export default function Posts({ data }: { data: IPosts[] }) {
+export default function Posts({ data }: { data: Posts[] }) {
     const ref = useRef<HTMLDivElement>(null);
     const scroll = (scrollOffset: number) => {
         if (ref.current) {

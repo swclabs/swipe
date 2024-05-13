@@ -1,5 +1,5 @@
 
-import { IProductDetail } from "@/interface/products";
+import { IProductDetail } from "@/types/products";
 import { Image } from "@nextui-org/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";

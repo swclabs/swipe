@@ -1,4 +1,4 @@
-import { IProductDetail } from "@/interface/products";
+import { IProductDetail } from "@/types/products";
 
 const iphoneDetail: IProductDetail[] = [
     {

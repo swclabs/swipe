@@ -1,8 +1,8 @@
 "use client"
 import React from 'react';
 import Banner from "@/components/ui-app/banner"
-import News from '@/components/iphone/news';
-import Accessories from '@/components/iphone/accessories';
+import News from '@/components/phone/news';
+import Accessories from '@/components/phone/accessories';
 import Product from '@/components/accessories/product';
 import Welcome from '@/components/ui-app/common/welcome-section';
 import Posts from '@/components/ui-app/posts';
