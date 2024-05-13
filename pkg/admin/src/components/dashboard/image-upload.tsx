@@ -1,6 +1,7 @@
 'use client'
 
 import { ChangeEvent, Dispatch, SetStateAction, useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import { FileInput, FileUploader, FileUploaderContent, FileUploaderItem } from "@/components/ui/file-upload";
 import { Paperclip, Trash2 } from "lucide-react";
 import { Label } from "../ui/label";
@@ -141,5 +142,4 @@ export const ImageUploaderOld = () => {
         </FileUploader>
     );
 }
-
 export default ImageUploader;
