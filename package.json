@@ -20,7 +20,7 @@
     "embla-carousel-auto-scroll": "^8.0.4",
     "embla-carousel-autoplay": "^8.0.2",
     "embla-carousel-react": "^8.0.2",
-    "formik": "^2.4.5",
+    "formik": "^2.4.6",
     "framer-motion": "^10.16.9",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.372.0",
