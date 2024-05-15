@@ -23,7 +23,15 @@ export interface Supplier {
     id: string;
     email: string;
     name: string;
-    phone_number: string;
+}
+
+export interface SupplierReq {
+    email: string,
+    name: string,
+    city: string,
+    district: string,
+    street: string,
+    ward: string,
 }
 
 export interface Suppliers {
@@ -34,6 +42,11 @@ export interface Category {
     id: string;
     description: string;
     name: string;
+}
+
+export interface CategoryReq {
+    name: string;
+    description: string;
 }
 
 export interface Categories {

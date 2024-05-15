@@ -1,5 +1,5 @@
 import APIEndpoint from "@/data-providers/endpoint";
-import { BaseResponse, Categories, NewProductRes, Products, Suppliers } from "@/types/products";
+import { BaseResponse, Categories, CategoryReq, NewProductRes, Products, Supplier, SupplierReq, Suppliers } from "@/types/products";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";
 
@@ -39,10 +39,28 @@ export class ProductService {
         return response;
     }
 
+    static async PostSuppliers(supplier: SupplierReq): Promise<AxiosResponse<BaseResponse>> {
+        const axiosInstance = createAxiosInstance();
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
+            `${APIEndpoint.PRODUCTS.POST_SUPPLIERS}`,
+            supplier,
+        );
+        return response;
+    }
+
     static async GetCategory(limit: number): Promise<AxiosResponse<Categories>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<Categories> = await axiosInstance.get(
             `${APIEndpoint.PRODUCTS.GET_CATEGORIES}?limit=${limit}`,
+        );
+        return response;
+    }
+
+    static async PostCategory(category: CategoryReq): Promise<AxiosResponse<BaseResponse>> {
+        const axiosInstance = createAxiosInstance();
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
+            `${APIEndpoint.PRODUCTS.POST_CATEGORIES}`,
+            category
         );
         return response;
     }

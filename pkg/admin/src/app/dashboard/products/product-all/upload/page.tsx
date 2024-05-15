@@ -120,7 +120,6 @@ export default function Page() {
             description: "Failure",
           })
         const newProductImages = await ProductService.NewProductImage(uploadedFiles, newProductRes.data.id)
-        console.log(newProductImages.data)
         newProductImages.status === 201 ?
           toast({
             title: "Update products images",
