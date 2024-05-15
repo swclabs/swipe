@@ -1,4 +1,4 @@
-import APIEndpoint from "@/data-providers/endpoint";
+import APIEndpoint from "@/providers/endpoint";
 import { Auth, LoginReq, LoginRes, LogoutRes, SignUpReq, SignUpRes } from "@/types/account-management";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";

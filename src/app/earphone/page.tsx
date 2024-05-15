@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/ui-app/banner"
+import Banner, { BannerPlugin } from "@/components/common/banner"
 import ProductBar from '@/components/earphone/product-bar';
 import News from '@/components/earphone/news';
 import Product from '@/components/earphone/product';
 import Accessories from '@/components/earphone/accessories';
 import Service from "@/components/store/service";
 import { motion } from "framer-motion"
-import Welcome from '@/components/ui-app/common/welcome-section';
+import Welcome from '@/components/common/welcome-section';
 import ProductAirpodTypes from '@/components/earphone/product-types';
 
 function IphonePage() {

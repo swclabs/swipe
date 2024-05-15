@@ -4,7 +4,7 @@ import { Link } from "@nextui-org/react";
 export function NavbarItemIphone() {
     return (
         <div className='medium-container'>
-            <Link color="foreground" href="/iphone">
+            <Link color="foreground" href="/phone">
                 <p className=" text-xs">iPhone</p>
             </Link>
             <div className="overlay">

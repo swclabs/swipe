@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/ui-app/banner"
+import Banner from "@/components/common/banner"
 import ProductBar from '@/components/watch/product-bar';
 import Product from '@/components/watch/product';
 import { Image } from '@nextui-org/react';

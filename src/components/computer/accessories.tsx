@@ -1,6 +1,6 @@
 'use client';
 import './style.css'
-import AccessoryComponent from "../ui-app/common/accessories";
+import AccessoryComponent from "../common/accessories";
 import accessories from "@/faker/accessory";
 
 export default function Accessories() {

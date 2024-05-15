@@ -8,12 +8,12 @@ import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
 import NotLoggedIn, { LoggedIn } from '../cart/cart';
 import NavbarItemStore from './store';
-import NavbarItemMac from './mac';
-import { NavbarItemIpad } from './ipad';
-import { NavbarItemIphone } from './iphone';
+import NavbarItemMac from './computer';
+import { NavbarItemIpad } from './tablet';
+import { NavbarItemIphone } from './phone';
 import NavbarItemAccessory from './accessory';
 import NavbarItemWatch from './watch';
-import NavbarItemAirPod from './air-pod';
+import NavbarItemAirPod from './earphone';
 import NavbarItemSupport from './support';
 
 export default function NavbarComponent() {

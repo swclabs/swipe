@@ -1,4 +1,4 @@
-import APIEndpoint from '@/data-providers/endpoint';
+import APIEndpoint from '@/providers/endpoint';
 import axios, { AxiosInstance } from 'axios';
 import { deleteCookie, getCookie, setCookie } from 'cookies-next';
 import { toast } from "react-toastify"

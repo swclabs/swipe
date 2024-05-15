@@ -1,4 +1,4 @@
-import APIEndpoint from "@/data-providers/endpoint";
+import APIEndpoint from "@/providers/endpoint";
 import { Newsletters } from "@/types/products";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";

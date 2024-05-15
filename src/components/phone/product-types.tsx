@@ -71,7 +71,7 @@ export default function ProductIphoneTypes() {
                     </a>
                 </CarouselItem>
                 <CarouselItem className="lg:basis-1/6 md:basis-1">
-                    <a className="flex flex-col items-center justify-center" href="/airpod">
+                    <a className="flex flex-col items-center justify-center" href="/earphone">
                         <div className='flex justify-center h-14 w-14'>
                             <Image
                                 src="/img/iphone/airpods_light_large.svg"

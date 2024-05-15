@@ -1,11 +1,11 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/ui-app/banner"
+import Banner, { BannerPlugin } from "@/components/common/banner"
 import ProductBar from '@/components/tablet/product-bar';
 import News from '@/components/tablet/news';
 import Accessories from '@/components/tablet/accessories';
 import Product from '@/components/tablet/product';
-import Welcome from '@/components/ui-app/common/welcome-section';
+import Welcome from '@/components/common/welcome-section';
 import ProductIpadTypes from '@/components/tablet/product-types';
 import { motion } from "framer-motion"
 function IpadPage() {
