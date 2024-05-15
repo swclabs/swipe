@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/common/banner"
+import Banner from "@/components/common/banner"
 import News from '@/components/computer/news';
 import Accessories from '@/components/computer/accessories';
 import ProductBar from '@/components/computer/product-bar';
@@ -33,7 +33,7 @@ function ProductPage() {
                     <ProductMacTypes />
                 </motion.div>
             </div>
-            <BannerPlugin />
+            <Banner />
 
             <Welcome title='Mac' subtitle='If you can dream it, Mac can do it' />
 

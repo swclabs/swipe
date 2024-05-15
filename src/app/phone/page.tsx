@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/common/banner"
+import Banner from "@/components/common/banner"
 import News from '@/components/phone/news';
 import Accessories from '@/components/phone/accessories';
 import ProductBar from '@/components/phone/product-bar';
@@ -35,7 +35,7 @@ function IphonePage() {
                         <ProductIphoneTypes />
                     </motion.div>
                 </div>
-                <BannerPlugin />
+                <Banner />
 
                 {/* Section Welcome */}
                 <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />

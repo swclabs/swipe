@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/common/banner"
+import Banner from "@/components/common/banner"
 import ProductBar from '@/components/earphone/product-bar';
 import News from '@/components/earphone/news';
 import Product from '@/components/earphone/product';
@@ -36,7 +36,7 @@ function IphonePage() {
                         <ProductAirpodTypes />
                     </motion.div>
                 </div>
-                <BannerPlugin />
+                <Banner />
 
                 {/* Section Welcome */}
                 <Welcome title='Airpods' subtitle='Nơi âm nhạc trở nên sống động.' />
