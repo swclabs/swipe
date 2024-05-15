@@ -7,10 +7,12 @@ import Link from "next/link"
 import React from "react"
 
 import { motion } from "framer-motion"
-
+import { EmblaOptionsType } from 'embla-carousel'
 import homeBanner from "@/faker/home-banner"
+import LandingPageCarousel, { LandingPageBannerCarousel } from "@/components/landing-page/carousel"
 
 export default function Home() {
+
   return (
     <div>
       <Banner />
@@ -44,9 +46,14 @@ export default function Home() {
             <p className=" text-center text-3xl p-1 font-semibold">Vẫn còn thời gian để</p>
             <p className=" text-center text-3xl p-1 font-semibold">Tạo nên những bất ngờ thú vị</p>
             <p className=" text-center text-xl p-1 font-medium">Mua được quà “hot” dù là phút cuối</p>
-            <Link href="#"><p className=" text-center p-1 text-blue-600">Mua ngay</p></Link>
+            <Link href="/store"><p className=" text-center p-1 text-blue-600">Mua ngay</p></Link>
           </div>
         </motion.div>
+
+        <div className=" w-full flex flex-col justify-center">
+          <LandingPageCarousel />
+          <LandingPageBannerCarousel />
+        </div>
 
         {homeBanner.map((val, index) => (
           <Card className="col-span-12 sm:col-span-4 h-[650px] mt-4" radius="none" key={index}>

@@ -1,7 +1,6 @@
 import APIEndpoint from '@/providers/endpoint';
 import axios, { AxiosInstance } from 'axios';
 import { deleteCookie, getCookie, setCookie } from 'cookies-next';
-import { toast } from "react-toastify"
 
 const createAxiosInstance = (): AxiosInstance => {
     const accessToken = getCookie('accessToken');

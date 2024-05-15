@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/common/banner"
+import Banner from "@/components/common/banner"
 import ProductBar from '@/components/tablet/product-bar';
 import News from '@/components/tablet/news';
 import Accessories from '@/components/tablet/accessories';
@@ -32,7 +32,7 @@ function IpadPage() {
                         <ProductIpadTypes />
                     </motion.div>
                 </div>
-                <BannerPlugin />
+                <Banner />
 
                 {/* Section Welcome */}
                 <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
