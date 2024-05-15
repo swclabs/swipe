@@ -5,7 +5,7 @@ import News from '@/components/phone/news';
 import Accessories from '@/components/phone/accessories';
 import Product from '@/components/accessories/product';
 import Welcome from '@/components/ui-app/common/welcome-section';
-import Posts from '@/components/ui-app/posts';
+import PostsComponent from '@/components/ui-app/posts';
 import posts from '@/faker/posts';
 import { Image } from '@nextui-org/react';
 import AccessoryIphone from '@/components/accessories/iphone-accessories';
