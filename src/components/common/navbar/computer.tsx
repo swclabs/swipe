@@ -1,72 +1,79 @@
 import { Link } from "@nextui-org/react";
 
 
-export function NavbarItemIpad() {
+export default function NavbarItemMac() {
     return (
         <div className='large-container'>
-            <Link color="foreground" href="/ipad">
-                <p className=" text-xs">iPad</p>
+            <Link color="foreground" href="/computer">
+                <p className=" text-xs">Mac</p>
             </Link>
             <div className="overlay">
                 <div className=' container p-8 flex absolute'>
                     <div className=' container'>
-                        <p className=' text-xs pb-3'>Khám phá iPad</p>
+                        <p className=' text-xs pb-3'>Khám phá Mac</p>
                         <ul>
                             <li className=' pt-1 pb-1'>
                                 <Link className=' text-2xl font-semibold' color="foreground">
-                                    Khám phá tất cả iPad
+                                    Khám phá tất cả các Mac
                                 </Link>
                             </li>
                             <li className=' pt-1 pb-1'>
                                 <Link className=' text-2xl font-semibold' color="foreground">
-                                    iPad Air
+                                    MacBook Air
                                 </Link>
                             </li>
                             <li className=' pt-1 pb-1'>
                                 <Link className=' text-2xl font-semibold' color="foreground">
-                                    iPad Pro
+                                    MacBook Pro
                                 </Link>
                             </li>
                             <li className=' pt-1 pb-1'>
                                 <Link className=' text-2xl font-semibold' color="foreground">
-                                    iPad
+                                    iMac
                                 </Link>
                             </li>
                             <li className=' pt-1 pb-1'>
                                 <Link className=' text-2xl font-semibold' color="foreground">
-                                    iPad mini
+                                    Mac mini
                                 </Link>
                             </li>
                             <li className=' pt-1 pb-1'>
                                 <Link className=' text-2xl font-semibold' color="foreground">
-                                    Apple Pencil
+                                    Mac Studio
                                 </Link>
                             </li>
                             <li className=' pt-1 pb-1'>
                                 <Link className=' text-2xl font-semibold' color="foreground">
-                                    Bàn phím
+                                    Mac Pro
+                                </Link>
+                            </li>
+                            <li className=' pt-1 pb-1'>
+                                <Link className=' text-2xl font-semibold' color="foreground">
+                                    Màn hình
                                 </Link>
                             </li>
                         </ul>
-                        <Link color="foreground" className=' text-xs pb-3'>So Sánh iPad</Link>
+                        <Link color="foreground" className=' text-xs pb-3'>So Sánh Mac</Link>
                     </div>
                     <div className=' container'>
-                        <p className=' text-xs pb-3'>Mua iPad</p>
+                        <p className=' text-xs pb-3'>Mua Mac</p>
                         <ul>
-                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Mua iPad</Link></li>
-                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Phụ kiện iPad</Link></li>
+                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Mua Mac</Link></li>
+                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Phụ kiện Mac</Link></li>
                             <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Apple Trade In </Link></li>
                             <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Tài chính</Link></li>
                         </ul>
                     </div>
                     <div className=' container'>
-                        <p className=' text-xs pb-3'>Tìm hiểu thêm về iPhone</p>
+                        <p className=' text-xs pb-3'>Tìm hiểu thêm về Mac</p>
                         <ul>
-                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Hỗ Trợ iPad</Link></li>
-                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>AppleCare+ cho iPad</Link></li>
-                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>iPadOS 17</Link></li>
+                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Hỗ Trợ Mac</Link></li>
+                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>AppleCare+ cho mac</Link></li>
+                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>macOS Sonoma</Link></li>
                             <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Các ứng dụng của Apple</Link></li>
+                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Tính liên tục</Link></li>
                             <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>iCloud+</Link></li>
+                            <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Mac cho doanh nghiệp</Link></li>
                             <li className=' pt-0.5 pb-0.5'><Link color="foreground" href='#' className=' text-xs font-medium'>Giáo dục</Link></li>
                         </ul>
                     </div>

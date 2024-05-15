@@ -1,9 +1,9 @@
-import { IProductDetail } from "@/types/products";
+import { ProductDetail } from "@/types/products";
 import { Button, Image } from "@nextui-org/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface IColorProps {
-    product: IProductDetail[];
+    product: ProductDetail[];
     version: number;
     color: number;
     setVersion: Dispatch<SetStateAction<number>>;

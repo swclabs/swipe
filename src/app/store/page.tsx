@@ -1,6 +1,6 @@
 'use client'
 
-import Banner from "@/components/ui-app/banner"
+import Banner from "@/components/common/banner"
 import React from "react"
 import './style.css'
 import Product from "@/components/store/product";

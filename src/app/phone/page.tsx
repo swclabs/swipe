@@ -1,12 +1,12 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/ui-app/banner"
+import Banner, { BannerPlugin } from "@/components/common/banner"
 import News from '@/components/phone/news';
 import Accessories from '@/components/phone/accessories';
 import ProductBar from '@/components/phone/product-bar';
 import Product from '@/components/phone/product';
-import Welcome from '@/components/ui-app/common/welcome-section';
-import Posts from '@/components/ui-app/posts';
+import Welcome from '@/components/common/welcome-section';
+import PostsComponent from '@/components/common/posts';
 import posts from '@/faker/posts';
 import ProductIphoneTypes from '@/components/phone/product-types';
 import { motion } from "framer-motion"
@@ -41,7 +41,7 @@ function IphonePage() {
                 <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
 
                 {/* Posts Section */}
-                <Posts data={posts} />
+                <PostsComponent data={posts} />
 
                 {/* News */}
                 <div className="flex justify-center">

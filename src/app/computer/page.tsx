@@ -1,10 +1,10 @@
 "use client"
 import React from 'react';
-import Banner, { BannerPlugin } from "@/components/ui-app/banner"
+import Banner, { BannerPlugin } from "@/components/common/banner"
 import News from '@/components/computer/news';
 import Accessories from '@/components/computer/accessories';
 import ProductBar from '@/components/computer/product-bar';
-import Welcome from '@/components/ui-app/common/welcome-section';
+import Welcome from '@/components/common/welcome-section';
 import ProductTabs from '@/components/computer/tab';
 import ProductMacTypes from '@/components/computer/product-types';
 import { motion } from "framer-motion"

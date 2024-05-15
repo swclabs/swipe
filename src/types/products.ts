@@ -48,7 +48,7 @@ export interface Posts {
     textcolor: string;
 }
 
-export interface IProductDetail {
+export interface ProductDetail {
     name: string;
     screen: string;
     img: string[]

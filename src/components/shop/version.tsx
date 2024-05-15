@@ -1,8 +1,8 @@
-import { IProductDetail } from "@/types/products";
+import { ProductDetail } from "@/types/products";
 import { Dispatch, SetStateAction, useState } from "react";
 
 interface IVersionProps {
-    product: IProductDetail[];
+    product: ProductDetail[];
     version: number;
     setVersion: Dispatch<SetStateAction<number>>;
 }

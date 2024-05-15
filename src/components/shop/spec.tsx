@@ -1,9 +1,9 @@
-import { IProductDetail } from "@/types/products";
+import { ProductDetail } from "@/types/products";
 import { ButtonGroup } from "@nextui-org/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface IStorageProps {
-    product: IProductDetail[];
+    product: ProductDetail[];
     version: number;
     setVersion: Dispatch<SetStateAction<number>>;
 }
