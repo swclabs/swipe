@@ -1,14 +1,14 @@
 "use client"
 import React from 'react';
 import Banner, { BannerPlugin } from "@/components/ui-app/banner"
-import ProductBar from '@/components/airpod/product-bar';
-import News from '@/components/airpod/news';
-import Product from '@/components/airpod/product';
-import Accessories from '@/components/airpod/accessories';
+import ProductBar from '@/components/earphone/product-bar';
+import News from '@/components/earphone/news';
+import Product from '@/components/earphone/product';
+import Accessories from '@/components/earphone/accessories';
 import Service from "@/components/store/service";
 import { motion } from "framer-motion"
 import Welcome from '@/components/ui-app/common/welcome-section';
-import ProductAirpodTypes from '@/components/airpod/product-types';
+import ProductAirpodTypes from '@/components/earphone/product-types';
 
 function IphonePage() {
     return (

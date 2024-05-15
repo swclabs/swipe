@@ -1,9 +1,9 @@
-import { IProductNews } from "@/interface/products";
+import { ProductNews } from "@/types/products";
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
 import { useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-export default function ListCard({ data }: { data: IProductNews[] }) {
+export default function ListCard({ data }: { data: ProductNews[] }) {
     const ref = useRef<HTMLDivElement>(null);
     const scroll = (scrollOffset: number) => {
         if (ref.current) {

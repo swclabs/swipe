@@ -5,70 +5,16 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { MoreHorizontal } from "lucide-react"
 import Image from "next/image"
-
-const TableBodyRow = () => {
-    return (
-        <TableRow>
-            <TableCell className="hidden sm:table-cell">
-                <Image
-                    alt="Product image"
-                    className="aspect-square rounded-md object-cover"
-                    height="64"
-                    src="/placeholder.svg"
-                    width="64"
-                />
-            </TableCell>
-            <TableCell className="font-medium">
-                Laser Lemonade Machine
-            </TableCell>
-            <TableCell>
-                <Badge variant="outline">Draft</Badge>
-            </TableCell>
-            <TableCell className="hidden md:table-cell">
-                $499.99
-            </TableCell>
-            <TableCell className="hidden md:table-cell">
-                25
-            </TableCell>
-            <TableCell className="hidden md:table-cell">
-                2023-07-12 10:42 AM
-            </TableCell>
-            <TableCell>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button
-                            aria-haspopup="true"
-                            size="icon"
-                            variant="ghost"
-                        >
-                            <MoreHorizontal className="h-4 w-4" />
-                            <span className="sr-only">Toggle menu</span>
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Delete</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            </TableCell>
-        </TableRow>
-    )
-}
+import { PaginationSupplier } from "./pagination"
 
 const TableHeaderRow = () => {
     return (
         <TableRow>
-            <TableHead className="hidden w-[100px] sm:table-cell">
-                <span className="sr-only">Image</span>
-            </TableHead>
+            <TableHead>ID</TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Status</TableHead>
             <TableHead className="hidden md:table-cell">
-                Price
-            </TableHead>
-            <TableHead className="hidden md:table-cell">
-                Total Sales
+                Email
             </TableHead>
             <TableHead className="hidden md:table-cell">
                 Created at
@@ -95,15 +41,45 @@ export const TabsContentAll = () => {
                         <TableHeaderRow />
                     </TableHeader>
                     <TableBody>
-                        <TableBodyRow />
+                        <TableRow>
+                            <TableCell>1</TableCell>
+                            <TableCell className="font-medium">
+                                Laser Lemonade Machine
+                            </TableCell>
+                            <TableCell>
+                                <Badge variant="outline">Draft</Badge>
+                            </TableCell>
+                            <TableCell className="hidden md:table-cell">
+                                $499.99
+                            </TableCell>
+                            <TableCell className="hidden md:table-cell">
+                                2023-07-12 10:42 AM
+                            </TableCell>
+                            <TableCell>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <Button
+                                            aria-haspopup="true"
+                                            size="icon"
+                                            variant="ghost"
+                                        >
+                                            <MoreHorizontal className="h-4 w-4" />
+                                            <span className="sr-only">Toggle menu</span>
+                                        </Button>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent align="end">
+                                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                                        <DropdownMenuItem>Edit</DropdownMenuItem>
+                                        <DropdownMenuItem>Delete</DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            </TableCell>
+                        </TableRow>
                     </TableBody>
                 </Table>
             </CardContent>
             <CardFooter>
-                <div className="text-xs text-muted-foreground">
-                    Showing <strong>1-10</strong> of <strong>32</strong>{" "}
-                    products
-                </div>
+                <PaginationSupplier />
             </CardFooter>
         </Card>
     )

@@ -1,36 +1,40 @@
-import { ISupplier, ISuppliers } from '@/types/products'
+import { ProductService } from '@/services/products';
+import { Categories, Category, Supplier, Suppliers } from '@/types/products'
 import { create } from 'zustand'
 
-interface IUseSuppliers {
-    supplier: ISuppliers;
-    reloadSupplier: () => void;
+interface UseSuppliers {
+    supplier: Supplier[];
+    fetchSupplier: () => Promise<void>;
 }
 
-export const useSuppliers = create<IUseSuppliers>()((set): IUseSuppliers => ({
-    supplier: {
-        data: [
-            {
-                email: "example@example.com",
-                id: "1",
-                name: "apple",
-                phone_number: "2123121241"
-            },
-        ]
-    },
-    reloadSupplier: () => set((state) => {
-        state.supplier.data[0].id = (parseInt(state.supplier.data[0].id) + 1).toString();
-        return {
-            supplier: state.supplier
-        }
-    })
+
+export const useSuppliers = create<UseSuppliers>()((set): UseSuppliers => ({
+    supplier: [],
+    fetchSupplier: async () => {
+        const suppliers = await ProductService.GetSuppliers(10)
+        return set((state) => {
+            return {
+                supplier: suppliers ? suppliers.data.data : []
+            }
+        })
+    }
 }))
 
-interface BearState {
-    bears: number
-    increase: (by: number) => void
+
+interface UseCategory {
+    category: Category[];
+    fetchCategory: () => Promise<void>;
 }
 
-const useBearStore = create<BearState>()((set) => ({
-    bears: 0,
-    increase: (by) => set((state) => ({ bears: state.bears + by })),
+
+export const useCategories = create<UseCategory>()((set): UseCategory => ({
+    category: [],
+    fetchCategory: async () => {
+        const category = await ProductService.GetCategory(10)
+        return set((state) => {
+            return {
+                category: category ? category.data.data : []
+            }
+        })
+    }
 }))

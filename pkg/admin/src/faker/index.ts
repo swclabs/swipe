@@ -1,10 +1,25 @@
 export const Suppliers = [
-    "Apple",
-    "Samsung"
+    {
+        id: "1",
+        name: "Apple"
+    },
+    {
+        id: "2",
+        name: "Samsung"
+    }
 ]
 
 export const Categories = [
-    "iPhone",
-    "iPad",
-    "Mac"
+    {
+        id: "1",
+        name: "iPhone"
+    },
+    {
+        id: "2",
+        name: "Mac"
+    },
+    {
+        id: "3",
+        name: "iPad"
+    }
 ]

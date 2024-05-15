@@ -1,4 +1,4 @@
-import { IProductDetail } from "@/interface/products";
+import { IProductDetail } from "@/types/products";
 import { Button, Image } from "@nextui-org/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 

@@ -265,22 +265,3 @@ export const ProductStatus = () => {
         </Card>
     )
 }
-
-
-export const ProductUploadImages = () => {
-    return (
-        <Card className="overflow-hidden" x-chunk="dashboard-07-chunk-4">
-            <CardHeader>
-                <CardTitle>Product Images</CardTitle>
-                <CardDescription>
-                    Lipsum dolor sit amet, consectetur adipiscing elit
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <div className="grid gap-2">
-                    <ImageUploader />
-                </div>
-            </CardContent>
-        </Card>
-    )
-}

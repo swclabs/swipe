@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useCallback, useState } from "react";
 import { FileInput, FileUploader, FileUploaderContent, FileUploaderItem } from "@/components/ui/file-upload";
 import { Paperclip, Trash2 } from "lucide-react";
 import { Label } from "../ui/label";
@@ -54,8 +54,12 @@ function getImageData(event: ChangeEvent<HTMLInputElement>) {
 }
 
 
-const ImageUploader = () => {
-    const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+interface ImageUploaderProps {
+    uploadedFiles: File[];
+    setUploadedFiles: Dispatch<SetStateAction<File[]>>;
+}
+
+const ImageUploader = ({ uploadedFiles, setUploadedFiles }: ImageUploaderProps) => {
     const onDrop = useCallback((acceptedFiles: File[]) => {
         setUploadedFiles(acceptedFiles)
     }, [])
@@ -95,7 +99,7 @@ const ImageUploader = () => {
                                 <p>{file.type}</p>
                             </div>
                         </div>
-                        <Button size="icon" variant="ghost" onClick={() => { deletefile(index) }}><Trash2 /></Button>
+                        <Button type="button" size="icon" variant="ghost" onClick={() => { deletefile(index) }}><Trash2 /></Button>
                     </div>
                 ))
             }
@@ -137,5 +141,4 @@ export const ImageUploaderOld = () => {
         </FileUploader>
     );
 }
-
 export default ImageUploader;
