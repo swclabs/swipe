@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { LandingPageCard } from "@/components/widget/landing-page";
+import { LandingPageCard } from "@/components/site/landing-page";
 
 import { motion } from "framer-motion"
 
