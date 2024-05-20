@@ -1,9 +1,10 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/common/banner"
 import ProductBar from '@/components/watch/product-bar';
 import Product from '@/components/watch/product';
 import { Image } from '@nextui-org/react';
+import News from '@/components/watch/new';
+import Welcome from '@/components/common/welcome-section';
 
 function WatchPage() {
     return (
@@ -20,9 +21,8 @@ function WatchPage() {
 
             <div className=" w-full bg-white">
                 <ProductBar />
-                {/* <Banner /> */}
 
-                <div className='bg-black mb-8'>
+                {/* <div className='bg-black mb-8'>
                     <div className='flex flex-col items-center justify-center text-center pt-8'>
                         <Image
                             alt='logo_war_watch_s9'
@@ -86,12 +86,28 @@ function WatchPage() {
                         >
                         </Image>
                     </div>
+                </div> */}
+
+                {/* Section Welcome */}
+                <Welcome title='Apple Watch' subtitle='To wear it is to love it.' />
+
+                {/* News */}
+                <div className="flex justify-center bg-white">
+                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
+                        <span className="text-xl sm:text-5xl font-medium">Tìm hiểu thêm về Apple Watch.</span>
+                    </div>
                 </div>
+                <News />
 
                 {/* Section Product */}
-                <div className="flex justify-center">
+                {/* <div className="flex justify-center">
                     <div className=" pt-12 pb-12">
                         <span className=" text-xl sm:text-5xl font-medium">Apple Watch nào phù hợp với bạn?</span>
+                    </div>
+                </div> */}
+                <div className="flex justify-center">
+                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
+                        <span className="text-xl sm:text-5xl font-medium">Apple Watch nào phù hợp với bạn?</span>
                     </div>
                 </div>
                 <Product />

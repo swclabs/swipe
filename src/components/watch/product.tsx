@@ -5,20 +5,16 @@ import watch from "@/faker/watch";
 
 export default function Product() {
     return (
-        <div className="w-full pb-[10px] hover:pb-0 scrollbar hover:overflow-x-auto overflow-hidden">
-            <div className=" relative flex snap-x snap-mandatory 2xl:justify-between">
+        <div className="flex justify-center">
+            <div className=" sm:w-4/5 sm:pl-12">
 
-                <div className=" sm:w-1/12 shrink-0 snap-center">
-                    <div className="shrink-0"></div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
+                <div className="flex flex-row">
                     {watch.map((value, index) => (
-                        <div className="container mx-auto h-full w-full border bg-white" key={index}>
+                        <div className="container h-full w-[30%] bg-white" key={index}>
                             <div className="flex flex-col justify-center items-center text-center gap-y-4">
 
                                 <div className="h-full pt-4">
-                                    <div className="h-full content-end">
+                                    <div className="flex justify-center items-center h-full">
                                         <a href="#">
                                             <Image
                                                 alt="Card background"
@@ -28,15 +24,6 @@ export default function Product() {
                                         </a>
                                     </div>
 
-                                    {/* <div className="flex justify-center object-center pt-4 h-[37px]">
-                                        <Image
-
-                                            alt="Swatch Items"
-                                            className="z-0 object-cover"
-                                            src={value.swatch}
-                                        />
-                                    </div> */}
-
                                     <div className="h-full">
                                         <h1 className="font-semibold text-2xl pt-4">{value.title}</h1>
                                     </div>
@@ -44,10 +31,10 @@ export default function Product() {
                                 </div>
 
                                 <div className="h-full">
-                                    <div className="h-12 pl-2 pr-2">
+                                    <div className="h-16 pl-16 pr-16">
                                         <p className="text-center"> {value.desc}</p>
                                     </div>
-                                    <div className="h-full">
+                                    <div className="h-12">
                                         <h4 className="font-semibold text-lg py-2">{value.price}</h4>
                                     </div>
                                 </div>
@@ -59,13 +46,9 @@ export default function Product() {
                                 </div>
                             </div>
                         </div>
-
                     ))}
                 </div>
 
-                <div className=" sm:w-1/12 shrink-0 snap-center">
-                    <div className="shrink-0"></div>
-                </div>
             </div>
         </div>
     )
