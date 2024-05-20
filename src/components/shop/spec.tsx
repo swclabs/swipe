@@ -32,7 +32,7 @@ export default function Spec({ product, version, setVersion }: IStorageProps) {
             <div className='pt-5' style={version === -1 ? disableSpec : enableSpec}>
                 {product[spec].SSD.map((value, index) => (
                     <button
-                        className={`container ${select === index ? "border-blue-500" : "border-gray-400"} border-2 rounded-xl mt-5 h-[100px]`}
+                        className={`container ${select === index ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                         key={index}
                         onClick={() => setSelect(index)}
                     >

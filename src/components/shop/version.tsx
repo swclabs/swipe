@@ -22,7 +22,7 @@ export default function Version({ product, version, setVersion }: IVersionProps)
             <div className='pt-5'>
                 {product.map((value, index) => (
                     <button
-                        className={`container ${version === index ? "border-blue-500" : "border-gray-400"} border-2 rounded-xl mt-5 h-[100px]`}
+                        className={`container ${version === index ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                         key={index}
                         onClick={() => select(index)}
                     >

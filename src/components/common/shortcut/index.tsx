@@ -3,8 +3,8 @@ import { Button } from "@nextui-org/react";
 
 export default function ShortCut() {
     return (
-        <div className="flex justify-center bg-gray-50 pt-5 pb-5">
-            <div className="w-4/5 pl-12 pr-12">
+        <div className="flex w-full justify-center bg-gray-50 pt-5 pb-5">
+            <div className="w-4/5">
                 <h1 className=" text-2xl font-semibold">
                     <span>Liên kết nhanh</span>
                     <div className=" flex mt-5 mb-2">

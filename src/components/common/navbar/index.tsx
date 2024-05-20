@@ -41,7 +41,7 @@ export default function NavbarComponent() {
                     <Link href='/'>
                         <Image
                             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-                            src="/ico/swiftcart.svg"
+                            src="/logo.png"
                             alt="swipe logo"
                             width={50}
                             height={50}

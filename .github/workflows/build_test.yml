@@ -47,10 +47,10 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
-          dir: "pkg/admin"
+          dir: "plugin/admin"
 
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
           cmd: run lint # will run `yarn test` command
-          dir: "pkg/admin"
+          dir: "plugin/admin"
