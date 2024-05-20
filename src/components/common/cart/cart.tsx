@@ -63,7 +63,9 @@ export function LoggedIn() {
         <div className=' container'>
             <div className=" flex justify-between sticky top-[0px] bg-gray-50">
                 <p className=' font-semibold text-xl'>Giỏ hàng</p>
-                <Button color="primary" radius="full">Xem Giỏ hàng</Button>
+                <Link href={`/shop/bag`}>
+                    <Button color="primary" radius="full">Xem Giỏ hàng</Button>
+                </Link>
             </div>
             <div className=' pt-5 text-sm'>
                 {cartData.map((value, index) => (
