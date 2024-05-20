@@ -4,9 +4,7 @@ export default function FooterComponent() {
     return (
         <div className="w-full flex justify-center bg-gray-50">
             <div className=" h-[300px] w-4/5">
-                <div className=" ml-8 mr-8">
-                    <Divider />
-                </div>
+                <Divider />
                 <div className="flex p-8 h-[250px]">
                     <div className="container">
                         <p className=" text-xs font-semibold">Shop</p>
@@ -43,10 +41,8 @@ export default function FooterComponent() {
                         <p className=" text-xs font-semibold">Tổng đài hỗ trợ</p>
                     </div>
                 </div>
-                <div className=" ml-8 mr-8">
-                    <Divider />
-                    <p className=" font-light text-xs pt-1">2024@Swipe</p>
-                </div>
+                <Divider />
+                <p className=" font-light text-xs pt-1">2024@Swipe</p>
             </div>
         </div>
     )

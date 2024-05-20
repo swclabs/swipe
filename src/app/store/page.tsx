@@ -1,8 +1,7 @@
 'use client'
-
+import './style.css'
 import Banner from "@/components/common/banner"
 import React from "react"
-import './style.css'
 import Product from "@/components/store/product";
 import Accessory from "@/components/store/accessory";
 import Service from "@/components/store/service";

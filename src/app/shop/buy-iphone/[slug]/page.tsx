@@ -69,7 +69,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     <span className=" text-gray-400">Bảo vệ iPhone mới của bạn.</span>
                 </div>
                 <div className=" container flex mt-5">
-                    <button className={`container border-gray-400 border-2 rounded-xl`}>
+                    <button className={`container border-gray-400 border-1 rounded-xl`}>
                         <div className=' p-4 text-left'>
                             <div className=" font-semibold">
                                 AppleCare+
@@ -92,7 +92,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                             </ul>
                         </div>
                     </button>
-                    <button className={`container border-gray-400 border-2 rounded-xl ml-5`}>
+                    <button className={`container border-gray-400 border-[1.5px] rounded-xl ml-5`}>
                         <div className=' p-4'>
                             <div className=" font-semibold">
                                 Không có bảo hành AppleCare+
@@ -101,7 +101,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     </button>
                 </div>
             </div>
-            <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center">
+            <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
                 <div className=" container flex w-4/5">
                     <div className=" w-1/3">
                         <div className=" container font-semibold text-3xl p-10">
