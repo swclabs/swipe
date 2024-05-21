@@ -5,6 +5,7 @@ import { Button, Image } from '@nextui-org/react';
 import { Link } from '@nextui-org/react';
 import cartData from "@/faker/cart";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
+import { VscSymbolMethod } from "react-icons/vsc";
 
 function BagPage() {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -26,7 +27,7 @@ function BagPage() {
         <>
             <div className=" w-full bg-white">
                 {/* <Banner /> */}
-                <div className='w-1/2 m-auto'>
+                <div className='w-4/5 m-auto'>
 
                     <div className="flex justify-center items-center mt-4 mb-12">
                         <p className="text-base">Xin lưu ý rằng chúng tôi không chấp nhận đổi trả đối với các đơn hàng trực tuyến.</p>
@@ -44,34 +45,38 @@ function BagPage() {
 
                     {cartData.map((value, index) => (
                         totalPrice += parseInt(value.price.replace(/\D/g, '')),
-                        <div className='flex flex-col'>
-                            <div className='h-[40vh] flex flex-row justify-between items-center border-b-1'>
-                                <div className="h-full flex w-[20%] mr-2" key={index}>
+                        <div className="flex flex-col" key={index}>
+                            <div className="h-[40vh] flex flex-row justify-around items-center border-b-1">
+                                <div className="h-full flex w-[25%]  pt-16 mr-2">
                                     <Image
                                         alt="img"
                                         src={value.img}
-                                        className='h-full object-contain'
+                                        className='w-full max-h-[400px] bg-gray-100 object-cover'
                                     />
                                 </div>
                                 <div className='flex flex-col'>
+
                                     <div className='pb-4 border-b-1'>
                                         <div className='flex justify-between sticky py-2'>
                                             <p className='text-2xl font-medium'>{value.name}</p>
                                             <p className='text-2xl font-medium'>{value.price}</p>
                                         </div>
                                         <div className='flex justify-between sticky py-2'>
-                                            <p className='2xl:text-base text-sm font-light'>{value.desc}</p>
+                                            <p className='2xl:text-base text-sm font-light w-[80%]'>{value.desc}</p>
                                             <p className='text-base font-light pl-4'>{value.subdesc}</p>
                                         </div>
                                     </div>
 
                                     <div className='mt-8'>
                                         <div className='flex flex-row gap-x-2'>
-                                            <Image
+                                            {/* <Image
                                                 alt="img"
                                                 src="/img/cart/logistics-delivery-truck-in-movement-svgrepo-com.svg"
                                                 className='h-6 w-6 object-contain'
-                                            />
+                                            /> */}
+                                            <div className='pt-1'>
+                                                <VscSymbolMethod />
+                                            </div>
                                             <div className='flex flex-col'>
                                                 <p>Đặt hàng hôm nay. Giao hàng đến:</p>
                                                 <p className='font-semibold text-sm'>Th 2 20/05/2024 — Miễn Phí</p>
