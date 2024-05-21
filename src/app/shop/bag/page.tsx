@@ -45,13 +45,13 @@ function BagPage() {
 
                     {cartData.map((value, index) => (
                         totalPrice += parseInt(value.price.replace(/\D/g, '')),
-                        <div className='flex flex-col'>
-                            <div className='h-[40vh] flex flex-row justify-around items-center border-b-1'>
-                                <div className="h-full flex w-[25%]  pt-16 mr-2" key={index}>
+                        <div className="flex flex-col" key={index}>
+                            <div className="h-[40vh] flex flex-row justify-around items-center border-b-1">
+                                <div className="h-full flex w-[25%]  pt-16 mr-2">
                                     <Image
                                         alt="img"
                                         src={value.img}
-                                        className='w-full max-h-[400px] object-cover'
+                                        className='w-full max-h-[400px] bg-gray-100 object-cover'
                                     />
                                 </div>
                                 <div className='flex flex-col'>
