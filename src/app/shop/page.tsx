@@ -2,10 +2,10 @@
 import './style.css'
 import Banner from "@/components/common/banner"
 import React from "react"
-import Product from "@/components/store/product";
-import Accessory from "@/components/store/accessory";
-import Service from "@/components/store/service";
-import ProductTypes from "@/components/store/product-types";
+import Product from "@/components/shop/product";
+import Accessory from "@/components/shop/accessory";
+import Service from "@/components/shop/service";
+import ProductTypes from "@/components/shop/product-types";
 import { motion } from "framer-motion"
 
 export default function Store() {
