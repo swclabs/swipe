@@ -5,7 +5,7 @@ import ProductBar from '@/components/earphone/product-bar';
 import News from '@/components/earphone/news';
 import Product from '@/components/earphone/product';
 import Accessories from '@/components/earphone/accessories';
-import Service from "@/components/store/service";
+import Service from "@/components/shop/service";
 import { motion } from "framer-motion"
 import Welcome from '@/components/common/welcome-section';
 import ProductAirpodTypes from '@/components/earphone/product-types';
