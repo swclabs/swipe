@@ -1,12 +1,3 @@
-
-export interface ProductNews {
-    title: string;
-    subtitle: string;
-    desc: string;
-    img: string;
-    textcolor: string;
-}
-
 export interface ProductData {
     title: string;
     subtitle: string;

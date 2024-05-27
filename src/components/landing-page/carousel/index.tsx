@@ -104,6 +104,55 @@ const LandingPageCarousel = () => {
   )
 }
 
+
+const LandingPageBannerCarouselData = [
+  {
+    image: '/logo.png',
+    title: 'Fitness+',
+    decs: 'Yoga with Dice'
+  },
+  {
+    image: '/logo.png',
+    title: 'Music',
+    decs: 'Holiday'
+  },
+  {
+    image: '/logo.png',
+    title: 'Arcade',
+    decs: 'Adventure'
+  },
+  {
+    image: '/logo.png',
+    title: 'Fitness+',
+    decs: 'Yoga with Dice'
+  },
+  {
+    image: '/logo.png',
+    title: 'Music',
+    decs: 'Holiday'
+  },
+  {
+    image: '/logo.png',
+    title: 'Arcade',
+    decs: 'Adventure'
+  },
+  {
+    image: '/logo.png',
+    title: 'Fitness+',
+    decs: 'Yoga with Dice'
+  },
+  {
+    image: '/logo.png',
+    title: 'Music',
+    decs: 'Holiday'
+  },
+  {
+    image: '/logo.png',
+    title: 'Arcade',
+    decs: 'Adventure'
+  }
+]
+
 export const LandingPageBannerCarousel = () => {
   const plugin = React.useRef(
     AutoScroll({ playOnInit: true })
@@ -119,7 +168,7 @@ export const LandingPageBannerCarousel = () => {
       onMouseLeave={plugin.current.play}
     >
       <CarouselContent>
-        {Array.from({ length: 8 }).map((_, index) => (
+        {LandingPageBannerCarouselData.map((value, index) => (
           <CarouselItem key={index} className="md:basis-1/4">
             <motion.div
               className="box"
@@ -128,11 +177,21 @@ export const LandingPageBannerCarousel = () => {
               <div className="p-1">
                 <Card>
                   <CardContent className=" flex aspect-video items-center justify-center p-6">
-                    <div className=" p-3">
-                      <div className=" text-blue-500 text-3xl pb-3">
-                        <IoCartOutline />
+                    <div className=" p-3 w-full">
+                      <div className=" text-blue-500 text-3xl pb-3 flex items-center justify-between">
+                        <div className=" max-w-max">
+                          <Image
+                            src={value.image}
+                            alt=""
+                            width={50}
+                            height={10}
+                          />
+                        </div>
+                        <div className=" text-xl font-semibold inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
+                          {value.title}
+                        </div>
                       </div>
-                      <p className=" text-xl font-semibold">Trải nghiệm <span className=" text-blue-500">mua sắm</span> được <span className=" text-blue-500" >cá nhân hóa</span> bởi ứng dụng <span className=" text-blue-500">Swipe</span></p>
+                      <p className=" text-xl font-semibold">{value.decs}</p>
                     </div>
                   </CardContent>
                 </Card>
