@@ -62,3 +62,9 @@ export interface ProductDetail {
         product: string[];
     }[];
 }
+
+export interface ProductShopCard {
+    title: string;
+    price: string;
+    img: string;
+}
