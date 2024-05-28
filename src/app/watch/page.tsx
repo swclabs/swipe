@@ -5,6 +5,9 @@ import Product from '@/components/watch/product';
 import { Image } from '@nextui-org/react';
 import News from '@/components/watch/new';
 import Welcome from '@/components/common/welcome-section';
+import Banner from "@/components/common/banner"
+import Widget from '@/components/common/widget';
+import WidgetData2 from '@/faker/widget-watch';
 
 function WatchPage() {
     return (
@@ -20,84 +23,10 @@ function WatchPage() {
             */}
 
             <div className=" w-full bg-white">
+                <Banner />
                 <ProductBar />
-
-                {/* <div className='bg-black mb-8'>
-                    <div className='flex flex-col items-center justify-center text-center pt-8'>
-                        <Image
-                            alt='logo_war_watch_s9'
-                            className='object-center'
-                            src='/img/watch/logo_watch_s9_large.png'
-                        >
-                        </Image>
-                    </div>
-                    <div className='flex items-center justify-center text-center py-4'>
-                        <h2 className=" text-xl sm:text-5xl font-medium text-white">Thông minh hơn. Sáng hơn. Quyền năng hơn.</h2>
-                    </div>
-                    <div className='flex items-center justify-center text-center py-4'>
-                        <p className=" text-xl sm:text-2xl font-normal text-white">Từ 10.499.000đ</p>
-                    </div>
-                    <div className='flex items-center justify-center text-center py-4'>
-                        <a className="text-blue-600" href="#">
-                            <span className="buy"> Mua </span>
-                        </a>
-                    </div>
-
-                    <div className="flex justify-center">
-                        <Image
-                            alt='tile_s9_avail'
-                            className='object-center'
-                            src='/img/watch/tile_s9_avail_large.jpg'
-                        >
-                        </Image>
-                    </div>
-                </div>
-
-                <div className='bg-gray-100 mb-8'>
-                    <div className='flex flex-col items-center justify-center text-center pt-8'>
-                        <Image
-                            alt='logo_watch_ultra_2'
-                            className='object-center'
-                            src='/img/watch/logo_watch_ultra_2_large.png'
-                        >
-                        </Image>
-                    </div>
-                    <div className='flex items-center justify-center text-center py-4'>
-                        <h2 className=" text-xl sm:text-5xl font-medium">
-                            Một đẳng cấp
-                            <br />
-                            phiêu lưu mới.
-                        </h2>
-                    </div>
-                    <div className='flex items-center justify-center text-center py-4'>
-                        <p className=" text-xl sm:text-2xl font-normal">Từ 21.999.000đ</p>
-                    </div>
-                    <div className='flex items-center justify-center text-center py-4'>
-                        <a className="text-blue-600" href="#">
-                            <span className="buy"> Mua </span>
-                        </a>
-                    </div>
-
-                    <div className="flex justify-center">
-                        <Image
-                            alt='tile_ultra_2'
-                            className='object-center'
-                            src='/img/watch/tile_ultra_2_large.jpg'
-                        >
-                        </Image>
-                    </div>
-                </div> */}
-
-                {/* Section Welcome */}
                 <Welcome title='Apple Watch' subtitle='To wear it is to love it.' />
-
-                {/* News */}
-                <div className="flex justify-center bg-white">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className="text-xl sm:text-5xl font-medium">Tìm hiểu thêm về Apple Watch.</span>
-                    </div>
-                </div>
-                <News />
+                <Widget data={WidgetData2} />
 
                 {/* Section Product */}
                 {/* <div className="flex justify-center">
