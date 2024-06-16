@@ -20,19 +20,5 @@ const watch = [
         img: "/img/watch/compare_ultra2_large.jpg",
         // swatch: "/img/watch/swatch_ultra2_large.png",
     },
-    {
-        title: "Apple Watch Ultra 2",
-        price: "Từ 21.999.000đ hoặc 896.000đ/th. trong 24 tháng.",
-        desc: "Ngầu và giàu năng lực nhất.",
-        img: "/img/watch/compare_ultra2_large.jpg",
-        // swatch: "/img/watch/swatch_ultra2_large.png",
-    },
-    {
-        title: "Apple Watch Ultra 2",
-        price: "Từ 21.999.000đ hoặc 896.000đ/th. trong 24 tháng.",
-        desc: "Ngầu và giàu năng lực nhất.",
-        img: "/img/watch/compare_ultra2_large.jpg",
-        // swatch: "/img/watch/swatch_ultra2_large.png",
-    },
 ]
 export default watch;
