@@ -59,3 +59,13 @@ export interface ProductShopCard {
     price: string;
     img: string;
 }
+
+export interface AccessoryShopCard {
+    title: string;
+    price: string;
+    img: string;
+    tag: string;
+    color: {
+        img: string;
+    }[];
+}
