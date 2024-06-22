@@ -1,14 +1,10 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/common/banner"
-import News from '@/components/computer/news';
 import Accessories from '@/components/computer/accessories';
-import ProductBar from '@/components/computer/product-bar';
 import Welcome from '@/components/common/welcome-section';
-import ProductTabs from '@/components/computer/tab';
-import ProductMacTypes from '@/components/computer/product-types';
+import ComputerNavbar from '@/components/computer/navbar';
 import { motion } from "framer-motion"
-import ProductCard from '@/components/computer/card';
+import ProductCard from '@/components/computer/product-card';
 import { desktop, display, laptop } from '@/faker/mac';
 
 function ProductPage() {
@@ -21,21 +17,10 @@ function ProductPage() {
                     transition={{ duration: 0.75 }}
                     className='w-4/5'
                 >
-                    <ProductMacTypes />
+                    <ComputerNavbar />
                 </motion.div>
             </div>
             <Welcome title='Shop Mac' subtitle='If you can dream it, Mac can do it' />
-
-            <News />
-
-            {/* Product */}
-            <div className=" w-full pt-10">
-                <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 p-5">
-                        <span className=" text-xl sm:text-5xl font-medium">Khám phá các mẫu Mac</span>
-                    </div>
-                </div>
-            </div>
 
             {/* <ProductTabs /> */}
 

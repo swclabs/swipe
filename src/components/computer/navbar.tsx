@@ -1,7 +1,7 @@
 import { Image } from "@nextui-org/react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 
-export default function ProductMacTypes() {
+export default function ComputerNavbar() {
     return (
         <Carousel className="w-full ">
             <CarouselContent>

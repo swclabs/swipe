@@ -11,7 +11,7 @@ export default function ListCard({ data }: { data: CardContent[] }) {
         }
     };
     return (
-        <div className="w-full pb-[10px]">
+        <div className="w-full py-[10px]">
             <div
                 className=" relative flex 2xl:justify-between overflow-auto scroll-smooth"
                 style={{ scrollbarWidth: "none" }}
@@ -24,7 +24,7 @@ export default function ListCard({ data }: { data: CardContent[] }) {
                     <div className="flex snap-center" key={index}>
                         <Card className="h-[550px] sm:w-[450px] m-5 w-[350px]">
                             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                                <div className={value.textcolor}>
+                                <div className={`${value.textcolor} p-[1.7647058824rem]`}>
                                     <p className="text-tiny uppercase font-medium">
                                         {value.title}
                                     </p>
