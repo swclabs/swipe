@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import BreadCrumb from "@/components/dashboard/breadcrumb"
-import { TabsContentAll } from "@/components/dashboard/products/product"
+import { TabsContentAll } from "@/components/products/product"
 
 const breadcrumbItems = [
     { title: "Products", link: "/dashboard/products" },

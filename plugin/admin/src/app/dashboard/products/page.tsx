@@ -1,7 +1,7 @@
 'use client';
 import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker";
 import { Overview } from "@/components/dashboard/overview";
-import { CategoryCard, OrdersCard, ProductCard, SupplierCard, UploadProductCard } from "@/components/dashboard/products/card";
+import { CategoryCard, OrdersCard, ProductCard, SupplierCard, UploadProductCard } from "@/components/products/card";
 import { RecentSales } from "@/components/dashboard/recent-sales";
 import { Button } from "@/components/ui/button";
 import {
