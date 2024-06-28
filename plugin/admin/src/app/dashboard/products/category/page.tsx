@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import BreadCrumb from "@/components/dashboard/breadcrumb"
-import { TabsContentAll } from "@/components/products/product"
+import { TabsContentWithStatus } from "@/components/products/product"
 
 const breadcrumbItems = [
     { title: "Products", link: "/dashboard/products" },
@@ -89,7 +89,7 @@ export default function Page() {
                             </div>
                         </div>
                         <TabsContent value="all">
-                            <TabsContentAll />
+                            <TabsContentWithStatus />
                         </TabsContent>
                     </Tabs>
                 </div>

@@ -39,7 +39,7 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
   }, [isOpen]);
 
   return (
-    <nav className="space-y-2">
+    <nav className="space-y-2 z-0">
       {items.map((item) =>
         item.isChidren ? (
           <Accordion
@@ -50,7 +50,7 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
             value={openItem}
             onValueChange={setOpenItem}
           >
-            <AccordionItem value={item.title} className="border-none ">
+            <AccordionItem value={item.title} className="border-none">
               <AccordionTrigger
                 className={cn(
                   buttonVariants({ variant: 'ghost' }),
@@ -88,7 +88,7 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
                       'bg-muted font-bold hover:bg-muted',
                     )}
                   >
-                    <child.icon className={cn('h-5 w-5', child.color)} />
+                    <child.icon className={cn('h-4 w-4 ml-2', child.color)} />
                     <div
                       className={cn(
                         'absolute left-12 text-sm duration-200',

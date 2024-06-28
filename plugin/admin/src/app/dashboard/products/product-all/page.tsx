@@ -1,3 +1,5 @@
+'use client';
+
 import {
     File,
     ListFilter,
@@ -23,14 +25,25 @@ import {
 } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import BreadCrumb from "@/components/dashboard/breadcrumb"
-import { TabsContentAll } from "@/components/products/product"
+import { TabsContentWithStatus } from "@/components/products/product"
+import { useProduct } from "@/state/products"
+import { useEffect } from "react"
 
 const breadcrumbItems = [
     { title: "Products", link: "/dashboard/products" },
     { title: "All", link: "/dashboard/products/product-all" }
 ];
 
+
 export default function Page() {
+    const { product, fetchProduct } = useProduct()
+    useEffect(() => {
+        fetchProduct()
+    }, [])
+
+
+    console.log(product)
+
     return (
         <ScrollArea className="h-full">
             <div className=" pl-6 pt-6 bg-muted/40">
@@ -89,7 +102,10 @@ export default function Page() {
                             </div>
                         </div>
                         <TabsContent value="all">
-                            <TabsContentAll />
+                            {product != null && <TabsContentWithStatus input={product} status="all" />}
+                        </TabsContent>
+                        <TabsContent value="draft">
+                            {product != null && <TabsContentWithStatus input={product} status="draft" />}
                         </TabsContent>
                     </Tabs>
                 </div>

@@ -1,37 +1,37 @@
-"use client";
-import { DashboardNav } from "@/components/dashboard/dashboard-nav";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { navItems } from "@/constants/data";
+'use client'
+import { useState, useEffect } from "react";
 import { MenuIcon } from "lucide-react";
-import { useState } from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { SideNav } from "@/components/layout/side-nav";
+import { NavItems } from "@/constants/side-nav";
 
-// import { Playlist } from "../data/playlists";
-
-interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
-  // playlists: Playlist[];
-}
-
-export function MobileSidebar({ className }: SidebarProps) {
+export const MobileSidebar = () => {
   const [open, setOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
-          <MenuIcon />
+          <div className="flex items-center justify-center gap-2">
+            <MenuIcon />
+            <h1 className="text-lg font-semibold">eConnect</h1>
+          </div>
         </SheetTrigger>
-        <SheetContent side="left" className="!px-0">
-          <div className="space-y-4 py-4">
-            <div className="px-3 py-2">
-              <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-                Overview
-              </h2>
-              <div className="space-y-1">
-                <DashboardNav items={navItems} setOpen={setOpen} />
-              </div>
-            </div>
+        <SheetContent side="left" className="w-72">
+          <div className="px-1 py-6 pt-16 overflow-y-auto overflow-x-hidden max-h-[75vh]">
+            <SideNav items={NavItems} setOpen={setOpen} />
           </div>
         </SheetContent>
       </Sheet>
     </>
   );
-}
+};

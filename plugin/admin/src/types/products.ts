@@ -1,4 +1,4 @@
-export interface Products {
+export interface Product {
     price: string;
     description: string;
     name: string;
@@ -51,4 +51,27 @@ export interface CategoryReq {
 
 export interface Categories {
     data: Category[];
+}
+
+
+export interface ProductBody {
+    id: number;
+    image: string[];
+    price: string;
+    description: string;
+    name: string;
+    status: string;
+    created: string;
+    is_spec: boolean,
+    spec: {
+        screen: string,
+        display: string;
+        SSD: number[],
+        RAM: number[],
+    }
+}
+export interface Products {
+    limit: number;
+    page: number;
+    data: ProductBody[];
 }

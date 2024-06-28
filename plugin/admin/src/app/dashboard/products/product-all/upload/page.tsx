@@ -44,7 +44,6 @@ import { DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHead
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useCategories, useSuppliers } from "@/state/products";
 import { useToast } from "@/components/ui/use-toast";
-import { ToastAction } from "@/components/ui/toast";
 import { ProductService } from "@/services/products";
 
 const breadcrumbItems = [{ title: "Products", link: "/dashboard/products" }, { title: "Upload", link: "/dashboard/product/upload" }];
