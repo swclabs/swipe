@@ -97,7 +97,7 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
         // console.log("product", res);
       }
       router.refresh();
-      router.push(`/dashboard/products`);
+      router.push(`/dashboard/shop`);
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",

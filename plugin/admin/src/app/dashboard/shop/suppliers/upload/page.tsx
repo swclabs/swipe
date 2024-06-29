@@ -29,9 +29,8 @@ import { ToastAction } from "@/components/ui/toast";
 import { ProductService } from "@/services/products";
 
 const breadcrumbItems = [
-  { title: "Products", link: "/dashboard/products" },
-  { title: "Suppliers", link: "/dashboard/products/suppliers" },
-  { title: "Upload", link: "/dashboard/products/suppliers/upload" }
+  { title: "Suppliers", link: "/dashboard/shop/suppliers" },
+  { title: "Upload", link: "/dashboard/shop/suppliers/upload" }
 ];
 
 export default function Page() {

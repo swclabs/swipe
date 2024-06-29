@@ -65,8 +65,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import BreadCrumb from "@/components/dashboard/breadcrumb";
 const breadcrumbItems = [
-    { title: "Products", link: "/dashboard/products" },
-    { title: "Orders", link: "/dashboard/products/orders" }
+    { title: "Orders", link: "/dashboard/sales/orders" }
 ];
 
 export default function Page() {

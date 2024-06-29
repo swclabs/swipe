@@ -26,8 +26,7 @@ import BreadCrumb from "@/components/dashboard/breadcrumb"
 import { TabsContentWithStatus } from "@/components/products/product"
 
 const breadcrumbItems = [
-    { title: "Products", link: "/dashboard/products" },
-    { title: "Category", link: "/dashboard/products/category" }
+    { title: "Category", link: "/dashboard/shop/category" }
 ];
 
 export default function Page() {
@@ -78,7 +77,7 @@ export default function Page() {
                                         Export
                                     </span>
                                 </Button>
-                                <a href="/dashboard/products/category/upload">
+                                <a href="/dashboard/shop/category/upload">
                                     <Button size="sm" className="h-8 gap-1">
                                         <PlusCircle className="h-3.5 w-3.5" />
                                         <div className="sr-only sm:not-sr-only sm:whitespace-nowrap">
@@ -89,7 +88,7 @@ export default function Page() {
                             </div>
                         </div>
                         <TabsContent value="all">
-                            <TabsContentWithStatus />
+
                         </TabsContent>
                     </Tabs>
                 </div>

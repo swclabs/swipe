@@ -22,6 +22,14 @@ export class ProductService {
         return response;
     }
 
+    static async DeleteProduct(id: number): Promise<AxiosResponse<BaseResponse>> {
+        const axiosInstance = createAxiosInstance();
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.delete(
+            `${APIEndpoint.PRODUCTS.GET_PRODUCTS}?pid=${id}`
+        );
+        return response;
+    }
+
     static async NewProductImage(files: File[], id: string): Promise<AxiosResponse<BaseResponse>> {
         const form = new FormData();
         files.map((value) => form.append("img", value))

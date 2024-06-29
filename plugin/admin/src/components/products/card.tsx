@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export const ProductCard = () => {
     return (
-        <Link href="/dashboard/products/product-all">
+        <Link href="/dashboard/shop/product">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
@@ -26,7 +26,7 @@ export const ProductCard = () => {
 
 export const UploadProductCard = () => {
     return (
-        <Link href="/dashboard/products/upload">
+        <Link href="/dashboard/shop/upload">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
@@ -47,7 +47,7 @@ export const UploadProductCard = () => {
 
 export const OrdersCard = () => {
     return (
-        <Link href="/dashboard/products/orders">
+        <Link href="/dashboard/sales/orders">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
@@ -68,7 +68,7 @@ export const OrdersCard = () => {
 
 export const SupplierCard = () => {
     return (
-        <Link href="/dashboard/products/suppliers">
+        <Link href="/dashboard/shop/suppliers">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
@@ -89,7 +89,7 @@ export const SupplierCard = () => {
 
 export const CategoryCard = () => {
     return (
-        <Link href="/dashboard/products/category">
+        <Link href="/dashboard/shop/category">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">

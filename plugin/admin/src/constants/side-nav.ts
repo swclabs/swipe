@@ -1,4 +1,4 @@
-import { CircleDot , Box, HomeIcon, LayoutDashboard, LayoutDashboardIcon, LayoutList, LogIn, ShoppingBag, Store, User, Users, TicketPercent } from "lucide-react";
+import { CircleDot, Box, HomeIcon, LayoutDashboard, LayoutDashboardIcon, LayoutList, LogIn, ShoppingBag, Store, User, Users, TicketPercent } from "lucide-react";
 import { NavItemWithChildren } from "@/types/navbar";
 
 export const NavItems: NavItemWithChildren[] = [
@@ -17,37 +17,37 @@ export const NavItems: NavItemWithChildren[] = [
     children: [
       {
         title: "Landing Page",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
         href: "/dashboard/site/landing-page"
       },
       {
         title: "Mac",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
         href: "/dashboard/site/computer"
       },
       {
         title: "iPhone",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
         href: "/dashboard/site/phone"
       },
       {
         title: "iPad",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
         href: "/dashboard/site/tablet"
       },
       {
         title: "AirPod",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
         href: "/dashboard/site/airpod"
       },
       {
         title: "Accessories",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
         href: "/dashboard/site/accessories"
       },
@@ -56,72 +56,72 @@ export const NavItems: NavItemWithChildren[] = [
   {
     title: "Sales",
     href: "/",
-    icon: ShoppingBag ,
+    icon: ShoppingBag,
     color: "text-sky-500",
     isChidren: true,
     children: [
       {
         title: "Orders",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
-        href: "/dashboard/products/orders"
+        href: "/dashboard/sales/orders"
       },
     ]
   },
   {
     title: "Shop",
-    href: "/dashboard/products",
-    icon: Store ,
+    href: "/dashboard/shop",
+    icon: Store,
     color: "text-sky-500",
     isChidren: true,
     children: [
       {
         title: "Products",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
-        href: "/dashboard/products/product-all"
+        href: "/dashboard/shop/product"
       },
       {
         title: "Suppliers",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
-        href: "/dashboard/products/suppliers"
+        href: "/dashboard/shop/suppliers"
       },
       {
         title: "Category",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
-        href: "/dashboard/products/category"
+        href: "/dashboard/shop/category"
       },
     ],
   },
   {
     title: "Customers",
     href: "/",
-    icon: Users ,
+    icon: Users,
     color: "text-sky-500",
     isChidren: true,
     children: [
       {
         title: "Users",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
-        href: "/dashboard/products/orders"
+        href: "/dashboard/sales/orders"
       },
     ]
   },
   {
     title: "Promotions",
     href: "/",
-    icon: TicketPercent ,
+    icon: TicketPercent,
     color: "text-sky-500",
     isChidren: true,
     children: [
       {
         title: "Users",
-        icon: CircleDot ,
+        icon: CircleDot,
         color: "text-red-500",
-        href: "/dashboard/products/orders"
+        href: "/dashboard/sales/orders"
       },
     ]
   },

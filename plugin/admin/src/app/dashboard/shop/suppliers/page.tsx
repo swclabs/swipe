@@ -23,11 +23,9 @@ import {
 } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import BreadCrumb from "@/components/dashboard/breadcrumb"
-import { TabsContentWithStatus } from "@/components/products/product"
 
 const breadcrumbItems = [
-    { title: "Products", link: "/dashboard/products" },
-    { title: "Suppliers", link: "/dashboard/products/suppliers" }
+    { title: "Suppliers", link: "/dashboard/shop/suppliers" }
 ];
 
 export default function Page() {
@@ -78,7 +76,7 @@ export default function Page() {
                                         Export
                                     </span>
                                 </Button>
-                                <a href="/dashboard/products/suppliers/upload">
+                                <a href="/dashboard/shop/suppliers/upload">
                                     <Button size="sm" className="h-8 gap-1">
                                         <PlusCircle className="h-3.5 w-3.5" />
                                         <div className="sr-only sm:not-sr-only sm:whitespace-nowrap">

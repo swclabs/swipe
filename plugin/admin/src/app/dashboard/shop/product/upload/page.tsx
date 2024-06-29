@@ -46,7 +46,7 @@ import { useCategories, useSuppliers } from "@/state/products";
 import { useToast } from "@/components/ui/use-toast";
 import { ProductService } from "@/services/products";
 
-const breadcrumbItems = [{ title: "Products", link: "/dashboard/products" }, { title: "Upload", link: "/dashboard/product/upload" }];
+const breadcrumbItems = [{ title: "Products", link: "/dashboard/shop" }, { title: "Upload", link: "/dashboard/product/upload" }];
 
 export default function Page() {
   const [ssdcount, setSsdCount] = useState<number[]>([]);

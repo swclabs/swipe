@@ -28,21 +28,26 @@ import BreadCrumb from "@/components/dashboard/breadcrumb"
 import { TabsContentWithStatus } from "@/components/products/product"
 import { useProduct } from "@/state/products"
 import { useEffect } from "react"
+import { ProductService } from "@/services/products";
 
 const breadcrumbItems = [
-    { title: "Products", link: "/dashboard/products" },
-    { title: "All", link: "/dashboard/products/product-all" }
+    { title: "Product", link: "/dashboard/shop/product" }
 ];
 
 
 export default function Page() {
+
     const { product, fetchProduct } = useProduct()
     useEffect(() => {
         fetchProduct()
     }, [])
 
-
-    console.log(product)
+    const deleteItem = (id: number) => {
+        const func = async (id: number) => {
+            const res = await ProductService.DeleteProduct(id)
+        }
+        func(id)
+    }
 
     return (
         <ScrollArea className="h-full">
@@ -91,7 +96,7 @@ export default function Page() {
                                         Export
                                     </span>
                                 </Button>
-                                <a href="/dashboard/products/product-all/upload">
+                                <a href="/dashboard/shop/product/upload">
                                     <Button size="sm" className="h-8 gap-1">
                                         <PlusCircle className="h-3.5 w-3.5" />
                                         <div className="sr-only sm:not-sr-only sm:whitespace-nowrap">
@@ -102,10 +107,20 @@ export default function Page() {
                             </div>
                         </div>
                         <TabsContent value="all">
-                            {product != null && <TabsContentWithStatus input={product} status="all" />}
+                            {product != null && <TabsContentWithStatus
+                                input={product} status="all" deletefunc={deleteItem} />}
+                        </TabsContent>
+                        <TabsContent value="active">
+                            {product != null && <TabsContentWithStatus
+                                input={product} status="active" deletefunc={deleteItem} />}
                         </TabsContent>
                         <TabsContent value="draft">
-                            {product != null && <TabsContentWithStatus input={product} status="draft" />}
+                            {product != null && <TabsContentWithStatus
+                                input={product} status="draft" deletefunc={deleteItem} />}
+                        </TabsContent>
+                        <TabsContent value="archived">
+                            {product != null && <TabsContentWithStatus
+                                input={product} status="archived" deletefunc={deleteItem} />}
                         </TabsContent>
                     </Tabs>
                 </div>
