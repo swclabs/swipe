@@ -110,36 +110,3 @@ export type Employee = {
   job: string;
   profile_picture?: string | null; // Profile picture can be a string (URL) or null (if no picture)
 };
-
-export const navItems: NavItem[] = [
-  {
-    title: "Dashboard",
-    href: "/dashboard",
-    icon: "dashboard",
-    label: "Dashboard",
-  },
-  {
-    title: "Site",
-    href: "/dashboard/site",
-    icon: "layoutList",
-    label: "layoutList",
-  },
-  {
-    title: "Product",
-    href: "/dashboard/products",
-    icon: "box",
-    label: "product",
-  },
-  {
-    title: "Users",
-    href: "/dashboard/users",
-    icon: "user",
-    label: "user",
-  },
-  {
-    title: "Login",
-    href: "/",
-    icon: "login",
-    label: "login",
-  },
-];

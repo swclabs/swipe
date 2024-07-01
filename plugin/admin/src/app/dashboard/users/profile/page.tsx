@@ -1,5 +1,5 @@
 import BreadCrumb from "@/components/dashboard/breadcrumb";
-import { CreateProfileOne } from "@/components/dashboard/forms/user-profile-stepper/create-profile";
+import { CreateProfileOne } from "@/components/forms/user-profile-stepper/create-profile";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const breadcrumbItems = [{ title: "Profile", link: "/dashboard/profile" }];
