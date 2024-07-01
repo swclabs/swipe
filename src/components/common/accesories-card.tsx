@@ -38,11 +38,11 @@ export default function AccessoryCard({ data }: { data: AccessoryShopCard[] }) {
                                     ))}
                                 </div>
                             </CardBody>
-                            <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between px-8 pb-6">
+                            <CardFooter className=" bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between px-8 pb-6">
                                 <div>
-                                    <p className="text-sm text-red-500">{value.tag}</p>
-                                    <p className="h-12 font-semibold">{value.title}</p>
-                                    <p className="text-sm w-[90%] mt-4">
+                                    <p className="h-4 mb-2 text-sm text-red-500">{value.tag}</p>
+                                    <p className="h-16 text-base font-semibold">{value.title}</p>
+                                    <p className="h-4 text-sm w-[90%] mt-4">
                                         {value.price}
                                     </p>
                                 </div>

@@ -24,6 +24,9 @@ export default function ShopCard({ data }: { data: ProductShopCard[] }) {
                                 <p className="text-2xl font-semibold">
                                     {value.title}
                                 </p>
+                                <p>
+                                    {value.subtitle}
+                                </p>
                             </CardHeader>
                             <Image
                                 removeWrapper
