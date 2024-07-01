@@ -2,6 +2,7 @@
 import { Image } from "@nextui-org/react";
 import './style.css'
 import watch from "@/faker/watch";
+import { Link, Button } from "@nextui-org/react";
 
 export default function Product() {
     return (
@@ -30,19 +31,19 @@ export default function Product() {
 
                                 </div>
 
-                                <div className="h-full">
+                                <div className="flex flex-col justify-center items-center h-full">
                                     <div className="h-16 pl-16 pr-16">
                                         <p className="text-center"> {value.desc}</p>
                                     </div>
-                                    <div className="h-12">
-                                        <h4 className="font-semibold text-lg py-2">{value.price}</h4>
+                                    <div className="h-full w-[60%]">
+                                        <h4 className="font-semibold text-base py-2">{value.price}</h4>
                                     </div>
                                 </div>
 
                                 <div className="h-full pb-4">
-                                    <a className=" text-blue-600" href="/shop/goto/buy-iphone/iphone-15-pro">
-                                        <span className="buy"> Mua </span>
-                                    </a>
+                                    <Link href={"shop/buy-watch/"}>
+                                        <Button color="primary" className=" w-full">Mua</Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

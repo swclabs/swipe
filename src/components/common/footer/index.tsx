@@ -8,33 +8,33 @@ export default function FooterComponent() {
                 <div className="flex p-8 h-[250px]">
                     <div className="container">
                         <p className=" text-xs font-semibold">Shop</p>
-                        <ul className=" pt-3 font-extralight">
-                            <li className=" text-xs">Mac</li>
-                            <li className=" text-xs">iPad</li>
-                            <li className=" text-xs">iPhone</li>
-                            <li className=" text-xs">Watch</li>
-                            <li className=" text-xs">AirPods</li>
-                            <li className=" text-xs">Phụ kiện</li>
+                        <ul className=" pt-3 font-light text-xs">
+                            <li>Mac</li>
+                            <li>iPad</li>
+                            <li>iPhone</li>
+                            <li>Watch</li>
+                            <li>AirPods</li>
+                            <li>Phụ kiện</li>
                         </ul>
                     </div>
                     <div className="container">
                         <p className=" text-xs font-semibold">Account</p>
-                        <ul className=" pt-3">
-                            <li className=" text-xs font-extralight">Quản lý tài khoản</li>
+                        <ul className=" pt-3 text-xs font-light">
+                            <li >Quản lý tài khoản</li>
                         </ul>
                     </div>
                     <div className="container">
                         <p className=" text-xs font-semibold">Swipe</p>
-                        <ul className=" pt-3">
-                            <li className=" text-xs font-extralight">Hệ thống cửa hàng</li>
+                        <ul className=" pt-3  text-xs font-light">
+                            <li >Hệ thống cửa hàng</li>
                         </ul>
                     </div>
                     <div className="container">
                         <p className=" text-xs font-semibold">Chính sách</p>
-                        <ul className=" pt-3">
-                            <li className=" text-xs font-extralight">Chính sách giao hàng</li>
-                            <li className=" text-xs font-extralight">Chính sách bảo mật</li>
-                            <li className=" text-xs font-extralight">Chính sách bảo hành</li>
+                        <ul className=" pt-3 text-xs font-light">
+                            <li>Chính sách giao hàng</li>
+                            <li>Chính sách bảo mật</li>
+                            <li>Chính sách bảo hành</li>
                         </ul>
                     </div>
                     <div className="container">

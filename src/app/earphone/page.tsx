@@ -9,6 +9,8 @@ import Service from "@/components/shop/service";
 import { motion } from "framer-motion"
 import Welcome from '@/components/common/welcome-section';
 import ProductAirpodTypes from '@/components/earphone/product-types';
+import Widget from '@/components/common/widget';
+import WidgetData3 from '@/faker/widget-accessory';
 
 function IphonePage() {
     return (
@@ -36,22 +38,10 @@ function IphonePage() {
                         <ProductAirpodTypes />
                     </motion.div>
                 </div>
+
                 <Banner />
-
-                {/* Section Welcome */}
                 <Welcome title='Airpods' subtitle='Nơi âm nhạc trở nên sống động.' />
-
-                {/* News */}
-                <div className="flex justify-center text-center">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className=" text-lg sm:text-6xl font-semibold">
-                            Kết nối tuyệt diệu với <br />
-                            các thiết bị của bạn.
-                        </span>
-                    </div>
-                </div>
-
-                <News />
+                <Widget data={WidgetData3} />
 
                 {/* Section Products */}
                 <div className="flex justify-center text-center">
