@@ -35,7 +35,7 @@ export interface SupplierReq {
 }
 
 export interface Suppliers {
-    data: Supplier[];
+    body: Supplier[];
 }
 
 export interface Category {
@@ -50,7 +50,7 @@ export interface CategoryReq {
 }
 
 export interface Categories {
-    data: Category[];
+    body: Category[];
 }
 
 
@@ -71,7 +71,5 @@ export interface ProductBody {
     }
 }
 export interface Products {
-    limit: number;
-    page: number;
-    data: ProductBody[];
+    body: ProductBody[];
 }

@@ -35,8 +35,8 @@ interface TabsContentParams {
 }
 
 const DataWithStatus = (inputs: Products, status: string): ProductBody[] => {
-  if (status.toLowerCase() === "all") return inputs.data
-  return inputs.data ? inputs.data.filter((v) => v.status.toLowerCase() === status.toLowerCase()) : [];
+  if (status.toLowerCase() === "all") return inputs.body
+  return inputs.body ? inputs.body.filter((v) => v.status.toLowerCase() === status.toLowerCase()) : [];
 }
 
 export const TabsContentWithStatus = ({ input, status, deletefunc }: TabsContentParams) => {

@@ -14,7 +14,7 @@ export const useSuppliers = create<UseSuppliers>()((set): UseSuppliers => ({
         const suppliers = await ProductService.GetSuppliers(10)
         return set((state) => {
             return {
-                supplier: suppliers ? suppliers.data.data : []
+                supplier: suppliers ? suppliers.data.body : []
             }
         })
     }
@@ -33,7 +33,7 @@ export const useCategories = create<UseCategory>()((set): UseCategory => ({
         const category = await ProductService.GetCategory(10)
         return set((state) => {
             return {
-                category: category ? category.data.data : []
+                category: category ? category.data.body : []
             }
         })
     }
