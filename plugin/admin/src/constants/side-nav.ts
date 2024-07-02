@@ -82,6 +82,12 @@ export const NavItems: NavItemWithChildren[] = [
         href: "/dashboard/shop/product"
       },
       {
+        title: "Inventory",
+        icon: CircleDot,
+        color: "text-red-500",
+        href: "/dashboard/shop/inventory"
+      },
+      {
         title: "Suppliers",
         icon: CircleDot,
         color: "text-red-500",
