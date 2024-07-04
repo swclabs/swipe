@@ -1,9 +1,9 @@
-import { ProductNews } from "@/types/products";
+import { CardContent } from "@/types";
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
 import { useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-export default function ListCard({ data }: { data: ProductNews[] }) {
+export default function ListCard({ data }: { data: CardContent[] }) {
     const ref = useRef<HTMLDivElement>(null);
     const scroll = (scrollOffset: number) => {
         if (ref.current) {
@@ -11,7 +11,7 @@ export default function ListCard({ data }: { data: ProductNews[] }) {
         }
     };
     return (
-        <div className="w-full pb-[10px]">
+        <div className="w-full py-[10px]">
             <div
                 className=" relative flex 2xl:justify-between overflow-auto scroll-smooth"
                 style={{ scrollbarWidth: "none" }}
@@ -22,13 +22,13 @@ export default function ListCard({ data }: { data: ProductNews[] }) {
                 </div>
                 {data.map((value, index) => (
                     <div className="flex snap-center" key={index}>
-                        <Card className="h-[500px] sm:w-[400px] m-5 w-[300px]">
+                        <Card className="h-[550px] sm:w-[450px] m-5 w-[350px]">
                             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                                <div className={value.textcolor}>
+                                <div className={`${value.textcolor} p-[1.7647058824rem]`}>
                                     <p className="text-tiny uppercase font-medium">
                                         {value.title}
                                     </p>
-                                    <h4 className="font-semibold text-2xl pt-2 pb-2">{value.subtitle}</h4>
+                                    <h4 className="font-semibold text-3xl pt-2 pb-2">{value.subtitle}</h4>
                                     <h4 className="font-normal text-sm text-left">{value.desc}</h4>
                                 </div>
                             </CardHeader>

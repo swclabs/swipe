@@ -1,6 +1,6 @@
 const WatchAccessories = [
     {
-        name: "Dây Đeo Thể Thao Màu Xanh Dương Nhạt 45mm - M/L",
+        title: "Dây Đeo Thể Thao Màu Xanh Dương Nhạt 45mm - M/L",
         price: "1.249.000đ",
         img: "/img/accessory/MWMU3ref.png",
         tag: "Mới",
@@ -26,10 +26,10 @@ const WatchAccessories = [
         ]
     },
     {
-        name: "Dây Quấn Thể Thao Màu Xanh Đại Dương 45mm",
+        title: "Dây Quấn Thể Thao Màu Xanh Đại Dương 45mm",
         price: "1.429.000đ",
         img: "/img/accessory/MW4P3.png",
-        tag: "Mới",
+        tag: "",
         color: [
             {
                 img: "/img/accessory/MW4Q3_SW_COLOR.png"
@@ -52,10 +52,10 @@ const WatchAccessories = [
         ]
     },
     {
-        name: "Vòng Solo Màu Hồng 45mm - Cỡ 6",
+        title: "Vòng Solo Màu Hồng 45mm - Cỡ 6",
         price: "1.249.000đ",
         img: "/img/accessory/MWFH3ref.png",
-        tag: "Mới",
+        tag: "Chỉ có tại Apple",
         color: [
             {
                 img: "/img/accessory/MWE33ref_SW_COLOR.png"
@@ -71,6 +71,57 @@ const WatchAccessories = [
             },
             {
                 img: "/img/accessory/MT9W3ref_SW_COLOR.png",
+            },
+        ]
+    },
+    {
+        title: "Vòng Bện Solo Pride Edition 45mm - Cỡ 6",
+        price: "2.549.000đ",
+        img: "/img/accessory/MX3W3ref.png",
+        tag: "Mới",
+        color: [
+            {
+                img: "/img/accessory/MX3W3ref_SW_COLOR.png"
+            },
+        ]
+    },
+    {
+        title: "Dây Quấn Thể Thao Nike Màu Ánh Sao/Hồng 45mm",
+        price: "1.249.000đ",
+        img: "/img/accessory/MUJY3.png",
+        tag: "Mới",
+        color: [
+            {
+                img: "/img/accessory/MUJW3_SW_COLOR.png"
+            },
+            {
+                img: "/img/accessory/MTL03_SW_COLOR.png"
+            },
+            {
+                img: "/img/accessory/MUJV3_SW_COLOR.png"
+            },
+            {
+                img: "/img/accessory/MTL33_SW_COLOR.png"
+            },
+            {
+                img: "/img/accessory/MTL23_SW_COLOR.png"
+            },
+        ]
+    },
+    {
+        title: "Dây Quấn Alpine Màu Xanh Dương 49mm - Nhỏ",
+        price: "2.549.000đ",
+        img: "/img/accessory/MT5J3ref.png",
+        tag: "Mới",
+        color: [
+            {
+                img: "/img/accessory/MT5J3ref_SW_COLOR.png"
+            },
+            {
+                img: "/img/accessory/MT5N3ref_SW_COLOR.png"
+            },
+            {
+                img: "/img/accessory/MT5T3ref_SW_COLOR.png"
             },
         ]
     },

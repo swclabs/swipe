@@ -1,12 +1,3 @@
-
-export interface ProductNews {
-    title: string;
-    subtitle: string;
-    desc: string;
-    img: string;
-    textcolor: string;
-}
-
 export interface ProductData {
     title: string;
     subtitle: string;
@@ -60,5 +51,22 @@ export interface ProductDetail {
         name: string;
         img: string;
         product: string[];
+    }[];
+}
+
+export interface ProductShopCard {
+    title: string;
+    subtitle: string;
+    price: string;
+    img: string;
+}
+
+export interface AccessoryShopCard {
+    title: string;
+    price: string;
+    img: string;
+    tag: string;
+    color: {
+        img: string;
     }[];
 }
