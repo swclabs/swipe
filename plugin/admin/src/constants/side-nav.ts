@@ -9,51 +9,6 @@ export const NavItems: NavItemWithChildren[] = [
     color: "text-sky-500",
   },
   {
-    title: "Site",
-    icon: LayoutList,
-    href: "/dashboard/site",
-    color: "text-orange-500",
-    isChidren: true,
-    children: [
-      {
-        title: "Landing Page",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/site/landing-page"
-      },
-      {
-        title: "Mac",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/site/computer"
-      },
-      {
-        title: "iPhone",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/site/phone"
-      },
-      {
-        title: "iPad",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/site/tablet"
-      },
-      {
-        title: "AirPod",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/site/airpod"
-      },
-      {
-        title: "Accessories",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/site/accessories"
-      },
-    ],
-  },
-  {
     title: "Sales",
     href: "/",
     icon: ShoppingBag,
@@ -130,6 +85,51 @@ export const NavItems: NavItemWithChildren[] = [
         href: "/dashboard/sales/orders"
       },
     ]
+  },
+  {
+    title: "Site",
+    icon: LayoutList,
+    href: "/dashboard/site",
+    color: "text-orange-500",
+    isChidren: true,
+    children: [
+      {
+        title: "Landing Page",
+        icon: CircleDot,
+        color: "text-red-500",
+        href: "/dashboard/site/landing-page"
+      },
+      {
+        title: "Mac",
+        icon: CircleDot,
+        color: "text-red-500",
+        href: "/dashboard/site/computer"
+      },
+      {
+        title: "iPhone",
+        icon: CircleDot,
+        color: "text-red-500",
+        href: "/dashboard/site/phone"
+      },
+      {
+        title: "iPad",
+        icon: CircleDot,
+        color: "text-red-500",
+        href: "/dashboard/site/tablet"
+      },
+      {
+        title: "AirPod",
+        icon: CircleDot,
+        color: "text-red-500",
+        href: "/dashboard/site/airpod"
+      },
+      {
+        title: "Accessories",
+        icon: CircleDot,
+        color: "text-red-500",
+        href: "/dashboard/site/accessories"
+      },
+    ],
   },
   {
     title: "Login",
