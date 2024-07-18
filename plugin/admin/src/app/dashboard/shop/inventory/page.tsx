@@ -1,7 +1,7 @@
 'use client'
 import { SearchDialog } from "@/components/inventory/dialog";
 import { SelectDemo } from "@/components/inventory/select";
-import { TableDemo } from "@/components/inventory/table";
+import { InventoryTableComponent } from "@/components/inventory/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -42,7 +42,7 @@ export default function Page() {
         </div>
 
         <div className=" container py-5">
-          <TableDemo />
+          <InventoryTableComponent />
         </div>
       </div>
     </ScrollArea >

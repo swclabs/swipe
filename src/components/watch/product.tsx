@@ -41,7 +41,7 @@ export default function Product() {
                                 </div>
 
                                 <div className="h-full pb-4">
-                                    <Link href={"shop/buy-watch/"}>
+                                    <Link href={"shop/watch/"}>
                                         <Button color="primary" className=" w-full">Mua</Button>
                                     </Link>
                                 </div>
