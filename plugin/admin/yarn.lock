@@ -2259,10 +2259,10 @@ formik@^2.4.6:
     tiny-warning "^1.0.2"
     tslib "^2.0.0"
 
-framer-motion@^11.1.9:
-  version "11.1.9"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.1.9.tgz#1ef021fc35615eb83d6baa903a47ba872be99187"
-  integrity sha512-flECDIPV4QDNcOrDafVFiIazp8X01HFpzc01eDKJsdNH/wrATcYydJSH9JbPWMS8UD5lZlw+J1sK8LG2kICgqw==
+framer-motion@^11.3.7:
+  version "11.3.7"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.3.7.tgz#de37d00f863bd6dabfa2a4002108a3888c7a4535"
+  integrity sha512-wolMesg8ruYgZX8nMELY2a/ZgMMpYhggLNIexx1blaYN0yb2+SdQ78sEkGDKde+3LTCeFy/wCi97i5Br4yT0GQ==
   dependencies:
     tslib "^2.4.0"
 
