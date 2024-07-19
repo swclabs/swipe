@@ -45,10 +45,12 @@
   dependencies:
     tslib "^2.0.0"
 
-"@effect/schema@^0.66.12":
-  version "0.66.14"
-  resolved "https://registry.yarnpkg.com/@effect/schema/-/schema-0.66.14.tgz#c52db8b93cf9215a102bca2ff39bd68bc686e124"
-  integrity sha512-2Yc6gnXpcMmwQnbU2JUwDl0ckeOJmFZzteXn2jjVWuNi9PGv+jp2yK7jxv0pALcieuYwdR5tKkCRI7STuhEwfg==
+"@effect/schema@0.68.12":
+  version "0.68.12"
+  resolved "https://registry.yarnpkg.com/@effect/schema/-/schema-0.68.12.tgz#e530485e049a04eb0ce8698ea3294d2feac1afbb"
+  integrity sha512-UWJsFXzeYTBQYnftwI1KR2uaxIZ8fk+kffDS7BnJwnGjPPgODq3/AzeoBDSu1MAlnwBKOz+QRdMuSMxrT/pHig==
+  dependencies:
+    fast-check "^3.19.0"
 
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
@@ -1145,13 +1147,13 @@
   resolved "https://registry.yarnpkg.com/@uploadthing/mime-types/-/mime-types-0.2.10.tgz#169edb30f1aa52f828e37acfe5121432493efe01"
   integrity sha512-kz3F0oEgAyts25NAGXlUBCWh3mXonbSOQJFGFMawHuIgbUbnzXbe4w5WI+0XdneCbjNmikfWrdWrs8m/7HATfQ==
 
-"@uploadthing/shared@6.7.5":
-  version "6.7.5"
-  resolved "https://registry.yarnpkg.com/@uploadthing/shared/-/shared-6.7.5.tgz#9d18959dccd9e9cd8f064be0e0a20fadaadc8942"
-  integrity sha512-BZXzvh6zGEt4ip//mxfXdRTNWYw9XJ6tommL6A1TEo2l8jvdNbUpPUwXnMVWBMwio2b48BO7D9V3siYIKMD4pg==
+"@uploadthing/shared@6.7.8":
+  version "6.7.8"
+  resolved "https://registry.yarnpkg.com/@uploadthing/shared/-/shared-6.7.8.tgz#67bcb5d708b65c2aeba5d384532f27596bb8c52b"
+  integrity sha512-dLNa9GpdeiCHc/Nd0+BfaJ3wXvWIztBAaWIsNNPoaKiU3qhHoQd+5jDVx4oYKYVANqnv9s2CJW7di8Th5xy7Cw==
   dependencies:
     "@uploadthing/mime-types" "0.2.10"
-    effect "^3.1.0"
+    effect "3.4.5"
     std-env "^3.7.0"
 
 acorn-jsx@^5.3.2:
@@ -1770,10 +1772,10 @@ eastasianwidth@^0.2.0:
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
-effect@^3.1.0:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/effect/-/effect-3.1.2.tgz#e270c0a6c1442203088bd992adf12b5c47b90271"
-  integrity sha512-XakSWck6w6ROqKyEys0tKE9K6Gx2p8W/09u2ZTEZZrneO5Z3QEdPhXzWTyC73kD5zUvfJinZLVIas8I1xoHaTg==
+effect@3.4.5:
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/effect/-/effect-3.4.5.tgz#f1e2624271a082a7c99d42414c542af5879f011f"
+  integrity sha512-aTonOH68tUttSdYwMkiuky3hjgn3pu7yInNaE8rU2EDKQ8zr9Me78WcvWBQKe4u1gvbBH77y9dAKqn98lNIfNQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2127,10 +2129,10 @@ eventemitter3@^4.0.1:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
-fast-check@^3.18.0:
-  version "3.18.0"
-  resolved "https://registry.yarnpkg.com/fast-check/-/fast-check-3.18.0.tgz#025c137cb1ad3f229af7d1f913f4aa2e075fa0c5"
-  integrity sha512-/951xaT0kA40w0GXRsZXEwSTE7LugjZtSA/8vPgFkiPQ8wNp8tRvqWuNDHBgLxJYXtsK11e/7Q4ObkKW5BdTFQ==
+fast-check@^3.19.0:
+  version "3.20.0"
+  resolved "https://registry.yarnpkg.com/fast-check/-/fast-check-3.20.0.tgz#287a3b6b9c45e8d9121c157b437b465bf27befa6"
+  integrity sha512-pZIjqLpOZgdSLecec4GKC3Zq5702MZ34upMKxojnNVSWA0K64V3pXOBT1Wdsrc3AphLtzRBbsi8bRWF4TUGmUg==
   dependencies:
     pure-rand "^6.1.0"
 
@@ -3970,17 +3972,16 @@ undici-types@~5.26.4:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
   integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
-uploadthing@^6.12.0:
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/uploadthing/-/uploadthing-6.12.0.tgz#643d744696d40a80c0a4bad8b0fdcd17bf01b79e"
-  integrity sha512-uoWG1riH6z2IHCcbMo3xnGe6p/+sx2PPOOLOsk5DeqGv5HtlY7ISauFFRXW8H+jdhevZm1n/j4Je/Z+bbIziSg==
+uploadthing@^6.13.2:
+  version "6.13.2"
+  resolved "https://registry.yarnpkg.com/uploadthing/-/uploadthing-6.13.2.tgz#82e6c36aaa22905ffdcb1ea341c1f509615d7d06"
+  integrity sha512-hrxwOgqKs8siczPloop72drRBiUYaFDHMp45OR/sSAaAbOPyGBmBL88Bi4UWCvgC+aBWCLRxtMEGeoqrfu+OMg==
   dependencies:
-    "@effect/schema" "^0.66.12"
+    "@effect/schema" "0.68.12"
     "@uploadthing/mime-types" "0.2.10"
-    "@uploadthing/shared" "6.7.5"
+    "@uploadthing/shared" "6.7.8"
     consola "^3.2.3"
-    effect "^3.1.0"
-    fast-check "^3.18.0"
+    effect "3.4.5"
     std-env "^3.7.0"
 
 uri-js@^4.2.2:
