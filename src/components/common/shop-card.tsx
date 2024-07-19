@@ -1,14 +1,20 @@
 import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
-import { useRef } from "react";
+// import { useRef } from "react";
 // import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { ProductShopCard } from "@/types/products"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 
 export default function ShopCard({ data }: { data: ProductShopCard[] }) {
+    // const ref = useRef<HTMLDivElement>(null);
+    // const scroll = (scrollOffset: number) => {
+    //     if (ref.current) {
+    //         ref.current.scrollLeft += scrollOffset
+    //     }
+    // };
     return (
         <div className="flex justify-center items-center w-[100%]">
             <Carousel className="w-[80%]">
-                <CarouselContent className="py-8 -ml-1">
+                <CarouselContent className="py-8">
                     {data.map((value, index) => (
                         <CarouselItem className="mx-4 basis-1/4" key={index} >
                             <Card className="flex justify-center items-center relative h-[50vh] w-[20vw]">
