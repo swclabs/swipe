@@ -14,10 +14,9 @@ COPY package.json next.config.js ./
 RUN npm run build
 
 # Stage 3: run
-FROM node:22-alpine
+FROM node:22-alpine as runner
 WORKDIR /app
-COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/.next/standalone .
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 CMD ["npm", "run", "start"]
