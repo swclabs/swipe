@@ -13,9 +13,9 @@ export default function Product() {
           <div className="shrink-0"></div>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-4 gap-6">
           {airpod.map((value, index) => (
-            <div className="container mx-auto h-[500px] border bg-white rounded-xl w-[350px]" key={index}>
+            <div className="container mx-auto h-[500px] bg-white rounded-xl w-[350px]" key={index}>
               <div className="flex flex-col justify-center items-center text-center gap-y-4 p-5">
                 <div className="h-60 pt-4">
                   <div className="h-full content-end">
@@ -43,7 +43,7 @@ export default function Product() {
                 </div>
                 <div className="h-full pb-4">
                   <Link href={"shop/earphone/"}>
-                    <Button color="primary" className=" w-full">Mua</Button>
+                    <Button color="primary" className="w-full" radius="full">Mua</Button>
                   </Link>
                 </div>
               </div>
@@ -56,13 +56,13 @@ export default function Product() {
           <div className="shrink-0"></div>
         </div>
       </div>
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <div className=" pt-12 pb-12">
           <a className="text-center text-blue-600 text-xl font-semibold" href="#">
             <span className="buy"> So sánh tất cả các phiên bản Airpods </span>
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
