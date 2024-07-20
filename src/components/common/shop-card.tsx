@@ -1,56 +1,53 @@
-import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
-// import { useRef } from "react";
-// import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { Button, Image } from "@nextui-org/react";
 import { ProductShopCard } from "@/types/products"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 
 export default function ShopCard({ data }: { data: ProductShopCard[] }) {
-    // const ref = useRef<HTMLDivElement>(null);
-    // const scroll = (scrollOffset: number) => {
-    //     if (ref.current) {
-    //         ref.current.scrollLeft += scrollOffset
-    //     }
-    // };
-    return (
-        <div className="flex justify-center items-center w-[100%]">
-            <Carousel className="w-[80%]">
-                <CarouselContent className="py-8">
-                    {data.map((value, index) => (
-                        <CarouselItem className="mx-4 basis-1/4" key={index} >
-                            <Card className="flex justify-center items-center relative h-[50vh] w-[20vw]">
-                                <CardHeader className="flex px-8 pt-8 pb-6 absolute z-10 top-1 flex-col !items-start">
-                                    <p className="text-2xl font-semibold">
-                                        {value.title}
-                                    </p>
-                                    <p>
-                                        {value.subtitle}
-                                    </p>
-                                </CardHeader>
-                                <Image
-                                    removeWrapper
-                                    alt="Card background"
-                                    className="z-0 w-[40%] h-[40%] 2xl:w-[50%] 2xl:h-[50%] object-contain absolute"
-                                    src={value.img}
-                                />
-                                <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between px-8 pb-6">
-                                    <div>
-                                        <p className="text-sm w-[90%]">
-                                            {value.price}
-                                        </p>
-                                    </div>
-                                    <Button className="text-tiny" color="primary" radius="full" size="sm">
-                                        Buy
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
-        </div>
-    )
+  return (
+    <div className="flex justify-center items-center">
+      <Carousel className="w-full">
+        <CarouselContent className="py-8">
+          {data.map((value, index) => (
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={index} >
+              <Card className="justify-center items-center relative border-none bg-white min-h-[500px]">
+                <CardHeader>
+                  <p className="text-2xl font-semibold">
+                    {value.title}
+                  </p>
+                  <p>
+                    {value.subtitle}
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-center">
+                    <Image
+                      removeWrapper
+                      alt="Card background"
+                      className="z-0 h-[230px] my-8"
+                      src={value.img}
+                    />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <div className=" flex justify-between w-full">
+                    <p className="text-sm">
+                      {value.price}
+                    </p>
+                    <Button className="text-tiny" color="primary" radius="full" size="sm">
+                      Buy
+                    </Button>
+                  </div>
+                </CardFooter>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
+  )
 }
 
 
