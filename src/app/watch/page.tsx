@@ -23,8 +23,10 @@ function WatchPage() {
             */}
 
             <div className=" w-full bg-white">
-                <Banner />
+                {/* We will fix in next version */}
                 <ProductBar />
+
+                <Banner />
                 <Welcome title='Apple Watch' subtitle='To wear it is to love it.' />
                 <Widget data={WidgetData2} />
 
@@ -34,9 +36,11 @@ function WatchPage() {
                         <span className=" text-xl sm:text-5xl font-medium">Apple Watch nào phù hợp với bạn?</span>
                     </div>
                 </div> */}
-                <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className="text-xl sm:text-5xl font-medium">Apple Watch nào phù hợp với bạn?</span>
+                <div className='w-full'>
+                    <div className="flex justify-center">
+                        <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
+                            <span className="text-xl sm:text-5xl font-semibold">Apple Watch nào phù hợp với bạn?</span>
+                        </div>
                     </div>
                 </div>
                 <Product />
