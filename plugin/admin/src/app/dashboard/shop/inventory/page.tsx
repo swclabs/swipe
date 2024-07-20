@@ -1,5 +1,4 @@
 'use client'
-import { SearchDialog } from "@/components/inventory/dialog";
 import { SelectDemo } from "@/components/inventory/select";
 import { InventoryTableComponent } from "@/components/inventory/table";
 import { Badge } from "@/components/ui/badge";
