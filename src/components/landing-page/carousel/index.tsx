@@ -71,7 +71,7 @@ const LandingPageCarousel = () => {
         plugin.current
       ]}
       onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.play}
+      onMouseLeave={() => plugin.current.play()}
     >
       <CarouselContent>
         {LandingPageCarouselData.map((value, index) => (
@@ -165,7 +165,7 @@ export const LandingPageBannerCarousel = () => {
         plugin.current
       ]}
       onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.play}
+      onMouseLeave={() => plugin.current.play}
     >
       <CarouselContent>
         {LandingPageBannerCarouselData.map((value, index) => (
