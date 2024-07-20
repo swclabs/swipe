@@ -10,18 +10,16 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { StockItem } from "@/types/inventory"
 import { Search } from "lucide-react"
 
-export function SearchDialog() {
+export function ProductSpecsDialog({ src }: { src: StockItem }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className=" flex w-[300px] items-center">
-          <Button variant={"outline"} size={"sm"} className="w-full justify-start">
-            <div className="flex space-x-2 items-center">
-              <Search className="w-4" />
-              <div className=" text-sm">Search</div>
-            </div>
+        <div className=" flex items-center">
+          <Button variant="ghost" className="justify-start">
+            {src.product_name}
           </Button>
         </div>
       </DialogTrigger>
