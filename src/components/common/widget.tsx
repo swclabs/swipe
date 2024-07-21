@@ -11,8 +11,8 @@ export default function Widget({ data }: { data: Widgets }) {
     <>
       <div className=" w-full">
         <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:pt-12 pt-5">
-            <span className=" text-xl sm:text-4xl font-semibold">{data.headline}</span>
+          <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
+            <span className=" text-xl sm:text-5xl font-semibold">{data.headline}</span>
           </div>
         </div>
       </div>
