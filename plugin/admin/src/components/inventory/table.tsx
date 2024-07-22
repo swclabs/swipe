@@ -53,11 +53,16 @@ const data: StockItem[] = [
     currency_code: "USD",
     status: "active",
     specs: {
-      color: "",
-      ram: "",
-      ssd: "",
+      color: "black",
+      ram: "8GB",
+      ssd: "512GB",
       color_image: "",
-      image: ""
+      image: [
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
+      ]
     }
   },
   {
@@ -73,7 +78,12 @@ const data: StockItem[] = [
       ram: "",
       ssd: "",
       color_image: "",
-      image: ""
+      image: [
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
+        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
+      ]
     }
   }
 ]

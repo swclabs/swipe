@@ -3,7 +3,7 @@ interface Specs {
     ram: string;
     ssd: string;
     color_image: string;
-    image: string;
+    image: string[];
 }
 
 export interface StockItem {
