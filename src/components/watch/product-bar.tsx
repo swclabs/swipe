@@ -6,7 +6,7 @@ export default function ProductBar() {
     return (
         <div className="flex justify-center h-full bg-black">
             <div className="pt-6 pb-6 flex items-center">
-                <div className="grid grid-cols-11 gap-4">
+                <div className="flex flex-row gap-4">
                     <a className="flex flex-col items-center justify-center text-center gap-y-2" href="">
                         <div className='flex justify-center h-12 w-12'>
                             <Image
