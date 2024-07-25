@@ -81,18 +81,72 @@ export default function Product() {
 
             {
                 activeTab === 'products' &&
-                <div className="flex flex-row border-y-1 justify-between items-center py-8 w-3/5">
-                    <div className="flex flex-col justify-center items-center">
-                        <div className="flex items-center justify-center border rounded-full w-[143px] h-[143px] mb-4">
+                <div className="flex md:flex-row flex-col border-y-1 justify-between items-center py-8 w-3/5">
+                    <div className="flex md:flex-col flex-row md:justify-center items-center justify-start">
+                        <div className="flex items-center justify-center md:border rounded-full w-[143px] h-[143px] mb-4">
                             <Image
                                 alt="Mac"
                                 src="/img/accessory/icon-product-mac.png"
                                 className="w-[75px] h-[75px]"
                             ></Image>
                         </div>
-                        <p>Mac</p>
+                        <div className="w-20 md:h-12 text-start">
+                            <p className="text-center">Mac</p>
+                        </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center">
+                    <div className="flex md:flex-col flex-row md:justify-center items-center justify-start">
+                        <div className="flex items-center justify-center md:border rounded-full w-[143px] h-[143px] mb-4">
+                            <Image
+                                alt="Mac"
+                                src="/img/accessory/icon-product-ipad.png"
+                                className="w-[75px] h-[75px]"
+                            ></Image>
+                        </div>
+                        {/* <p>TV & Nhà</p> */}
+                        <div className="w-20 md:h-12 text-start">
+                            <p className="text-center">iPad</p>
+                        </div>
+                    </div>
+                    <div className="flex md:flex-col flex-row md:justify-center items-center justify-start">
+                        <div className="flex items-center justify-center md:border rounded-full w-[143px] h-[143px] mb-4">
+                            <Image
+                                alt="Mac"
+                                src="/img/accessory/icon-product-iphone.png"
+                                className="w-[75px] h-[75px]"
+                            ></Image>
+                        </div>
+                        {/* <p>TV & Nhà</p> */}
+                        <div className="w-20 md:h-12 text-start">
+                            <p className="text-center">iPhone</p>
+                        </div>
+                    </div>
+                    <div className="flex md:flex-col flex-row md:justify-center items-center justify-start">
+                        <div className="flex items-center justify-center md:border rounded-full w-[143px] h-[143px] mb-4">
+                            <Image
+                                alt="Mac"
+                                src="/img/accessory/icon-product-watch.png"
+                                className="w-[75px] h-[75px]"
+                            ></Image>
+                        </div>
+                        {/* <p>TV & Nhà</p> */}
+                        <div className="w-20 md:h-12 text-start">
+                            <p className="text-center">Watch</p>
+                        </div>
+                    </div>
+                    <div className="flex md:flex-col flex-row md:justify-center items-center justify-start">
+                        <div className="flex items-center justify-center md:border rounded-full w-[143px] h-[143px] mb-4">
+                            <Image
+                                alt="Mac"
+                                src="/img/accessory/icon-product-tv.png"
+                                className="w-[75px] h-[75px]"
+                            ></Image>
+                        </div>
+                        {/* <p>TV & Nhà</p> */}
+                        <div className="w-20 md:h-12 text-start">
+                            <p className="text-center">TV & Nhà</p>
+                        </div>
+                    </div>
+                    {/* <div className="flex flex-col justify-center items-center">
                         <div className="flex items-center justify-center border rounded-full w-[143px] h-[143px] mb-4">
                             <Image
                                 alt="Mac"
@@ -131,22 +185,21 @@ export default function Product() {
                             ></Image>
                         </div>
                         <p>TV & Nhà</p>
-                    </div>
+                    </div> */}
                 </div>
             }
             {
                 activeTab === 'types' &&
                 <div className="flex flex-wrap justify-center items-center w-3/5 gap-8 border-y-1 py-8 relative">
                     {objectMapping.filter((item, index) => isCollapsed ? index < 13 : index < 5).map((item, index) => (
-                        <div key={index} className="flex flex-col justify-center items-center w-[180px]">
-                            <div className="flex items-center justify-center border rounded-full w-[143px] h-[143px] mb-4 py-4">
+                        <div key={index} className="flex flex-row md:flex-col justify-center items-center w-[180px]">
+                            <div className="flex flex-row items-center md:justify-center md:border rounded-full w-[143px] h-[143px] mb-4 py-4">
                                 <Image
-                                    alt="Mac"
                                     src={item.img}
                                     className="w-[75px] h-[75px]"
                                 ></Image>
                             </div>
-                            <div className="h-12 text-start">
+                            <div className="w-20 md:h-12 text-start">
                                 <p className="text-center">{item.title}</p>
                             </div>
                         </div>
