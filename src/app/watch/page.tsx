@@ -8,6 +8,8 @@ import Welcome from '@/components/common/welcome-section';
 import Banner from "@/components/common/banner"
 import Widget from '@/components/common/widget';
 import WidgetData2 from '@/faker/widget-watch';
+import { motion } from "framer-motion"
+import ProductWatchTypes from '@/components/watch/product-types';
 
 function WatchPage() {
     return (
@@ -24,7 +26,17 @@ function WatchPage() {
 
             <div className=" w-full bg-white">
                 {/* We will fix in next version */}
-                <ProductBar />
+                {/* <ProductBar /> */}
+                <div className=' w-full flex justify-center p-5 bg-gray-50'>
+                    <motion.div
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.75 }}
+                        className='w-4/5'
+                    >
+                        <ProductWatchTypes />
+                    </motion.div>
+                </div>
 
                 <Banner />
                 <Welcome title='Apple Watch' subtitle='To wear it is to love it.' />
