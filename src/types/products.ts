@@ -59,6 +59,9 @@ export interface ProductShopCard {
     subtitle: string;
     price: string;
     img: string;
+    color: {
+        img: string;
+    }[];
 }
 
 export interface AccessoryShopCard {
