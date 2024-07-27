@@ -28,17 +28,6 @@ function IphonePage() {
         </motion.div>
       </div>
 
-      <div className=' w-full flex justify-center p-5 bg-gray-50'>
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.75 }}
-          className='w-4/5'
-        >
-          <ProductIphoneTypes />
-        </motion.div>
-      </div>
-
       <Banner />
       <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
       <PostsWidget data={posts} />
