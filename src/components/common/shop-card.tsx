@@ -31,7 +31,7 @@ export default function ShopCard({ data }: { data: ProductShopCard[] }) {
                 </CardContent>
                 <CardFooter>
                   <div className=" flex justify-between w-full">
-                    <p className="text-sm">
+                    <p className="text-sm w-2/3">
                       {value.price}
                     </p>
                     <Button className="text-tiny" color="primary" radius="full" size="sm">
