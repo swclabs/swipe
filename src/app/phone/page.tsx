@@ -32,32 +32,7 @@ function IphonePage() {
       <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
       <PostsWidget data={posts} />
 
-      {/* Section Products */}
-      <div className="flex justify-center text-center ">
-        <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-          <h2 className=" text-xl sm:text-5xl font-medium pb-8">Khám phá các dòng sản phẩm iPhone.</h2>
-          <Link className=" text-blue-600" href="/shop/iphone">
-            <span className="buy"> Mua iPhone </span>
-          </Link>
-        </div>
-      </div>
-
-      <Product />
-
-
-      {/* Section Products */}
-      <div className="flex justify-center text-center ">
-        <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-          <h2 className=" text-xl sm:text-5xl font-medium pb-8">Khám phá các dòng sản phẩm iPhone.</h2>
-          <Link className=" text-blue-600" href="/shop/iphone">
-            <span className="buy"> Mua iPhone </span>
-          </Link>
-        </div>
-      </div>
-
-      <Product />
-
-      <Widget data={WidgetData1} />
+      {/* <Widget data={WidgetData1} /> */}
       <div className=' bg-gray-50 flex justify-center'>
         <div className=' md:w-4/5 w-2/3'>
           <div className=" text-xl sm:text-2xl font-semibold pt-10">Mọi phiên bản. <span className='font-medium text-gray-500'> Hãy chọn mẫu bạn thích.</span></div>
