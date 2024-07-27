@@ -8,6 +8,7 @@ import Product from '@/components/tablet/product';
 import Welcome from '@/components/common/welcome-section';
 import ProductIpadTypes from '@/components/tablet/product-types';
 import { motion } from "framer-motion"
+import { Link } from '@nextui-org/react';
 function IpadPage() {
     return (
         <>
@@ -63,9 +64,10 @@ function IpadPage() {
                 <div className="flex justify-center text-center ">
                     <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
                         <h2 className=" text-xl sm:text-5xl font-medium pb-8">Khám phá các dòng sản phẩm iPad.</h2>
-                        <a className=" text-blue-600" href="#">
+                        <Link href='' className=" text-blue-600">
                             <span className="buy"> Mua iPad </span>
-                        </a>
+                        </Link>
+
                     </div>
                 </div>
                 <Product />

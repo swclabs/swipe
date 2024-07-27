@@ -3,17 +3,13 @@ import { Button, Chip, Image } from "@nextui-org/react";
 import './style.css'
 import iphone from "@/faker/iphone";
 import Link from "next/link";
-import { useEffect } from "react";
 import { FiTruck } from "react-icons/fi";
 
 
 
 export default function Product() {
-
-  // useEffect(() => { }, [])
-
   return (
-    <div className="w-full pb-[10px] scrollbar hover:overflow-x-auto overflow-hidden">
+    <div className="flex justify-center w-full pb-[10px] hover:pb-0 scrollbar hover:overflow-x-auto overflow-hidden">
       <div className=" relative flex snap-x snap-mandatory 2xl:justify-between">
 
         <div className=" sm:w-1/12 shrink-0 snap-center">
