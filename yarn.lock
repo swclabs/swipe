@@ -14,18 +14,6 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@emotion/is-prop-valid@^0.8.2":
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
-  integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
-  dependencies:
-    "@emotion/memoize" "0.7.4"
-
-"@emotion/memoize@0.7.4":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
-  integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
-
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
@@ -2200,11 +2188,6 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.0.tgz#d774355e41f372d5350a4d0714abb48194a489c3"
   integrity sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==
 
-"@types/node@^16.10.2":
-  version "16.18.96"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.96.tgz#eb0012d23ff53d14d64ec8a352bf89792de6aade"
-  integrity sha512-84iSqGXoO+Ha16j8pRZ/L90vDMKX04QTYMTfYeE1WrjWaZXuchBehGUZEpNgx7JnmlrIHdnABmpjrQjhCnNldQ==
-
 "@types/node@^20":
   version "20.14.11"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.14.11.tgz#09b300423343460455043ddd4d0ded6ac579b74b"
@@ -2795,13 +2778,12 @@ cookie@^0.6.0:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.6.0.tgz#2798b04b071b0ecbff0dbb62a505a8efa4e19051"
   integrity sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==
 
-cookies-next@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/cookies-next/-/cookies-next-4.1.1.tgz#54498efe867bb5c1a47b5a99a7ea8563601c2413"
-  integrity sha512-20QaN0iQSz87Os0BhNg9M71eM++gylT3N5szTlhq2rK6QvXn1FYGPB4eAgU4qFTunbQKhD35zfQ95ZWgzUy3Cg==
+cookies-next@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/cookies-next/-/cookies-next-4.2.1.tgz#a0c2942afee16f1ffc2bc05a003c7c0cf32deda5"
+  integrity sha512-qsjtZ8TLlxCSX2JphMQNhkm3V3zIMQ05WrLkBKBwu50npBbBfiZWIdmSMzBGcdGKfMK19E0PIitTfRFAdMGHXg==
   dependencies:
     "@types/cookie" "^0.6.0"
-    "@types/node" "^16.10.2"
     cookie "^0.6.0"
 
 cross-spawn@^7.0.0, cross-spawn@^7.0.2:
@@ -3526,14 +3508,12 @@ fraction.js@^4.3.7:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.7.tgz#06ca0085157e42fda7f9e726e79fefc4068840f7"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-framer-motion@^10.16.9:
-  version "10.18.0"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.18.0.tgz#1f4fc51403996ea7170af885bd44a7079d255950"
-  integrity sha512-oGlDh1Q1XqYPksuTD/usb0I70hq95OUzmL9+6Zd+Hs4XV0oaISBa/UUMSjYiq6m8EUF32132mOJ8xVZS+I0S6w==
+framer-motion@^11.3.19:
+  version "11.3.19"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.3.19.tgz#7a2bd72ed1dd04a47d8ecb8444447cfc47c70984"
+  integrity sha512-+luuQdx4AsamyMcvzW7jUAJYIKvQs1KE7oHvKkW3eNzmo0S+3PSDWjBuQkuIP9WyneGnKGMLUSuHs8OP7jKpQg==
   dependencies:
     tslib "^2.4.0"
-  optionalDependencies:
-    "@emotion/is-prop-valid" "^0.8.2"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
