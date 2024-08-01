@@ -2959,10 +2959,10 @@ electron-to-chromium@^1.4.668:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.746.tgz#787213e75f6c7bccb55dfe8b68170555c548d093"
   integrity sha512-jeWaIta2rIG2FzHaYIhSuVWqC6KJYo7oSBX4Jv7g+aVujKztfvdpf+n6MGwZdC5hQXbax4nntykLH2juIQrfPg==
 
-embla-carousel-auto-scroll@^8.1.7:
-  version "8.1.7"
-  resolved "https://registry.yarnpkg.com/embla-carousel-auto-scroll/-/embla-carousel-auto-scroll-8.1.7.tgz#dd796eb4927b9d1109945ed5c2d5fc1507551e96"
-  integrity sha512-T8j+J9VVqN0dS0OzdwON8YmoXLTI4oqMNfxE02AAAQT5K4TbIkd5xv7gXNN1K7adc/1pmC6TmULqUaP2vZGhxw==
+embla-carousel-auto-scroll@^8.1.8:
+  version "8.1.8"
+  resolved "https://registry.yarnpkg.com/embla-carousel-auto-scroll/-/embla-carousel-auto-scroll-8.1.8.tgz#56c1083e15583f5ccde630b6647d79272256da1b"
+  integrity sha512-4CNWg7xgvxTPILaOOEBcZvCZKHnhi+JUDFExvFTALK0kN22LBp5pn/Lgqmfh3UCcUi/GZFFjPYykqs4zlHs08A==
 
 embla-carousel-autoplay@^8.1.8:
   version "8.1.8"
