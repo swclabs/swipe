@@ -16,7 +16,7 @@ export default function Product() {
                         <div className="container mx-auto h-[700px] w-full bg-gray-100 rounded-2xl relative" key={index}>
                             <div className=" p-5 flex flex-col justify-center items-center text-center gap-y-4">
                                 <div className="h-full pt-4">
-                                    <div className="content-end">
+                                    <div className="content-end h-[200px]">
                                         <a href="#">
                                             <Image
                                                 alt="Card background"
