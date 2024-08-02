@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/hooks/useSidebar";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface SidebarProps {
   className?: string;

@@ -3,11 +3,11 @@
 import { ChangeEvent, Dispatch, SetStateAction, useCallback, useState } from "react";
 import { FileInput, FileUploader, FileUploaderContent, FileUploaderItem } from "@/components/ui/file-upload";
 import { Paperclip, Trash2 } from "lucide-react";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useDropzone } from "react-dropzone";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 const FileSvgDraw = () => {
     return (

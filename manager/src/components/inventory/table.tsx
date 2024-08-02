@@ -40,7 +40,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { StockItem } from "@/types/inventory"
-import { Badge } from "../ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { ProductSpecsDialog } from "./dialog"
 
 const data: StockItem[] = [
