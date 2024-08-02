@@ -1,7 +1,7 @@
 import { Button, Image } from "@nextui-org/react";
 import { ProductShopCard } from "@/types/products"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
-import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
 export default function ShopCard({ data }: { data: ProductShopCard[] }) {
   return (

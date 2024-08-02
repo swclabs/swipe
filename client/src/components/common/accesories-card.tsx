@@ -1,7 +1,7 @@
 import { Button, Image } from "@nextui-org/react";
 import { AccessoryShopCard } from "@/types/products"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
-import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
 export default function AccessoryCard({ data }: { data: AccessoryShopCard[] }) {
   return (
@@ -21,7 +21,7 @@ export default function AccessoryCard({ data }: { data: AccessoryShopCard[] }) {
                     />
                   </div>
                 </CardHeader>
-                <CardContent> 
+                <CardContent>
                   <div className="h-3 flex justify-center items-center content-center gap-x-2">
                     {value.color?.map((color, index) => (
                       <Image

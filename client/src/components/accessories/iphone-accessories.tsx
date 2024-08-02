@@ -1,7 +1,7 @@
 'use client';
 import { Image } from "@nextui-org/react";
 import { iPhoneAccessories } from "@/faker/iphone-accessory";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 
 export default function AccessoryIphone() {

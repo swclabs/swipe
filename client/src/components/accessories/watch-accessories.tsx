@@ -1,7 +1,7 @@
 'use client';
 import { Image } from "@nextui-org/react";
 import { WatchAccessories } from "@/faker/watch-accessory";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 
 export default function AccessoryWatch() {
