@@ -7,6 +7,9 @@ import Accessory from "@/components/shop/accessory";
 import Service from "@/components/shop/service";
 import ProductNavbar from "@/components/shop/navbar";
 import { motion } from "framer-motion"
+import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
+import { mac_carousel } from '@/faker/mac_carousel';
+import { shop_carousel } from '@/faker/shop_carousel';
 
 export default function Store() {
     return (
@@ -29,16 +32,7 @@ export default function Store() {
 
                 <ProductNavbar />
 
-                <div className="flex justify-center">
-                    <div className="sm:w-4/5 sm:pt-12 pb-10 sm:pb-12 sm:pl-12 sm:pr-12 pt-10">
-                        <h1 className=" sm:text-2xl font-semibold">
-                            <span>Thế hệ mới nhất.</span>
-                            <span className=" text-gray-500"> Xem ngay có gì mới</span>
-                        </h1>
-                    </div>
-                </div>
-
-                <Product />
+                <ShopCardsCarousel carousel={shop_carousel} />
 
                 <div className="flex justify-center">
                     <div className="w-4/5 sm:pt-12 sm:pl-12 sm:pr-12 pt-10">

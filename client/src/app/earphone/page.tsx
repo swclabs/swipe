@@ -11,6 +11,8 @@ import Welcome from '@/components/common/welcome-section';
 import ProductAirpodTypes from '@/components/earphone/product-types';
 import Widget from '@/components/common/widget';
 import WidgetData3 from '@/faker/widget-accessory';
+import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
+import { shop_carousel } from '@/faker/shop_carousel';
 
 function IphonePage() {
     return (
@@ -41,7 +43,7 @@ function IphonePage() {
 
                 <Banner />
                 <Welcome title='Airpods' subtitle='Nơi âm nhạc trở nên sống động.' />
-                <Widget data={WidgetData3} />
+                <ShopCardsCarousel carousel={shop_carousel} />
 
                 {/* Section Products */}
                 <div className="flex justify-center text-center">

@@ -31,7 +31,7 @@ export default function AccessoryIphone() {
                                     ))}
                                 </div>
                                 <p className="2xl:text-sm text-xs text-red-500 h-3">{value.tag}</p>
-                                <p className="text-center md:h-20 h-12 2xl:text-lg text-sm font-semibold 2xl:px-8 px-4">{value.name}</p>
+                                <p className="text-center md:h-20 h-12 2xl:text-lg text-sm font-semibold 2xl:px-8 px-4">{value.title}</p>
                                 <p className="2xl:text-sm md:text-xs text-base font-light">{value.price}</p>
                             </div>
                         </CarouselItem>
