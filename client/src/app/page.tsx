@@ -2,7 +2,7 @@
 
 import Banner from "@/components/common/banner"
 import ShortCut from "@/components/common/shortcut"
-import { Card, CardHeader, Image } from "@nextui-org/react"
+import { Card, CardHeader} from "@nextui-org/react"
 import Link from "next/link"
 import React from "react"
 
@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 import { EmblaOptionsType } from 'embla-carousel'
 import homeBanner from "@/faker/home-banner"
 import LandingPageCarousel, { LandingPageBannerCarousel } from "@/components/landing-page/carousel"
+import Image from "next/image"
 
 export default function Home() {
 

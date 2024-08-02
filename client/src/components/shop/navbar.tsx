@@ -1,5 +1,5 @@
-import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function ProductNavbar() {
   return (
@@ -18,7 +18,6 @@ export default function ProductNavbar() {
                 alt="mac"
                 width={100}
                 height={100}
-
               />
               <p className=" text-sm font-semibold text-center pt-4">Mac</p>
             </a>
