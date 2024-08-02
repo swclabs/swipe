@@ -1,0 +1,8 @@
+.title-wrapper:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+.title-wrapper {
+    transition: transform 0.5s;
+}
