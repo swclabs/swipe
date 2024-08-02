@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
 import { mac_carousel } from '@/faker/mac_carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
+import ShortCut from '@/components/common/shortcut';
 
 export default function Store() {
     return (
@@ -55,7 +56,7 @@ export default function Store() {
                 </div>
 
                 <Accessory />
-                {/* <ShortCut /> */}
+                <ShortCut />
             </div>
         </>
     )

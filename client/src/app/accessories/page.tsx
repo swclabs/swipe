@@ -12,6 +12,7 @@ import AccessoryWatch from '@/components/accessories/watch-accessories';
 import AccessoryIpad from '@/components/accessories/ipad-accessories';
 import AccessoryMac from '@/components/accessories/mac-accessories';
 import AccessoryAirtag from '@/components/accessories/airtag-accessories';
+import ShortCut from '@/components/common/shortcut';
 
 function AccessoriesPage() {
     return (
@@ -72,7 +73,7 @@ function AccessoriesPage() {
                 </div>
 
                 <AccessoryAirtag />
-
+                <ShortCut />
                 <div className='w-full bg-gray-100'>
                     <div className='w-1/2 m-auto mt-12'>
                         <div className='flex flex-col justify-center items-center'>
@@ -94,7 +95,6 @@ function AccessoriesPage() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     );

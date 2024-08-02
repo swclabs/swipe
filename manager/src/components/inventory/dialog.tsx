@@ -17,8 +17,8 @@ import {
 } from "@/components/ui/carousel"
 import { StockItem } from "@/types/inventory"
 import { Card, CardContent } from "@/components/ui/card"
-import { Label } from "../ui/label"
-import { Input } from "../ui/input"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 import Image from "next/image"
 
 export function ProductSpecsDialog({ src }: { src: StockItem }) {

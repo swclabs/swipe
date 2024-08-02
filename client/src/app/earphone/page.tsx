@@ -13,6 +13,7 @@ import Widget from '@/components/common/widget';
 import WidgetData3 from '@/faker/widget-accessory';
 import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
+import ShortCut from '@/components/common/shortcut';
 
 function IphonePage() {
     return (
@@ -68,6 +69,7 @@ function IphonePage() {
                 </div>
 
                 <Accessories />
+                <ShortCut />
             </div>
         </>
     );

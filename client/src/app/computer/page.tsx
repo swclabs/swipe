@@ -7,6 +7,7 @@ import WidgetData1 from '@/faker/widget';
 import WidgetMac2, { WidgetMac3, WidgetMac4 } from '@/faker/mac-widget';
 import { ComputerCardsCarousel } from '@/components/computer/cards-carousel';
 import { mac_carousel, mac_carousel_1, mac_carousel_2, mac_carousel_3 } from '@/faker/mac_carousel';
+import ShortCut from '@/components/common/shortcut';
 
 function ProductPage() {
   return (
@@ -17,6 +18,7 @@ function ProductPage() {
       <ComputerCardsCarousel carousel={mac_carousel_1} />
       <ComputerCardsCarousel carousel={mac_carousel_2} />
       <ComputerCardsCarousel carousel={mac_carousel_3} />
+      <ShortCut />
     </div>
   )
 }

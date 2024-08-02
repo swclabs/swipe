@@ -15,6 +15,7 @@ import { iphone_shop } from '@/faker/iphone-shop';
 import { iPhoneAccessories } from '@/faker/iphone-accessory';
 import { PhoneCardsCarousel } from '@/components/phone/cards-carousel';
 import { iphone_carousel } from '@/faker/iphone-carousel';
+import ShortCut from '@/components/common/shortcut';
 
 function IphonePage() {
   return (
@@ -44,6 +45,7 @@ function IphonePage() {
           <AccessoryCard data={iPhoneAccessories} />
         </div>
       </div>
+      <ShortCut />
     </div>
   );
 }

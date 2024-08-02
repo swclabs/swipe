@@ -11,6 +11,7 @@ import { motion } from "framer-motion"
 import { Link } from '@nextui-org/react';
 import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
+import ShortCut from '@/components/common/shortcut';
 function IpadPage() {
     return (
         <>
@@ -73,6 +74,7 @@ function IpadPage() {
                 </div>
 
                 <Accessories />
+                <ShortCut />
             </div >
         </>
     );

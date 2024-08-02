@@ -10,52 +10,11 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import AutoScroll from 'embla-carousel-auto-scroll'
 import Image from "next/image"
-import { IoCartOutline } from "react-icons/io5"
 import { motion } from "framer-motion"
+import { FiShoppingCart, FiTruck } from "react-icons/fi"
+import { MdOutlinePayment } from "react-icons/md";
+import { LandingPageBannerCarouselData, LandingPageCarouselData } from "@/faker/landing"
 
-const LandingPageCarouselData = [
-  {
-    title: "Vison Pro",
-    subtitle: "Kỷ nguyên điện toán",
-    img: "/landing-page/visionpro.png"
-  },
-  {
-    title: "Phụ kiện",
-    subtitle: "Trang Trí cho điện thoại của bạn",
-    img: "/landing-page/access.png",
-    text: "text-black"
-  },
-  {
-    title: "Macbook Pro M3",
-    subtitle: "Laptop mạnh mẽ, trang bị vi xử lý mạnh mẽ",
-    img: "/landing-page/macm3.png",
-    text: "text-black"
-  },
-  {
-    title: "iPad Pro",
-    subtitle: "Mỏng không tưởng, mạnh không ngờ",
-    img: "/landing-page/ipadpro.png",
-    text: "text-white"
-  },
-  {
-    title: "iPad Air",
-    subtitle: "Hai kích cỡ, chip nhanh hơn, Đa zi năng",
-    img: "/landing-page/ipadair.png",
-    text: "text-black"
-  },
-  {
-    title: "iPhone 15 Pro",
-    subtitle: "Titan. Thật bền chắc. Thật nhẹ. Thật Pro.",
-    img: "/img/iphone15pro.jpg",
-    text: "text-white",
-  },
-  {
-    title: "iPhone 15",
-    subtitle: "Camera mới. Thiết kế mới. Mới lịm tim",
-    img: "/img/iphone15.jpg",
-    text: "text-black"
-  },
-]
 
 const LandingPageCarousel = () => {
   const plugin = React.useRef(
@@ -104,55 +63,6 @@ const LandingPageCarousel = () => {
   )
 }
 
-
-const LandingPageBannerCarouselData = [
-  {
-    image: '/logo.png',
-    title: 'Fitness+',
-    decs: 'Yoga with Dice'
-  },
-  {
-    image: '/logo.png',
-    title: 'Music',
-    decs: 'Holiday'
-  },
-  {
-    image: '/logo.png',
-    title: 'Arcade',
-    decs: 'Adventure'
-  },
-  {
-    image: '/logo.png',
-    title: 'Fitness+',
-    decs: 'Yoga with Dice'
-  },
-  {
-    image: '/logo.png',
-    title: 'Music',
-    decs: 'Holiday'
-  },
-  {
-    image: '/logo.png',
-    title: 'Arcade',
-    decs: 'Adventure'
-  },
-  {
-    image: '/logo.png',
-    title: 'Fitness+',
-    decs: 'Yoga with Dice'
-  },
-  {
-    image: '/logo.png',
-    title: 'Music',
-    decs: 'Holiday'
-  },
-  {
-    image: '/logo.png',
-    title: 'Arcade',
-    decs: 'Adventure'
-  }
-]
-
 export const LandingPageBannerCarousel = () => {
   const plugin = React.useRef(
     AutoScroll({ playOnInit: true })
@@ -169,20 +79,21 @@ export const LandingPageBannerCarousel = () => {
     >
       <CarouselContent>
         {LandingPageBannerCarouselData.map((value, index) => (
-          <CarouselItem key={index} className="md:basis-1/4">
+          <CarouselItem key={index} className="md:basis-1/4 basis-1/2">
             <motion.div
               className="box"
               whileHover={{ scale: 1.03 }}
             >
               <div className="p-1">
                 <Card>
-                  <CardContent className=" flex aspect-video items-center justify-center p-6">
+                  <CardContent className=" flex aspect-video items-center justify-center p-6 min-h-[200px] min-w-max">
                     <div className=" p-3 w-full">
                       <div className=" text-blue-500 text-3xl pb-3 flex items-center justify-between">
                         <div className=" max-w-max">
                           <Image
                             src={value.image}
                             alt=""
+                            className="min-w-[60px] min-h-max"
                             width={50}
                             height={10}
                           />
@@ -191,7 +102,14 @@ export const LandingPageBannerCarousel = () => {
                           {value.title}
                         </div>
                       </div>
-                      <p className=" text-xl font-semibold">{value.decs}</p>
+                      <div className=" flex justify-between">
+                        <p className=" text-xl font-semibold">{value.decs}</p>
+                        <div className=" flex gap-2">
+                          <MdOutlinePayment />
+                          <FiShoppingCart />
+                          <FiTruck />
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
