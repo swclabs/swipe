@@ -15,20 +15,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set Node.js 20.9.0
+      - name: Set Node.js 22.0.0
         uses: actions/setup-node@v3
         with:
-          node-version: 20.9.0
+          node-version: 22.0.0
 
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
+          dir: "client"
 
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
           cmd: run lint # will run `yarn test` command
+          dir: "client"
 
   admin:
     name: build-admin
@@ -38,19 +40,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set Node.js 20.9.0
+      - name: Set Node.js 22.0.0
         uses: actions/setup-node@v3
         with:
-          node-version: 20.9.0
+          node-version: 22.0.0
 
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
-          dir: "plugin/admin"
+          dir: "manager"
 
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
           cmd: run lint # will run `yarn test` command
-          dir: "plugin/admin"
+          dir: "manager"
