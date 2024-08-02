@@ -9,6 +9,8 @@ import Welcome from '@/components/common/welcome-section';
 import ProductIpadTypes from '@/components/tablet/product-types';
 import { motion } from "framer-motion"
 import { Link } from '@nextui-org/react';
+import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
+import { shop_carousel } from '@/faker/shop_carousel';
 function IpadPage() {
     return (
         <>
@@ -38,16 +40,7 @@ function IpadPage() {
                 {/* Section Welcome */}
                 <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
 
-
-                {/* News */}
-                <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className=" text-xl sm:text-5xl font-medium">Tin tức.</span>
-                        <span className=" text-xl sm:text-5xl font-medium text-gray-500">Tìm hiểu thêm về iPad</span>
-                    </div>
-                </div>
-
-                <News />
+                <ShopCardsCarousel carousel={shop_carousel} />
 
                 {/* Section Products Compare */}
                 {/* <div className="flex justify-center text-center ">

@@ -10,7 +10,7 @@ export default function ShopCard({ data }: { data: ProductShopCard[] }) {
         <CarouselContent className="py-8">
           {data.map((value, index) => (
             <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={index} >
-              <Card className="justify-center items-center relative border-none bg-white min-h-[500px]">
+              <Card className="justify-center items-center relative border-none bg-white min-h-[525px] max-h-[525px]">
                 <CardHeader>
                   <p className="text-2xl font-semibold">
                     {value.title}
@@ -24,7 +24,7 @@ export default function ShopCard({ data }: { data: ProductShopCard[] }) {
                     <Image
                       removeWrapper
                       alt="Card background"
-                      className="z-0 h-[230px] my-8"
+                      className="z-0 my-8"
                       src={value.img}
                     />
                   </div>
