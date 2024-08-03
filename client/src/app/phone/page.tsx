@@ -13,6 +13,9 @@ import ShopCard from "@/components/common/shop-card";
 import AccessoryCard from '@/components/common/accesories-card';
 import { iphone_shop } from '@/faker/iphone-shop';
 import { iPhoneAccessories } from '@/faker/iphone-accessory';
+import { PhoneCardsCarousel } from '@/components/phone/cards-carousel';
+import { iphone_carousel } from '@/faker/iphone-carousel';
+import ShortCut from '@/components/common/shortcut';
 
 function IphonePage() {
   return (
@@ -30,7 +33,7 @@ function IphonePage() {
 
       <Banner />
       <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
-      <PostsWidget data={posts} />
+      <PhoneCardsCarousel carousel={iphone_carousel} />
 
       {/* <Widget data={WidgetData1} /> */}
       <div className=' bg-gray-50 flex justify-center'>
@@ -42,6 +45,7 @@ function IphonePage() {
           <AccessoryCard data={iPhoneAccessories} />
         </div>
       </div>
+      <ShortCut />
     </div>
   );
 }

@@ -10,6 +10,9 @@ import Widget from '@/components/common/widget';
 import WidgetData2 from '@/faker/widget-watch';
 import { motion } from "framer-motion"
 import ProductWatchTypes from '@/components/watch/product-types';
+import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
+import { shop_carousel } from '@/faker/shop_carousel';
+import ShortCut from '@/components/common/shortcut';
 
 function WatchPage() {
     return (
@@ -40,7 +43,7 @@ function WatchPage() {
 
                 <Banner />
                 <Welcome title='Apple Watch' subtitle='To wear it is to love it.' />
-                <Widget data={WidgetData2} />
+                <ShopCardsCarousel carousel={shop_carousel} />
 
                 {/* Section Product */}
                 {/* <div className="flex justify-center">
@@ -183,7 +186,7 @@ function WatchPage() {
                         </div>
                     </div>
                 </div>
-
+                <ShortCut />
             </div>
         </>
     );

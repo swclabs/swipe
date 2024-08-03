@@ -8,7 +8,7 @@ const iphone_shop = [
     {
         title: "iPhone 15 Pro & iPhone 15 Plus",
         subtitle: "",
-        price: "Từ 22.999.000đ hoặc 936.000đ/thángmỗi tháng trong 24 tháng*",
+        price: "Từ 22.999.000đ hoặc 936.000đ/tháng mỗi tháng trong 24 tháng*",
         img: "/img/shop/iphone-card-40-iphone15hero-202309.jpeg",
     },
     {

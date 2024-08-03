@@ -1,5 +1,5 @@
 import { Image } from "@nextui-org/react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export default function ComputerNavbar() {
     return (
@@ -111,8 +111,8 @@ export default function ComputerNavbar() {
                     </a>
                 </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious variant="ghost" />
+            <CarouselNext variant="ghost" />
         </Carousel>
     )
 }
