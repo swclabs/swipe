@@ -111,8 +111,8 @@ export default function ProductIpadTypes() {
                     </a>
                 </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious variant="ghost" />
+            <CarouselNext variant="ghost" />
         </Carousel>
     )
 }

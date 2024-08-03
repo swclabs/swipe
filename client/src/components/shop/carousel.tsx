@@ -41,8 +41,8 @@ export default function ShopCarousel({ product, version, color, setVersion, setC
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious variant="secondary" />
+                <CarouselNext variant="secondary" />
             </Carousel>
         </div >
     )

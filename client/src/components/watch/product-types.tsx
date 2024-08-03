@@ -81,8 +81,8 @@ export default function ProductWatchTypes() {
                     </a>
                 </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious variant="ghost" />
+            <CarouselNext variant="ghost" />
         </Carousel>
     )
 }

@@ -97,8 +97,8 @@ export default function ProductIphoneTypes() {
           </a>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious variant="ghost" />
+      <CarouselNext variant="ghost" />
     </Carousel>
   )
 }
