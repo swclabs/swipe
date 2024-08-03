@@ -22,7 +22,7 @@ export function ComputerCardsCarousel({ carousel }: { carousel: CarouselData }) 
 
   return (
     <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         {carousel.headline}
       </h2>
       <div className=" !text-black">
