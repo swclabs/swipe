@@ -14,7 +14,7 @@ export default function Version({ product, version, setVersion }: IVersionProps)
     }
 
     return (
-        <div className=" container mt-5">
+        <div className=" container">
             <div className=' font-semibold text-2xl'>
                 Phiên bản. <span className=' text-gray-400'>Mẫu nào phù hợp nhất với bạn?</span>
             </div>
@@ -32,7 +32,7 @@ export default function Version({ product, version, setVersion }: IVersionProps)
                                 <div className=' text-xs'>Màn hình {value.screen}</div>
                             </div>
                             <div className=' w-2/5 text-xs text-right'>
-                                Từ {value.SSD[0]?.price}
+                                Từ {value.color[index]?.specs && value.color[index].specs[0].price}
                             </div>
                         </div>
                     </button>

@@ -3,29 +3,26 @@ import ShopCarousel from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
 import Spec from "@/components/shop/spec";
 import Version from "@/components/shop/version";
-import iphoneDetail from "@/faker/iphone-detail";
+import ipadDetail from "@/faker/ipad-details";
 import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const [details, setDetails] = useState<ProductDetail[]>(iphoneDetail)
+  const [details, setDetails] = useState<ProductDetail[]>(ipadDetail)
   const [version, setVersion] = useState<number>(-1)
   const [color, setColor] = useState<number>(-1)
-
   useEffect(() => {
-    setDetails(iphoneDetail)
+    setDetails(ipadDetail)
   }, [])
-
   return (
     <div className=" container w-[87%] m-auto">
       <div className=" container pt-10">
         <div className=" text-red-500 font-medium pt-5">Mới</div>
-        <div className=" font-semibold text-5xl pt-2">Mua {details[0]?.name}</div>
-        {details[0]?.color[0].specs !== undefined &&
-          <div className=" font-base text-xs pt-2">{details[0]?.color[0].specs[0]?.price}</div>
-        }
+        <div className=" font-semibold text-5xl pt-2">
+          Mua {version === -1 ? details[0]?.name : details[version]?.name}
+        </div>
       </div>
 
       <div className="flex container flex-col md:flex-row pt-14 relative max-h-max">

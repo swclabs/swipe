@@ -43,14 +43,15 @@ export interface ProductDetail {
     name: string;
     screen: string;
     img: string[]
-    SSD: {
-        value: string;
-        price: string;
-    }[];
     color: {
         name: string;
         img: string;
         product: string[];
+        specs?: {
+            RAM: string;
+            SSD: string;
+            price: string;
+        }[];
     }[];
 }
 
