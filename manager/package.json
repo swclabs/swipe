@@ -34,7 +34,7 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@tanstack/react-table": "^8.19.3",
+    "@tanstack/react-table": "^8.20.1",
     "@types/uuid": "^9.0.8",
     "admin": "file:",
     "axios": "^1.7.2",

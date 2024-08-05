@@ -947,17 +947,17 @@
     "@swc/counter" "^0.1.3"
     tslib "^2.4.0"
 
-"@tanstack/react-table@^8.19.3":
-  version "8.19.3"
-  resolved "https://registry.npmjs.org/@tanstack/react-table/-/react-table-8.19.3.tgz"
-  integrity sha512-MtgPZc4y+cCRtU16y1vh1myuyZ2OdkWgMEBzyjYsoMWMicKZGZvcDnub3Zwb6XF2pj9iRMvm1SO1n57lS0vXLw==
+"@tanstack/react-table@^8.20.1":
+  version "8.20.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-table/-/react-table-8.20.1.tgz#bd2d549d8a18458fb8284025ce66a9b86176fa6b"
+  integrity sha512-PJK+07qbengObe5l7c8vCdtefXm8cyR4i078acWrHbdm8JKw1ES7YpmOtVt9ALUVEEFAHscdVpGRhRgikgFMbQ==
   dependencies:
-    "@tanstack/table-core" "8.19.3"
+    "@tanstack/table-core" "8.20.1"
 
-"@tanstack/table-core@8.19.3":
-  version "8.19.3"
-  resolved "https://registry.npmjs.org/@tanstack/table-core/-/table-core-8.19.3.tgz"
-  integrity sha512-IqREj9ADoml9zCAouIG/5kCGoyIxPFdqdyoxis9FisXFi5vT+iYfEfLosq4xkU/iDbMcEuAj+X8dWRLvKYDNoQ==
+"@tanstack/table-core@8.20.1":
+  version "8.20.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/table-core/-/table-core-8.20.1.tgz#74bfab10fa35bed51fa0bd2f3539a331d7e78f1b"
+  integrity sha512-5Ly5TIRHnWH7vSDell9B/OVyV380qqIJVg7H7R7jU4fPEmOD4smqAX7VRflpYI09srWR8aj5OLD2Ccs1pI5mTg==
 
 "@types/d3-array@^3.0.3":
   version "3.2.1"
@@ -1158,9 +1158,9 @@ acorn@^8.9.0:
     "@radix-ui/react-toggle" "^1.0.3"
     "@radix-ui/react-toggle-group" "^1.1.0"
     "@radix-ui/react-tooltip" "^1.0.7"
-    "@tanstack/react-table" "^8.19.3"
+    "@tanstack/react-table" "^8.20.1"
     "@types/uuid" "^9.0.8"
-    admin "file:C:/Users/84865/AppData/Local/Yarn/Cache/v6/npm-admin-0.1.0-2da4de14-ce41-4f07-ad39-086d050df361-1722616340724/node_modules/admin"
+    admin "file:."
     axios "^1.7.2"
     class-variance-authority "^0.7.0"
     clsx "^2.1.1"
@@ -1171,12 +1171,12 @@ acorn@^8.9.0:
     framer-motion "^11.3.19"
     jotai "^2.9.1"
     lucide-react "^0.417.0"
-    manager "file:C:/Users/84865/AppData/Local/Yarn/Cache/v6/npm-admin-0.1.0-2da4de14-ce41-4f07-ad39-086d050df361-1722616340724/node_modules/admin"
+    manager "file:."
     next "14.2.5"
     next-auth "^4.24.7"
     next-themes "^0.3.0"
     react "^18"
-    react-day-picker "^9.0.1"
+    react-day-picker "8.10.1"
     react-dom "^18"
     react-dropzone "^14.2.3"
     react-hook-form "^7.52.0"
@@ -3031,9 +3031,9 @@ lucide-react@^0.417.0:
     "@radix-ui/react-toggle" "^1.0.3"
     "@radix-ui/react-toggle-group" "^1.1.0"
     "@radix-ui/react-tooltip" "^1.0.7"
-    "@tanstack/react-table" "^8.19.3"
+    "@tanstack/react-table" "^8.20.1"
     "@types/uuid" "^9.0.8"
-    admin "file:C:/Users/84865/AppData/Local/Yarn/Cache/v6/npm-manager-0.1.0-2751768f-1f5b-4ee7-b3bb-b93937a5ca47-1722616340781/node_modules/manager"
+    admin "file:."
     axios "^1.7.2"
     class-variance-authority "^0.7.0"
     clsx "^2.1.1"
@@ -3044,12 +3044,12 @@ lucide-react@^0.417.0:
     framer-motion "^11.3.19"
     jotai "^2.9.1"
     lucide-react "^0.417.0"
-    manager "file:C:/Users/84865/AppData/Local/Yarn/Cache/v6/npm-manager-0.1.0-2751768f-1f5b-4ee7-b3bb-b93937a5ca47-1722616340781/node_modules/manager"
+    manager "file:."
     next "14.2.5"
     next-auth "^4.24.7"
     next-themes "^0.3.0"
     react "^18"
-    react-day-picker "^9.0.1"
+    react-day-picker "8.10.1"
     react-dom "^18"
     react-dropzone "^14.2.3"
     react-hook-form "^7.52.0"
@@ -3529,13 +3529,6 @@ react-day-picker@8.10.1:
   resolved "https://registry.yarnpkg.com/react-day-picker/-/react-day-picker-8.10.1.tgz#4762ec298865919b93ec09ba69621580835b8e80"
   integrity sha512-TMx7fNbhLk15eqcMt+7Z7S2KF7mfTId/XJDjKE8f+IUcFn0l08/kI4FiYTL/0yuOLmEcbR4Fwe3GJf/NiiMnPA==
 
-react-day-picker@^9.0.1:
-  version "9.0.6"
-  resolved "https://registry.npmjs.org/react-day-picker/-/react-day-picker-9.0.6.tgz"
-  integrity sha512-q4TUrUgA/TZbtrnoXYZrcQRky+HUHqnRmsldDG/jjsYQQehmQPRv4gWihEMrmcfI3sVWQlhUXx3bbnCYhfVMiA==
-  dependencies:
-    date-fns "^3.6.0"
-
 react-dom@^18:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
@@ -3870,8 +3863,16 @@ streamsearch@^1.1.0:
   resolved "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz"
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
-  name string-width-cjs
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+string-width@^4.1.0:
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -3951,7 +3952,14 @@ string.prototype.trimstart@^1.0.8:
     define-properties "^1.2.1"
     es-object-atoms "^1.0.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
