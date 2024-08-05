@@ -25,7 +25,7 @@ export default function Product() {
                       <Image
                         alt="Card background"
                         className="z-0 w-full max-h-[400px] object-cover"
-                        src={value.img}
+                        src={value.image}
                       />
                     </a>
                   </div>
@@ -34,11 +34,11 @@ export default function Product() {
 
                 <div className=" w-full">
                   <div className=" flex">
-                    <Chip radius="sm" className="text-xs m-1">{value.specifications.screen}</Chip>
-                    <Chip radius="sm" className="text-xs m-1">{value.specifications.display}</Chip>
+                    <Chip radius="sm" className="text-xs m-1">{value.specs.screen}</Chip>
+                    <Chip radius="sm" className="text-xs m-1">{value.specs.display}</Chip>
                   </div>
                   <div className=" flex">
-                    {value.specifications.SSD.map((item, idx) => (
+                    {value.specs.SSD.map((item, idx) => (
                       <Chip radius="sm" className="text-xs m-1" key={idx}>{item}</Chip>
                     ))}
                   </div>
@@ -46,7 +46,7 @@ export default function Product() {
 
                 <div className="h-full">
                   <div className="h-full">
-                    <p className="text-left font-semibold text-xl pb-5"> {value.title}</p>
+                    <p className="text-left font-semibold text-xl pb-5"> {value.name}</p>
                   </div>
                   <div className="h-full">
                     <p className="text-left text-sm"> {value.desc}</p>
@@ -57,7 +57,7 @@ export default function Product() {
                 </div>
 
                 <div className="w-full p-5 absolute bottom-0">
-                  <Link href={"iphone/" + value.title.toLowerCase().replaceAll(" ", "-")}>
+                  <Link href={"iphone/" + value.name.toLowerCase().replaceAll(" ", "-")}>
                     <Button color="primary" className=" w-full">Mua</Button>
                   </Link>
                   <div className=" flex items-center pt-4">

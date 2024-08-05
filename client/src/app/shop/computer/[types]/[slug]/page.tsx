@@ -25,8 +25,8 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <div className=" font-base text-xs pt-2">{details[0]?.SSD[0].price}</div>
             </div>
 
-            <div className="flex container flex-row pt-14 relative max-h-max">
-                <div className="container pr-14 w-2/3">
+            <div className="flex container flex-col md:flex-row pt-14 relative max-h-max">
+                <div className="container md:pr-14 w-full md:w-2/3">
                     <div className=" w-full sticky top-[100px]">
                         <ShopCarousel product={details}
                             version={version}
@@ -37,7 +37,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     </div>
 
                 </div>
-                <div className=" w-1/3">
+                <div className=" md:w-1/3 py-5 md:py-0">
                     <Version
                         product={details}
                         version={version}
@@ -58,6 +58,8 @@ export default function Page({ params }: { params: { slug: string } }) {
                     />
 
                     <Spec
+                        setColor={setColor}
+                        color={color}
                         product={details}
                         version={version}
                         setVersion={setVersion}
@@ -69,7 +71,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     Gói bảo hành AppleCare+.
                     <span className=" text-gray-400">Bảo vệ iPhone mới của bạn.</span>
                 </div>
-                <div className=" container flex mt-5">
+                <div className=" container flex md:flex-row flex-col mt-5 gap-5">
                     <button className={`container border-gray-400 border-1 rounded-xl`}>
                         <div className=' p-4 text-left'>
                             <div className=" font-semibold">
@@ -93,7 +95,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                             </ul>
                         </div>
                     </button>
-                    <button className={`container border-gray-400 border-[1.5px] rounded-xl ml-5`}>
+                    <button className={`container border-gray-400 border-[1.5px] rounded-xl`}>
                         <div className=' p-4'>
                             <div className=" font-semibold">
                                 Không có bảo hành AppleCare+
@@ -103,27 +105,21 @@ export default function Page({ params }: { params: { slug: string } }) {
                 </div>
             </div>
             <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
-                <div className=" container flex w-4/5">
-                    <div className=" w-1/3">
-                        <div className=" container font-semibold text-3xl p-10">
-                            iPhone 15 mới của bạn.
-                            <span className=" text-gray-400">Theo cách bạn muốn.</span>
-                        </div>
+                <div className=" container flex w-4/5 flex-col md:flex-row">
+                    <div className=" container font-semibold text-3xl p-10">
+                        iPhone 15 mới của bạn.
+                        <span className=" text-gray-400">Theo cách bạn muốn.</span>
                     </div>
-                    <div className=" w-1/3">
-                        <div className=" container p-10">
-                            <div className=" mb-2">iPhone 15 128GB Xanh Dương</div>
-                            <div className=" font-semibold">Tổng cộng 22.999.000đ</div>
-                        </div>
+                    <div className=" container p-10">
+                        <div className=" mb-2">iPhone 15 128GB Xanh Dương</div>
+                        <div className=" font-semibold">Tổng cộng 22.999.000đ</div>
                     </div>
-                    <div className=" w-1/3">
-                        <div className=" container p-10">
-                            <div className=" font-semibold">Giao hàng:</div>
-                            <div className=" text-sm">Còn hàng</div>
-                            <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
+                    <div className=" container p-10">
+                        <div className=" font-semibold">Giao hàng:</div>
+                        <div className=" text-sm">Còn hàng</div>
+                        <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
 
-                            <Button className=" w-full" color="primary">thêm vào giỏ hàng</Button>
-                        </div>
+                        <Button className=" w-full" color="primary">thêm vào giỏ hàng</Button>
                     </div>
                 </div>
             </div>

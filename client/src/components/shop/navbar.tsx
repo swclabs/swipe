@@ -23,7 +23,7 @@ export default function ProductNavbar() {
             </a>
           </div>
           <div className=" flex">
-            <a className=" w-[100px] mr-[10px]" href="/shop/iphone">
+            <a className=" w-[100px] mr-[10px]" href="/shop/phone">
               <Image
                 className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                 src="/img/iphone.png"
