@@ -4,6 +4,7 @@ const iphoneDetail: ProductDetail[] = [
     {
         name: "iPhone 15 Pro",
         screen: "6.1 inch",
+        chip: "A16 Bionic chip",
         img: [
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-1-202309.jpg",
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-2-202309.jpg",
@@ -28,6 +29,7 @@ const iphoneDetail: ProductDetail[] = [
                 price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
             },
         ],
+        memory: [],
         color: [
             {
                 name: "Nature Titanium",
@@ -74,6 +76,7 @@ const iphoneDetail: ProductDetail[] = [
     {
         name: "iPhone 15 Pro Max",
         screen: "6.7 inch",
+        chip: "A16 Bionic chip",
         img: [
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-1-202309.jpg",
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-2-202309.jpg",
@@ -93,6 +96,7 @@ const iphoneDetail: ProductDetail[] = [
                 price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
             },
         ],
+        memory: [],
         color: [
             {
                 name: "Nature Titanium",

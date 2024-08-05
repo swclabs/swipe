@@ -7,14 +7,15 @@ import iphoneDetail from "@/faker/iphone-detail";
 import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
+import { laptop } from "@/faker/mac-detail";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
-    const [details, setDetails] = useState<ProductDetail[]>(iphoneDetail)
+    const [details, setDetails] = useState<ProductDetail[]>(laptop)
     const [version, setVersion] = useState<number>(-1)
     const [color, setColor] = useState<number>(-1)
     useEffect(() => {
-        setDetails(iphoneDetail)
+        setDetails(laptop)
     }, [])
     return (
         <div className=" container w-[87%] m-auto">

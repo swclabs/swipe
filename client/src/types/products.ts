@@ -42,7 +42,12 @@ export interface Posts {
 export interface ProductDetail {
     name: string;
     screen: string;
+    chip: string;
     img: string[]
+    memory: {
+        value: string;
+        price: string;
+    }[];
     SSD: {
         value: string;
         price: string;
