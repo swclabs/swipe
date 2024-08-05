@@ -11,7 +11,6 @@ const iphoneDetail: ProductDetail[] = [
             "/img/shop/iphone-15-pro/iphone-15-pro-finish-select.jpg",
 
         ],
-        memory: [],
         color: [
             {
                 name: "Nature Titanium",
