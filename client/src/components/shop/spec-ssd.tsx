@@ -19,17 +19,17 @@ const enableSpec = {}
 
 export default function SpecMemory({ product, version, color, setColor }: IStorageProps) {
     const [select, setSelect] = useState<number>(-1)
-    const [checkRam, setCheckRam] = useState<string[]>([])
-    const tempRam: string[] = []
+    const [checkSSD, setCheckSSD] = useState<string[]>([])
+    const tempSSD: string[] = []
 
     useEffect(() => {
         setSelect(-1)
-        setCheckRam(tempRam)
+        setCheckSSD(tempSSD)
     }, [color, version])
 
     product[version]?.color[color]?.specs?.map((value, index) => {
-        if (!tempRam.includes(value.RAM)) {
-            tempRam.push(value.RAM)
+        if (!tempSSD.includes(value.SSD)) {
+            tempSSD.push(value.SSD)
         }
     })
 
@@ -38,12 +38,12 @@ export default function SpecMemory({ product, version, color, setColor }: IStora
         <div className=" container mt-10">
             {color !== -1 &&
                 <div className=' font-semibold text-2xl'>
-                    Memory. <span className=' text-gray-400'>Bạn cần bao nhiêu memory?</span>
+                    Dung lượng. <span className=' text-gray-400'>Bạn cần bao nhiêu dung lượng?</span>
                 </div>
             }
 
             <div className='pt-5' style={version === -1 ? disableSpec : enableSpec}>
-                {checkRam.map((value, index) =>
+                {checkSSD.map((value, index) =>
                     <button
                         className={`container ${select === index ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                         key={index}

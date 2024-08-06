@@ -8,6 +8,7 @@ import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { laptop } from "@/faker/mac-detail";
 import SpecMemory from "@/components/shop/spec-memory";
+import SpecSSD from "@/components/shop/spec-ssd";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -64,6 +65,14 @@ export default function Page({ params }: { params: { slug: string } }) {
                         color={color}
                         product={details}
                         version={version}
+                        setVersion={setVersion}
+                    />
+
+                    <SpecSSD
+                        product={details}
+                        version={version}
+                        color={color}
+                        setColor={setColor}
                         setVersion={setVersion}
                     />
                 </div>
