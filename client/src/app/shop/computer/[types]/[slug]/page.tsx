@@ -3,11 +3,11 @@ import ShopCarousel from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
 import Spec from "@/components/shop/spec";
 import Version from "@/components/shop/version";
-import iphoneDetail from "@/faker/iphone-detail";
 import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { laptop } from "@/faker/mac-detail";
+import SpecMemory from "@/components/shop/spec-memory";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -22,7 +22,9 @@ export default function Page({ params }: { params: { slug: string } }) {
             <div className=" container pt-10">
                 <div className=" text-red-500 font-medium pt-5">Mới</div>
                 <div className=" font-semibold text-5xl pt-2">Mua {details[0]?.name}</div>
-                <div className=" font-base text-xs pt-2">{details[0]?.SSD[0].price}</div>
+                {details[0]?.color[0].specs !== undefined &&
+                    <div className=" font-base text-xs pt-2">{details[0]?.color[0].specs[0]?.price}</div>
+                }
             </div>
 
             <div className="flex container flex-col md:flex-row pt-14 relative max-h-max">
@@ -57,7 +59,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         setVersion={setVersion}
                     />
 
-                    <Spec
+                    <SpecMemory
                         setColor={setColor}
                         color={color}
                         product={details}
