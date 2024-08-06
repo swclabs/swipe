@@ -42,6 +42,7 @@ export interface Posts {
 export interface ProductDetail {
     name: string;
     screen: string;
+    chip: string;
     img: string[]
     color: {
         name: string;

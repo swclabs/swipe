@@ -62,7 +62,9 @@ export default function ProductCard({ product }: products) {
                                 </div>
 
                                 <div className="w-full p-5 absolute bottom-0">
-                                    <Button color="primary" className=" w-full">Mua</Button>
+                                    <Link href={"computer/" + "laptop/" + value.name.toLowerCase().replaceAll(" ", "-")}>
+                                        <Button color="primary" className=" w-full">Mua</Button>
+                                    </Link>
                                     <div className=" flex items-center pt-4">
                                         <FiTruck />
                                         <p className=" pl-2 text-left text-xs">Đặt hàng hôm nay, giao hàng đến Hồ Chí Minh</p>
@@ -77,6 +79,6 @@ export default function ProductCard({ product }: products) {
                     <div className="shrink-0"></div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

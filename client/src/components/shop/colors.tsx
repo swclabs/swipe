@@ -1,5 +1,6 @@
 import { ProductDetail } from "@/types/products";
-import { Button, Image } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
+import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface IColorProps {
@@ -24,13 +25,12 @@ export default function Colors({ product, version, color, setVersion, setColor }
                 Màu. <span className=' text-gray-400'>Chọn màu bạn yêu thích</span>
             </div>
 
-            <div className='pt-5 flex'>
+            <div className='pt-5 flex gap-4'>
                 {product[selectVersion].color.map((value, index) => (
                     <Button
                         isIconOnly
                         radius="full"
                         key={index}
-                        className="ml-4"
                         variant={`${color === index ? "bordered" : "solid"}`}
                         color="primary"
                         isDisabled={version === -1 ? true : false}
@@ -39,6 +39,7 @@ export default function Colors({ product, version, color, setVersion, setColor }
                         <Image
                             alt="img"
                             src={value.img}
+                            fill
                         />
                     </Button>
                 ))}
