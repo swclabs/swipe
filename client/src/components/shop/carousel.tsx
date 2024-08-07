@@ -8,8 +8,8 @@ interface ICarouselProps {
   product: ProductDetail[];
   version: number;
   color: number;
-  setVersion: Dispatch<SetStateAction<number>>;
-  setColor: Dispatch<SetStateAction<number>>;
+  setVersion: (version: number) => void;
+  setColor: (color: number) => void;
 }
 
 export default function ShopCarousel({ product, version, color, setVersion, setColor }: ICarouselProps) {
@@ -17,6 +17,7 @@ export default function ShopCarousel({ product, version, color, setVersion, setC
   const [images, setImages] = useState<string[]>([])
 
   useEffect(() => {
+    if (product.length === 0) return
     if (version === -1 || color === -1) {
       setImages(product[0].img)
       return
