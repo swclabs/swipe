@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 interface IVersionProps {
     product: ProductDetail[];
     version: number;
-    setVersion: Dispatch<SetStateAction<number>>;
+    setVersion: (version: number) => void;
 }
 
 export default function Version({ product, version, setVersion }: IVersionProps) {

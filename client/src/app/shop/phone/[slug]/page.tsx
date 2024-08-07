@@ -2,17 +2,27 @@
 import ShopCarousel from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
 import Spec from "@/components/shop/spec";
+import SpecMemory from "@/components/shop/spec-memory";
+import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import iphoneDetail from "@/faker/iphone-detail";
+import { useProductStore } from "@/state";
 import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const [details, setDetails] = useState<ProductDetail[]>(iphoneDetail)
-  const [version, setVersion] = useState<number>(-1)
-  const [color, setColor] = useState<number>(-1)
+  const {
+    details,
+    version,
+    color,
+    specs,
+    setVersion,
+    setDetails,
+    setColor,
+    setSpecs,
+  } = useProductStore()
 
   useEffect(() => {
     setDetails(iphoneDetail)
@@ -60,12 +70,24 @@ export default function Page({ params }: { params: { slug: string } }) {
             setVersion={setVersion}
           />
 
-          <Spec
-            setColor={setColor}
+          <SpecMemory
+            product={details}
             color={color}
+            version={version}
+            specs={specs}
+            setSpecs={setSpecs}
+            setColor={setColor}
+            setVersion={setVersion}
+          />
+
+          <SpecSSD
             product={details}
             version={version}
+            color={color}
+            specs={specs}
+            setColor={setColor}
             setVersion={setVersion}
+            setSpecs={setSpecs}
           />
         </div>
       </div>
