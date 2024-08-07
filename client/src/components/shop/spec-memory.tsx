@@ -1,64 +1,60 @@
 import React from 'react';
 import { ProductDetail } from "@/types/products";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { motion } from 'framer-motion';
+import { Badge } from '../ui/badge';
+import { Button } from '../ui/button';
+import { cn } from '@/lib/utils';
 
 interface IStorageProps {
-    product: ProductDetail[];
-    version: number;
-    color: number;
-    setVersion: Dispatch<SetStateAction<number>>;
-    setColor: Dispatch<SetStateAction<number>>;
+  product: ProductDetail[];
+  version: number;
+  color: number;
+  specs: { ram: string, ssd: string }
+  setVersion: (version: number) => void;
+  setColor: (color: number) => void;
+  setSpecs: (specs: { ram: string, ssd: string }) => void;
 }
 
 const disableSpec = {
-    "pointerEvents": "none",
-    "opacity": "0.4",
+  "pointerEvents": "none",
+  "opacity": "0.4",
 }
 
 const enableSpec = {}
 
-export default function SpecMemory({ product, version, color, setColor }: IStorageProps) {
-    const [select, setSelect] = useState<number>(-1)
-    const [checkRam, setCheckRam] = useState<string[]>([])
-    const tempRam: string[] = []
-
-    useEffect(() => {
-        setSelect(-1)
-        setCheckRam(tempRam)
-    }, [color, version])
-
-    product[version]?.color[color]?.specs?.map((value, index) => {
-        if (!tempRam.includes(value.RAM)) {
-            tempRam.push(value.RAM)
-        }
-    })
-
-
-    return (
+export default function SpecMemory({ product, version, color, specs, setSpecs }: IStorageProps) {
+  const RAM = Array.from(new Set(product[version]?.color[color]?.specs?.map((value) => value.RAM)))
+  return (
+    <>{version !== -1 && color !== -1 &&
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25 }}
+      >
         <div className=" container mt-10">
-            {color !== -1 &&
-                <div className=' font-semibold text-2xl'>
-                    Memory. <span className=' text-gray-400'>Bạn cần bao nhiêu memory?</span>
-                </div>
+          <div className=' font-semibold text-2xl'>
+            Memory. <span className=' text-gray-400'>Bạn cần bao nhiêu memory?</span>
+          </div>
+
+          <div className='pt-2 flex gap-2' style={version === -1 ? disableSpec : enableSpec}>
+            {RAM.map((value, index) =>
+              <Button
+                variant="outline"
+                className={cn(specs.ram === value ? "border-blue-500" : "border-gray-400")}
+                key={index}
+                // disabled={specs.ram === value ? true : false}
+                onClick={() => setSpecs({ ram: value, ssd: '' })}
+              >
+                {value}
+              </Button>
+            )
             }
 
-            <div className='pt-5' style={version === -1 ? disableSpec : enableSpec}>
-                {checkRam.map((value, index) =>
-                    <button
-                        className={`container ${select === index ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
-                        key={index}
-                        onClick={() => setSelect(index)}
-                    >
-                        <div className='flex justify-between p-4'>
-                            <div className=' w-2/5 flex flex-col items-start justify-center'>
-                                <div className=' font-semibold'>{value}</div>
-                            </div>
-                        </div>
-                    </button>
-                )
-                }
-
-            </div>
+          </div>
         </div >
-    )
+      </motion.div >
+    }
+    </>
+  )
 }
