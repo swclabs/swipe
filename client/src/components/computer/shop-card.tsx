@@ -22,7 +22,7 @@ export default function ShopComputer({ data, href }: { data: ProductShopCard[]; 
                   </p>
                 </CardHeader>
                 <CardContent className=" flex-1">
-                  <div className="flex justify-center  flex-1">
+                  <div className="flex justify-center flex-1">
                     <Image
                       alt="Card background"
                       className="z-0 my-8"
