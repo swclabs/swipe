@@ -77,7 +77,7 @@ export default function NavbarComponent() {
           <NavbarItemSupport />
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end" className='sm:flex gap-12'>
+      <NavbarContent justify="end" className='sm:flex'>
         <NavbarItem>
           <div className='medium-container'>
             <Link color="foreground" href="#">

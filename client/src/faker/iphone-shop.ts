@@ -1,18 +1,18 @@
 const iphone_shop = [
     {
-        title: "iPhone 15 Pro & iPhone 15 Pro Max",
+        title: "iPhone 15 Pro",
         subtitle: "",
         price: "Từ 28.999.000đ hoặc 1.181.000đ/tháng mỗi tháng trong 24 tháng*",
         img: "/img/shop/iphone-card-40-iphone15prohero-202309.jpeg",
     },
     {
-        title: "iPhone 15 Pro & iPhone 15 Plus",
+        title: "iPhone 15 Pro",
         subtitle: "",
         price: "Từ 22.999.000đ hoặc 936.000đ/tháng mỗi tháng trong 24 tháng*",
         img: "/img/shop/iphone-card-40-iphone15hero-202309.jpeg",
     },
     {
-        title: "iPhone 14 & iPhone 14 Plus",
+        title: "iPhone 14",
         subtitle: "",
         price: "Từ 19.999.000đ hoặc 814.000đ/thángmỗi tháng trong 24 tháng*",
         img: "/img/shop/iphone-card-40-iphone14-202209.jpeg",

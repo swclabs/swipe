@@ -1,17 +1,3 @@
-export interface ProductData {
-    title: string;
-    subtitle: string;
-    price: string;
-    desc: string;
-    img: string;
-    swatch: string;
-    spec?: {
-        screen: string;
-        display: string;
-        SSD: number[];
-    };
-}
-
 export interface Accessory {
     title: string;
     desc: string;
@@ -56,10 +42,10 @@ export interface ProductDetail {
 }
 
 export interface ProductShopCard {
-    title: string;
-    subtitle: string;
+    name: string;
+    desc: string;
     price: string;
-    img: string;
+    image: string;
 }
 
 export interface AccessoryShopCard {

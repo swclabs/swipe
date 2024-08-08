@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ShopCard({ data, href }: { data: ProductShopCard[]; href: string }) {
+export default function ShopTablet({ data, href }: { data: ProductShopCard[]; href: string }) {
   return (
     <div className="flex justify-center items-center">
       <Carousel className="w-full">
@@ -27,8 +27,8 @@ export default function ShopCard({ data, href }: { data: ProductShopCard[]; href
                       alt="Card background"
                       className="z-0 my-8"
                       src={value.image}
-                      width={100}
-                      height={100}
+                      width={125}
+                      height={125}
                     />
                   </div>
                 </CardContent>
