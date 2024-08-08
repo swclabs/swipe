@@ -23,7 +23,7 @@ export default function Product() {
                       <Image
                         alt="Card background"
                         className="z-0 w-full h-full object-cover"
-                        src={value.img}
+                        src={value.image}
                       />
                     </a>
                   </div>
@@ -31,8 +31,8 @@ export default function Product() {
 
                 <div className="h-full pt-4">
                   <div className="h-20">
-                    <h1 className="font-semibold text-2xl pt-4">{value.title}</h1>
-                    <p>{value.subtitle}</p>
+                    <h1 className="font-semibold text-2xl pt-4">{value.name}</h1>
+                    <p>{value.desc}</p>
                   </div>
 
                   <div className="h-full pt-4">

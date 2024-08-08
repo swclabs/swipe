@@ -12,72 +12,45 @@ import { Link } from '@nextui-org/react';
 import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
 import ShortCut from '@/components/common/shortcut';
-function IpadPage() {
-    return (
-        <>
-            {/* 
-            |
-            |--- news (tin tức sản phẩm)
-            |
-            |--- sản phẩm cụ thể
-            |
-            |--- phụ kiện cho sản phẩm
-            |
-            */}
+import ipad from '@/faker/ipad';
+import { iPhoneAccessories } from '@/faker/iphone-accessory';
+import AccessoryCard from '@/components/common/accesories-card';
+import ShopTablet from '@/components/tablet/shop-card';
 
-            <div className=" w-full bg-white">
-                <div className=' w-full flex justify-center p-5 bg-black'>
-                    <motion.div
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.75 }}
-                        className='w-4/5'
-                    >
-                        <ProductIpadTypes />
-                    </motion.div>
-                </div>
-                <Banner />
+function Page() {
+  return (
+    <>
+      <div className=" w-full bg-white">
+        <div className=' w-full flex justify-center p-5 bg-black'>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.75 }}
+            className='w-4/5'
+          >
+            <ProductIpadTypes />
+          </motion.div>
+        </div>
+        <Banner />
 
-                {/* Section Welcome */}
-                <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
+        {/* Section Welcome */}
+        <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
 
-                <ShopCardsCarousel carousel={shop_carousel} />
+        <ShopCardsCarousel carousel={shop_carousel} />
 
-                {/* Section Products Compare */}
-                {/* <div className="flex justify-center text-center ">
-                    <div className=" pt-12 pb-12 w-[1000px] bg-white">
-                        <h2 className=" text-xl sm:text-5xl font-medium pb-8">Khám phá các dòng sản phẩm iPad.</h2>
-                        <a className=" text-blue-600" href="#">
-                            <span className="buy"> Mua iPad </span>
-                        </a>
-                    </div>
-                </div> */}
-                {/* <ProductCompare /> */}
+        <div className=' bg-gray-50 flex justify-center'>
+          <div className=' md:w-4/5 w-2/3'>
+            <div className=" text-xl sm:text-2xl font-semibold pt-10">Mọi phiên bản. <span className='font-medium text-gray-500'> Hãy chọn mẫu bạn thích.</span></div>
+            <ShopTablet data={ipad} href='/shop/tablet' />
 
-                {/* Section Products */}
-                <div className="flex justify-center text-center ">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <h2 className=" text-xl sm:text-5xl font-medium pb-8">Khám phá các dòng sản phẩm iPad.</h2>
-                        <Link href='' className=" text-blue-600">
-                            <span className="buy"> Mua iPad </span>
-                        </Link>
-
-                    </div>
-                </div>
-                <Product />
-
-                {/* Section Accessories */}
-                <div className="flex justify-center">
-                    <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-                        <span className=" text-xl sm:text-5xl font-medium">Phụ kiện thiết yếu cho iPad.</span>
-                    </div>
-                </div>
-
-                <Accessories />
-                <ShortCut />
-            </div >
-        </>
-    );
+            <span className=" text-xl sm:text-2xl font-semibold"> Phụ kiện. <span className='font-medium text-gray-500'> Những phụ kiện kết hợp hoàn hảo với thiết bị yêu thích của bạn.</span></span>
+            <AccessoryCard data={iPhoneAccessories} />
+          </div>
+        </div>
+        <ShortCut />
+      </div >
+    </>
+  );
 }
 
-export default IpadPage;
+export default Page;

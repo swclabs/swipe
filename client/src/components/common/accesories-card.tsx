@@ -46,8 +46,8 @@ export default function AccessoryCard({ data }: { data: AccessoryShopCard[] }) {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious variant="secondary" />
+        <CarouselNext variant="secondary" />
       </Carousel>
     </div>
   )

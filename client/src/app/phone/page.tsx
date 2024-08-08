@@ -9,13 +9,14 @@ import { motion } from "framer-motion"
 import Widget, { PostsWidget } from '@/components/common/widget';
 import WidgetData1 from '@/faker/widget';
 import { Link } from '@nextui-org/react';
-import ShopCard from "@/components/common/shop-card";
 import AccessoryCard from '@/components/common/accesories-card';
 import { iphone_shop } from '@/faker/iphone-shop';
 import { iPhoneAccessories } from '@/faker/iphone-accessory';
 import { PhoneCardsCarousel } from '@/components/phone/cards-carousel';
 import { iphone_carousel } from '@/faker/iphone-carousel';
 import ShortCut from '@/components/common/shortcut';
+import iphone from '@/faker/iphone';
+import ShopPhone from '@/components/phone/shop-card';
 
 function IphonePage() {
   return (
@@ -35,11 +36,10 @@ function IphonePage() {
       <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
       <PhoneCardsCarousel carousel={iphone_carousel} />
 
-      {/* <Widget data={WidgetData1} /> */}
       <div className=' bg-gray-50 flex justify-center'>
         <div className=' md:w-4/5 w-2/3'>
           <div className=" text-xl sm:text-2xl font-semibold pt-10">Mọi phiên bản. <span className='font-medium text-gray-500'> Hãy chọn mẫu bạn thích.</span></div>
-          <ShopCard data={iphone_shop} />
+          <ShopPhone data={iphone} href='/shop/phone' />
 
           <span className=" text-xl sm:text-2xl font-semibold"> Phụ kiện. <span className='font-medium text-gray-500'> Những phụ kiện kết hợp hoàn hảo với thiết bị yêu thích của bạn.</span></span>
           <AccessoryCard data={iPhoneAccessories} />
