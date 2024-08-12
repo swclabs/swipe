@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductDetail } from "@/types/products";
+import { ProductDetail, Specs } from "@/types/products";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import { Badge } from '../ui/badge';
@@ -7,13 +7,13 @@ import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 
 interface IStorageProps {
-  product: ProductDetail[];
+  product: ProductDetail<Specs>[];
   version: number;
   color: number;
-  specs: { ram: string, ssd: string }
+  specs: Specs
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
-  setSpecs: (specs: { ram: string, ssd: string }) => void;
+  setSpecs: (specs: Specs) => void;
 }
 
 const disableSpec = {
@@ -41,10 +41,10 @@ export default function SpecMemory({ product, version, color, specs, setSpecs }:
             {RAM.map((value, index) =>
               <Button
                 variant="outline"
-                className={cn(specs.ram === value ? "border-blue-500" : "border-gray-400")}
+                className={cn(specs.RAM === value ? "border-blue-500" : "border-gray-400")}
                 key={index}
                 // disabled={specs.ram === value ? true : false}
-                onClick={() => setSpecs({ ram: value, ssd: '' })}
+                onClick={() => setSpecs({ RAM: value, SSD: '', price: '' })}
               >
                 {value}
               </Button>
