@@ -1,13 +1,13 @@
 'use client';
-import ShopCarousel from "@/components/shop/carousel";
+import ShopDeviceCarousel from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
 import Spec from "@/components/shop/spec";
 import SpecMemory from "@/components/shop/spec-memory";
 import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import ipadDetail from "@/faker/ipad-details";
-import { useProductStore } from "@/state";
-import { ProductDetail } from "@/types/products";
+import { useProductWithSpecs } from "@/state";
+import { ProductDetail, Specs } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
@@ -22,10 +22,11 @@ export default function Page({ params }: { params: { slug: string } }) {
     setDetails,
     setColor,
     setSpecs,
-  } = useProductStore()
+  } = useProductWithSpecs()
   useEffect(() => {
     setDetails(ipadDetail)
   }, [])
+  console.log('ipadDetail', details)
   return (
     <div className=" container w-[87%] m-auto">
       <div className=" container pt-10">
@@ -38,7 +39,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div className="flex container flex-col md:flex-row pt-14 relative max-h-max">
         <div className="container md:pr-14 w-full md:w-2/3">
           <div className=" w-full sticky top-[100px]">
-            <ShopCarousel product={details}
+            <ShopDeviceCarousel product={details}
               version={version}
               color={color}
               setColor={setColor}

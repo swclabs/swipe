@@ -25,7 +25,19 @@ export interface Posts {
     textcolor: string;
 }
 
-export interface ProductDetail {
+export interface Specs {
+    RAM: string;
+    SSD: string;
+    price: string;
+}
+
+export interface Connection {
+    name: string;
+    desc: string;
+    price: string;
+}
+
+export interface ProductDetail<T> {
     name: string;
     screen: string;
     img: string[]
@@ -33,11 +45,19 @@ export interface ProductDetail {
         name: string;
         img: string;
         product: string[];
-        specs?: {
-            RAM: string;
-            SSD: string;
-            price: string;
-        }[];
+        specs?: T[];
+    }[];
+}
+
+export interface ProductConnectionDetail {
+    name: string;
+    screen: string;
+    img: string[]
+    color: {
+        name: string;
+        img: string;
+        product: string[];
+        specs?: Connection[];
     }[];
 }
 

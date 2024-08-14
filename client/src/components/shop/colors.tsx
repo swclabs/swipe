@@ -1,10 +1,10 @@
-import { ProductDetail } from "@/types/products";
+import { ProductDetail, Specs } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { motion } from 'framer-motion';
 
 interface IColorProps {
-  product: ProductDetail[];
+  product: ProductDetail<{ price: string }>[];
   version: number;
   color: number;
   setVersion: (version: number) => void;
