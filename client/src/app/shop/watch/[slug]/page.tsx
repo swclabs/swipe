@@ -26,7 +26,6 @@ export default function Page({ params }: { params: { slug: string } }) {
     setSpecs,
   } = useProducWithConnection()
   useEffect(() => {
-    setColor(0)
     setDetails(watchDetail)
   }, [])
   return (
