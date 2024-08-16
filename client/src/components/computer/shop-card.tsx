@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ShopCard({ data, href }: { data: ProductShopCard[]; href: string }) {
+export default function ShopComputer({ data, href }: { data: ProductShopCard[]; href: string }) {
   return (
     <div className="flex justify-center items-center">
       <Carousel className="w-full">
@@ -22,18 +22,18 @@ export default function ShopCard({ data, href }: { data: ProductShopCard[]; href
                   </p>
                 </CardHeader>
                 <CardContent className=" flex-1">
-                  <div className="flex justify-center  flex-1">
+                  <div className="flex justify-center flex-1">
                     <Image
                       alt="Card background"
                       className="z-0 my-8"
                       src={value.image}
-                      width={100}
-                      height={100}
+                      width={200}
+                      height={200}
                     />
                   </div>
                 </CardContent>
                 <CardFooter className="flex-1 w-full">
-                  <div className=" flex justify-between w-full items-center">
+                  <div className=" flex justify-between w-full">
                     <p className="text-sm w-2/3">
                       {value.price}
                     </p>

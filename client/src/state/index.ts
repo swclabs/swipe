@@ -1,37 +1,37 @@
 import { laptop } from '@/faker/mac-detail';
-import { ProductDetail } from './../types/products';
+import { Connection, ProductDetail, Specs } from './../types/products';
 import { create } from 'zustand'
 
-// const useStore = create((set) => ({
-//     count: 1,
-//     inc: () => set((state: { count: number }) => ({ count: state.count + 1 })),
-// }))
 
-interface ProductStore {
+interface ProductStoreWith<T> {
     color: number;
     version: number;
-    details: ProductDetail[];
-    specs: {
-        ram: string;
-        ssd: string;
-    }
+    details: ProductDetail<T>[];
+    specs: T
     setColor: (color: number) => void;
     setVersion: (version: number) => void;
-    setDetails: (details: ProductDetail[]) => void;
-    setSpecs: (specs: { ram: string; ssd: string }) => void;
+    setDetails: (details: ProductDetail<T>[]) => void;
+    setSpecs: (specs: T) => void;
 }
 
-export const useProductStore = create<ProductStore>((set) => ({
+export const useProductWithSpecs = create<ProductStoreWith<Specs>>((set) => ({
     version: -1,
     color: -1,
     details: [],
-    specs: {
-        ram: "",
-        ssd: "",
-    },
+    specs: {} as Specs,
     setColor: (color: number) => set({ color }),
     setVersion: (version: number) => set({ version }),
-    setDetails: (details: ProductDetail[]) => set({ details: details }),
-    setSpecs: (specs: { ram: string; ssd: string }) => set({ specs }),
+    setDetails: (details: ProductDetail<Specs>[]) => set({ details: details }),
+    setSpecs: (specs: Specs) => set({ specs }),
 }))
 
+export const useProducWithConnection = create<ProductStoreWith<Connection>>((set) => ({
+    version: -1,
+    color: -1,
+    details: [],
+    specs: {} as Connection,
+    setColor: (color: number) => set({ color }),
+    setVersion: (version: number) => set({ version }),
+    setDetails: (details: ProductDetail<Connection>[]) => set({ details: details }),
+    setSpecs: (specs: Connection) => set({ specs }),
+}))

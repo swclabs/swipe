@@ -14,7 +14,7 @@ export default function Page() {
         <div className=" text-xl sm:text-5xl font-semibold py-10"> Mua Airpod </div>
 
         <div className=" text-xl sm:text-2xl font-semibold pt-10">Tất cả các phiên bản Airpod. <span className='font-medium text-gray-500'>Hãy chọn mẫu bạn thích.</span></div>
-        <ShopCard data={airpod} />
+        <ShopCard data={airpod} href='/shop/earphone' />
 
         <span className=" text-xl sm:text-2xl font-semibold"> Những mẫu tai nghe khác. <span className='font-medium text-gray-500'> Hãy chọn cho bạn gu âm nhạc </span></span>
         <AccessoryCard data={earphone} />
