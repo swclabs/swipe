@@ -48,7 +48,6 @@ export default function Page({ params }: { params: { slug: string } }) {
               setVersion={setVersion}
             />
           </div>
-
         </div>
         <div className=" md:w-1/3 py-5 md:py-0">
           <Version
