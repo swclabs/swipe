@@ -10,6 +10,7 @@ import { useProductWithSpecs } from "@/state";
 import { ProductDetail, Specs } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -23,10 +24,13 @@ export default function Page({ params }: { params: { slug: string } }) {
     setColor,
     setSpecs,
   } = useProductWithSpecs()
+
+
   useEffect(() => {
+    setSpecs({ RAM: "", SSD: "", price: "" })
     setDetails(ipadDetail)
   }, [])
-  console.log('ipadDetail', details)
+  console.log(specs)
   return (
     <div className=" container w-[87%] m-auto">
       <div className=" container pt-10">
@@ -89,63 +93,33 @@ export default function Page({ params }: { params: { slug: string } }) {
           />
         </div>
       </div>
-      <div className=" container mt-10">
-        <div className=" font-semibold text-2xl">
-          Gói bảo hành AppleCare+.
-          <span className=" text-gray-400">Bảo vệ iPhone mới của bạn.</span>
-        </div>
-        <div className=" container flex md:flex-row flex-col mt-5 gap-5">
-          <button className={`container border-gray-400 border-1 rounded-xl`}>
-            <div className=' p-4 text-left'>
-              <div className=" font-semibold">
-                AppleCare+
+      {details[version] && details[version].color[color] && specs.SSD !== "" &&
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
+            <div className=" container flex w-4/5 flex-col md:flex-row">
+              <div className=" container font-semibold text-3xl p-10">
+                {details[version]?.name} mới của bạn.
+                <span className=" text-gray-400">Theo cách bạn muốn.</span>
               </div>
-              <div className=" text-sm">
-                3.999.000đhoặc163.000đ/thángmỗi tháng cho 24 thángthángChú thích*
-                Ở mức phí dịch vụ 1.67%, sau khi thanh toán lần đầu 20% là 800.000đ
+              <div className=" container p-10">
+                <div className=" mb-2">{details[version]?.name} {specs.SSD} {details[version].color[color].name}</div>
+                <div className=" font-semibold">Tổng cộng {specs.price}</div>
               </div>
-              <div className=" w-full border-t-[1px] border-black mt-5" />
-              <ul className="list-disc p-4 text-xs">
-                <li>
-                  Nay đã có dịch vụ sửa chữa không hạn chế cho trường hợp hư hỏng do sự cố bất ngờ.
-                </li>
-                <li>
-                  Dịch vụ sửa chữa được Apple chứng nhận sử dụng linh kiện Apple chính hãng
-                </li>
-                <li>
-                  Dịch Vụ Thay Thế Cấp Tốc - Chúng tôi sẽ gửi cho bạn một thiết bị thay thế để bạn không phải chờ sửa chữa
-                </li>
-              </ul>
-            </div>
-          </button>
-          <button className={`container border-gray-400 border-[1.5px] rounded-xl`}>
-            <div className=' p-4'>
-              <div className=" font-semibold">
-                Không có bảo hành AppleCare+
-              </div>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
-        <div className=" container flex w-4/5 flex-col md:flex-row">
-          <div className=" container font-semibold text-3xl p-10">
-            iPhone 15 mới của bạn.
-            <span className=" text-gray-400">Theo cách bạn muốn.</span>
-          </div>
-          <div className=" container p-10">
-            <div className=" mb-2">iPhone 15 128GB Xanh Dương</div>
-            <div className=" font-semibold">Tổng cộng 22.999.000đ</div>
-          </div>
-          <div className=" container p-10">
-            <div className=" font-semibold">Giao hàng:</div>
-            <div className=" text-sm">Còn hàng</div>
-            <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
+              <div className=" container p-10">
+                <div className=" font-semibold">Giao hàng:</div>
+                <div className=" text-sm">Còn hàng</div>
+                <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
 
-            <Button className=" w-full" color="primary">thêm vào giỏ hàng</Button>
+                <Button className=" w-full" color="primary">thêm vào giỏ hàng</Button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      }
     </div>
   )
 }

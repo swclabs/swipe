@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Product() {
   return (
-    <div className="flex justify-center w-full pb-[10px] hover:pb-0 scrollbar hover:overflow-x-auto overflow-hidden">
+    <div className="flex justify-center w-full pb-[10px] overflow-hidden">
       <div className=" relative flex snap-x snap-mandatory 2xl:justify-between">
 
         <div className=" sm:w-1/12 shrink-0 snap-center">

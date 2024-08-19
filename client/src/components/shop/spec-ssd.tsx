@@ -6,7 +6,7 @@ interface IStorageProps {
   product: ProductDetail<Specs>[];
   version: number;
   color: number;
-  specs: Specs
+  specs: Specs;
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
   setSpecs: (specs: Specs) => void;
@@ -20,17 +20,16 @@ const disableSpec = {
 const enableSpec = {}
 
 export default function SpecSSD({ product, version, color, specs, setSpecs }: IStorageProps) {
-
   return (
     <>
-      {version !== -1 && color !== -1 && specs.RAM !== '' &&
+      {version !== -1 && color !== -1 && specs.RAM !== "" &&
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25 }}
         >
 
-          <div className=" container mt-10">
+          <div className=" container mt-10" id='SSD'>
             <div className=' font-semibold text-2xl'>
               Dung lượng. <span className=' text-gray-400'>Bạn cần bao nhiêu dung lượng?</span>
             </div>

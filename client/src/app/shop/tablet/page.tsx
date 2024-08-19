@@ -12,6 +12,8 @@ import { Link } from '@nextui-org/react';
 import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
 import ShortCut from '@/components/common/shortcut';
+import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
+import { product_carousel } from '@/faker/accessory-carousel';
 function IpadPage() {
   return (
     <>
@@ -66,14 +68,16 @@ function IpadPage() {
         </div>
         <Product />
 
+        <ProductCardCarousel carousel={product_carousel} />
+
         {/* Section Accessories */}
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
             <span className=" text-xl sm:text-5xl font-medium">Phụ kiện thiết yếu cho iPad.</span>
           </div>
         </div>
 
-        <Accessories />
+        <Accessories /> */}
         <ShortCut />
       </div >
     </>
