@@ -5,7 +5,6 @@ import ProductBar from '@/components/earphone/product-bar';
 import News from '@/components/earphone/news';
 import Product from '@/components/earphone/product';
 import Accessories from '@/components/earphone/accessories';
-import Service from "@/components/shop/service";
 import { motion } from "framer-motion"
 import Welcome from '@/components/common/welcome-section';
 import ProductAirpodTypes from '@/components/earphone/product-types';
@@ -14,6 +13,7 @@ import WidgetData3 from '@/faker/widget-accessory';
 import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
 import ShortCut from '@/components/common/shortcut';
+import  ServiceCarousel  from '@/components/shop/service';
 
 function IphonePage() {
     return (
@@ -59,7 +59,7 @@ function IphonePage() {
                 <Product />
 
                 {/* Section Service */}
-                <Service />
+                <ServiceCarousel />
 
                 {/* Section Accessories */}
                 <div className="flex justify-center">
