@@ -2693,11 +2693,11 @@
   integrity sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==
 
 "@types/node@^22":
-  version "22.0.2"
-  resolved "https://registry.npmjs.org/@types/node/-/node-22.0.2.tgz"
-  integrity sha512-yPL6DyFwY5PiMVEwymNeqUTKsDczQBJ/5T7W/46RwLU/VH+AA8aT5TZkvBviLKLbbm0hlfftEkGrNzfRk/fofQ==
+  version "22.4.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.4.1.tgz#9b595d292c65b94c20923159e2ce947731b6fdce"
+  integrity sha512-1tbpb9325+gPnKK0dMm+/LMriX0vKxf6RnB0SZUqfyVkQ4fMgUSySqhxE/y8Jvs4NyF1yHzTfG9KlnkIODxPKg==
   dependencies:
-    undici-types "~6.11.1"
+    undici-types "~6.19.2"
 
 "@types/prop-types@*":
   version "15.7.12"
@@ -5305,7 +5305,16 @@ streamsearch@^1.1.0:
   resolved "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz"
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+string-width@^4.1.0:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -5474,7 +5483,7 @@ supports-preserve-symlinks-flag@^1.0.0:
     react-device-detect "^2.2.3"
     react-dom "^18.3.1"
     react-icons "^5.2.1"
-    swipe "file:C:/Users/84865/AppData/Local/Yarn/Cache/v6/npm-swipe-0.1.0-2f419e4a-d111-4990-893d-23a0ad54cf7c-1724060646775/node_modules/swipe"
+    swipe "file:."
     tailwind-merge "^2.4.0"
     tailwindcss-animate "^1.0.7"
     zustand "^4.5.2"
@@ -5681,10 +5690,10 @@ unbox-primitive@^1.0.2:
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
-undici-types@~6.11.1:
-  version "6.11.1"
-  resolved "https://registry.npmjs.org/undici-types/-/undici-types-6.11.1.tgz"
-  integrity sha512-mIDEX2ek50x0OlRgxryxsenE5XaQD4on5U2inY7RApK3SOJpofyw7uW2AyfMKkhAxXIceo2DeWGVGwyvng1GNQ==
+undici-types@~6.19.2:
+  version "6.19.8"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.19.8.tgz#35111c9d1437ab83a7cdc0abae2f26d88eda0a02"
+  integrity sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==
 
 update-browserslist-db@^1.1.0:
   version "1.1.0"
