@@ -9,26 +9,18 @@ import Welcome from '@/components/common/welcome-section';
 import posts from '@/faker/posts';
 import ProductIphoneTypes from '@/components/phone/product-types';
 import { motion } from "framer-motion"
+import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
+import { product_carousel } from '@/faker/accessory-carousel';
 
 function IphonePage() {
   return (
     <>
-      {/* 
-            |
-            |--- news 
-            |
-            |--- sản phẩm cụ thể
-            |
-            |--- phụ kiện cho sản phẩm
-            |
-            */}
-
       <div className=" w-full bg-gray-50">
         <div className=' w-full flex justify-center p-5 bg-gray-50'>
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75 }}
+            transition={{ duration: 0.5 }}
             className='w-4/5'
           >
             <ProductIphoneTypes />
@@ -39,21 +31,13 @@ function IphonePage() {
         <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
 
         <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-            <span className=" text-xl sm:text-5xl font-medium">Khám phá dòng sản phẩm.</span>
+          <div className=" sm:w-4/5 pt-10 pb-10">
+            <span className=" text-xl sm:text-4xl font-semibold">Khám phá dòng sản phẩm.</span>
           </div>
         </div>
 
         <Product />
-
-        {/* Section Accessories */}
-        <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-            <span className=" text-xl sm:text-5xl font-medium">Phụ kiện thiết yếu cho iPhone.</span>
-          </div>
-        </div>
-
-        <Accessories />
+        <ProductCardCarousel carousel={product_carousel} />
       </div>
     </>
   );

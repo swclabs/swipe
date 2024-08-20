@@ -2,9 +2,8 @@ import React from "react";
 import { Divider } from "@nextui-org/react";
 export default function FooterComponent() {
     return (
-        <div className="w-full flex justify-center bg-gray-50">
+        <div className="w-full flex justify-center bg-gray-50 mt-5">
             <div className=" h-[300px] w-4/5">
-                <Divider />
                 <div className="flex p-8 h-[250px]">
                     <div className="container">
                         <p className=" text-xs font-semibold">Shop</p>

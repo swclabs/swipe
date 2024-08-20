@@ -16,6 +16,8 @@ import { TbCurrencyDong } from 'react-icons/tb';
 import { RiBox3Line } from 'react-icons/ri';
 import { CiCreditCard1 } from 'react-icons/ci';
 import ServiceCarousel from '@/components/shop/service';
+import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
+import { product_carousel } from '@/faker/accessory-carousel';
 
 export default function Store() {
 
@@ -41,17 +43,7 @@ export default function Store() {
 
         <ShopCardsCarousel carousel={shop_carousel} />
         <ServiceCarousel />
-
-        <div className=" pt-10 pb-10 sm:pb-12 flex justify-center">
-          <div className="sm:w-4/5 sm:pl-12 sm:pr-12">
-            <h1 className=" sm:text-2xl font-semibold">
-              <span>Phụ kiện.</span>
-              <span className=" text-gray-500"> Tạo nét riêng</span>
-            </h1>
-          </div>
-        </div>
-
-        <Accessory />
+        <ProductCardCarousel carousel={product_carousel} />
         <ShortCut />
       </div>
     </>
