@@ -5,8 +5,8 @@ export default function ProductIphoneTypes() {
   return (
     <Carousel className="w-full ">
       <CarouselContent>
-        <CarouselItem className="lg:basis-1/6 md:basis-1">
-          <a className="flex flex-col items-center text-center gap-y-2" href="">
+        <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
+          <a className="flex flex-col items-center text-center gap-y-2" href="/shop/phone/iphone-15-pro">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/iphone/iphone_15_pro_light_large.svg"
@@ -18,8 +18,8 @@ export default function ProductIphoneTypes() {
             <p>iPhone 15 Pro</p>
           </a>
         </CarouselItem>
-        <CarouselItem className="lg:basis-1/6 md:basis-1">
-          <a className="flex flex-col items-center text-center gap-y-2" href="">
+        <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
+          <a className="flex flex-col items-center text-center gap-y-2" href="/shop/phone/iphone-15">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/iphone/iphone_15_light_large.svg"
@@ -31,8 +31,8 @@ export default function ProductIphoneTypes() {
             <p>iPhone 15</p>
           </a>
         </CarouselItem>
-        <CarouselItem className="lg:basis-1/6 md:basis-1">
-          <a className="flex flex-col items-center text-center gap-y-2" href="">
+        <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
+          <a className="flex flex-col items-center text-center gap-y-2" href="/shop/phone/iphone-14">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/iphone/iphone_15_light_large.svg"
@@ -44,8 +44,8 @@ export default function ProductIphoneTypes() {
             <p>iPhone 14</p>
           </a>
         </CarouselItem>
-        <CarouselItem className="lg:basis-1/6 md:basis-1">
-          <a className="flex flex-col items-center text-center gap-y-2" href="">
+        <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
+          <a className="flex flex-col items-center text-center gap-y-2" href="/shop/phone/iphone-13">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/iphone/iphone_13_light_large.svg"
@@ -57,8 +57,8 @@ export default function ProductIphoneTypes() {
             <p>iPhone 13</p>
           </a>
         </CarouselItem>
-        <CarouselItem className="lg:basis-1/6 md:basis-1">
-          <a className="flex flex-col items-center text-center gap-y-2" href="">
+        <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
+          <a className="flex flex-col items-center text-center gap-y-2" href="/shop/phone/iphone-se">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/iphone/iphone_se_light_large.svg"
@@ -70,7 +70,7 @@ export default function ProductIphoneTypes() {
             <p>iPhone SE</p>
           </a>
         </CarouselItem>
-        <CarouselItem className="lg:basis-1/6 md:basis-1">
+        <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
           <a className="flex flex-col items-center justify-center" href="/earphone">
             <div className='flex justify-center h-14 w-14'>
               <Image
@@ -83,7 +83,7 @@ export default function ProductIphoneTypes() {
             <p>Airpods</p>
           </a>
         </CarouselItem>
-        <CarouselItem className="lg:basis-1/6 md:basis-1">
+        <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
           <a className="flex flex-col items-center justify-center" href="/accessories">
             <div className='flex justify-center h-14 w-14'>
               <Image

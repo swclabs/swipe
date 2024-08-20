@@ -27,8 +27,11 @@ function ProductPage() {
       {/* <ProductTabs /> */}
 
       <div className=" w-full" id='laptop'>
-        <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:p-12 p-5">
+        <div className="flex">
+          <div className=" sm:w-1/12 shrink-0 snap-center">
+            <div className="shrink-0"></div>
+          </div>
+          <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
             <p className=" text-xl sm:text-3xl font-semibold">Laptop</p>
             <p className=' text-sm font-light'>Nhanh và tiện lợi</p>
           </div>
@@ -37,8 +40,11 @@ function ProductPage() {
       <ProductCard product={laptop} />
 
       <div className=" w-full" id='desktop'>
-        <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:p-12 p-5">
+        <div className="flex">
+          <div className=" sm:w-1/12 shrink-0 snap-center">
+            <div className="shrink-0"></div>
+          </div>
+          <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
             <p className=" text-xl sm:text-3xl font-semibold">Desktop</p>
             <p className=' text-sm font-light'>Sức mạnh tối đa</p>
           </div>
@@ -47,8 +53,11 @@ function ProductPage() {
       <ProductCard product={desktop} />
 
       <div className=" w-full" id='display'>
-        <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:p-12 p-5">
+        <div className="flex">
+          <div className=" sm:w-1/12 shrink-0 snap-center">
+            <div className="shrink-0"></div>
+          </div>
+          <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
             <p className=" text-xl sm:text-3xl font-semibold">Display</p>
             <p className=' text-sm font-light'>Sắc màu rực rỡ</p>
           </div>
@@ -57,14 +66,6 @@ function ProductPage() {
       <ProductCard product={display} />
 
       <ProductCardCarousel carousel={product_carousel} />
-      {/* Section Accessories */}
-      {/* <div className="flex justify-center">
-        <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-          <span className=" text-xl sm:text-5xl font-medium">Phụ kiện thiết yếu cho Mac.</span>
-        </div>
-      </div>
-
-      <Accessories /> */}
     </div>
   )
 }

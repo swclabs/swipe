@@ -17,18 +17,8 @@ import { product_carousel } from '@/faker/accessory-carousel';
 function IpadPage() {
   return (
     <>
-      {/* 
-            |
-            |--- news (tin tức sản phẩm)
-            |
-            |--- sản phẩm cụ thể
-            |
-            |--- phụ kiện cho sản phẩm
-            |
-            */}
-
-      <div className=" w-full bg-white">
-        <div className=' w-full flex justify-center p-5 bg-black'>
+      <div className=" w-full bg-gray-50">
+        <div className=' w-full flex justify-center p-5'>
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -57,27 +47,17 @@ function IpadPage() {
         {/* <ProductCompare /> */}
 
         {/* Section Products */}
-        <div className="flex justify-center text-center ">
-          <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-            <h2 className=" text-xl sm:text-5xl font-medium pb-8">Khám phá các dòng sản phẩm iPad.</h2>
-            <Link href='' className=" text-blue-600">
-              <span className="buy"> Mua iPad </span>
-            </Link>
-
+        <div className="flex text-left ">
+          <div className=" sm:w-1/12 shrink-0 snap-center">
+            <div className="shrink-0"></div>
+          </div>
+          <div className=" sm:w-4/5 sm:py-12 py-10 px-2">
+            <h2 className=" text-xl sm:text-4xl font-medium pb-8">Khám phá các dòng sản phẩm iPad.</h2>
           </div>
         </div>
         <Product />
 
         <ProductCardCarousel carousel={product_carousel} />
-
-        {/* Section Accessories */}
-        {/* <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-            <span className=" text-xl sm:text-5xl font-medium">Phụ kiện thiết yếu cho iPad.</span>
-          </div>
-        </div>
-
-        <Accessories /> */}
         <ShortCut />
       </div >
     </>
