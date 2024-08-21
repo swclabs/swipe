@@ -15,6 +15,7 @@ import { Button } from "@nextui-org/react";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import Comment from "@/components/shop/comment";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -75,6 +76,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+      <Comment />
     </div>
   )
 }

@@ -11,6 +11,8 @@ import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
+import AddToCart from "@/components/shop/add-to-cart";
+import Comment from "@/components/shop/comment";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -92,33 +94,16 @@ export default function Page({ params }: { params: { slug: string } }) {
           />
         </div>
       </div>
-      {details[version] && details[version].color[color] && specs.SSD != "" &&
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.25 }}
-        >
-          <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
-            <div className=" container flex w-4/5 flex-col md:flex-row">
-              <div className=" container font-semibold text-3xl p-10">
-                {details[version]?.name} mới của bạn.
-                <span className=" text-gray-400">Theo cách bạn muốn.</span>
-              </div>
-              <div className=" container p-10">
-                <div className=" mb-2">{details[version]?.name} {specs.SSD} {details[version].color[color].name}</div>
-                <div className=" font-semibold">Tổng cộng {specs.price}</div>
-              </div>
-              <div className=" container p-10">
-                <div className=" font-semibold">Giao hàng:</div>
-                <div className=" text-sm">Còn hàng</div>
-                <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
-
-                <Button className=" w-full" color="primary">thêm vào giỏ hàng</Button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      }
+      <AddToCart
+        product={details}
+        version={version}
+        color={color}
+        specs={specs}
+        setColor={setColor}
+        setVersion={setVersion}
+        setSpecs={setSpecs}
+      />
+      <Comment/>
     </div >
   )
 }
