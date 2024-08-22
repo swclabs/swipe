@@ -13,7 +13,7 @@ import { desktop, display, laptop } from '@/faker/mac';
 
 function ProductPage() {
   return (
-    <div className=' w-full'>
+    <div className=' w-full bg-gray-50'>
       <Banner />
       <Welcome title='Mac' subtitle='If you can dream it, Mac can do it' />
       <ComputerCardsCarousel carousel={mac_carousel} />

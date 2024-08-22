@@ -7,7 +7,7 @@ interface ProductStoreWith<T> {
     color: number;
     version: number;
     details: ProductDetail<T>[];
-    specs: T
+    specs: T;
     setColor: (color: number) => void;
     setVersion: (version: number) => void;
     setDetails: (details: ProductDetail<T>[]) => void;

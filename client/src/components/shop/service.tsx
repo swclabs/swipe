@@ -1,91 +1,43 @@
-import { Button, Card, CardBody } from "@nextui-org/react";
-import { CiCreditCard1 } from "react-icons/ci";
+"use client";
+import React from "react";
 import { IoCartOutline } from "react-icons/io5";
-import { RiBox3Line } from "react-icons/ri";
 import { TbCurrencyDong } from "react-icons/tb";
+import { RiBox3Line } from "react-icons/ri";
+import { CiCreditCard1 } from "react-icons/ci";
+import { Card, Services } from "../ui/service-cards-carousel";
 
-import './style.css'
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { useRef } from "react";
-
-export default function Service() {
-  const ref = useRef<HTMLDivElement>(null);
-  const scroll = (scrollOffset: number) => {
-
-    if (ref.current) {
-      ref.current.scrollLeft += scrollOffset
+export default function ServiceCarousel() {
+  const service = [
+    {
+      title: <span>Trải nghiệm <span className=' text-blue-600'>mua sắm</span> được <span className=' text-blue-600'>cá nhân hóa</span> bởi ứng dụng <span className=' text-blue-600'>Swipe</span></span>,
+      ico: IoCartOutline,
+      color: "text-blue-600",
+    },
+    {
+      title: <span>Thanh toán <span className=" text-purple-500">lãi suất thấp</span> thời hạn đến 24 tháng</span>,
+      ico: TbCurrencyDong,
+      color: "text-purple-500",
+    },
+    {
+      title: <span>Giao hàng <span className=" text-green-500">miễn phí</span></span>,
+      ico: RiBox3Line,
+      color: "text-green-500",
+    },
+    {
+      title: <span>Mua hàng <span className=" text-red-500">nhận điểm tín dụng</span> để mua thiết bị mới</span>,
+      ico: CiCreditCard1,
+      color: "text-red-500",
     }
-  };
+  ].map((card, i) => (
+    <Card index={i} card={card} key={i} />
+  ))
   return (
-    <div className=" w-full pt-12 pb-[10px]">
-      <div
-        className=" relative flex justify-between overflow-auto scroll-smooth"
-        style={{ scrollbarWidth: "none" }}
-        ref={ref}
-      >
-        <div className=" sm:w-1/12 shrink-0 snap-center">
-          <div className="shrink-0"></div>
-        </div>
-        <div className=" snap-center">
-          <Card className="w-[300px] h-[200px] m-5">
-            <CardBody>
-              <div className=" p-3">
-                <div className=" text-blue-500 text-3xl pb-3">
-                  <IoCartOutline />
-                </div>
-                <p className=" text-xl font-semibold">Trải nghiệm <span className=" text-blue-500">mua sắm</span> được <span className=" text-blue-500" >cá nhân hóa</span> bởi ứng dụng <span className=" text-blue-500">Swipe</span></p>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-        <div className=" snap-center">
-          <Card className="w-[300px] h-[200px] m-5">
-            <CardBody>
-              <div className=" p-3">
-                <div className=" text-purple-500 text-3xl pb-3">
-                  <TbCurrencyDong />
-                </div>
-                <p className=" text-xl font-semibold">Thanh toán <span className=" text-purple-500">lãi suất thấp</span> thời hạn đến 24 tháng</p>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-        <div className=" snap-center">
-          <Card className="w-[300px] h-[200px] m-5">
-            <CardBody>
-              <div className=" p-3">
-                <div className=" text-green-500 text-3xl pb-3">
-                  <RiBox3Line />
-                </div>
-                <p className=" text-xl font-semibold">Giao hàng <span className=" text-green-500">miễn phí</span></p>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-        <div className=" snap-center">
-          <Card className="w-[300px] h-[200px] m-5">
-            <CardBody>
-              <div className=" p-3">
-                <div className=" text-red-500 text-3xl pb-3">
-                  <CiCreditCard1 />
-                </div>
-                <p className=" text-xl font-semibold">Mua hàng <span className=" text-red-500">nhận điểm tín dụng</span> để mua thiết bị mới</p>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-        <div className=" sm:w-1/12 shrink-0 snap-center">
-          <div className="shrink-0"></div>
-        </div>
-      </div>
-      <div className=" flex justify-end">
-        <Button radius="full" isIconOnly className=" mr-3" onClick={() => scroll(-400)}>
-          <FaAngleLeft />
-        </Button>
-        <Button radius="full" isIconOnly className=" mr-10" onClick={() => scroll(400)}>
-          <FaAngleRight />
-        </Button>
-      </div>
+    <div className="w-full h-full py-20">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-4xl font-semibold text-neutral-800 dark:text-neutral-200 font-sans">
+        <span>Swipe.</span>
+        <span className=" text-gray-500"> Tạo nên nhiều sự khác biệt</span>
+      </h2>
+      <Services items={service} />
     </div>
-  )
+  );
 }

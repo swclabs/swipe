@@ -1,6 +1,7 @@
 'use client';
 import ShopDeviceCarousel, { ShopAccessoryCarousel } from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
+import Comment from "@/components/shop/comment";
 import ConnectionDetail from "@/components/shop/connection";
 import Spec from "@/components/shop/spec";
 import SpecMemory from "@/components/shop/spec-memory";
@@ -80,44 +81,6 @@ export default function Page({ params }: { params: { slug: string } }) {
           />
         </div>
       </div>
-      <div className=" container mt-10">
-        <div className=" font-semibold text-2xl">
-          Gói bảo hành AppleCare+.
-          <span className=" text-gray-400">Bảo vệ iPhone mới của bạn.</span>
-        </div>
-        <div className=" container flex md:flex-row flex-col mt-5 gap-5">
-          <button className={`container border-gray-400 border-1 rounded-xl`}>
-            <div className=' p-4 text-left'>
-              <div className=" font-semibold">
-                AppleCare+
-              </div>
-              <div className=" text-sm">
-                3.999.000đhoặc163.000đ/thángmỗi tháng cho 24 thángthángChú thích*
-                Ở mức phí dịch vụ 1.67%, sau khi thanh toán lần đầu 20% là 800.000đ
-              </div>
-              <div className=" w-full border-t-[1px] border-black mt-5" />
-              <ul className="list-disc p-4 text-xs">
-                <li>
-                  Nay đã có dịch vụ sửa chữa không hạn chế cho trường hợp hư hỏng do sự cố bất ngờ.
-                </li>
-                <li>
-                  Dịch vụ sửa chữa được Apple chứng nhận sử dụng linh kiện Apple chính hãng
-                </li>
-                <li>
-                  Dịch Vụ Thay Thế Cấp Tốc - Chúng tôi sẽ gửi cho bạn một thiết bị thay thế để bạn không phải chờ sửa chữa
-                </li>
-              </ul>
-            </div>
-          </button>
-          <button className={`container border-gray-400 border-[1.5px] rounded-xl`}>
-            <div className=' p-4'>
-              <div className=" font-semibold">
-                Không có bảo hành AppleCare+
-              </div>
-            </div>
-          </button>
-        </div>
-      </div>
       <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
         <div className=" container flex w-4/5 flex-col md:flex-row">
           <div className=" container font-semibold text-3xl p-10">
@@ -137,6 +100,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+      <Comment />
     </div>
   )
 }

@@ -27,7 +27,7 @@ function WatchPage() {
             |
             */}
 
-            <div className=" w-full bg-white">
+            <div className=" w-full bg-gray-50">
                 {/* We will fix in next version */}
                 {/* <ProductBar /> */}
                 <div className=' w-full flex justify-center p-5 bg-gray-50'>

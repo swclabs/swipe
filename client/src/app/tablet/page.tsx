@@ -20,8 +20,8 @@ import ShopTablet from '@/components/tablet/shop-card';
 function Page() {
   return (
     <>
-      <div className=" w-full bg-white">
-        <div className=' w-full flex justify-center p-5 bg-black'>
+      <div className=" w-full bg-gray-50">
+        {/* <div className=' w-full flex justify-center p-5'>
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -30,7 +30,7 @@ function Page() {
           >
             <ProductIpadTypes />
           </motion.div>
-        </div>
+        </div> */}
         <Banner />
 
         {/* Section Welcome */}

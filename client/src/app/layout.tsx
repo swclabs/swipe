@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import NextTopLoader from 'nextjs-toploader';
 import "./globals.css";
 import Providers from "./providers";
 import NavbarComponent from "@/components/common/navbar";
@@ -18,8 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className=" scroll-smooth">
       <body className={inter.className}>
+        <NextTopLoader showSpinner={false} />
         <Providers>
           <NavbarComponent />
           {children}
