@@ -1,16 +1,16 @@
 import React from 'react';
-import { ProductDetail, Specs } from "@/types/products";
+import { ProductDetail, Storage } from "@/types/products";
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 
 interface IStorageProps {
-  product: ProductDetail<Specs>[];
+  product: ProductDetail<Storage>[];
   version: number;
   color: number;
-  specs: Specs;
+  specs: Storage;
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
-  setSpecs: (specs: Specs) => void;
+  setSpecs: (specs: Storage) => void;
 }
 
 const disableSpec = {

@@ -14,6 +14,7 @@ import { shop_carousel } from '@/faker/shop_carousel';
 import ShortCut from '@/components/common/shortcut';
 import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
 import { product_carousel } from '@/faker/accessory-carousel';
+import Accessory from '@/components/accessories';
 function IpadPage() {
   return (
     <>
@@ -32,32 +33,10 @@ function IpadPage() {
 
         {/* Section Welcome */}
         <Welcome title='iPad' subtitle='Thỏa sức sáng tạo' />
-
-        <ShopCardsCarousel carousel={shop_carousel} />
-
-        {/* Section Products Compare */}
-        {/* <div className="flex justify-center text-center ">
-                    <div className=" pt-12 pb-12 w-[1000px] bg-white">
-                        <h2 className=" text-xl sm:text-5xl font-medium pb-8">Khám phá các dòng sản phẩm iPad.</h2>
-                        <a className=" text-blue-600" href="#">
-                            <span className="buy"> Mua iPad </span>
-                        </a>
-                    </div>
-                </div> */}
-        {/* <ProductCompare /> */}
-
-        {/* Section Products */}
-        <div className="flex text-left ">
-          <div className=" sm:w-1/12 shrink-0 snap-center">
-            <div className="shrink-0"></div>
-          </div>
-          <div className=" sm:w-4/5 sm:py-12 py-10 px-2">
-            <h2 className=" text-xl sm:text-4xl font-medium pb-8">Khám phá các dòng sản phẩm iPad.</h2>
-          </div>
-        </div>
         <Product />
 
-        <ProductCardCarousel carousel={product_carousel} />
+        {/* <ProductCardCarousel carousel={product_carousel} /> */}
+        <Accessory />
         <ShortCut />
       </div >
     </>
