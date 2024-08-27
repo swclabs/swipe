@@ -25,7 +25,7 @@ export interface Posts {
     textcolor: string;
 }
 
-export interface Specs {
+export interface Storage {
     RAM: string;
     SSD: string;
     price: string;

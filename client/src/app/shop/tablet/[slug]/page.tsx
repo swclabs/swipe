@@ -7,7 +7,7 @@ import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import ipadDetail from "@/faker/ipad-details";
 import { useProductWithSpecs } from "@/state";
-import { ProductDetail, Specs } from "@/types/products";
+import { ProductDetail, Storage } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";

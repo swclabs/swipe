@@ -11,6 +11,7 @@ import ProductIphoneTypes from '@/components/phone/product-types';
 import { motion } from "framer-motion"
 import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
 import { product_carousel } from '@/faker/accessory-carousel';
+import Accessory from '@/components/accessories';
 
 function IphonePage() {
   return (
@@ -30,14 +31,9 @@ function IphonePage() {
 
         <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
 
-        <div className="flex justify-center">
-          <div className=" sm:w-4/5 pt-10 pb-10">
-            <span className=" text-xl sm:text-4xl font-semibold">Khám phá dòng sản phẩm.</span>
-          </div>
-        </div>
-
         <Product />
-        <ProductCardCarousel carousel={product_carousel} />
+        <Accessory />
+        {/* <ProductCardCarousel carousel={product_carousel} /> */}
       </div>
     </>
   );

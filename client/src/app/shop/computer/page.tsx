@@ -4,15 +4,16 @@ import Accessories from '@/components/computer/accessories';
 import Welcome from '@/components/common/welcome-section';
 import ComputerNavbar from '@/components/computer/navbar';
 import { motion } from "framer-motion"
-import ProductCard from '@/components/computer/product-card';
 import { desktop, display, laptop } from '@/faker/mac';
 import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
 import { product_carousel } from '@/faker/accessory-carousel';
+import Accessory from '@/components/accessories';
+import { ProductDesktopCard, ProductDisplayCard, ProductLaptopCard } from '@/components/computer/product-card';
 
 function ProductPage() {
   return (
-    <div className=' w-full'>
-      <div className=' w-full flex justify-center p-2 bg-gray-50'>
+    <div className=' w-full bg-gray-50'>
+      <div className=' w-full flex justify-center p-2'>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -26,7 +27,7 @@ function ProductPage() {
 
       {/* <ProductTabs /> */}
 
-      <div className=" w-full" id='laptop'>
+      {/* <div className=" w-full" id='laptop'>
         <div className="flex">
           <div className=" sm:w-1/12 shrink-0 snap-center">
             <div className="shrink-0"></div>
@@ -36,10 +37,10 @@ function ProductPage() {
             <p className=' text-sm font-light'>Nhanh và tiện lợi</p>
           </div>
         </div>
-      </div>
-      <ProductCard product={laptop} />
+      </div> */}
+      <ProductLaptopCard product={laptop} />
 
-      <div className=" w-full" id='desktop'>
+      {/* <div className=" w-full" id='desktop'>
         <div className="flex">
           <div className=" sm:w-1/12 shrink-0 snap-center">
             <div className="shrink-0"></div>
@@ -49,10 +50,10 @@ function ProductPage() {
             <p className=' text-sm font-light'>Sức mạnh tối đa</p>
           </div>
         </div>
-      </div>
-      <ProductCard product={desktop} />
+      </div> */}
+      <ProductDesktopCard product={desktop} />
 
-      <div className=" w-full" id='display'>
+      {/* <div className=" w-full" id='display'>
         <div className="flex">
           <div className=" sm:w-1/12 shrink-0 snap-center">
             <div className="shrink-0"></div>
@@ -62,10 +63,11 @@ function ProductPage() {
             <p className=' text-sm font-light'>Sắc màu rực rỡ</p>
           </div>
         </div>
-      </div>
-      <ProductCard product={display} />
+      </div> */}
+      <ProductDisplayCard product={display} />
 
-      <ProductCardCarousel carousel={product_carousel} />
+      <Accessory />
+      {/* <ProductCardCarousel carousel={product_carousel} /> */}
     </div>
   )
 }

@@ -18,18 +18,6 @@ import ServiceCarousel from '@/components/shop/service';
 function IphonePage() {
   return (
     <>
-      {/* 
-            |
-            |--- news 
-            |
-            |--- sản phẩm cụ thể
-            |
-            |--- phụ kiện cho sản phẩm
-            |
-            |--- dịch vụ
-            |
-            */}
-
       <div className=" w-full bg-gray-50">
         <div className=' w-full flex justify-center p-5 bg-gray-50'>
           <motion.div
@@ -46,29 +34,10 @@ function IphonePage() {
         <Welcome title='Airpods' subtitle='Nơi âm nhạc trở nên sống động.' />
         <ShopCardsCarousel carousel={shop_carousel} />
 
-        {/* Section Products */}
-        <div className="flex justify-center text-center">
-          <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-            <span className=" text-lg sm:text-6xl font-semibold">
-              AirPods nào <br />
-              phù hợp với bạn?
-            </span>
-          </div>
-        </div>
-
         <Product />
 
         {/* Section Service */}
         <ServiceCarousel />
-
-        {/* Section Accessories */}
-        <div className="flex justify-center">
-          <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-            <span className=" text-xl sm:text-5xl font-medium">Phụ kiện thiết yếu cho Airpod.</span>
-          </div>
-        </div>
-
-        <Accessories />
         <ShortCut />
       </div>
     </>
