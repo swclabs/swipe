@@ -1170,7 +1170,7 @@ acorn@^8.9.0:
     formik "^2.4.6"
     framer-motion "^11.3.19"
     jotai "^2.9.1"
-    lucide-react "^0.417.0"
+    lucide-react "^0.436.0"
     manager "file:."
     next "14.2.5"
     next-auth "^4.24.7"
@@ -2998,10 +2998,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-lucide-react@^0.417.0:
-  version "0.417.0"
-  resolved "https://registry.npmjs.org/lucide-react/-/lucide-react-0.417.0.tgz"
-  integrity sha512-F/MDUHDter8YMZ7JKQpW/5/+v38tdaoShKX3e+opYsqfCnaHwn+5zz3+lBrMDFMNtSsvxtNpchLIaMpEfsi/4w==
+lucide-react@^0.436.0:
+  version "0.436.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.436.0.tgz#020c75031fbba5e01f7188991fa5a50195098f50"
+  integrity sha512-N292bIxoqm1aObAg0MzFtvhYwgQE6qnIOWx/GLj5ONgcTPH6N0fD9bVq/GfdeC9ZORBXozt/XeEKDpiB3x3vlQ==
 
 "manager@file:.":
   version "0.1.0"
@@ -3043,7 +3043,7 @@ lucide-react@^0.417.0:
     formik "^2.4.6"
     framer-motion "^11.3.19"
     jotai "^2.9.1"
-    lucide-react "^0.417.0"
+    lucide-react "^0.436.0"
     manager "file:."
     next "14.2.5"
     next-auth "^4.24.7"
