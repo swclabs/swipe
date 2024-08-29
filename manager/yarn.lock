@@ -1181,7 +1181,7 @@ acorn@^8.9.0:
     react-dropzone "^14.2.3"
     react-hook-form "^7.52.0"
     react-icons "^5.2.1"
-    react-resizable-panels "^2.0.22"
+    react-resizable-panels "^2.1.1"
     recharts "^2.12.7"
     sonner "^1.5.0"
     tailwind-merge "^2.4.0"
@@ -3054,7 +3054,7 @@ lucide-react@^0.417.0:
     react-dropzone "^14.2.3"
     react-hook-form "^7.52.0"
     react-icons "^5.2.1"
-    react-resizable-panels "^2.0.22"
+    react-resizable-panels "^2.1.1"
     recharts "^2.12.7"
     sonner "^1.5.0"
     tailwind-merge "^2.4.0"
@@ -3598,10 +3598,10 @@ react-remove-scroll@2.5.7:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
-react-resizable-panels@^2.0.22:
-  version "2.0.22"
-  resolved "https://registry.npmjs.org/react-resizable-panels/-/react-resizable-panels-2.0.22.tgz"
-  integrity sha512-G8x8o7wjQxCG+iF4x4ngKVBpe0CY+DAZ/SaiDoqBEt0yuKJe9OE/VVYMBMMugQ3GyQ65NnSJt23tujlaZZe75A==
+react-resizable-panels@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-resizable-panels/-/react-resizable-panels-2.1.1.tgz#efcf4ee0d7b45d9617db2f2e3de1ca04589e6b7f"
+  integrity sha512-+cUV/yZBYfiBj+WJtpWDJ3NtR4zgDZfHt3+xtaETKE+FCvp+RK/NJxacDQKxMHgRUTSkfA6AnGljQ5QZNsCQoA==
 
 react-smooth@^4.0.0:
   version "4.0.1"
