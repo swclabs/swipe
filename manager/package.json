@@ -37,7 +37,7 @@
     "@tanstack/react-table": "^8.19.3",
     "@types/uuid": "^9.0.8",
     "admin": "file:",
-    "axios": "^1.7.2",
+    "axios": "^1.7.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
