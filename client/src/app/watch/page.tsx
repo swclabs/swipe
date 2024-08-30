@@ -17,6 +17,7 @@ import { CardsCarousel } from '@/components/watch/cards-carousel';
 import { watch_carousel } from '@/faker/watch-carousel';
 import AccessoryCard from '@/components/common/accesories-card';
 import { iPhoneAccessories } from '@/faker/iphone-accessory';
+import ServiceCarousel from '@/components/shop/service';
 
 function WatchPage() {
   return (
@@ -36,6 +37,7 @@ function WatchPage() {
         <Welcome title='Apple Watch' subtitle='To wear it is to love it.' />
         <ShopCardsCarousel carousel={shop_carousel} />
         <Product />
+        <ServiceCarousel />
         <CardsCarousel carousel={watch_carousel} />
         <ShortCut />
       </div>
