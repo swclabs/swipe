@@ -24,7 +24,7 @@ export default function Product() {
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
           {ipad.map((value, index) => (
             <div className="container mx-auto w-full bg-gray-100 rounded-2xl relative" key={index}>
-              <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4 w-[300px]">
+              <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4">
                 <div className=" w-full flex-1">
                   <div className=" w-full flex flex-col gap-y-3">
                     <div className="h-full">
@@ -68,6 +68,9 @@ export default function Product() {
               </div>
             </div>
           ))}
+        </div>
+        <div className=" sm:w-1/12 shrink-0 snap-center">
+          <div className="shrink-0"></div>
         </div>
       </div>
     </div>

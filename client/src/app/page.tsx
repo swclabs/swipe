@@ -4,7 +4,7 @@ import Banner from "@/components/common/banner"
 import ShortCut from "@/components/common/shortcut"
 import Link from "next/link"
 import React from "react"
-import LandingPageCarousel, { LandingPageBannerCarousel } from "@/components/landing-page/carousel"
+import HomePageCarousel, { HomePageBannerCarousel } from "@/components/home/carousel"
 import Image from "next/image"
 
 export default function Home() {
@@ -33,8 +33,8 @@ export default function Home() {
         </div>
 
         <div className=" w-full flex flex-col justify-center gap-4">
-          <LandingPageCarousel />
-          <LandingPageBannerCarousel />
+          <HomePageCarousel />
+          <HomePageBannerCarousel />
         </div>
       </div >
       <ShortCut />
