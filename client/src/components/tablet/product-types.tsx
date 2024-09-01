@@ -6,7 +6,7 @@ export default function ProductIpadTypes() {
     <Carousel className="w-full">
       <CarouselContent>
         <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
-          <a className="flex flex-col items-center justify-center text-center" href="">
+          <a className="flex flex-col items-center justify-center text-center" href="tablet/ipad-pro">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/ipad/ipadpro_light__large.svg"
@@ -21,7 +21,7 @@ export default function ProductIpadTypes() {
           </a>
         </CarouselItem>
         <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
-          <a className="flex flex-col items-center justify-center text-center" href="">
+          <a className="flex flex-col items-center justify-center text-center" href="tablet/ipad-air">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/ipad/ipadpro_light__large.svg"
@@ -36,7 +36,7 @@ export default function ProductIpadTypes() {
           </a>
         </CarouselItem>
         <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
-          <a className="flex flex-col items-center justify-center text-center" href="">
+          <a className="flex flex-col items-center justify-center text-center" href="tablet/ipad">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/ipad/pa_ipadair_gen5_light_large.svg"
@@ -51,7 +51,7 @@ export default function ProductIpadTypes() {
           </a>
         </CarouselItem>
         <CarouselItem className="lg:basis-1/6 sm:basis-1 md:basis-1/3">
-          <a className="flex flex-col items-center justify-center text-center" href="">
+          <a className="flex flex-col items-center justify-center text-center" href="tablet/ipad-mini">
             <div className='flex justify-center h-12 w-12'>
               <Image
                 src="/img/ipad/ipadmini_light_large.svg"

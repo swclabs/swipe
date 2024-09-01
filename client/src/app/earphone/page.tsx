@@ -19,17 +19,6 @@ function IphonePage() {
   return (
     <>
       <div className=" w-full bg-gray-50">
-        <div className=' w-full flex justify-center p-5 bg-gray-50'>
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75 }}
-            className='w-4/5'
-          >
-            <ProductAirpodTypes />
-          </motion.div>
-        </div>
-
         <Banner />
         <Welcome title='Airpods' subtitle='Nơi âm nhạc trở nên sống động.' />
         <ShopCardsCarousel carousel={shop_carousel} />

@@ -27,7 +27,7 @@ export default function NavbarComponent() {
     "Watch",
     "AirPods",
     "Phụ kiện",
-    "Hỗ trợ"
+    "Hỗ trợ bc"
   ];
 
   return (
@@ -109,20 +109,76 @@ export default function NavbarComponent() {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 0 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+        <NavbarMenuItem>
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/shop"
+            size="lg"
+          >
+            Cửa hàng
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/computer"
+            size="lg"
+          >
+            Mac
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/tablet"
+            size="lg"
+          >
+            iPad
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/phone"
+            size="lg"
+          >
+            iPhone
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/watch"
+            size="lg"
+          >
+            Watch
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/earphone"
+            size="lg"
+          >
+            AirPods
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/accessories"
+            size="lg"
+          >
+            Phụ kiện
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
