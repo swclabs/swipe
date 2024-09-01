@@ -11,16 +11,19 @@ import { accessory_iphone } from "@/faker/accessory-ip";
 export default function Accessory() {
   return (
     <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
-      <div className="flex justify-center">
-        <div className=" sm:w-4/5 pt-10 pb-10">
-          <span className=" text-xl sm:text-4xl font-semibold">Khám phá phụ kiện.</span>
+      <div className="flex">
+        <div className=" sm:w-1/12 shrink-0 snap-center">
+          <div className="shrink-0"></div>
+        </div>
+        <div className=" sm:py-12 py-5 px-2">
+          <p className=" text-xl sm:text-3xl font-semibold">Khám phá phụ kiện</p>
         </div>
       </div>
       <div className=" relative flex snap-x snap-mandatory 2xl:justify-between w-full justify-center">
         <div className=" sm:w-1/12 shrink-0 snap-center">
           <div className="shrink-0"></div>
         </div>
-        <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
+        <div className="w-full grid lg:grid-cols-4 2xl:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
           {accessory_iphone.map((value, index) => (
             <div className="container mx-auto w-full bg-white rounded-2xl relative" key={index}>
               <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4 w-[300px] h-[400px] md:min-h-[500px]">
@@ -51,6 +54,9 @@ export default function Accessory() {
               </div>
             </div>
           ))}
+        </div>
+        <div className=" sm:w-1/12 shrink-0 snap-center">
+          <div className="shrink-0"></div>
         </div>
       </div>
     </div>

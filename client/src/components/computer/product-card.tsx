@@ -17,8 +17,11 @@ interface products {
 export function ProductLaptopCard({ product }: products) {
   return (
     <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
-      <div className="flex justify-center" id="laptop">
-        <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
+      <div className="flex" id="laptop">
+        <div className=" sm:w-1/12 shrink-0 snap-center">
+          <div className="shrink-0"></div>
+        </div>
+        <div className=" sm:py-12 py-5 px-2">
           <p className=" text-xl sm:text-3xl font-semibold">Laptop</p>
           <p className=' text-sm font-light'>Nhanh và tiện lợi</p>
         </div>
@@ -31,12 +34,13 @@ export function ProductLaptopCard({ product }: products) {
 export function ProductDesktopCard({ product }: products) {
   return (
     <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
-      <div className="flex justify-center" id="desktop">
-        <div className=" sm:w-4/5">
-          <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
-            <p className=" text-xl sm:text-3xl font-semibold">Desktop</p>
-            <p className=' text-sm font-light'>Sức mạnh tối đa</p>
-          </div>
+      <div className="flex" id="desktop">
+        <div className=" sm:w-1/12 shrink-0 snap-center">
+          <div className="shrink-0"></div>
+        </div>
+        <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
+          <p className=" text-xl sm:text-3xl font-semibold">Desktop</p>
+          <p className=' text-sm font-light'>Sức mạnh tối đa</p>
         </div>
       </div>
       {card(product)}
@@ -47,12 +51,13 @@ export function ProductDesktopCard({ product }: products) {
 export function ProductDisplayCard({ product }: products) {
   return (
     <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
-      <div className="flex justify-center" id="display">
-        <div className=" sm:w-4/5">
-          <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
-            <p className=" text-xl sm:text-3xl font-semibold">Display</p>
-            <p className=' text-sm font-light'>Sắc màu rực rỡ</p>
-          </div>
+      <div className="flex" id="display">
+        <div className=" sm:w-1/12 shrink-0 snap-center">
+          <div className="shrink-0"></div>
+        </div>
+        <div className=" sm:w-4/5 sm:py-12 py-5 px-2">
+          <p className=" text-xl sm:text-3xl font-semibold">Display</p>
+          <p className=' text-sm font-light'>Sắc màu rực rỡ</p>
         </div>
       </div>
       {card(product)}
@@ -62,14 +67,14 @@ export function ProductDisplayCard({ product }: products) {
 
 const card = (product: product[]) => {
   return (
-    <div className=" relative flex snap-x snap-mandatory 2xl:justify-between justify-center" >
+    <div className=" w-full flex relative snap-x snap-mandatory 2xl:justify-between justify-center" >
       <div className=" sm:w-1/12 shrink-0 snap-center">
         <div className="shrink-0"></div>
       </div>
-      <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
+      <div className=" w-full grid lg:grid-cols-4 2xl:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
         {product.map((value, index) => (
-          <div className="container mx-auto w-full bg-gray-100 rounded-2xl relative" key={index}>
-            <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4 min-h-[550px] w-[300px]">
+          <div className="container mx-auto bg-gray-100 rounded-2xl relative min-h-[550px]" key={index}>
+            <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4">
               <div className=" w-full flex-1">
                 <div className=" w-full flex flex-col gap-y-3">
                   <div className="h-full">
@@ -105,6 +110,9 @@ const card = (product: product[]) => {
             </div>
           </div>
         ))}
+      </div>
+      <div className=" sm:w-1/12 shrink-0 snap-center">
+        <div className="shrink-0"></div>
       </div>
     </div >
   )
