@@ -16,6 +16,7 @@ import ipad from '@/faker/ipad';
 import { iPhoneAccessories } from '@/faker/iphone-accessory';
 import AccessoryCard from '@/components/common/accesories-card';
 import ShopTablet from '@/components/tablet/shop-card';
+import Accessory from '@/components/accessories';
 
 function Page() {
   return (
@@ -38,7 +39,7 @@ function Page() {
 
         <ShopCardsCarousel carousel={shop_carousel} />
 
-        <div className=' bg-gray-50 flex justify-center'>
+        {/* <div className=' bg-gray-50 flex justify-center'>
           <div className=' md:w-4/5 w-2/3'>
             <div className=" text-xl sm:text-2xl font-semibold pt-10">Mọi phiên bản. <span className='font-medium text-gray-500'> Hãy chọn mẫu bạn thích.</span></div>
             <ShopTablet data={ipad} href='/shop/tablet' />
@@ -46,7 +47,9 @@ function Page() {
             <span className=" text-xl sm:text-2xl font-semibold"> Phụ kiện. <span className='font-medium text-gray-500'> Những phụ kiện kết hợp hoàn hảo với thiết bị yêu thích của bạn.</span></span>
             <AccessoryCard data={iPhoneAccessories} />
           </div>
-        </div>
+        </div> */}
+        <Product />
+        <Accessory />
         <ShortCut />
       </div >
     </>

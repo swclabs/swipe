@@ -5,11 +5,11 @@ updates:
     schedule:
       interval: daily
       time: "10:00"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
 
   - package-ecosystem: npm
     directory: "/manager"
     schedule:
       interval: daily
       time: "10:00"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5

@@ -1,4 +1,5 @@
 'use client';
+import { AddWatchToCart } from "@/components/shop/add-to-cart";
 import ShopDeviceCarousel, { ShopAccessoryCarousel } from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
 import Comment from "@/components/shop/comment";
@@ -81,25 +82,15 @@ export default function Page({ params }: { params: { slug: string } }) {
           />
         </div>
       </div>
-      <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
-        <div className=" container flex w-4/5 flex-col md:flex-row">
-          <div className=" container font-semibold text-3xl p-10">
-            Apple Watch mới của bạn.
-            <span className=" text-gray-400">Theo cách bạn muốn.</span>
-          </div>
-          <div className=" container p-10">
-            <div className=" mb-2">iPhone 15 128GB Xanh Dương</div>
-            <div className=" font-semibold">Tổng cộng 22.999.000đ</div>
-          </div>
-          <div className=" container p-10">
-            <div className=" font-semibold">Giao hàng:</div>
-            <div className=" text-sm">Còn hàng</div>
-            <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
-
-            <Button className=" w-full" color="primary">thêm vào giỏ hàng</Button>
-          </div>
-        </div>
-      </div>
+      <AddWatchToCart
+        product={details}
+        version={version}
+        color={color}
+        specs={specs}
+        setSpecs={setSpecs}
+        setVersion={setVersion}
+        setColor={setColor}
+      />
       <Comment />
     </div>
   )

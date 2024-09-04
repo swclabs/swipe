@@ -1,6 +1,6 @@
-import { ProductDetail, Specs } from "@/types/products";
+import { ProductDetail, Storage } from "@/types/products";
 
-const ipadDetail: ProductDetail<Specs>[] = [
+const ipadDetail: ProductDetail<Storage>[] = [
     {
         name: "iPad Pro 11 inch",
         screen: "6.1 inch",

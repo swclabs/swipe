@@ -1,4 +1,4 @@
-export const LandingPageCarouselData = [
+export const HomePageCarouselData = [
     {
         title: "Vison Pro",
         subtitle: "Kỷ nguyên điện toán",
@@ -42,7 +42,7 @@ export const LandingPageCarouselData = [
     },
 ]
 
-export const LandingPageBannerCarouselData = [
+export const HomePageBannerCarouselData = [
     {
         image: '/img/iphone/iphone_13_large.png',
         title: 'iPhone 13',

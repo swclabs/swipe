@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductDetail, Specs } from "@/types/products";
+import { ProductDetail, Storage } from "@/types/products";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import { Badge } from '../ui/badge';
@@ -8,13 +8,13 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 interface IStorageProps {
-  product: ProductDetail<Specs>[];
+  product: ProductDetail<Storage>[];
   version: number;
   color: number;
-  specs: Specs
+  specs: Storage
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
-  setSpecs: (specs: Specs) => void;
+  setSpecs: (specs: Storage) => void;
 }
 
 const disableSpec = {
@@ -24,7 +24,7 @@ const disableSpec = {
 
 const enableSpec = {}
 
-const GetByRam = (product: ProductDetail<Specs>[], version: number, color: number) => {
+const GetByRam = (product: ProductDetail<Storage>[], version: number, color: number) => {
   return product[version]?.color[color]?.specs
     ?.reduce<string[]>((acc, curr) => {
       if (!acc.includes(curr.RAM)) {

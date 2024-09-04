@@ -13,10 +13,10 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { FiShoppingCart, FiTruck } from "react-icons/fi"
 import { MdOutlinePayment } from "react-icons/md";
-import { LandingPageBannerCarouselData, LandingPageCarouselData } from "@/faker/landing"
+import { HomePageBannerCarouselData, HomePageCarouselData } from "@/faker/landing"
 
 
-const LandingPageCarousel = () => {
+const HomePageCarousel = () => {
   const plugin = React.useRef(
     Autoplay({
       delay: 5000,
@@ -33,7 +33,7 @@ const LandingPageCarousel = () => {
       onMouseLeave={() => plugin.current.play(false)}
     >
       <CarouselContent>
-        {LandingPageCarouselData.map((value, index) => (
+        {HomePageCarouselData.map((value, index) => (
           <CarouselItem className="md:basis-1/2" key={index}>
             <motion.div
               className="box"
@@ -63,7 +63,7 @@ const LandingPageCarousel = () => {
   )
 }
 
-export const LandingPageBannerCarousel = () => {
+export const HomePageBannerCarousel = () => {
   const plugin = React.useRef(
     AutoScroll({ playOnInit: true })
   )
@@ -78,7 +78,7 @@ export const LandingPageBannerCarousel = () => {
       onMouseLeave={() => plugin.current.play(1)}
     >
       <CarouselContent>
-        {LandingPageBannerCarouselData.map((value, index) => (
+        {HomePageBannerCarouselData.map((value, index) => (
           <CarouselItem key={index} className="md:basis-1/4 basis-1/2">
             <motion.div
               className="box"
@@ -124,4 +124,4 @@ export const LandingPageBannerCarousel = () => {
 
 
 
-export default LandingPageCarousel
+export default HomePageCarousel

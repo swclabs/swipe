@@ -11,15 +11,19 @@ import Image from "next/image";
 
 export default function Product() {
   return (
-    <div className="flex justify-center w-full pb-[10px] overflow-hidden">
-      <div className=" relative flex snap-x snap-mandatory 2xl:justify-between">
-
+    <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
+      <div className="flex justify-center">
+        <div className=" sm:w-4/5 pt-10 pb-10">
+          <span className=" text-xl sm:text-4xl font-semibold">Khám phá dòng sản phẩm.</span>
+        </div>
+      </div>
+      <div className=" relative flex snap-x snap-mandatory 2xl:justify-between w-full justify-center">
         <div className=" sm:w-1/12 shrink-0 snap-center">
           <div className="shrink-0"></div>
         </div>
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
+        <div className="grid lg:grid-cols-4 2xl:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
           {iphone.map((value, index) => (
-            <div className="container mx-auto w-full bg-gray-100 rounded-2xl relative" key={index}>
+            <div className="container mx-auto bg-gray-100 rounded-2xl relative" key={index}>
               <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4">
                 <div className=" w-full flex-1">
                   <div className=" w-full flex flex-col gap-y-3">
@@ -31,17 +35,17 @@ export default function Product() {
                     </div>
                   </div>
                 </div>
-                <div className="pt-4 flex-1">
+                <div className="pt-4 flex-1 min-h-[150px]">
                   <Image
                     alt="img card"
-                    height={150}
-                    width={150}
+                    height={100}
+                    width={100}
                     src={value.image}
                   />
                 </div>
 
                 <div className=" w-full flex-1">
-                  <div className=" w-full flex flex-col gap-y-3">
+                  <div className=" w-full flex flex-col gap-y-2">
                     <div className="flex gap-2">
                       <Chip radius="sm" className="text-xs">{value.specs.screen}</Chip>
                       <Chip radius="sm" className="text-xs">{value.specs.display}</Chip>
@@ -70,7 +74,6 @@ export default function Product() {
             </div>
           ))}
         </div>
-
         <div className=" sm:w-1/12 shrink-0 snap-center">
           <div className="shrink-0"></div>
         </div>
