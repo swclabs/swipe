@@ -79,7 +79,7 @@ export const HomePageBannerCarousel = () => {
     >
       <CarouselContent>
         {HomePageBannerCarouselData.map((value, index) => (
-          <CarouselItem key={index} className="md:basis-1/4 basis-1/2">
+          <CarouselItem key={index} className="md:basis-1/4">
             <motion.div
               className="box"
               whileHover={{ scale: 1.03 }}
@@ -92,18 +92,18 @@ export const HomePageBannerCarousel = () => {
                         <div className=" max-w-max">
                           <Image
                             src={value.image}
-                            alt=""
-                            className="min-w-[60px] min-h-max"
+                            alt="img"
+                            className="min-h-max"
                             width={50}
                             height={10}
                           />
                         </div>
-                        <div className=" text-xl font-semibold inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
+                        <div className="font-semibold bg-gradient-to-r from-[#0b080a]  to-[#4309f0] text-transparent bg-clip-text">
                           {value.title}
                         </div>
                       </div>
                       <div className=" flex justify-between">
-                        <p className=" text-xl font-semibold">{value.decs}</p>
+                        <p className=" font-semibold">{value.decs}</p>
                         <div className=" flex gap-2">
                           <MdOutlinePayment />
                           <FiShoppingCart />

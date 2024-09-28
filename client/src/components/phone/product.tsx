@@ -62,7 +62,7 @@ export default function Product() {
                 </div>
 
                 <div className="w-full flex-1">
-                  <Link href={"phone/" + value.name.toLowerCase().replaceAll(" ", "-")}>
+                  <Link href={"shop/phone/" + value.name.toLowerCase().replaceAll(" ", "-")}>
                     <Button color="primary" className=" w-full">Mua</Button>
                   </Link>
                   <div className=" flex items-center pt-4">
