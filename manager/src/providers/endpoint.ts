@@ -14,4 +14,9 @@ export default class APIEndpoint {
         GET_SUPPLIERS: `${APIEndpoint.BASE_URL}/suppliers`,
         GET_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`
     }
+
+    static readonly INVENTORY = {
+        POST_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
+        GET_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
+    }
 }

@@ -164,13 +164,18 @@ export const columns: ColumnDef<StockItem>[] = [
       const [isDeleteOpen, setIsDeleteOpen] = useState(false);
       const [idDelete, setIdDelete] = useState(-1);
 
+      const deletefunc = (id: number) => {
+        // Add your delete functionality here
+        console.log("Delete payment with ID: ", id);
+      };
+
       return (
         <>
           <DeleteConfirmDialog
             id={idDelete}
             isOpen={isDeleteOpen}
             setIsOpen={setIsDeleteOpen}
-          // deletefunc={deletefunc}
+            deletefunc={deletefunc}
           />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -206,7 +211,7 @@ export const columns: ColumnDef<StockItem>[] = [
   },
 ]
 
-export function InventoryTableComponent() {
+export function InventoryTableComponent({ deletefunc }) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []

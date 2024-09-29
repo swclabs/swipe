@@ -17,9 +17,17 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
+import { InventoryService } from "@/services/inventory";
 
 
 export default function Page() {
+
+  // const deleteItem = (id: number) => {
+  //   const func = async (id: number) => {
+  //     const res = await InventoryService.DeleteInventory(id)
+  //   }
+  //   func(id)
+  // }
 
   return (
     <ScrollArea className="h-full bg-muted/40">

@@ -206,12 +206,12 @@ export const DeleteConfirmDialog = ({
     id,
     isOpen,
     setIsOpen,
-    // deletefunc,
+    deletefunc,
 }: {
     id: number,
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    // deletefunc: (id: number) => void;
+    deletefunc: (id: number) => void;
 }) => {
     return (
         <ResponsiveDialog
@@ -228,7 +228,7 @@ export const DeleteConfirmDialog = ({
                 <Button
                     variant={"destructive"}
                     onClick={() => {
-                        // deletefunc(id);
+                        deletefunc(id);
                         window.location.reload();
                     }}
                 >
