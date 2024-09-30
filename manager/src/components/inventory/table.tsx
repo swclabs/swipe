@@ -44,6 +44,7 @@ import { Badge } from "@/components/ui/badge"
 import { ProductSpecsDialog } from "./dialog"
 import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
 import { useState } from "react"
+import { InventoryService } from "@/services/inventory";
 
 const data: StockItem[] = [
   {
@@ -164,10 +165,18 @@ export const columns: ColumnDef<StockItem>[] = [
       const [isDeleteOpen, setIsDeleteOpen] = useState(false);
       const [idDelete, setIdDelete] = useState(-1);
 
+      // const deletefunc = (id: number) => {
+      //   // Add your delete functionality here
+      //   console.log("Delete payment with ID: ", id);
+      // };
+
       const deletefunc = (id: number) => {
-        // Add your delete functionality here
         console.log("Delete payment with ID: ", id);
-      };
+        const func = async (id: number) => {
+          const res = await InventoryService.DeleteInventory(id)
+        }
+        func(id)
+      }
 
       return (
         <>
@@ -211,7 +220,7 @@ export const columns: ColumnDef<StockItem>[] = [
   },
 ]
 
-export function InventoryTableComponent({ deletefunc }) {
+export function InventoryTableComponent() {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []

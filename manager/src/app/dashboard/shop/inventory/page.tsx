@@ -17,7 +17,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
-import { InventoryService } from "@/services/inventory";
+
 
 
 export default function Page() {
