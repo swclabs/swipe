@@ -42,9 +42,9 @@ import {
 import { StockItem } from "@/types/inventory"
 import { Badge } from "@/components/ui/badge"
 import { ProductSpecsDialog } from "./dialog"
-import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
-import { useState } from "react"
-import { InventoryService } from "@/services/inventory";
+// import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
+// import { useState } from "react"
+// import { InventoryService } from "@/services/inventory";
 
 const data: StockItem[] = [
   {
@@ -162,30 +162,25 @@ export const columns: ColumnDef<StockItem>[] = [
     cell: ({ row }) => {
       const payment = row.original
 
-      const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-      const [idDelete, setIdDelete] = useState(-1);
+      // const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+      // const [idDelete, setIdDelete] = useState(-1);
 
       // const deletefunc = (id: number) => {
-      //   // Add your delete functionality here
       //   console.log("Delete payment with ID: ", id);
-      // };
-
-      const deletefunc = (id: number) => {
-        console.log("Delete payment with ID: ", id);
-        const func = async (id: number) => {
-          const res = await InventoryService.DeleteInventory(id)
-        }
-        func(id)
-      }
+      //   const func = async (id: number) => {
+      //     const res = await InventoryService.DeleteInventory(id)
+      //   }
+      //   func(id)
+      // }
 
       return (
         <>
-          <DeleteConfirmDialog
+          {/* <DeleteConfirmDialog
             id={idDelete}
             isOpen={isDeleteOpen}
             setIsOpen={setIsDeleteOpen}
             deletefunc={deletefunc}
-          />
+          /> */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="h-8 w-8 p-0">
@@ -203,15 +198,14 @@ export const columns: ColumnDef<StockItem>[] = [
               <DropdownMenuSeparator />
               <DropdownMenuItem>View customer</DropdownMenuItem>
               <DropdownMenuItem>View payment details</DropdownMenuItem>
-              {/* <DropdownMenuItem>Edit</DropdownMenuItem> */}
-              <DropdownMenuItem
+              {/* <DropdownMenuItem
                 onClick={() => {
                   setIsDeleteOpen(!isDeleteOpen)
                   setIdDelete(Number(row.id))
                 }}
               >
                 <span className=" text-red-500">Delete</span>
-              </DropdownMenuItem>
+              </DropdownMenuItem> */}
             </DropdownMenuContent>
           </DropdownMenu>
         </>
