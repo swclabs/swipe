@@ -8,6 +8,7 @@ import { PaginationSupplier } from "./pagination"
 import { ProductBody, Products } from "@/types/products"
 import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
 import { useState } from "react"
+import React from "react"
 
 const TableHeaderRow = () => {
   return (
