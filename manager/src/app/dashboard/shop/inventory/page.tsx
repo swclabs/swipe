@@ -7,9 +7,28 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Group, PlusCircle, Search, ShoppingBag, Package, Truck } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label"
+
 
 
 export default function Page() {
+
+  // const deleteItem = (id: number) => {
+  //   const func = async (id: number) => {
+  //     const res = await InventoryService.DeleteInventory(id)
+  //   }
+  //   func(id)
+  // }
+
   return (
     <ScrollArea className="h-full bg-muted/40">
       <div className="container">
@@ -29,7 +48,89 @@ export default function Page() {
                 <p className="text-xs text-muted-foreground">
                   Add new item
                 </p>
-                <Button className=" w-1/2" size="sm">New</Button>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className=" w-1/2" size="sm">New</Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Add new item</DialogTitle>
+                      <DialogDescription>
+                        Add your items to here. Click save when you&apos;re done.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="grid gap-4 py-4">
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="name" className="text-right">
+                          Name
+                        </Label>
+                        <Input id="name" className="col-span-3" />
+                      </div>
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="username" className="text-right">
+                          Price
+                        </Label>
+                        <Input id="username" className="col-span-3" />
+                      </div>
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="username" className="text-right">
+                          Available
+                        </Label>
+                        <Input id="username" className="col-span-3" />
+                      </div>
+
+                    </div>
+                    <DialogFooter>
+                      <Button type="submit">Save changes</Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
+
+                {/* <Button onPress={onOpen}>New</Button>
+                <Modal
+                  backdrop="opaque"
+                  isOpen={isOpen}
+                  onOpenChange={onOpenChange}
+                  classNames={{
+                    backdrop: "bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20"
+                  }}
+                >
+                  <ModalContent>
+                    {(onClose) => (
+                      <>
+                        <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+                        <ModalBody>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nullam pulvinar risus non risus hendrerit venenatis.
+                            Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                          </p>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nullam pulvinar risus non risus hendrerit venenatis.
+                            Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                          </p>
+                          <p>
+                            Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
+                            dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
+                            Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod.
+                            Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur
+                            proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                          </p>
+                        </ModalBody>
+                        <ModalFooter>
+                          <Button color="danger" variant="light" onPress={onClose}>
+                            Close
+                          </Button>
+                          <Button color="primary" onPress={onClose}>
+                            Action
+                          </Button>
+                        </ModalFooter>
+                      </>
+                    )}
+                  </ModalContent>
+                </Modal>*/}
               </CardContent>
             </Card>
             <Card>

@@ -42,6 +42,9 @@ import {
 import { StockItem } from "@/types/inventory"
 import { Badge } from "@/components/ui/badge"
 import { ProductSpecsDialog } from "./dialog"
+// import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
+// import { useState } from "react"
+// import { InventoryService } from "@/services/inventory";
 
 const data: StockItem[] = [
   {
@@ -159,26 +162,53 @@ export const columns: ColumnDef<StockItem>[] = [
     cell: ({ row }) => {
       const payment = row.original
 
+      // const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+      // const [idDelete, setIdDelete] = useState(-1);
+
+      // const deletefunc = (id: number) => {
+      //   console.log("Delete payment with ID: ", id);
+      //   const func = async (id: number) => {
+      //     const res = await InventoryService.DeleteInventory(id)
+      //   }
+      //   func(id)
+      // }
+
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <DotsHorizontalIcon className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <>
+          {/* <DeleteConfirmDialog
+            id={idDelete}
+            isOpen={isDeleteOpen}
+            setIsOpen={setIsDeleteOpen}
+            deletefunc={deletefunc}
+          /> */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-8 w-8 p-0">
+                <span className="sr-only">Open menu</span>
+                <DotsHorizontalIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>Actions</DropdownMenuLabel>
+              <DropdownMenuItem
+                onClick={() => navigator.clipboard.writeText(payment.id)}
+              >
+                Copy payment ID
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>View customer</DropdownMenuItem>
+              <DropdownMenuItem>View payment details</DropdownMenuItem>
+              {/* <DropdownMenuItem
+                onClick={() => {
+                  setIsDeleteOpen(!isDeleteOpen)
+                  setIdDelete(Number(row.id))
+                }}
+              >
+                <span className=" text-red-500">Delete</span>
+              </DropdownMenuItem> */}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </>
       )
     },
   },
