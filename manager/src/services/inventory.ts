@@ -20,4 +20,12 @@ export class InventoryService {
         return response;
     }
 
+    static async NewInventory(data: StockItem): Promise<AxiosResponse<StockItem>> {
+        const axiosInstance = createAxiosInstance();
+        const response: AxiosResponse<StockItem> = await axiosInstance.post(
+            APIEndpoint.INVENTORY.POST_STOCK,
+            data
+        );
+        return response;
+    }
 }

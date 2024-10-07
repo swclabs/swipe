@@ -49,7 +49,7 @@ export default function Page() {
                   Add new item
                 </p>
 
-                <Dialog>
+                {/* <Dialog>
                   <DialogTrigger asChild>
                     <Button className=" w-1/2" size="sm">New</Button>
                   </DialogTrigger>
@@ -85,7 +85,12 @@ export default function Page() {
                       <Button type="submit">Save changes</Button>
                     </DialogFooter>
                   </DialogContent>
-                </Dialog>
+                </Dialog> */}
+                <a href="/dashboard/shop/inventory/upload">
+                  <Button className="w-1/2" size="sm">
+                    New
+                  </Button>
+                </a>
 
                 {/* <Button onPress={onOpen}>New</Button>
                 <Modal
