@@ -162,23 +162,23 @@ export const columns: ColumnDef<StockItem>[] = [
     cell: ({ row }) => {
       const payment = row.original
 
-      const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-      const [idDelete, setIdDelete] = useState(-1);
-      const deletefunc = (id: number) => {
-        console.log("Delete payment with ID: ", id);
-        const func = async (id: number) => {
-          const res = await InventoryService.DeleteInventory(id)
-        }
-        func(id)
-      }
+      // const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+      // const [idDelete, setIdDelete] = useState(-1);
+      // const deletefunc = (id: number) => {
+      //   console.log("Delete payment with ID: ", id);
+      //   const func = async (id: number) => {
+      //     const res = await InventoryService.DeleteInventory(id)
+      //   }
+      //   func(id)
+      // }
       return (
         <>
-          <DeleteConfirmDialog
+          {/* <DeleteConfirmDialog
             id={idDelete}
             isOpen={isDeleteOpen}
             setIsOpen={setIsDeleteOpen}
             deletefunc={deletefunc}
-          />
+          /> */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="h-8 w-8 p-0">
@@ -196,14 +196,14 @@ export const columns: ColumnDef<StockItem>[] = [
               <DropdownMenuSeparator />
               <DropdownMenuItem>View customer</DropdownMenuItem>
               <DropdownMenuItem>View payment details</DropdownMenuItem>
-              <DropdownMenuItem
+              {/* <DropdownMenuItem
                 onClick={() => {
                   setIsDeleteOpen(!isDeleteOpen)
                   setIdDelete(Number(row.getValue("product_id")))
                 }}
               >
                 <span className=" text-red-500">Delete</span>
-              </DropdownMenuItem>
+              </DropdownMenuItem> */}
             </DropdownMenuContent>
           </DropdownMenu >
         </>

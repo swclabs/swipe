@@ -28,16 +28,16 @@ import { useFormik } from "formik"
 import { useToast } from "@/components/ui/use-toast";
 
 export function ProductSpecsDialog({ src }: { src: StockItem }) {
-  // const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  // const [idDelete, setIdDelete] = useState(-1);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [idDelete, setIdDelete] = useState(-1);
 
-  // const deletefunc = (id: number) => {
-  //   console.log("Delete payment with ID: ", id);
-  //   const func = async (id: number) => {
-  //     const res = await InventoryService.DeleteInventory(id)
-  //   }
-  //   func(id)
-  // }
+  const deletefunc = (id: number) => {
+    console.log("Delete payment with ID: ", id);
+    const func = async (id: number) => {
+      const res = await InventoryService.DeleteInventory(id)
+    }
+    func(id)
+  }
   const { toast } = useToast()
   const formik = useFormik({
     /*
@@ -66,12 +66,12 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
 
   return (
     <>
-      {/* <DeleteConfirmDialog
+      <DeleteConfirmDialog
         id={idDelete}
         isOpen={isDeleteOpen}
         setIsOpen={setIsDeleteOpen}
         deletefunc={deletefunc}
-      /> */}
+      />
       <Dialog>
         <DialogTrigger asChild>
           <div className=" flex items-center">
@@ -181,14 +181,14 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
 
             <DialogFooter>
               <Button type="submit">Save changes</Button>
-              {/* <Button variant={"destructive"}
-              onClick={() => {
-                setIsDeleteOpen(!isDeleteOpen)
-                setIdDelete(Number(src.id))
-              }}
-            >
-              Delete
-            </Button> */}
+              <Button variant={"destructive"}
+                onClick={() => {
+                  setIsDeleteOpen(!isDeleteOpen)
+                  setIdDelete(Number(src.id))
+                }}
+              >
+                Delete
+              </Button>
             </DialogFooter>
           </form>
         </DialogContent>
