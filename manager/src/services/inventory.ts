@@ -4,10 +4,10 @@ import { AxiosResponse } from "axios";
 import { StockItem, InventoryStockSchema } from "@/types/inventory";
 
 export class InventoryService {
-    static async GetInventoryStock(limit: number): Promise<AxiosResponse<InventoryStockSchema>> {
+    static async GetInventoryStock(page: number, limit: number): Promise<AxiosResponse<InventoryStockSchema>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<InventoryStockSchema> = await axiosInstance.get(
-            `${APIEndpoint.INVENTORY.GET_STOCK}?limit=${limit}`
+            `${APIEndpoint.INVENTORY.GET_STOCK}?page=${page}&limit=${limit}`
         );
         return response;
     }

@@ -17,6 +17,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
+import { useInventory } from "@/state/inventory";
+import { useEffect } from "react";
 
 
 
@@ -28,6 +30,11 @@ export default function Page() {
   //   }
   //   func(id)
   // }
+
+  const { inventory, fetchInventory } = useInventory()
+  useEffect(() => {
+    fetchInventory()
+  }, [])
 
   return (
     <ScrollArea className="h-full bg-muted/40">

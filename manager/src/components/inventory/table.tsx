@@ -20,7 +20,6 @@ import {
 } from "@tanstack/react-table"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -42,54 +41,59 @@ import {
 import { StockItem } from "@/types/inventory"
 import { Badge } from "@/components/ui/badge"
 import { ProductSpecsDialog } from "./dialog"
-import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
-import { useState } from "react"
-import { InventoryService } from "@/services/inventory";
+import { useInventory } from "@/state/inventory";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const data: StockItem[] = [
-  {
-    id: "1",
-    product_name: "iphone 16",
-    product_id: "1",
-    price: "12312313",
-    available: "1000",
-    currency_code: "USD",
-    status: "active",
-    specs: {
-      color: "black",
-      ram: "8GB",
-      ssd: "512GB",
-      color_image: "",
-      image: [
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-      ]
-    }
-  },
-  {
-    id: "2",
-    product_name: "xphone 15",
-    product_id: "2",
-    price: "1231231312312",
-    available: "1000",
-    status: "active",
-    currency_code: "USD",
-    specs: {
-      color: "",
-      ram: "",
-      ssd: "",
-      color_image: "",
-      image: [
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-      ]
-    }
-  }
-]
+// const data: StockItem[] = [
+//   {
+//     id: "1",
+//     product_name: "iphone 16",
+//     product_id: "1",
+//     price: "12312313",
+//     available: "1000",
+//     currency_code: "USD",
+//     status: "active",
+//     specs: {
+//       color: "black",
+//       ram: "8GB",
+//       ssd: "512GB",
+//       color_image: "",
+//       image: [
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
+//       ]
+//     }
+//   },
+//   {
+//     id: "2",
+//     product_name: "xphone 15",
+//     product_id: "2",
+//     price: "1231231312312",
+//     available: "1000",
+//     status: "active",
+//     currency_code: "USD",
+//     specs: {
+//       color: "",
+//       ram: "",
+//       ssd: "",
+//       color_image: "",
+//       image: [
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
+//       ]
+//     }
+//   }
+// ]
+
+// StockItem[]
+// let data: StockItem[] = []
+
+
 
 export const columns: ColumnDef<StockItem>[] = [
   {
@@ -213,6 +217,12 @@ export const columns: ColumnDef<StockItem>[] = [
 ]
 
 export function InventoryTableComponent() {
+  const { inventory, fetchInventory } = useInventory()
+  useEffect(() => {
+    fetchInventory()
+  }, [])
+
+  const [data, setData] = useState<any>(inventory?.stock || [])
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
