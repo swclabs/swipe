@@ -26,6 +26,7 @@ import { DeleteConfirmDialog } from "./responsive-dialog"
 import React from "react"
 import { useFormik } from "formik"
 import { useToast } from "@/components/ui/use-toast";
+import { spec } from "node:test/reporters"
 
 export function ProductSpecsDialog({ src }: { src: StockItem }) {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
@@ -41,26 +42,44 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
   const { toast } = useToast()
   const formik = useFormik({
     /*
-    ID
-    Color
-    Ram
-    SSD
-    Price
-    Available
-    Status
+    id: string;
+    product_name: string;
+    product_id: string;
+    status: string;
+    price: string;
+    available: string;
+    currency_code: string;
+    specs: Specs;
      */
     initialValues: {
       id: src.id,
-      color: src.specs.color,
-      RAM: src.specs.ram,
-      SSD: src.specs.ssd,
+      product_name: src.product_name,
+      product_id: src.product_id,
+      status: src.status,
       price: src.price,
       available: src.available,
-      status: src.status,
+      currency_code: src.currency_code,
     },
     onSubmit: values => {
       // Fetch API to update the inventory
       console.log("test")
+      const updateInventory = async () => {
+        const updatedValues = {
+          ...values,
+          specs: src.specs // Add the missing 'specs' property
+        };
+        const res = await InventoryService.NewInventory(updatedValues);
+        res.status === 200 ?
+          toast({
+            title: "Inventory updated",
+            description: "The inventory has been updated successfully",
+          }) :
+          toast({
+            title: "Error",
+            description: "An error occurred while updating the inventory",
+          });
+      };
+      updateInventory();
     },
   });
 

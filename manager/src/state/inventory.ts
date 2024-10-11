@@ -12,7 +12,7 @@ interface UseInventory {
 export const useInventory = create<UseInventory>()((set): UseInventory => ({
     inventory: null,
     fetchInventory: async () => {
-        const inventoryRes = await InventoryService.GetInventoryStock(10, 10)
+        const inventoryRes = await InventoryService.GetInventoryStock(1, 10)
         return set((state) => {
             return {
                 inventory: inventoryRes ? inventoryRes.data : null
