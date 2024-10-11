@@ -59,6 +59,8 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
       price: src.price,
       available: src.available,
       currency_code: src.currency_code,
+      RAM: src.specs.ram,
+      SSD: src.specs.ssd,
     },
     onSubmit: values => {
       // Fetch API to update the inventory
