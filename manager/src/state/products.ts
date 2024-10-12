@@ -1,5 +1,5 @@
 import { ProductService } from '@/services/products';
-import { Categories, Category, Product, Products, Supplier, Suppliers } from '@/types/products'
+import { Categories, Category, Product, ProductDTO, Supplier, Suppliers } from '@/types/products'
 import { create } from 'zustand'
 
 interface UseSuppliers {
@@ -41,7 +41,7 @@ export const useCategories = create<UseCategory>()((set): UseCategory => ({
 
 
 interface UseProduct {
-    product: Products | null;
+    product: ProductDTO | null;
     fetchProduct: () => Promise<void>;
 }
 

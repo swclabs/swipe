@@ -13,6 +13,10 @@ export default class APIEndpoint {
 
     static readonly PRODUCTS = {
         GET_NEWSLETTERS: `${APIEndpoint.BASE_URL}/newsletters`,
-        GET_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`
+        GET_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`,
+        
+        PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
+
+        SEARCH_DETAIL: `${APIEndpoint.BASE_URL}/search/details`,
     }
 }

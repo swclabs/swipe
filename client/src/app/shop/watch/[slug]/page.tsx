@@ -10,8 +10,8 @@ import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import ipadDetail from "@/faker/ipad-details";
 import watchDetail from "@/faker/watch-detail";
-import { useProductWithSpecs, useProducWithConnection } from "@/state";
-import { Connection, ProductDetail } from "@/types/products";
+import { useProducts } from "@/state/products";
+import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     setDetails,
     setColor,
     setSpecs,
-  } = useProducWithConnection()
+  } = useProducts()
   useEffect(() => {
     setDetails(watchDetail)
   }, [])

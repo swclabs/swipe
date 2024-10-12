@@ -1,9 +1,3 @@
-export interface Accessory {
-    title: string;
-    desc: string;
-    img: string;
-}
-
 export interface Newsletter {
     id: string;
     type: string;
@@ -25,40 +19,42 @@ export interface Posts {
     textcolor: string;
 }
 
-export interface Storage {
-    RAM: string;
-    SSD: string;
+export interface Specification {
     price: string;
-}
-
-export interface Connection {
-    name: string;
+    ssd: string;
+    ram: string;
     desc: string;
+    connection: string;
+}
+
+export interface ProductDetail {
+    name: string;
+    screen: string;
+    img: string[]
+    color: {
+        name: string;
+        img: string;
+        product: string[];
+        specs?: Specification[];
+    }[];
+}
+
+export interface SpecsType {
+    screen: string;
+    display: string;
+    SSD: number[];
+    RAM: number[];
+}
+
+export interface ProductType {
+    id: number;
+    category: string;
+    desc: string;
+    image: string;
+    name: string;
     price: string;
-}
+    specs: SpecsType;
 
-export interface ProductDetail<T> {
-    name: string;
-    screen: string;
-    img: string[]
-    color: {
-        name: string;
-        img: string;
-        product: string[];
-        specs?: T[];
-    }[];
-}
-
-export interface ProductConnectionDetail {
-    name: string;
-    screen: string;
-    img: string[]
-    color: {
-        name: string;
-        img: string;
-        product: string[];
-        specs?: Connection[];
-    }[];
 }
 
 export interface ProductShopCard {

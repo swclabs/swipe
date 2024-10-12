@@ -1,5 +1,5 @@
 import APIEndpoint from "@/providers/endpoint";
-import { BaseResponse, Categories, CategoryReq, NewProductRes, Product, Products, Supplier, SupplierReq, Suppliers } from "@/types/products";
+import { BaseResponse, Categories, CategoryReq, NewProductRes, Product, ProductDTO, Supplier, SupplierReq, Suppliers } from "@/types/products";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";
 
@@ -14,9 +14,9 @@ export class ProductService {
         return response;
     }
 
-    static async GetProduct(limit: number): Promise<AxiosResponse<Products>> {
+    static async GetProduct(limit: number): Promise<AxiosResponse<ProductDTO>> {
         const axiosInstance = createAxiosInstance();
-        const response: AxiosResponse<Products> = await axiosInstance.get(
+        const response: AxiosResponse<ProductDTO> = await axiosInstance.get(
             `${APIEndpoint.PRODUCTS.GET_PRODUCTS}?limit=${limit}`
         );
         return response;

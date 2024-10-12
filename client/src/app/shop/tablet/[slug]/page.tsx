@@ -6,8 +6,8 @@ import SpecMemory from "@/components/shop/spec-memory";
 import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import ipadDetail from "@/faker/ipad-details";
-import { useProductWithSpecs } from "@/state";
-import { ProductDetail, Storage } from "@/types/products";
+import { useProducts } from "@/state/products";
+import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -25,11 +25,11 @@ export default function Page({ params }: { params: { slug: string } }) {
     setDetails,
     setColor,
     setSpecs,
-  } = useProductWithSpecs()
+  } = useProducts()
 
 
   useEffect(() => {
-    setSpecs({ RAM: "", SSD: "", price: "" })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
     setDetails(ipadDetail)
   }, [])
   // console.log(specs)
