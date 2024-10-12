@@ -1,11 +1,11 @@
 
-import { Connection, ProductDetail, Storage } from "@/types/products";
+import { ProductDetail } from "@/types/products";
 import { Image } from "@nextui-org/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface IDeviceProps {
-  product: ProductDetail<Storage>[];
+  product: ProductDetail[];
   version: number;
   color: number;
   setVersion: (version: number) => void;
@@ -53,7 +53,7 @@ export default function ShopDeviceCarousel({ product, version, color, setVersion
 }
 
 interface IAccessoryProps {
-  product: ProductDetail<Connection>[];
+  product: ProductDetail[];
   version: number;
   color: number;
   setVersion: (version: number) => void;

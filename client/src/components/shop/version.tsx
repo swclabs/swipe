@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 
 interface IVersionProps {
-  product: ProductDetail<{ price: string }>[];
+  product: ProductDetail[];
   version: number;
   setVersion: (version: number) => void;
 }

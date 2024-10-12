@@ -92,8 +92,8 @@ export default function Page() {
       name: 'Gamer Gear Pro Controller',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.',
       price: "17.000.000đ - 18.000.000đ",
-      category_id: "",
-      supplier_id: "",
+      category_id: 0,
+      supplier_id: 0,
       status: "draft",
       display: "6.1",
       screen: "OLED",
@@ -453,7 +453,7 @@ export default function Page() {
                             </SelectTrigger>
                             <SelectContent>
                               {supplier.map((value, index) => (
-                                <SelectItem value={value.id} key={index}>{value.name}</SelectItem>
+                                <SelectItem value={value.id.toString()} key={index}>{value.name}</SelectItem>
                               ))}
                             </SelectContent>
                           </Select>
@@ -468,7 +468,7 @@ export default function Page() {
                             </SelectTrigger>
                             <SelectContent>
                               {category.map((value, index) => (
-                                <SelectItem value={value.id} key={index}>{value.name}</SelectItem>
+                                <SelectItem value={value.id.toString()} key={index}>{value.name}</SelectItem>
                               ))}
                             </SelectContent>
                           </Select>

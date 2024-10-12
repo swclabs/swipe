@@ -6,7 +6,7 @@ import SpecMemory from "@/components/shop/spec-memory";
 import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import iphoneDetail from "@/faker/iphone-detail";
-import { useProductWithSpecs } from "@/state";
+import { useProducts } from "@/state/products";
 import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
@@ -25,10 +25,10 @@ export default function Page({ params }: { params: { slug: string } }) {
     setDetails,
     setColor,
     setSpecs,
-  } = useProductWithSpecs()
+  } = useProducts()
 
   useEffect(() => {
-    setSpecs({ RAM: "", SSD: "", price: "" })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
     setDetails(iphoneDetail)
   }, [])
 
@@ -103,7 +103,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         setVersion={setVersion}
         setSpecs={setSpecs}
       />
-      <Comment/>
+      <Comment />
     </div >
   )
 }

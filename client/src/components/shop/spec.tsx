@@ -1,9 +1,9 @@
-import { ProductDetail, Storage } from "@/types/products";
+import { ProductDetail } from "@/types/products";
 import { ButtonGroup } from "@nextui-org/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface IStorageProps {
-  product: ProductDetail<Storage>[];
+  product: ProductDetail[];
   version: number;
   color: number;
   setVersion: Dispatch<SetStateAction<number>>;
@@ -41,7 +41,7 @@ export default function Spec({ product, version, color, setColor }: IStorageProp
           >
             <div className='flex justify-between p-4'>
               <div className=' w-2/5 flex flex-col items-start justify-center'>
-                <div className=' font-semibold'>{value.SSD}</div>
+                <div className=' font-semibold'>{value.ssd}</div>
               </div>
               <div className=' w-2/5 text-xs text-right'>
                 {value.price}

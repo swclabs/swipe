@@ -1,22 +1,22 @@
-import { Connection, ProductDetail, Storage } from "@/types/products";
+import { ProductDetail, Specification } from "@/types/products";
 
 import { motion } from "framer-motion"
 import { Button } from "../ui/button";
 
 interface IStorageProps {
-  product: ProductDetail<Storage>[];
+  product: ProductDetail[];
   version: number;
   color: number;
-  specs: Storage;
+  specs: Specification;
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
-  setSpecs: (specs: Storage) => void;
+  setSpecs: (specs: Specification) => void;
 }
 export default function AddToCart({ product, version, color, specs, setSpecs }: IStorageProps) {
   return (
     <>
       {
-        product[version] && product[version].color[color] && specs.SSD != "" ?
+        product[version] && product[version].color[color] && specs.ssd != "" ?
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ export default function AddToCart({ product, version, color, specs, setSpecs }: 
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[version]?.name} {specs.SSD} {product[version].color[color].name}</div>
+                  <div className=" mb-2">{product[version]?.name} {specs.ssd} {product[version].color[color].name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">
@@ -54,7 +54,7 @@ export default function AddToCart({ product, version, color, specs, setSpecs }: 
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[0]?.name} {specs.SSD} {product[0]?.color[0].name}</div>
+                  <div className=" mb-2">{product[0]?.name} {specs.ssd} {product[0]?.color[0].name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">
@@ -74,20 +74,20 @@ export default function AddToCart({ product, version, color, specs, setSpecs }: 
 
 
 interface IConnectionProps {
-  product: ProductDetail<Connection>[];
+  product: ProductDetail[];
   version: number;
   color: number;
-  specs: Connection;
+  specs: Specification;
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
-  setSpecs: (specs: Connection) => void;
+  setSpecs: (specs: Specification) => void;
 }
 
 export function AddWatchToCart({ product, version, color, specs, setSpecs }: IConnectionProps) {
   return (
     <>
       {
-        product[version] && product[version].color[color] && specs.name != "" ?
+        product[version] && product[version].color[color] && specs.connection != "" ?
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export function AddWatchToCart({ product, version, color, specs, setSpecs }: ICo
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[version]?.name} {specs.name} {product[version].color[color].name}</div>
+                  <div className=" mb-2">{product[version]?.name} {specs.connection} {product[version].color[color].name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">
@@ -125,7 +125,7 @@ export function AddWatchToCart({ product, version, color, specs, setSpecs }: ICo
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[0]?.name} {specs.name} {product[0]?.color[0].name}</div>
+                  <div className=" mb-2">{product[0]?.name} {specs.connection} {product[0]?.color[0].name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">
