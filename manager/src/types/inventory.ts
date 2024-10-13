@@ -15,6 +15,7 @@ export interface StockItem {
     available: string;
     currency_code: string;
     specs: Specs;
+    image: string[];
 }
 
 interface Header {

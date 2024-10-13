@@ -19,4 +19,8 @@ export default class APIEndpoint {
         POST_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
         GET_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
     }
+
+    static readonly USERS = {
+        GET_USERS: `${APIEndpoint.BASE_URL}/users`,
+    }
 }

@@ -59,8 +59,9 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
       price: src.price,
       available: src.available,
       currency_code: src.currency_code,
-      RAM: src.specs.ram,
-      SSD: src.specs.ssd,
+      ram: src.specs.ram,
+      ssd: src.specs.ssd,
+      image: src.image,
     },
     onSubmit: values => {
       // Fetch API to update the inventory
@@ -113,17 +114,17 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
               <div className="w-1/2">
                 <Carousel className="w-full max-w-xs">
                   <CarouselContent>
-                    {src.specs.image.map((value, index) => (
+                    {src.image.map((value, index) => (
                       <CarouselItem key={index}>
                         <div className="p-1">
                           <Card>
                             <CardContent className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-xl">
-                              <Image
+                              {/* <Image
                                 src={value}
                                 width={500}
                                 height={500}
-                                alt="Product image"
-                              />
+                              /> */}
+                              <Image loader={() => value} src={value} alt="Product Image" width={500} height={500} />
                             </CardContent>
                           </Card>
                         </div>
@@ -158,7 +159,7 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
                     id="ram"
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
-                    value={formik.values.RAM}
+                    value={formik.values.ram}
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
@@ -167,7 +168,7 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
                     id="ssd"
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
-                    value={formik.values.SSD}
+                    value={formik.values.ssd}
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
