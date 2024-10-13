@@ -194,7 +194,7 @@ export const columns: ColumnDef<StockItem>[] = [
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(payment.id)}
+                onClick={() => navigator.clipboard.writeText(payment.id.toString())}
               >
                 Copy payment ID
               </DropdownMenuItem>
@@ -222,7 +222,6 @@ export function InventoryTableComponent() {
   useEffect(() => {
     fetchInventory()
   }, [])
-  console.log(inventory)
   // const [data, setData] = useState<any>(inventory?.stock || [
   //   {
   //     id: "1",

@@ -7,7 +7,7 @@ interface Specs {
 }
 
 export interface StockItem {
-    id: string;
+    id: number;
     product_name: string;
     product_id: string;
     status: string;
@@ -16,6 +16,10 @@ export interface StockItem {
     currency_code: string;
     specs: Specs;
     image: string[];
+}
+
+export interface BaseResponse {
+    msg: string;
 }
 
 interface Header {
@@ -31,3 +35,4 @@ export interface InventoryStockSchema {
     header: Header;
     stock: StockItem[];
 }
+

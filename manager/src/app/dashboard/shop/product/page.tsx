@@ -40,9 +40,7 @@ export default function Page() {
   const { product, fetchProduct } = useProduct()
   useEffect(() => {
     fetchProduct()
-    console.log("useEffect", product)
   }, [])
-  console.log("render", product)
   const deleteItem = (id: number) => {
     const func = async (id: number) => {
       const res = await ProductService.DeleteProduct(id)

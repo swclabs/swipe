@@ -72,7 +72,7 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
           specs: src.specs // Add the missing 'specs' property
         };
         const res = await InventoryService.NewInventory(updatedValues);
-        res.status === 200 ?
+        res.status === 201 ?
           toast({
             title: "Inventory updated",
             description: "The inventory has been updated successfully",
@@ -203,16 +203,17 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
 
             <DialogFooter>
               <Button type="submit">Save changes</Button>
-              <Button variant={"destructive"}
-                onClick={() => {
-                  setIsDeleteOpen(!isDeleteOpen)
-                  setIdDelete(Number(src.id))
-                }}
-              >
-                Delete
-              </Button>
             </DialogFooter>
           </form>
+          <Button variant={"destructive"}
+            onClick={() => {
+              setIsDeleteOpen(!isDeleteOpen)
+              setIdDelete(src.id)
+              // deletefunc(src.id)
+            }}
+          >
+            Delete
+          </Button>
         </DialogContent>
       </Dialog >
     </>
