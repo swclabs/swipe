@@ -1,25 +1,29 @@
 interface Specs {
-    color: string;
     ram: string;
     ssd: string;
-    color_image: string;
-    image: string[];
+    desc: string;
+    connection: string;
 }
 
 export interface StockItem {
-    id: number;
     product_name: string;
-    product_id: string;
+    product_id: number;
     status: string;
     price: string;
     available: string;
     currency_code: string;
-    specs: Specs;
     image: string[];
+    color: string;
+    color_img: string;
+    specs: Specs;
 }
 
 export interface BaseResponse {
     msg: string;
+}
+
+export interface NewInventoryRes extends BaseResponse {
+    id: string;
 }
 
 interface Header {

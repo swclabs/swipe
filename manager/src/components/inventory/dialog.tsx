@@ -144,7 +144,7 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
                     className="col-span-2 h-8"
                   />
                 </div>
-                <div className="grid grid-cols-3 items-center gap-4">
+                {/* <div className="grid grid-cols-3 items-center gap-4">
                   <Label htmlFor="color">Color</Label>
                   <Input
                     id="color"
@@ -152,7 +152,7 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
                     className="col-span-2 h-8"
                     disabled
                   />
-                </div>
+                </div> */}
                 <div className="grid grid-cols-3 items-center gap-4">
                   <Label htmlFor="ram">RAM</Label>
                   <Input

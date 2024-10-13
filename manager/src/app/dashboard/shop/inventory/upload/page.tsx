@@ -56,6 +56,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from "next/link";
 
 const breadcrumbItems = [{ title: "Inventory", link: "/dashboard/shop" }, { title: "Upload", link: "/dashboard/inventory/upload" }];
 
@@ -63,47 +64,59 @@ export default function Page() {
     const { toast } = useToast()
     const formik = useFormik({
         /*
-            id: string;
-            product_name: string;
-            product_id: string;
-            status: string;
-            price: string;
-            available: string;
-            currency_code: string;
-            specs: Specs;
-
-            interface Specs {
-                color: string;
-                ram: string;
-                ssd: string;
-                color_image: string;
-                image: string[];
+           {
+            "product_name": "iPhone 15 Pro Max",
+            "available": "1000",
+            "currency_code": "VND",
+            "price": "40000000",
+            "product_id": 6,
+            "color_img": "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696770/swc-storage/l2er9ptyweeoxyx2zqmu.jpg",
+            "color": "Black Titanium",
+            "image": [
+                            "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696813/swc-storage/nzbfah33w2emvcqxzclr.jpg",
+                            "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696814/swc-storage/xkdlsfuebn0v2o7banbw.jpg",
+                            "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696815/swc-storage/c24zwxmhl3lxoqxqqkkd.jpg",
+                            "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696817/swc-storage/cygibdl6tnjujb77mhbc.jpg"
+                        ],
+            "specs": {
+                    "ssd": "512GB",
+                    "ram": "16GB",
+                    "desc": "",
+                    "connection": ""
+                },
+            "status": "active"
             }
         */
         initialValues: {
-            id: '',
             product_name: '',
-            price: '',
-            description: '',
-            available: '',
+            price: '40000000',
+            available: '10',
             status: 'active',
-            product_id: '',
-            currency_code: '',
+            product_id: 6,
+            currency_code: 'VND',
+            image: [
+                "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696813/swc-storage/nzbfah33w2emvcqxzclr.jpg",
+                "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696814/swc-storage/xkdlsfuebn0v2o7banbw.jpg",
+                "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696815/swc-storage/c24zwxmhl3lxoqxqqkkd.jpg",
+                "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696817/swc-storage/cygibdl6tnjujb77mhbc.jpg",
+            ],
+            color_img: 'https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696770/swc-storage/l2er9ptyweeoxyx2zqmu.jpg',
+            color: 'Black Titanium',
             specs: {
-                color: '',
-                ram: '',
-                ssd: '',
-                color_image: '',
-                image: []
+                ram: '16GB',
+                ssd: '512GB',
+                connection: '',
+                desc: '',
             }
         },
         onSubmit: values => {
             const postNewInventory = async () => {
                 const newInventoryRes = await InventoryService.NewInventory(values)
+                console.log(newInventoryRes)
                 newInventoryRes.status === 201 ?
                     toast({
                         title: "Update products information",
-                        // description: newInventoryRes.data.msg,
+                        description: newInventoryRes.data.msg,
                     }) :
                     toast({
                         title: "Update products information",
@@ -111,7 +124,6 @@ export default function Page() {
                     })
             }
             postNewInventory()
-            console.log("test")
         },
     });
 
@@ -123,10 +135,6 @@ export default function Page() {
             </div>
             <form onSubmit={formik.handleSubmit}>
                 <div className="flex items-center gap-4 py-4 px-4">
-                    {/* <Button variant="outline" size="icon" className="h-7 w-7">
-                        <ChevronLeft className="h-4 w-4" />
-                        <span className="sr-only">Back</span>
-                    </Button> */}
                     <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
                         Upload New Inventory
                     </h1>
@@ -168,7 +176,14 @@ export default function Page() {
                                 </DialogFooter>
                             </DialogContent>
                         </Dialog>
-                        <Button size="sm" type="submit">Save</Button>
+                        <Button
+                            size="sm"
+                            type="submit"
+                        >
+                            <a href="/dashboard/shop/inventory">
+                                Save
+                            </a>
+                        </Button>
                     </div>
                 </div>
                 <Card x-chunk="dashboard-07-chunk-0">
@@ -183,12 +198,12 @@ export default function Page() {
                             <div className="grid gap-3">
                                 <Label htmlFor="name">Name</Label>
                                 <Input
-                                    id="name"
+                                    id="product_name"
                                     type="text"
                                     className="w-full"
                                     defaultValue={formik.values.product_name}
                                     onChange={(e) => {
-                                        formik.setFieldValue("name", e.target.value);
+                                        formik.setFieldValue("product_name", e.target.value);
                                     }}
                                 />
                             </div>
@@ -216,17 +231,6 @@ export default function Page() {
                                 />
                             </div>
                             <div className="grid gap-3">
-                                <Label htmlFor="description">Description</Label>
-                                <Textarea
-                                    id="description"
-                                    defaultValue={formik.values.description}
-                                    className=" min-h-[6rem]"
-                                    onChange={(e) => {
-                                        formik.setFieldValue("description", e.target.value);
-                                    }}
-                                />
-                            </div>
-                            <div className="grid gap-3">
                                 <Label htmlFor="available">Status</Label>
                                 <Textarea
                                     id="status"
@@ -234,6 +238,50 @@ export default function Page() {
                                     className=" w-full"
                                     onChange={(e) => {
                                         formik.setFieldValue("status", e.target.value);
+                                    }}
+                                />
+                            </div>
+                            <div className="grid gap-3">
+                                <Label htmlFor="available">Color</Label>
+                                <Textarea
+                                    id="color"
+                                    defaultValue={formik.values.color}
+                                    className=" w-full"
+                                    onChange={(e) => {
+                                        formik.setFieldValue("color", e.target.value);
+                                    }}
+                                />
+                            </div>
+                            <div className="grid gap-3">
+                                <Label htmlFor="available">Product ID</Label>
+                                <Textarea
+                                    id="product_id"
+                                    defaultValue={formik.values.product_id}
+                                    className=" w-full"
+                                    onChange={(e) => {
+                                        formik.setFieldValue("product_id", e.target.value);
+                                    }}
+                                />
+                            </div>
+                            <div className="grid gap-3">
+                                <Label htmlFor="available">SSD</Label>
+                                <Textarea
+                                    id="ssd"
+                                    defaultValue={formik.values.specs.ssd}
+                                    className=" w-full"
+                                    onChange={(e) => {
+                                        formik.setFieldValue("ssd", e.target.value);
+                                    }}
+                                />
+                            </div>
+                            <div className="grid gap-3">
+                                <Label htmlFor="available">RAM</Label>
+                                <Textarea
+                                    id="ram"
+                                    defaultValue={formik.values.specs.ram}
+                                    className=" w-full"
+                                    onChange={(e) => {
+                                        formik.setFieldValue("ram", e.target.value);
                                     }}
                                 />
                             </div>

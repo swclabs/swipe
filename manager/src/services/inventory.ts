@@ -1,7 +1,7 @@
 import APIEndpoint from "@/providers/endpoint";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";
-import { StockItem, InventoryStockSchema, BaseResponse } from "@/types/inventory";
+import { StockItem, InventoryStockSchema, BaseResponse, NewInventoryRes } from "@/types/inventory";
 
 export class InventoryService {
     static async GetInventoryStock(page: number, limit: number): Promise<AxiosResponse<InventoryStockSchema>> {
@@ -21,9 +21,9 @@ export class InventoryService {
         return response;
     }
 
-    static async NewInventory(data: StockItem): Promise<AxiosResponse<StockItem>> {
+    static async NewInventory(data: StockItem): Promise<AxiosResponse<NewInventoryRes>> {
         const axiosInstance = createAxiosInstance();
-        const response: AxiosResponse<StockItem> = await axiosInstance.post(
+        const response: AxiosResponse<NewInventoryRes> = await axiosInstance.post(
             APIEndpoint.INVENTORY.POST_STOCK,
             data
         );
