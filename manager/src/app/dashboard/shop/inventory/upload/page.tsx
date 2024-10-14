@@ -82,8 +82,8 @@ export default function Page() {
         */
         initialValues: {
             product_name: '',
-            price: '40000000',
-            available: '10',
+            price: '',
+            available: '',
             status: 'active',
             product_id: '',
             currency_code: 'VND',
@@ -252,7 +252,7 @@ export default function Page() {
                                         </CardHeader>
                                         <CardContent>
                                             <div className="grid gap-6">
-                                                <div className="grid gap-3">
+                                                {/* <div className="grid gap-3">
                                                     <Label htmlFor="name">Name</Label>
                                                     <Input
                                                         id="product_name"
@@ -263,7 +263,7 @@ export default function Page() {
                                                             formik.setFieldValue("product_name", e.target.value);
                                                         }}
                                                     />
-                                                </div>
+                                                </div> */}
                                                 <div className="grid gap-3">
                                                     <Label htmlFor="name">Price</Label>
                                                     <Input
