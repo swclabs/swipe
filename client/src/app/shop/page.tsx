@@ -2,19 +2,11 @@
 import './style.css'
 import Banner from "@/components/common/banner"
 import React from "react"
-import Product from "@/components/shop/product";
-import Accessory from "@/components/shop/accessory";
 import ProductNavbar from "@/components/shop/navbar";
 import { motion } from "framer-motion"
 import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
-import { mac_carousel } from '@/faker/mac_carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
-import ShortCut from '@/components/common/shortcut';
-import { IoCartOutline } from 'react-icons/io5';
-import { Card, Services } from '@/components/ui/service-cards-carousel';
-import { TbCurrencyDong } from 'react-icons/tb';
-import { RiBox3Line } from 'react-icons/ri';
-import { CiCreditCard1 } from 'react-icons/ci';
+import ShortCut from '@/components/common/shortcut';;
 import ServiceCarousel from '@/components/shop/service';
 import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
 import { product_carousel } from '@/faker/accessory-carousel';

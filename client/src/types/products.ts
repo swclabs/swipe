@@ -1,24 +1,3 @@
-export interface Newsletter {
-    id: string;
-    type: string;
-    title: string;
-    subtitle: string;
-    description: string;
-    image: string;
-    textcolor: string;
-}
-
-export interface Newsletters {
-    data: Newsletter[];
-}
-
-export interface Posts {
-    title: string;
-    subtitle: string;
-    img: string;
-    textcolor: string;
-}
-
 export interface Specification {
     price: string;
     ssd: string;

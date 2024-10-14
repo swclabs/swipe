@@ -1,11 +1,11 @@
 'use client';
-import { Button, Chip } from "@nextui-org/react";
 import './style.css'
 import iphone from "@/faker/iphone";
 import Link from "next/link";
 import { FiTruck } from "react-icons/fi";
-import ipad from "@/faker/ipad";
 import Image from "next/image";
+import { Badge } from "../ui/badge";
+import { Button } from '../ui/button';
 
 
 
@@ -47,12 +47,12 @@ export default function Product() {
                 <div className=" w-full flex-1">
                   <div className=" w-full flex flex-col gap-y-2">
                     <div className="flex gap-2">
-                      <Chip radius="sm" className="text-xs">{value.specs.screen}</Chip>
-                      <Chip radius="sm" className="text-xs">{value.specs.display}</Chip>
+                      <Badge variant="outline" className="text-xs ">{value.specs.screen}</Badge>
+                      <Badge variant="outline" className="text-xs ">{value.specs.display}</Badge>
                     </div>
                     <div className="flex gap-2">
                       {value.specs.SSD.map((item, idx) => (
-                        <Chip radius="sm" className="text-xs" key={idx}>{item}</Chip>
+                        <Badge variant="outline" className="text-xs " key={idx}>{item}</Badge>
                       ))}
                     </div>
                     <div className="h-full">

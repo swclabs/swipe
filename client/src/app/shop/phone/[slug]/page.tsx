@@ -1,16 +1,12 @@
 'use client';
 import ShopDeviceCarousel from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
-import Spec from "@/components/shop/spec";
 import SpecMemory from "@/components/shop/spec-memory";
 import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import iphoneDetail from "@/faker/iphone-detail";
 import { useProducts } from "@/state/products";
-import { ProductDetail } from "@/types/products";
-import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
-import { motion } from 'framer-motion';
 import AddToCart from "@/components/shop/add-to-cart";
 import Comment from "@/components/shop/comment";
 

@@ -1,19 +1,13 @@
 'use client';
 import { AddWatchToCart } from "@/components/shop/add-to-cart";
-import ShopDeviceCarousel, { ShopAccessoryCarousel } from "@/components/shop/carousel";
+import { ShopAccessoryCarousel } from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
 import Comment from "@/components/shop/comment";
 import ConnectionDetail from "@/components/shop/connection";
-import Spec from "@/components/shop/spec";
-import SpecMemory from "@/components/shop/spec-memory";
-import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
-import ipadDetail from "@/faker/ipad-details";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
-import { ProductDetail } from "@/types/products";
-import { Button } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 
 export default function Page({ params }: { params: { slug: string } }) {

@@ -27,7 +27,7 @@ export default function Home() {
               <div className=" text-center text-3xl p-1 font-semibold">Vẫn còn thời gian để</div>
               <div className=" text-center text-3xl p-1 font-semibold">Tạo nên những bất ngờ thú vị</div>
               <div className=" text-center text-xl p-1 font-medium">Mua được quà “hot” dù là phút cuối</div>
-              <Link href="/store"><p className=" text-center p-1 text-blue-600">Mua ngay</p></Link>
+              <Link href="/shop"><p className=" text-center p-1 text-blue-600">Mua ngay</p></Link>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
-import NotLoggedIn, { LoggedIn } from '@/components/common/cart';
+import Products, { LoggedIn } from '@/components/common/cart';
 import NavbarItemStore from './store';
 import NavbarItemMac from './computer';
 import { NavbarItemIpad } from './tablet';
@@ -27,7 +27,7 @@ export default function NavbarComponent() {
     "Watch",
     "AirPods",
     "Phụ kiện",
-    "Hỗ trợ bc"
+    "Hỗ trợ"
   ];
 
   return (
@@ -112,7 +112,7 @@ export default function NavbarComponent() {
             </Link>
             <div className="overlay">
               <div className=' container pl-20 pb-10 absolute'>
-                <LoggedIn />
+                <Products />
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function NavbarComponent() {
             </Link>
             <div className="overlay">
               <div className=' container pl-20 pb-10 absolute'>
-                <LoggedIn />
+                <Products />
               </div>
             </div>
           </div>

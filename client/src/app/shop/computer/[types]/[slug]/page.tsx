@@ -1,11 +1,8 @@
 'use client';
 import ShopDeviceCarousel from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
-import Spec from "@/components/shop/spec";
 import Version from "@/components/shop/version";
-import { ProductDetail } from "@/types/products";
-import { Button } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { laptop } from "@/faker/mac-detail";
 import SpecMemory from "@/components/shop/spec-memory";
 import SpecSSD from "@/components/shop/spec-ssd";
