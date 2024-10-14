@@ -49,12 +49,12 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
       "status": "<string>"
      */
     initialValues: {
-      id: src.id,
+      id: src.id.toString(),
       product_name: '',
       price: src.price,
       available: src.available,
       status: 'active',
-      product_id: src.product_id,
+      product_id: src.product_id.toString(),
       currency_code: 'VND',
       image: [],
       color_img: 'https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696770/swc-storage/l2er9ptyweeoxyx2zqmu.jpg',
@@ -192,7 +192,14 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
             </div>
 
             <DialogFooter>
-              <Button type="submit">Save changes</Button>
+              <Button
+                type="submit"
+                onClick={() => {
+                  window.location.reload();
+                }}
+              >
+                Save changes
+              </Button>
             </DialogFooter>
           </form>
           <Button variant={"destructive"}

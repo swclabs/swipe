@@ -99,10 +99,7 @@ export default function Page() {
         },
         onSubmit: values => {
             const postNewInventory = async () => {
-                const newInventoryRes = await InventoryService.NewInventory({
-                    ...values,
-                    product_id: Number(values.product_id),
-                });
+                const newInventoryRes = await InventoryService.NewInventory(values);
                 newInventoryRes.status === 201 ?
                     toast({
                         title: "Update products information",
