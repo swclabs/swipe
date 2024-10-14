@@ -1,18 +1,10 @@
 import APIEndpoint from "@/providers/endpoint";
-import { Newsletters, ProductDetail, ProductType } from "@/types/products";
+import { ProductDetail, ProductType } from "@/types/products";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";
 
 
 export class ProductService {
-    static async getNewsletters(): Promise<AxiosResponse<Newsletters>> {
-        const axiosInstance = createAxiosInstance();
-        const response: AxiosResponse<Newsletters> = await axiosInstance.get(
-            APIEndpoint.PRODUCTS.GET_NEWSLETTERS
-        );
-        return response;
-    }
-
     static async searchProductDetails(key: string): Promise<AxiosResponse<ProductDetail[]>> {
         const axiosInstance = createAxiosInstance();
         const resp: AxiosResponse<ProductDetail[]> = await axiosInstance.get(

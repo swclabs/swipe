@@ -1,19 +1,11 @@
 'use client';
-import ShopDeviceCarousel, { ShopAccessoryCarousel } from "@/components/shop/carousel";
-import Colors from "@/components/shop/colors";
-import ConnectionDetail from "@/components/shop/connection";
-import Spec from "@/components/shop/spec";
-import SpecMemory from "@/components/shop/spec-memory";
-import SpecSSD from "@/components/shop/spec-ssd";
-import Version from "@/components/shop/version";
+import { ShopAccessoryCarousel } from "@/components/shop/carousel";
 import { Separator } from "@/components/ui/separator";
-import ipadDetail from "@/faker/ipad-details";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
-import { ProductDetail } from "@/types/products";
 import { Button } from "@nextui-org/react";
 import { CiDeliveryTruck } from "react-icons/ci";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import Comment from "@/components/shop/comment";
 

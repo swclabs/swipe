@@ -4,7 +4,7 @@ import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";
 
 
-export class AccountManagement {
+export class Manager {
     static async signUp(req: SignUpReq): Promise<AxiosResponse<SignUpRes>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<SignUpRes> = await axiosInstance.post(

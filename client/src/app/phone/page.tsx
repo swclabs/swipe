@@ -3,20 +3,9 @@ import React from 'react';
 import Banner from "@/components/common/banner"
 import Product from '@/components/phone/product';
 import Welcome from '@/components/common/welcome-section';
-import posts from '@/faker/posts';
-import ProductIphoneTypes from '@/components/phone/product-types';
-import { motion } from "framer-motion"
-import Widget, { PostsWidget } from '@/components/common/widget';
-import WidgetData1 from '@/faker/widget';
-import { Link } from '@nextui-org/react';
-import AccessoryCard from '@/components/common/accesories-card';
-import { iphone_shop } from '@/faker/iphone-shop';
-import { iPhoneAccessories } from '@/faker/iphone-accessory';
 import { PhoneCardsCarousel } from '@/components/phone/cards-carousel';
 import { iphone_carousel } from '@/faker/iphone-carousel';
 import ShortCut from '@/components/common/shortcut';
-import iphone from '@/faker/iphone';
-import ShopPhone from '@/components/phone/shop-card';
 import Accessory from '@/components/accessories';
 
 function IphonePage() {
