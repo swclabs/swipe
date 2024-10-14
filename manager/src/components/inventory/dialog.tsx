@@ -15,7 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { StockItem } from "@/types/inventory"
+import { StockItem, StockItemBody } from "@/types/inventory"
 import { Card, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -28,12 +28,11 @@ import { useFormik } from "formik"
 import { useToast } from "@/components/ui/use-toast";
 import { spec } from "node:test/reporters"
 
-export function ProductSpecsDialog({ src }: { src: StockItem }) {
+export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const [idDelete, setIdDelete] = useState(-1);
 
   const deletefunc = (id: number) => {
-    console.log("Delete payment with ID: ", id);
     const func = async (id: number) => {
       const res = await InventoryService.DeleteInventory(id)
     }
@@ -42,36 +41,36 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
   const { toast } = useToast()
   const formik = useFormik({
     /*
-    id: string;
-    product_name: string;
-    product_id: string;
-    status: string;
-    price: string;
-    available: string;
-    currency_code: string;
-    specs: Specs;
+      "id": "<string>",
+      "available": "<string>",
+      "currency_code": "<string>",
+      "price": "<string>",
+      "product_id": "<string>",
+      "status": "<string>"
      */
     initialValues: {
       id: src.id,
-      product_name: src.product_name,
-      product_id: src.product_id,
-      status: src.status,
+      product_name: '',
       price: src.price,
       available: src.available,
-      currency_code: src.currency_code,
-      ram: src.specs.ram,
-      ssd: src.specs.ssd,
-      image: src.image,
+      status: 'active',
+      product_id: src.product_id,
+      currency_code: 'VND',
+      image: [],
+      color_img: 'https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696770/swc-storage/l2er9ptyweeoxyx2zqmu.jpg',
+      color: 'Black Titanium',
+      specs: {
+        ram: '16GB',
+        ssd: '512GB',
+        connection: '',
+        desc: '',
+      }
     },
     onSubmit: values => {
       // Fetch API to update the inventory
-      console.log("test")
       const updateInventory = async () => {
-        const updatedValues = {
-          ...values,
-          specs: src.specs // Add the missing 'specs' property
-        };
-        const res = await InventoryService.NewInventory(updatedValues);
+        const res = await InventoryService.UpdateInventory(values);
+        console.log(res);
         res.status === 201 ?
           toast({
             title: "Inventory updated",
@@ -144,31 +143,22 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
                     className="col-span-2 h-8"
                   />
                 </div>
-                {/* <div className="grid grid-cols-3 items-center gap-4">
-                  <Label htmlFor="color">Color</Label>
-                  <Input
-                    id="color"
-                    defaultValue={src.specs.color}
-                    className="col-span-2 h-8"
-                    disabled
-                  />
-                </div> */}
                 <div className="grid grid-cols-3 items-center gap-4">
-                  <Label htmlFor="ram">RAM</Label>
+                  <Label htmlFor="available">Available</Label>
                   <Input
-                    id="ram"
+                    id="available"
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
-                    value={formik.values.ram}
+                    value={formik.values.available}
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
-                  <Label htmlFor="ssd">SSD</Label>
+                  <Label htmlFor="currency_code">Currency Code</Label>
                   <Input
-                    id="ssd"
+                    id="currency_code"
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
-                    value={formik.values.ssd}
+                    value={formik.values.currency_code}
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
@@ -181,21 +171,21 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
-                  <Label htmlFor="available">Available</Label>
-                  <Input
-                    id="available"
-                    className="col-span-2 h-8"
-                    onChange={formik.handleChange}
-                    value={formik.values.available}
-                  />
-                </div>
-                <div className="grid grid-cols-3 items-center gap-4">
                   <Label htmlFor="status">Status</Label>
                   <Input
                     id="status"
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
-                    value={formik.values.available}
+                    value={formik.values.status}
+                  />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="status">Product ID</Label>
+                  <Input
+                    id="product_id"
+                    className="col-span-2 h-8"
+                    onChange={formik.handleChange}
+                    value={formik.values.product_id}
                   />
                 </div>
               </div>
@@ -209,7 +199,6 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
             onClick={() => {
               setIsDeleteOpen(!isDeleteOpen)
               setIdDelete(src.id)
-              // deletefunc(src.id)
             }}
           >
             Delete

@@ -33,10 +33,24 @@ interface Header {
     archive: number;
 }
 
+export interface StockItemBody {
+    id: number;
+    product_name: string;
+    product_id: number;
+    status: string;
+    price: string;
+    available: string;
+    currency_code: string;
+    image: string[];
+    color: string;
+    color_img: string;
+    specs: Specs;
+}
+
 export interface InventoryStockSchema {
     page: number;
     limit: number;
     header: Header;
-    stock: StockItem[];
+    stock: StockItemBody[];
 }
 
