@@ -252,18 +252,6 @@ export default function Page() {
                                         </CardHeader>
                                         <CardContent>
                                             <div className="grid gap-6">
-                                                {/* <div className="grid gap-3">
-                                                    <Label htmlFor="name">Name</Label>
-                                                    <Input
-                                                        id="product_name"
-                                                        type="text"
-                                                        className="w-full"
-                                                        defaultValue={formik.values.product_name}
-                                                        onChange={(e) => {
-                                                            formik.setFieldValue("product_name", e.target.value);
-                                                        }}
-                                                    />
-                                                </div> */}
                                                 <div className="grid gap-3">
                                                     <Label htmlFor="name">Price</Label>
                                                     <Input
@@ -349,7 +337,7 @@ export default function Page() {
                                 <div className="grid auto-rows-max items-start gap-4 col-span-2 lg:gap-8">
                                     <Card>
                                         <CardHeader x-chunk="dashboard-07-chunk-1">
-                                            <CardTitle>Product Images</CardTitle>
+                                            <CardTitle>Inventory Images</CardTitle>
                                             <CardDescription>
                                                 Lipsum dolor sit amet, consectetur adipiscing elit
                                             </CardDescription>
@@ -363,6 +351,23 @@ export default function Page() {
                                             </div>
                                         </CardContent>
                                     </Card>
+                                    <Card>
+                                        <CardHeader x-chunk="dashboard-07-chunk-1">
+                                            <CardTitle>Color Images</CardTitle>
+                                            <CardDescription>
+                                                Lipsum dolor sit amet, consectetur adipiscing elit
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <div className="grid gap-2">
+                                                <ImageUploader
+                                                    uploadedFiles={uploadedFiles}
+                                                    setUploadedFiles={setUploadedFiles}
+                                                />
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+
                                 </div>
                             </div>
                         </div>

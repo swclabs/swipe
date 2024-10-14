@@ -40,7 +40,7 @@ export class InventoryService {
 
     static async NewInventoryImage(files: File[], id: string): Promise<AxiosResponse<BaseResponse>> {
         const form = new FormData();
-        files.map((value) => form.append("img", value))
+        files.map((value) => form.append("image", value))
         const axiosInstance = createAxiosInstance();
         const config = {
             headers: {
@@ -49,6 +49,23 @@ export class InventoryService {
         }
         const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
             `${APIEndpoint.INVENTORY.POST_INVENTORIES_IMG}`,
+            form,
+            config
+        );
+        return response;
+    }
+
+    static async InventoryColorImage(files: File[], id: string): Promise<AxiosResponse<BaseResponse>> {
+        const form = new FormData();
+        files.map((value) => form.append("color_img", value))
+        const axiosInstance = createAxiosInstance();
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
+            `${APIEndpoint.INVENTORY.POST_INVENTORIES_COLOR_IMG}`,
             form,
             config
         );

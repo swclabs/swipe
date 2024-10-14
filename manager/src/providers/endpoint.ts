@@ -21,6 +21,7 @@ export default class APIEndpoint {
         PUT_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
 
         POST_INVENTORIES_IMG: `${APIEndpoint.BASE_URL}/inventories/image`,
+        POST_INVENTORIES_COLOR_IMG: `${APIEndpoint.BASE_URL}/inventories/image/color`
     }
 
     static readonly USERS = {
