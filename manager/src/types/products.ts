@@ -2,8 +2,8 @@ export interface Product {
     price: string;
     description: string;
     name: string;
-    supplier_id: string;
-    category_id: string;
+    supplier_id: number;
+    category_id: number;
     status: string;
     RAM: number[];
     SSD: number[];
@@ -20,7 +20,7 @@ export interface NewProductRes extends BaseResponse {
 }
 
 export interface Supplier {
-    id: string;
+    id: number;
     email: string;
     name: string;
 }
@@ -39,7 +39,7 @@ export interface Suppliers {
 }
 
 export interface Category {
-    id: string;
+    id: number;
     description: string;
     name: string;
 }
@@ -54,7 +54,7 @@ export interface Categories {
 }
 
 
-export interface ProductBody {
+export interface ProductResp {
     id: number;
     image: string[];
     price: string;
@@ -70,6 +70,6 @@ export interface ProductBody {
         RAM: number[],
     }
 }
-export interface Products {
-    body: ProductBody[];
+export interface ProductDTO {
+    body: ProductResp[];
 }

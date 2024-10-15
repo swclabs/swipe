@@ -1,6 +1,6 @@
 export default class APIEndpoint {
 
-    static readonly BASE_URL: string = ''
+    static readonly BASE_URL: string = 'http://localhost:8000'
     static readonly STORE_KEY: string = ''
 
     static readonly ACCOUNT_MANAGEMENT = {
@@ -13,6 +13,10 @@ export default class APIEndpoint {
 
     static readonly PRODUCTS = {
         GET_NEWSLETTERS: `${APIEndpoint.BASE_URL}/newsletters`,
-        GET_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`
+        GET_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`,
+
+        PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
+
+        SEARCH_DETAIL: `${APIEndpoint.BASE_URL}/search/details`,
     }
 }

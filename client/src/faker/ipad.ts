@@ -1,6 +1,6 @@
-import { ProductShopCard } from "@/types/products";
+import { ProductShopCard, ProductType } from "@/types/products";
 
-const ipad = [
+const ipad: ProductType[] = [
     {
         name: "iPad Pro",
         price: "Từ 21.199.000đ",
@@ -10,8 +10,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad Air",
@@ -22,8 +25,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad",
@@ -34,8 +40,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad",
@@ -46,8 +55,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -58,8 +70,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -70,8 +85,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -82,8 +100,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -94,8 +115,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -105,8 +129,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -116,8 +143,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -127,8 +157,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -139,8 +172,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -151,8 +187,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -162,8 +201,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
     {
         name: "iPad mini",
@@ -173,8 +215,11 @@ const ipad = [
         specs: {
             screen: "6.71",
             display: "Super Retina XDR",
-            SSD: [128, 256, 512]
-        }
+            SSD: [128, 256, 512],
+            RAM: []
+        },
+        id: 0,
+        category: ""
     },
 ]
 export default ipad;

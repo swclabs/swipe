@@ -1,6 +1,6 @@
-import { ProductDetail, Storage } from "@/types/products";
+import { ProductDetail } from "@/types/products";
 
-const iphoneDetail: ProductDetail<Storage>[] = [
+const iphoneDetail: ProductDetail[] = [
     {
         name: "iPhone 15 Pro",
         screen: "6.1 inch",
@@ -8,7 +8,6 @@ const iphoneDetail: ProductDetail<Storage>[] = [
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-1-202309.jpg",
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-2-202309.jpg",
             "/img/shop/iphone-15-pro/iphone-15-pro-finish-select.jpg",
-
         ],
         color: [
             {
@@ -22,9 +21,11 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "128GB",
+                        ram: "8GB",
+                        ssd: "128GB",
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },
@@ -39,24 +40,32 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "128GB",
+                        ram: "8GB",
+                        ssd: "128GB",
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "8GB",
-                        SSD: "256GB",
+                        ram: "8GB",
+                        ssd: "256GB",
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "512GB",
+                        ram: "16GB",
+                        ssd: "512GB",
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "1TB",
+                        ram: "16GB",
+                        ssd: "1TB",
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },
@@ -71,24 +80,32 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "128GB",
+                        ram: "8GB",
+                        ssd: "128GB",
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "8GB",
-                        SSD: "256GB",
+                        ram: "8GB",
+                        ssd: "256GB",
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "512GB",
+                        ram: "16GB",
+                        ssd: "512GB",
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "1TB",
+                        ram: "16GB",
+                        ssd: "1TB",
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },
@@ -103,19 +120,25 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "256GB",
+                        ram: "8GB",
+                        ssd: "256GB",
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "512GB",
+                        ram: "16GB",
+                        ssd: "512GB",
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "1TB",
+                        ram: "16GB",
+                        ssd: "1TB",
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },
@@ -141,24 +164,32 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "128GB",
+                        ram: "8GB",
+                        ssd: "128GB",
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "8GB",
-                        SSD: "256GB",
+                        ram: "8GB",
+                        ssd: "256GB",
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "512GB",
+                        ram: "16GB",
+                        ssd: "512GB",
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "1TB",
+                        ram: "16GB",
+                        ssd: "1TB",
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },
@@ -173,24 +204,32 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "128GB",
+                        ram: "8GB",
+                        ssd: "128GB",
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "8GB",
-                        SSD: "256GB",
+                        ram: "8GB",
+                        ssd: "256GB",
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "512GB",
+                        ram: "16GB",
+                        ssd: "512GB",
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "1TB",
+                        ram: "16GB",
+                        ssd: "1TB",
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },
@@ -205,24 +244,32 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "128GB",
+                        ram: "8GB",
+                        ssd: "128GB",
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "8GB",
-                        SSD: "256GB",
+                        ram: "8GB",
+                        ssd: "256GB",
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "512GB",
+                        ram: "16GB",
+                        ssd: "512GB",
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "1TB",
+                        ram: "16GB",
+                        ssd: "1TB",
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },
@@ -237,24 +284,32 @@ const iphoneDetail: ProductDetail<Storage>[] = [
                 ],
                 specs: [
                     {
-                        RAM: "8GB",
-                        SSD: "128GB",
+                        ram: "8GB",
+                        ssd: "128GB",
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "8GB",
-                        SSD: "256GB",
+                        ram: "8GB",
+                        ssd: "256GB",
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "512GB",
+                        ram: "16GB",
+                        ssd: "512GB",
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                     {
-                        RAM: "16GB",
-                        SSD: "1TB",
+                        ram: "16GB",
+                        ssd: "1TB",
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
+                        desc: "",
+                        connection: "",
                     },
                 ]
             },

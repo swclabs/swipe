@@ -1,48 +1,63 @@
 import React from "react";
 import { Divider } from "@nextui-org/react";
+import Image from "next/image";
 export default function FooterComponent() {
-    return (
-        <div className="w-full flex justify-center bg-gray-50 mt-5">
-            <div className=" h-[300px] w-4/5">
-                <div className="flex p-8 h-[250px]">
-                    <div className="container">
-                        <p className=" text-xs font-semibold">Shop</p>
-                        <ul className=" pt-3 font-light text-xs">
-                            <li>Mac</li>
-                            <li>iPad</li>
-                            <li>iPhone</li>
-                            <li>Watch</li>
-                            <li>AirPods</li>
-                            <li>Phụ kiện</li>
-                        </ul>
-                    </div>
-                    <div className="container">
-                        <p className=" text-xs font-semibold">Account</p>
-                        <ul className=" pt-3 text-xs font-light">
-                            <li >Quản lý tài khoản</li>
-                        </ul>
-                    </div>
-                    <div className="container">
-                        <p className=" text-xs font-semibold">Swipe</p>
-                        <ul className=" pt-3  text-xs font-light">
-                            <li >Hệ thống cửa hàng</li>
-                        </ul>
-                    </div>
-                    <div className="container">
-                        <p className=" text-xs font-semibold">Chính sách</p>
-                        <ul className=" pt-3 text-xs font-light">
-                            <li>Chính sách giao hàng</li>
-                            <li>Chính sách bảo mật</li>
-                            <li>Chính sách bảo hành</li>
-                        </ul>
-                    </div>
-                    <div className="container">
-                        <p className=" text-xs font-semibold">Tổng đài hỗ trợ</p>
-                    </div>
-                </div>
-                <Divider />
-                <p className=" font-light text-xs pt-1">2024@Swipe</p>
+  return (
+    <div className="w-full flex justify-center bg-gray-50 mt-5">
+      <div className=" max-h-max w-4/5">
+        <div className="flex py-16 gap-5 max-h-max flex-col-reverse md:flex-row justify-between">
+          <div className=" max-w-max">
+            <Image src="/logo.png" width={100} height={100} alt="logo" />
+            <p className="text-xs font-semibold pt-3">Swipe@2024</p>
+          </div>
+          <div className=" flex gap-5 md:flex-row flex-col w-full">
+            <div className=" sm:w-1/12 shrink-0 snap-center">
+              <div className="shrink-0"></div>
             </div>
+            <div className=" sm:w-1/12 shrink-0 snap-center">
+              <div className="shrink-0"></div>
+            </div>
+            <div className=" sm:w-1/12 shrink-0 snap-center">
+              <div className="shrink-0"></div>
+            </div>
+            <div className="container">
+              <p className=" text-xs font-semibold">Shop</p>
+              <ul className=" pt-3 font-normal text-xs">
+                <li>Mac</li>
+                <li>iPad</li>
+                <li>iPhone</li>
+                <li>Watch</li>
+                <li>AirPods</li>
+                <li>Phụ kiện</li>
+              </ul>
+            </div>
+
+            <div className="container">
+              <p className=" text-xs font-semibold">Help</p>
+              <ul className=" pt-3 font-normal text-xs">
+                <li>Mac</li>
+                <li>iPad</li>
+                <li>iPhone</li>
+                <li>Watch</li>
+                <li>AirPods</li>
+                <li>Phụ kiện</li>
+              </ul>
+            </div>
+
+            <div className="container">
+              <p className=" text-xs font-semibold">About Swipe</p>
+              <ul className=" pt-3 font-normal text-xs">
+                <li>Mac</li>
+                <li>iPad</li>
+                <li>iPhone</li>
+                <li>Watch</li>
+                <li>AirPods</li>
+                <li>Phụ kiện</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  )
 }

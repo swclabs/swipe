@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
-import NotLoggedIn, { LoggedIn } from '@/components/common/cart';
+import Products, { LoggedIn } from '@/components/common/cart';
 import NavbarItemStore from './store';
 import NavbarItemMac from './computer';
 import { NavbarItemIpad } from './tablet';
@@ -27,7 +27,7 @@ export default function NavbarComponent() {
     "Watch",
     "AirPods",
     "Phụ kiện",
-    "Hỗ trợ bc"
+    "Hỗ trợ"
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function NavbarComponent() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
+        <NavbarBrand className="sm:hidden">
           <Link href='/'>
             <Image
               className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
@@ -51,7 +51,19 @@ export default function NavbarComponent() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-12" justify="center">
+      <NavbarContent className="hidden sm:flex md:gap-8  lg:gap-12" justify="center">
+        <NavbarItem>
+          <Link href='/'>
+            <Image
+              className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+              src="/logo.png"
+              alt="swipe logo"
+              width={50}
+              height={50}
+              priority
+            />
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <NavbarItemStore />
         </NavbarItem>
@@ -76,8 +88,6 @@ export default function NavbarComponent() {
         <NavbarItem>
           <NavbarItemSupport />
         </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end" className='sm:flex'>
         <NavbarItem>
           <div className='medium-container'>
             <Link color="foreground" href="#">
@@ -102,7 +112,38 @@ export default function NavbarComponent() {
             </Link>
             <div className="overlay">
               <div className=' container pl-20 pb-10 absolute'>
-                <LoggedIn />
+                <Products />
+              </div>
+            </div>
+          </div>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end" className='sm:flex'>
+        <NavbarItem className=' sm:hidden'>
+          <div className='medium-container'>
+            <Link color="foreground" href="#">
+              <CiSearch />
+            </Link>
+            <div className="overlay">
+              <div className=' container p-8 flex absolute'>
+                <div className=' container'>
+                  <Search />
+                  <p className=' text-xs pt-3'>Liên kết nhanh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </NavbarItem>
+        <NavbarItem>
+          <div className='cart-container sm:hidden'>
+            <Link color="foreground" href="#">
+              <Badge content={3} color='primary'>
+                <IoBagOutline />
+              </Badge>
+            </Link>
+            <div className="overlay">
+              <div className=' container pl-20 pb-10 absolute'>
+                <Products />
               </div>
             </div>
           </div>

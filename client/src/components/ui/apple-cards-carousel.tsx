@@ -7,8 +7,6 @@ import React, {
   useContext,
 } from "react";
 import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
   IconChevronLeft,
   IconChevronRight,
   IconX,

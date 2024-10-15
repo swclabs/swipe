@@ -1,16 +1,16 @@
 import React from 'react';
-import { ProductDetail, Storage } from "@/types/products";
+import { ProductDetail, Specification } from "@/types/products";
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 
 interface IStorageProps {
-  product: ProductDetail<Storage>[];
+  product: ProductDetail[];
   version: number;
   color: number;
-  specs: Storage;
+  specs: Specification;
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
-  setSpecs: (specs: Storage) => void;
+  setSpecs: (specs: Specification) => void;
 }
 
 const disableSpec = {
@@ -38,18 +38,18 @@ export default function SpecSSD({ product, version, color, specs, setSpecs }: IS
 
           <div className='pt-0' style={version === -1 ? disableSpec : enableSpec}>
             {
-              version === -1 || color === -1 || specs.RAM === "" ?
-                product[0]?.color[0].specs?.filter(spec => spec.RAM === "8GB").map((value, index) =>
+              version === -1 || color === -1 || specs.ram === "" ?
+                product[0]?.color[0].specs?.filter(spec => spec.ram === "8GB").map((value, index) =>
                   <Button
                     variant="outline"
-                    className={`container ${specs.SSD === value.SSD ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
+                    className={`container ${specs.ssd === value.ssd ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                     key={index}
-                    onClick={() => setSpecs({ RAM: specs.RAM, SSD: value.SSD, price: value.price })}
-                    disabled={specs.RAM === "" ? true : false}
+                    onClick={() => setSpecs({ ram: specs.ram, ssd: value.ssd, price: value.price, connection: "", desc: "" })}
+                    disabled={specs.ram === "" ? true : false}
                   >
                     <div className='flex gap-11 justify-between max-w-full h-full items-center'>
                       <p className='break-words whitespace-normal text-left'>
-                        {value.SSD}
+                        {value.ssd}
                       </p>
                       <p className='break-words whitespace-normal font-normal text-right text-xs'>
                         {value.price}
@@ -57,17 +57,17 @@ export default function SpecSSD({ product, version, color, specs, setSpecs }: IS
                     </div>
                   </Button>
                 ) :
-                product[version]?.color[color].specs?.filter(spec => spec.RAM === specs.RAM).map((value, index) =>
+                product[version]?.color[color].specs?.filter(spec => spec.ram === specs.ram).map((value, index) =>
                   <Button
                     variant="outline"
-                    className={`container ${specs.SSD === value.SSD ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
+                    className={`container ${specs.ssd === value.ssd ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                     key={index}
-                    onClick={() => setSpecs({ RAM: specs.RAM, SSD: value.SSD, price: value.price })}
-                    disabled={specs.RAM === "" ? true : false}
+                    onClick={() => setSpecs({ ram: specs.ram, ssd: value.ssd, price: value.price, connection: "", desc: "" })}
+                    disabled={specs.ram === "" ? true : false}
                   >
                     <div className='flex gap-11 justify-between max-w-full h-full items-center'>
                       <p className='break-words whitespace-normal text-left'>
-                        {value.SSD}
+                        {value.ssd}
                       </p>
                       <p className='break-words whitespace-normal font-normal text-right text-xs'>
                         {value.price}
