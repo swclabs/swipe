@@ -1,15 +1,15 @@
 import APIEndpoint from '@/providers/endpoint';
 import axios, { AxiosInstance } from 'axios';
-import { deleteCookie, getCookie, setCookie } from 'cookies-next';
+import { getSession } from './auth';
 
-const createAxiosInstance = (): AxiosInstance => {
-    const accessToken = getCookie('accessToken');
-    // let refreshToken = getCookie('refreshToken');
+const createAxiosInstance = async (): Promise<AxiosInstance> => {
+    const session = await getSession();
+    const accessToken = session?.access_token;
     const instance = axios.create({
         baseURL: APIEndpoint.BASE_URL,
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${accessToken}`,
+            'Authorization': `Bearer ${accessToken}`,
         },
     });
 
