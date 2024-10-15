@@ -6,5 +6,5 @@ export const GET = async (req: NextRequest) => {
     if (!session) {
         return NextResponse.json({}, { status: 200 })
     }
-    return NextResponse.json(JSON.stringify(session, null, 2), { status: 200 })
+    return NextResponse.json(session, { status: 200 })
 }
