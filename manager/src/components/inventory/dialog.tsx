@@ -30,10 +30,10 @@ import { spec } from "node:test/reporters"
 
 export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  const [idDelete, setIdDelete] = useState(-1);
+  const [idDelete, setIdDelete] = useState("");
 
-  const deletefunc = (id: number) => {
-    const func = async (id: number) => {
+  const deletefunc = (id: string) => {
+    const func = async (id: string) => {
       const res = await InventoryService.DeleteInventory(id)
     }
     func(id)
@@ -49,12 +49,12 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
       "status": "<string>"
      */
     initialValues: {
-      id: src.id.toString(),
+      id: src.id,
       product_name: '',
       price: src.price,
       available: src.available,
       status: 'active',
-      product_id: src.product_id.toString(),
+      product_id: src.product_id,
       currency_code: 'VND',
       image: [],
       color_img: 'https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696770/swc-storage/l2er9ptyweeoxyx2zqmu.jpg',
@@ -68,10 +68,11 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
     },
     onSubmit: values => {
       // Fetch API to update the inventory
+      values.id = values.id.toString();
+      values.product_id = values.product_id.toString();
       const updateInventory = async () => {
         const res = await InventoryService.UpdateInventory(values);
-        console.log(res);
-        res.status === 201 ?
+        res.status === 200 ?
           toast({
             title: "Inventory updated",
             description: "The inventory has been updated successfully",
@@ -108,6 +109,7 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
               Product Specification
             </DialogDescription>
           </DialogHeader>
+
           <form onSubmit={formik.handleSubmit}>
             <div className="flex px-10">
               <div className="w-1/2">
@@ -130,8 +132,8 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
+                  <CarouselPrevious type="button" />
+                  <CarouselNext type="button" />
                 </Carousel>
               </div>
               <div className="grid gap-0 p-5">
@@ -193,23 +195,25 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
 
             <DialogFooter>
               <Button
-                type="submit"
                 onClick={() => {
                   window.location.reload();
                 }}
               >
                 Save changes
               </Button>
+              <Button
+                type="button"
+                variant={"destructive"}
+                onClick={() => {
+                  setIsDeleteOpen(!isDeleteOpen)
+                  setIdDelete(src.id)
+                }}
+              >
+                Delete
+              </Button>
             </DialogFooter>
           </form>
-          <Button variant={"destructive"}
-            onClick={() => {
-              setIsDeleteOpen(!isDeleteOpen)
-              setIdDelete(src.id)
-            }}
-          >
-            Delete
-          </Button>
+
         </DialogContent>
       </Dialog >
     </>

@@ -57,10 +57,16 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link";
+import { useProduct } from "@/state/products";
 
 const breadcrumbItems = [{ title: "Inventory", link: "/dashboard/shop" }, { title: "Upload", link: "/dashboard/inventory/upload" }];
 
 export default function Page() {
+    const { product, fetchProduct } = useProduct()
+    useEffect(() => {
+        fetchProduct()
+    }, [])
+
     const { toast } = useToast()
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
     const formik = useFormik({
@@ -85,14 +91,14 @@ export default function Page() {
             price: '',
             available: '',
             status: 'active',
-            product_id: '',
+            product_id: 0,
             currency_code: 'VND',
             image: [],
             color_img: '',
-            color: '',
+            color: 'Black Titanium',
             specs: {
-                ram: '',
-                ssd: '',
+                ram: '512GB',
+                ssd: '16GB',
                 connection: '',
                 desc: '',
             }
@@ -109,18 +115,19 @@ export default function Page() {
                         title: "Update products information",
                         description: "Failure",
                     });
-                const newInventoryImages = await InventoryService.NewInventoryImage(uploadedFiles, newInventoryRes.data.id);
-                newInventoryImages.status === 201 ?
-                    toast({
-                        title: "Update products images",
-                        description: newInventoryImages.data.msg,
-                    }) :
-                    toast({
-                        title: "Update products images",
-                        description: "Failure",
-                    });
+                // const newInventoryImages = await InventoryService.NewInventoryImage(uploadedFiles, newInventoryRes.data.id);
+                // newInventoryImages.status === 201 ?
+                //     toast({
+                //         title: "Update products images",
+                //         description: newInventoryImages.data.msg,
+                //     }) :
+                //     toast({
+                //         title: "Update products images",
+                //         description: "Failure",
+                //     });
             };
             postNewInventory();
+            window.history.back();
         },
     });
 
@@ -232,9 +239,7 @@ export default function Page() {
                                         size="sm"
                                         type="submit"
                                     >
-                                        <a href="/dashboard/shop/inventory">
-                                            Save
-                                        </a>
+                                        Save
                                     </Button>
                                 </div>
                             </div>
@@ -249,6 +254,38 @@ export default function Page() {
                                         </CardHeader>
                                         <CardContent>
                                             <div className="grid gap-6">
+                                                <div className="grid gap-3">
+                                                    <Label htmlFor="available">Product</Label>
+                                                    {/* <Textarea
+                                                        id="product_id"
+                                                        defaultValue={formik.values.product_id}
+                                                        className=" w-full"
+                                                        onChange={(e) => {
+                                                            formik.setFieldValue("product_id", e.target.value);
+                                                        }}
+                                                    /> */}
+                                                    <select
+                                                        className="text-sm border border-gray-300 rounded-md w-full p-2"
+                                                        id="product_id"
+                                                        defaultValue={"Select Product"}
+                                                        onChange={(e) => {
+                                                            formik.setFieldValue("product_id", parseInt(e.target.value));
+                                                        }}
+                                                    >
+                                                        <option hidden disabled value="Select Product">Select Product</option>
+                                                        {product?.body.map((value, index) => {
+                                                            return (
+                                                                <option
+                                                                    className="text-sm"
+                                                                    key={index}
+                                                                    value={value.id}
+                                                                >
+                                                                    {value.name}
+                                                                </option>
+                                                            );
+                                                        })}
+                                                    </select>
+                                                </div>
                                                 <div className="grid gap-3">
                                                     <Label htmlFor="name">Price</Label>
                                                     <Input
@@ -274,18 +311,34 @@ export default function Page() {
                                                 </div>
                                                 <div className="grid gap-3">
                                                     <Label htmlFor="available">Status</Label>
-                                                    <Textarea
+                                                    {/* <Input
                                                         id="status"
                                                         defaultValue={formik.values.status}
                                                         className=" w-full"
                                                         onChange={(e) => {
                                                             formik.setFieldValue("status", e.target.value);
                                                         }}
-                                                    />
+                                                    /> */}
+                                                    <Select
+                                                        disabled
+                                                        value={formik.values.status}
+                                                        onValueChange={(value) => {
+                                                            formik.setFieldValue("status", value);
+                                                        }}
+                                                    >
+                                                        <SelectTrigger id="status" aria-label="Select status">
+                                                            <SelectValue placeholder="Select status" />
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            <SelectItem value="draft">Draft</SelectItem>
+                                                            <SelectItem value="active">Active</SelectItem>
+                                                            <SelectItem value="archived">Archived</SelectItem>
+                                                        </SelectContent>
+                                                    </Select>
                                                 </div>
                                                 <div className="grid gap-3">
                                                     <Label htmlFor="available">Color</Label>
-                                                    <Textarea
+                                                    <Input
                                                         id="color"
                                                         defaultValue={formik.values.color}
                                                         className=" w-full"
@@ -294,18 +347,7 @@ export default function Page() {
                                                         }}
                                                     />
                                                 </div>
-                                                <div className="grid gap-3">
-                                                    <Label htmlFor="available">Product ID</Label>
-                                                    <Textarea
-                                                        id="product_id"
-                                                        defaultValue={formik.values.product_id}
-                                                        className=" w-full"
-                                                        onChange={(e) => {
-                                                            formik.setFieldValue("product_id", e.target.value);
-                                                        }}
-                                                    />
-                                                </div>
-                                                <div className="grid gap-3">
+                                                {/* <div className="grid gap-3">
                                                     <Label htmlFor="available">SSD</Label>
                                                     <Textarea
                                                         id="ssd"
@@ -326,8 +368,64 @@ export default function Page() {
                                                             formik.setFieldValue("ram", e.target.value);
                                                         }}
                                                     />
-                                                </div>
+                                                </div> */}
                                             </div>
+                                        </CardContent>
+                                    </Card>
+                                    <Card x-chunk="dashboard-07-chunk-2">
+                                        <CardHeader>
+                                            <CardTitle>Specification</CardTitle>
+                                            <CardDescription>
+                                                Lipsum dolor sit amet, consectetur adipiscing elit
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <Table>
+                                                <TableHeader>
+                                                    <TableRow>
+                                                        <TableHead className="w-[100px]">Specs</TableHead>
+                                                        <TableHead>Value</TableHead>
+                                                    </TableRow>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    <TableRow>
+                                                        <TableCell className="font-semibold">
+                                                            SSD
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <Label htmlFor="stock-3" className="sr-only">
+                                                                SSD
+                                                            </Label>
+                                                            <Input
+                                                                id="ssd"
+                                                                defaultValue={formik.values.specs.ssd}
+                                                                className="w-full"
+                                                                onChange={(e) => {
+                                                                    formik.setFieldValue("ssd", e.target.value);
+                                                                }}
+                                                            />
+                                                        </TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell className="font-semibold">
+                                                            RAM
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <Label htmlFor="stock-3" className="sr-only">
+                                                                RAM
+                                                            </Label>
+                                                            <Input
+                                                                id="ram"
+                                                                defaultValue={formik.values.specs.ram}
+                                                                className="w-full"
+                                                                onChange={(e) => {
+                                                                    formik.setFieldValue("ram", e.target.value);
+                                                                }}
+                                                            />
+                                                        </TableCell>
+                                                    </TableRow>
+                                                </TableBody>
+                                            </Table>
                                         </CardContent>
                                     </Card>
                                 </div>

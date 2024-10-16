@@ -12,7 +12,7 @@ export class InventoryService {
         return response;
     }
 
-    static async DeleteInventory(id: number): Promise<AxiosResponse<BaseResponse>> {
+    static async DeleteInventory(id: string): Promise<AxiosResponse<BaseResponse>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<BaseResponse> = await axiosInstance.delete(
             `${APIEndpoint.INVENTORY.GET_STOCK}?id=${id}`
@@ -29,7 +29,7 @@ export class InventoryService {
         return response;
     }
 
-    static async UpdateInventory(data: StockItem): Promise<AxiosResponse<NewInventoryRes>> {
+    static async UpdateInventory(data: StockItemBody): Promise<AxiosResponse<NewInventoryRes>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<NewInventoryRes> = await axiosInstance.put(
             APIEndpoint.INVENTORY.PUT_STOCK,
@@ -47,8 +47,8 @@ export class InventoryService {
                 'content-type': 'multipart/form-data'
             }
         }
-        const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
-            `${APIEndpoint.INVENTORY.POST_INVENTORIES_IMG}`,
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
+            `${APIEndpoint.INVENTORY.PUT_INVENTORIES_IMG}`,
             form,
             config
         );
@@ -64,8 +64,8 @@ export class InventoryService {
                 'content-type': 'multipart/form-data'
             }
         }
-        const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
-            `${APIEndpoint.INVENTORY.POST_INVENTORIES_COLOR_IMG}`,
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
+            `${APIEndpoint.INVENTORY.PUT_INVENTORIES_COLOR_IMG}`,
             form,
             config
         );

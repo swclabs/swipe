@@ -7,7 +7,7 @@ interface Specs {
 
 export interface StockItem {
     product_name: string;
-    product_id: string;
+    product_id: number;
     status: string;
     price: string;
     available: string;
@@ -34,9 +34,9 @@ interface Header {
 }
 
 export interface StockItemBody {
-    id: number;
+    id: string;
     product_name: string;
-    product_id: number;
+    product_id: string;
     status: string;
     price: string;
     available: string;
