@@ -300,7 +300,7 @@ export default function Page() {
                                                 </div>
                                                 <div className="grid gap-3">
                                                     <Label htmlFor="available">Available</Label>
-                                                    <Textarea
+                                                    <Input
                                                         id="available"
                                                         defaultValue={formik.values.available}
                                                         className=" w-full"
