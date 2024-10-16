@@ -5,10 +5,3 @@ export interface CardContent {
     img: string;
     textcolor: string;
 }
-
-type WidgetBody = CardContent
-
-export interface Widgets {
-    headline: string;
-    body: WidgetBody[];
-}

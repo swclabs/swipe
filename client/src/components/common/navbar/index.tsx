@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
-import NotLoggedIn, { LoggedIn } from '@/components/common/cart';
+import Products, { LoggedIn } from '@/components/common/cart';
 import NavbarItemStore from './store';
 import NavbarItemMac from './computer';
 import { NavbarItemIpad } from './tablet';
@@ -15,8 +15,9 @@ import NavbarItemAccessory from './accessory';
 import NavbarItemWatch from './watch';
 import NavbarItemAirPod from './earphone';
 import NavbarItemSupport from './support';
+import { SessionProviderProps } from 'next-auth/react';
 
-export default function NavbarComponent() {
+export default function NavbarComponent({ session }: { session: SessionProviderProps['session'] }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
@@ -27,7 +28,7 @@ export default function NavbarComponent() {
     "Watch",
     "AirPods",
     "Phụ kiện",
-    "Hỗ trợ bc"
+    "Hỗ trợ"
   ];
 
   return (
@@ -112,7 +113,7 @@ export default function NavbarComponent() {
             </Link>
             <div className="overlay">
               <div className=' container pl-20 pb-10 absolute'>
-                <LoggedIn />
+                <Products session={session} />
               </div>
             </div>
           </div>
@@ -143,7 +144,7 @@ export default function NavbarComponent() {
             </Link>
             <div className="overlay">
               <div className=' container pl-20 pb-10 absolute'>
-                <LoggedIn />
+                <Products session={session} />
               </div>
             </div>
           </div>

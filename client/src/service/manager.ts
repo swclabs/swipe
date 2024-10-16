@@ -1,40 +1,48 @@
 import APIEndpoint from "@/providers/endpoint";
 import { Auth, LoginReq, LoginRes, LogoutRes, SignUpReq, SignUpRes } from "@/types/account-management";
-import createAxiosInstance from "@/utils/axios";
+import createAxiosInstance from "@/lib/axios";
 import { AxiosResponse } from "axios";
 
 
-export class AccountManagement {
+export class Manager {
     static async signUp(req: SignUpReq): Promise<AxiosResponse<SignUpRes>> {
-        const axiosInstance = createAxiosInstance();
+        const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<SignUpRes> = await axiosInstance.post(
-            APIEndpoint.ACCOUNT_MANAGEMENT.SIGN_UP,
+            APIEndpoint.MANAGER.SIGN_UP,
             req,
         );
         return response;
     }
 
     static async login(req: LoginReq): Promise<AxiosResponse<LoginRes>> {
-        const axiosInstance = createAxiosInstance();
+        const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<LoginRes> = await axiosInstance.post(
-            APIEndpoint.ACCOUNT_MANAGEMENT.LOGIN,
+            APIEndpoint.MANAGER.LOGIN,
             req,
         );
         return response;
     }
 
     static async logout(): Promise<AxiosResponse<LogoutRes>> {
-        const axiosInstance = createAxiosInstance();
+        const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<LogoutRes> = await axiosInstance.get(
-            APIEndpoint.ACCOUNT_MANAGEMENT.LOGOUT,
+            APIEndpoint.MANAGER.LOGOUT,
         );
         return response;
     }
 
     static async auth(email: string): Promise<AxiosResponse<Auth>> {
-        const axiosInstance = createAxiosInstance();
+        const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<LogoutRes> = await axiosInstance.get(
-            `${APIEndpoint.ACCOUNT_MANAGEMENT.AUTH}?email=${email}`,
+            `${APIEndpoint.MANAGER.EMAIL}?email=${email}`,
+        );
+        return response;
+    }
+
+    static async oauth2(): Promise<AxiosResponse<LoginRes>> {
+        const axiosInstance = await createAxiosInstance();
+        const response: AxiosResponse<LoginRes> = await axiosInstance.get(
+            APIEndpoint.MANAGER.OAuth2,
         );
         return response;
     }

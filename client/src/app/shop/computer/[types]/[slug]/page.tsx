@@ -1,15 +1,12 @@
 'use client';
 import ShopDeviceCarousel from "@/components/shop/carousel";
 import Colors from "@/components/shop/colors";
-import Spec from "@/components/shop/spec";
 import Version from "@/components/shop/version";
-import { ProductDetail } from "@/types/products";
-import { Button } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { laptop } from "@/faker/mac-detail";
 import SpecMemory from "@/components/shop/spec-memory";
 import SpecSSD from "@/components/shop/spec-ssd";
-import { useProductWithSpecs } from "@/state";
+import { useProducts } from "@/state/products";
 import AddToCart from "@/components/shop/add-to-cart";
 import Comment from "@/components/shop/comment";
 
@@ -24,10 +21,10 @@ export default function Page({ params }: { params: { slug: string } }) {
     setDetails,
     setColor,
     setSpecs,
-  } = useProductWithSpecs()
+  } = useProducts()
 
   useEffect(() => {
-    setSpecs({ RAM: "", SSD: "", price: "" })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
     setDetails(laptop)
   }, [])
 

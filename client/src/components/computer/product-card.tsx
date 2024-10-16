@@ -94,12 +94,11 @@ const card = (product: product[]) => {
                   height={200}
                 />
               </div>
-
               <div className="w-full flex-1 flex flex-col gap-y-3">
                 <div className="h-full">
                   <h4 className="font-semibold text-lg text-left">{value.price}</h4>
                 </div>
-                <Link href={"phone/" + value.name.toLowerCase().replaceAll(" ", "-")}>
+                <Link href={"/shop/computer/laptop/" + value.name.toLowerCase().replaceAll(" ", "-")}>
                   <Button color="primary" className=" w-full">Mua</Button>
                 </Link>
                 <div className=" flex items-center pt-4">

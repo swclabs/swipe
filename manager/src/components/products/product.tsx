@@ -5,7 +5,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { MoreHorizontal, PlusCircle } from "lucide-react"
 import { PaginationSupplier } from "./pagination"
-import { ProductBody, Products } from "@/types/products"
+import { ProductResp, ProductDTO } from "@/types/products"
 import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
 import { useState } from "react"
 import React from "react"
@@ -30,12 +30,12 @@ const TableHeaderRow = () => {
 }
 
 interface TabsContentParams {
-  input: Products
+  input: ProductDTO
   status: string
   deletefunc: (id: number) => void
 }
 
-const DataWithStatus = (inputs: Products, status: string): ProductBody[] => {
+const DataWithStatus = (inputs: ProductDTO, status: string): ProductResp[] => {
   if (status.toLowerCase() === "all") return inputs.body
   return inputs.body ? inputs.body.filter((v) => v.status.toLowerCase() === status.toLowerCase()) : [];
 }

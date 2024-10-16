@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductDetail, Storage } from "@/types/products";
+import { ProductDetail, Specification } from "@/types/products";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import { Badge } from '../ui/badge';
@@ -8,13 +8,13 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 interface IStorageProps {
-  product: ProductDetail<Storage>[];
+  product: ProductDetail[];
   version: number;
   color: number;
-  specs: Storage
+  specs: Specification;
   setVersion: (version: number) => void;
   setColor: (color: number) => void;
-  setSpecs: (specs: Storage) => void;
+  setSpecs: (specs: Specification) => void;
 }
 
 const disableSpec = {
@@ -24,11 +24,11 @@ const disableSpec = {
 
 const enableSpec = {}
 
-const GetByRam = (product: ProductDetail<Storage>[], version: number, color: number) => {
+const GetByRam = (product: ProductDetail[], version: number, color: number) => {
   return product[version]?.color[color]?.specs
     ?.reduce<string[]>((acc, curr) => {
-      if (!acc.includes(curr.RAM)) {
-        acc.push(curr.RAM);
+      if (!acc.includes(curr.ram)) {
+        acc.push(curr.ram);
       }
       return acc;
     }, []);
@@ -53,9 +53,9 @@ export default function SpecMemory({ product, version, color, specs, setSpecs }:
                 GetByRam(product, 0, 0)?.map((value, index) =>
                   <Button
                     variant="outline"
-                    className={cn("border-[1.5px]", specs.RAM === value ? "border-blue-500" : "border-gray-400")}
+                    className={cn("border-[1.5px]", specs.ram === value ? "border-blue-500" : "border-gray-400")}
                     key={index}
-                    onClick={() => setSpecs({ RAM: value, SSD: '', price: '' })}
+                    onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "" })}
                     disabled={color === -1 ? true : false}
                   >
                     <Link href="#RAM" key={index}>
@@ -66,9 +66,9 @@ export default function SpecMemory({ product, version, color, specs, setSpecs }:
                 GetByRam(product, version, color)?.map((value, index) =>
                   <Button
                     variant="outline"
-                    className={cn("border-[1.5px]", specs.RAM === value ? "border-blue-500" : "border-gray-400")}
+                    className={cn("border-[1.5px]", specs.ram === value ? "border-blue-500" : "border-gray-400")}
                     key={index}
-                    onClick={() => setSpecs({ RAM: value, SSD: '', price: '' })}
+                    onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "" })}
                   >
                     <Link href="#RAM" key={index}>
                       {value}

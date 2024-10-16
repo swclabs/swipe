@@ -1,8 +1,8 @@
-import { Accessory } from "@/types/products";
+import { ProductType } from "@/types/products";
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
 
 
-export default function AccessoryComponent({ data }: { data: Accessory[] }) {
+export default function AccessoryComponent({ data }: { data: ProductType[] }) {
     return (
         <div className="flex justify-center">
             <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
@@ -12,7 +12,7 @@ export default function AccessoryComponent({ data }: { data: Accessory[] }) {
                             <Card>
                                 <CardHeader className="flex flex-col items-center justify-center">
                                     <h2 className="font-semibold text-3xl pt-8 pb-2">
-                                        {value.title}
+                                        {value.name}
                                     </h2>
                                     <p className="px-4 text-sm text-center">
                                         {value.desc}
@@ -23,7 +23,7 @@ export default function AccessoryComponent({ data }: { data: Accessory[] }) {
                                         removeWrapper
                                         alt="Card background"
                                         className="z-0 w-full h-full object-cover"
-                                        src={value.img}
+                                        src={value.image}
                                     />
                                 </CardBody>
                             </Card>
