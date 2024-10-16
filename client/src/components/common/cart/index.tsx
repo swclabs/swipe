@@ -10,6 +10,7 @@ import { FiBookmark } from "react-icons/fi";
 import { FiBox } from "react-icons/fi";
 import { FiSettings } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import { SessionProviderProps } from "next-auth/react";
 
 
 
@@ -56,20 +57,19 @@ interface Body {
   exp?: number
 }
 
-export default function Products() {
-  const [data, setData] = useState<Body>({});
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('/api/auth/session');
-      const body = await res.json();
-      if (typeof body !== 'object') {
-        setData(JSON.parse(body));
-      }
-    };
-    fetchData();
-  }, []);
-  // console.log(data.user);
-  if (data.user === undefined) {
+export default function Products({ session }: { session: SessionProviderProps['session'] }) {
+  // const [data, setData] = useState<Body>({});
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch('/api/auth/session');
+  //     const body = await res.json();
+  //     if (typeof body !== 'object') {
+  //       setData(JSON.parse(body));
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
+  if (!session) {
     return (
       <div className=' container'>
         <p className=' font-semibold text-xl'>Túi của bạn trống.</p>

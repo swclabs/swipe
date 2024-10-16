@@ -11,11 +11,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { Manager } from "@/service/manager";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { toast } from "../hooks/use-toast";
+import { ToastAction } from "../ui/toast";
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -55,8 +57,25 @@ export default function UserRegisterForm() {
   };
 
   const emailSubmit = async (data: UserCheckEmailValue) => {
-    setValidEmail(true);
-    setEmail(data.email);
+    // const resp = await Manager.auth(data.email);
+    // if (resp.status === 200) {
+    //   setValidEmail(true);
+    //   setEmail(data.email);
+    // }
+    // else {
+    //   toast({
+    //     variant: "destructive",
+    //     title: "Email is already registered",
+    //     description: "Please try again with a different email.",
+    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
+    //   })
+    // }
+    toast({
+      variant: "destructive",
+      title: "Email is already registered",
+      description: "Please try again with a different email.",
+      action: <ToastAction altText="Try again">Try again</ToastAction>,
+    })
   }
 
   return (

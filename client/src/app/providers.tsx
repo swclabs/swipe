@@ -1,16 +1,37 @@
 "use client";
 import { NextUIProvider } from "@nextui-org/react";
-import { isMobile } from 'react-device-detect';
-import { motion, AnimatePresence, useAnimation } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
+import { usePathname } from "next/navigation";
+import { Toaster } from "@/components/ui/toaster";
+import { SessionProvider, SessionProviderProps } from 'next-auth/react';
+import NextTopLoader from "nextjs-toploader";
+import NavbarComponent from "@/components/common/navbar";
+import FooterComponent from "@/components/common/footer";
 
-const Providers = ({ children }: any) => {
-  // if (isMobile) {
-  //     return (
-  //         <div className=" flex h-[100vh] flex-col text-center justify-center text-xs">
-  //             <p className="">Application does not support this device</p>
-  //         </div>
-  //     );
-  // }
+const Providers = ({
+  session,
+  children
+}: {
+  session: SessionProviderProps['session'];
+  children: React.ReactNode;
+}) => {
+  const pathname = usePathname();
+
+  // List of routes that should not use the layout
+  const noLayoutRoutes = ['/auth/sign-up', '/auth'];
+
+  if (noLayoutRoutes.includes(pathname)) {
+    return (
+      <NextUIProvider>
+        <AnimatePresence>
+          <SessionProvider session={session}>
+            {children}
+          </SessionProvider>
+          <Toaster />
+        </AnimatePresence>
+      </NextUIProvider>
+    );
+  }
   return (
     <NextUIProvider>
       <AnimatePresence>
@@ -20,7 +41,13 @@ const Providers = ({ children }: any) => {
           exit={{ opacity: 0 }}
           transition={{ delay: 0.25 }}
         >
-          {children}
+          <NextTopLoader showSpinner={false} />
+          <SessionProvider session={session}>
+            <NavbarComponent session={session} />
+            {children}
+            <Toaster />
+            <FooterComponent />
+          </SessionProvider>
         </motion.div>
       </AnimatePresence>
     </NextUIProvider>

@@ -4,14 +4,14 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
-const secretKey = "secret";
+const secretKey = process.env.NEXT_PUBLIC_SECRET ?? "secret";
 const key = new TextEncoder().encode(secretKey);
 
 export async function encrypt(payload: any) {
     return await new SignJWT(payload)
         .setProtectedHeader({ alg: "HS256" })
         .setIssuedAt()
-        .setExpirationTime("10 minutes")
+        .setExpirationTime("60min")
         .sign(key);
 }
 
@@ -27,19 +27,28 @@ export async function login(email: string, password: string): Promise<boolean> {
     const user = { email: email };
     try {
         // const resp = await Manager.login({ email, password });
+        const access_token = "resp.data.token";
         // console.log("Login", resp.data);
+        // Create the session
+        const expires = new Date(Date.now() + 2 * 3600 * 1000);
+        const session = await encrypt({ user, expires, access_token });
+
+        // Save the session in a cookie
+        cookies().set("session", session, { expires, httpOnly: true });
+        return true;
     }
     catch (e) {
-        console.error("Login failed");
+        console.error("login failed", e);
         return false;
     }
-    // Create the session
-    const expires = new Date(Date.now() + 1000 * 1000);
-    const session = await encrypt({ user, expires });
+}
+
+export async function updateAccessToken(access_token: string) {
+    const expires = new Date(Date.now() + 2 * 3600 * 1000);
+    const session = await encrypt({ expires, access_token });
 
     // Save the session in a cookie
     cookies().set("session", session, { expires, httpOnly: true });
-    return true;
 }
 
 export async function logout() {
@@ -59,7 +68,7 @@ export async function updateSession(request: NextRequest) {
     // console.log("Session", session);
     // Refresh the session so it doesn't expire
     const parsed = await decrypt(session);
-    parsed.expires = new Date(Date.now() + 10 * 1000);
+    parsed.expires = new Date(Date.now() + 2 * 3600 * 1000);
     const res = NextResponse.next();
     res.cookies.set({
         name: "session",
