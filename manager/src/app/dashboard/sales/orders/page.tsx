@@ -63,12 +63,18 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
+
 import BreadCrumb from "@/components/dashboard/breadcrumb";
 const breadcrumbItems = [
-    { title: "Orders", link: "/dashboard/sales/orders" }
+    { title: "Users", link: "/dashboard/customers/users" }
 ];
 
 export default function Page() {
+
+    // const { user, fetchUser } = useUser()
+    // useEffect(() => {
+    //     fetchUser()
+    // }, [])
     return (
         <ScrollArea className="h-full">
             <div className=" pl-6 pt-6">

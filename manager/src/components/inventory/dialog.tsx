@@ -15,7 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { StockItem } from "@/types/inventory"
+import { StockItem, StockItemBody } from "@/types/inventory"
 import { Card, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -24,18 +24,68 @@ import { useState } from "react"
 import { InventoryService } from "@/services/inventory"
 import { DeleteConfirmDialog } from "./responsive-dialog"
 import React from "react"
+import { useFormik } from "formik"
+import { useToast } from "@/components/ui/use-toast";
+import { spec } from "node:test/reporters"
 
-export function ProductSpecsDialog({ src }: { src: StockItem }) {
+export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  const [idDelete, setIdDelete] = useState(-1);
+  const [idDelete, setIdDelete] = useState("");
 
-  const deletefunc = (id: number) => {
-    console.log("Delete payment with ID: ", id);
-    const func = async (id: number) => {
+  const deletefunc = (id: string) => {
+    const func = async (id: string) => {
       const res = await InventoryService.DeleteInventory(id)
     }
     func(id)
   }
+  const { toast } = useToast()
+  const formik = useFormik({
+    /*
+      "id": "<string>",
+      "available": "<string>",
+      "currency_code": "<string>",
+      "price": "<string>",
+      "product_id": "<string>",
+      "status": "<string>"
+     */
+    initialValues: {
+      id: src.id,
+      product_name: '',
+      price: src.price,
+      available: src.available,
+      status: 'active',
+      product_id: src.product_id,
+      currency_code: 'VND',
+      image: [],
+      color_img: 'https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696770/swc-storage/l2er9ptyweeoxyx2zqmu.jpg',
+      color: 'Black Titanium',
+      specs: {
+        ram: '16GB',
+        ssd: '512GB',
+        connection: '',
+        desc: '',
+      }
+    },
+    onSubmit: values => {
+      // Fetch API to update the inventory
+      values.id = values.id.toString();
+      values.product_id = values.product_id.toString();
+      const updateInventory = async () => {
+        const res = await InventoryService.UpdateInventory(values);
+        res.status === 200 ?
+          toast({
+            title: "Inventory updated",
+            description: "The inventory has been updated successfully",
+          }) :
+          toast({
+            title: "Error",
+            description: "An error occurred while updating the inventory",
+          });
+      };
+      updateInventory();
+    },
+  });
+
   return (
     <>
       <DeleteConfirmDialog
@@ -59,104 +109,113 @@ export function ProductSpecsDialog({ src }: { src: StockItem }) {
               Product Specification
             </DialogDescription>
           </DialogHeader>
-          <div className="flex px-10">
-            <div className="w-1/2">
-              <Carousel className="w-full max-w-xs">
-                <CarouselContent>
-                  {src.specs.image.map((value, index) => (
-                    <CarouselItem key={index}>
-                      <div className="p-1">
-                        <Card>
-                          <CardContent className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-xl">
-                            <Image
-                              src={value}
-                              width={500}
-                              height={500}
-                              alt="Product image"
-                            />
-                          </CardContent>
-                        </Card>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
+
+          <form onSubmit={formik.handleSubmit}>
+            <div className="flex px-10">
+              <div className="w-1/2">
+                <Carousel className="w-full max-w-xs">
+                  <CarouselContent>
+                    {src.image.map((value, index) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <Card>
+                            <CardContent className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-xl">
+                              {/* <Image
+                                src={value}
+                                width={500}
+                                height={500}
+                              /> */}
+                              <Image loader={() => value} src={value} alt="Product Image" width={500} height={500} />
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious type="button" />
+                  <CarouselNext type="button" />
+                </Carousel>
+              </div>
+              <div className="grid gap-0 p-5">
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="id">ID</Label>
+                  <Input
+                    id="id"
+                    defaultValue={src.id}
+                    className="col-span-2 h-8"
+                  />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="available">Available</Label>
+                  <Input
+                    id="available"
+                    className="col-span-2 h-8"
+                    onChange={formik.handleChange}
+                    value={formik.values.available}
+                  />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="currency_code">Currency Code</Label>
+                  <Input
+                    id="currency_code"
+                    className="col-span-2 h-8"
+                    onChange={formik.handleChange}
+                    value={formik.values.currency_code}
+                  />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="price">Price</Label>
+                  <Input
+                    id="price"
+                    className="col-span-2 h-8"
+                    onChange={formik.handleChange}
+                    value={formik.values.price}
+                  />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="status">Status</Label>
+                  <Input
+                    id="status"
+                    className="col-span-2 h-8"
+                    onChange={formik.handleChange}
+                    value={formik.values.status}
+                  />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="status">Product ID</Label>
+                  <Input
+                    id="product_id"
+                    className="col-span-2 h-8"
+                    onChange={formik.handleChange}
+                    value={formik.values.product_id}
+                  />
+                </div>
+              </div>
             </div>
-            <div className="grid gap-0 p-5">
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="id">ID</Label>
-                <Input
-                  id="id"
-                  defaultValue={src.id}
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="color">Color</Label>
-                <Input
-                  id="color"
-                  defaultValue={src.specs.color}
-                  className="col-span-2 h-8"
-                  disabled
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="ram">RAM</Label>
-                <Input
-                  id="ram"
-                  defaultValue={src.specs.ram}
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="ssd">SSD</Label>
-                <Input
-                  id="ssd"
-                  defaultValue={src.specs.ssd}
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="price">Price</Label>
-                <Input
-                  id="price"
-                  defaultValue={src.price}
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="available">Available</Label>
-                <Input
-                  id="available"
-                  defaultValue={src.available}
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="status">Status</Label>
-                <Input
-                  id="status"
-                  defaultValue={src.status}
-                  className="col-span-2 h-8"
-                />
-              </div>
-            </div>
-          </div>
-          <DialogFooter>
-            <Button type="submit">Save changes</Button>
-            <Button
-              onClick={() => {
-                setIsDeleteOpen(!isDeleteOpen)
-                setIdDelete(Number(src.id))
-              }}
-            >
-              Delete
-            </Button>
-          </DialogFooter>
+
+            <DialogFooter>
+              <Button
+                onClick={() => {
+                  window.location.reload();
+                }}
+              >
+                Save changes
+              </Button>
+              <Button
+                type="button"
+                variant={"destructive"}
+                onClick={() => {
+                  setIsDeleteOpen(!isDeleteOpen)
+                  setIdDelete(src.id)
+                }}
+              >
+                Delete
+              </Button>
+            </DialogFooter>
+          </form>
+
         </DialogContent>
-      </Dialog>
+      </Dialog >
     </>
   )
 }

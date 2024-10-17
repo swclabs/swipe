@@ -1,23 +1,74 @@
 import APIEndpoint from "@/providers/endpoint";
 import createAxiosInstance from "@/utils/axios";
 import { AxiosResponse } from "axios";
-import { StockItem, InventoryStockSchema } from "@/types/inventory";
+import { StockItem, InventoryStockSchema, BaseResponse, NewInventoryRes, StockItemBody } from "@/types/inventory";
 
 export class InventoryService {
-    static async GetInventoryStock(limit: number): Promise<AxiosResponse<InventoryStockSchema>> {
+    static async GetInventoryStock(page: number, limit: number): Promise<AxiosResponse<InventoryStockSchema>> {
         const axiosInstance = createAxiosInstance();
         const response: AxiosResponse<InventoryStockSchema> = await axiosInstance.get(
-            `${APIEndpoint.INVENTORY.GET_STOCK}?limit=${limit}`
+            `${APIEndpoint.INVENTORY.GET_STOCK}?page=${page}&limit=${limit}`
         );
         return response;
     }
 
-    static async DeleteInventory(id: number): Promise<AxiosResponse<StockItem>> {
+    static async DeleteInventory(id: string): Promise<AxiosResponse<BaseResponse>> {
         const axiosInstance = createAxiosInstance();
-        const response: AxiosResponse<StockItem> = await axiosInstance.delete(
-            `${APIEndpoint.INVENTORY.GET_STOCK}?pid=${id}`
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.delete(
+            `${APIEndpoint.INVENTORY.GET_STOCK}?id=${id}`
         );
         return response;
     }
 
+    static async NewInventory(data: StockItem): Promise<AxiosResponse<NewInventoryRes>> {
+        const axiosInstance = createAxiosInstance();
+        const response: AxiosResponse<NewInventoryRes> = await axiosInstance.post(
+            APIEndpoint.INVENTORY.POST_STOCK,
+            data
+        );
+        return response;
+    }
+
+    static async UpdateInventory(data: StockItemBody): Promise<AxiosResponse<NewInventoryRes>> {
+        const axiosInstance = createAxiosInstance();
+        const response: AxiosResponse<NewInventoryRes> = await axiosInstance.put(
+            APIEndpoint.INVENTORY.PUT_STOCK,
+            data
+        );
+        return response;
+    }
+
+    static async NewInventoryImage(files: File[], id: string): Promise<AxiosResponse<BaseResponse>> {
+        const form = new FormData();
+        files.map((value) => form.append("image", value))
+        const axiosInstance = createAxiosInstance();
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
+            `${APIEndpoint.INVENTORY.PUT_INVENTORIES_IMG}`,
+            form,
+            config
+        );
+        return response;
+    }
+
+    static async InventoryColorImage(files: File[], id: string): Promise<AxiosResponse<BaseResponse>> {
+        const form = new FormData();
+        files.map((value) => form.append("color_img", value))
+        const axiosInstance = createAxiosInstance();
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
+            `${APIEndpoint.INVENTORY.PUT_INVENTORIES_COLOR_IMG}`,
+            form,
+            config
+        );
+        return response;
+    }
 }
