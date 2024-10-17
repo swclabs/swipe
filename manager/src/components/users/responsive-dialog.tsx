@@ -208,10 +208,10 @@ export const DeleteConfirmDialog = ({
     setIsOpen,
     deletefunc,
 }: {
-    id: string,
+    id: number,
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    deletefunc: (id: string) => void;
+    deletefunc: (id: number) => void;
 }) => {
     return (
         <ResponsiveDialog

@@ -1,11 +1,12 @@
+import { ProductDetail } from "@/types/products";
 import { image } from "@nextui-org/react";
 
-export const laptop = [
+export const laptop: ProductDetail[] = [
     {
         name: "MacBook Air 13”",
         screen: "13.3-inch Retina display",
-        chip: "M1 chip",
-        img: ["/img/mac/mba13-midnight-select-202402.jpg"],
+        // chip: "M1 chip",
+        image: ["/img/mac/mba13-midnight-select-202402.jpg"],
         color: [
             {
                 name: "Midnight",

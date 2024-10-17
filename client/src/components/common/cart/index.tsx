@@ -5,16 +5,16 @@ import cartData from "@/faker/cart";
 import { Button } from "@nextui-org/react";
 
 
-import { FiUser } from "react-icons/fi";
+import { FiUser, FiLogOut } from "react-icons/fi";
 import { FiBookmark } from "react-icons/fi";
 import { FiBox } from "react-icons/fi";
 import { FiSettings } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { SessionProviderProps } from "next-auth/react";
+import { SessionProviderProps, signOut } from "next-auth/react";
 
 
 
-function MenuShortcuts() {
+function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }) {
   return (
     <div className=' container pt-10 text-xs'>
       <p>Hồ sơ của tôi</p>
@@ -37,12 +37,20 @@ function MenuShortcuts() {
             Tài khoản
           </p>
         </a>
-        <a className=' pt-2 font-semibold flex items-center' href="/auth">
-          <FiSettings />
-          <p className=" pl-2">
-            Đăng nhập
-          </p>
-        </a>
+        {session ?
+          <button className=' pt-2 font-semibold flex items-center' onClick={() => signOut()}>
+            <FiLogOut />
+            <p className=" pl-2">
+              Đăng xuất
+            </p>
+          </button>
+          :
+          <a className=' pt-2 font-semibold flex items-center' href="/auth">
+            <FiSettings />
+            <p className=" pl-2">
+              Đăng nhập
+            </p>
+          </a>}
       </div>
     </div>
   )
@@ -76,7 +84,7 @@ export default function Products({ session }: { session: SessionProviderProps['s
         <div className=' pt-5 text-sm'>
           <Link href='/auth' className=' text-sm underline font-semibold'>Đăng nhập</Link> để xem sản phẩm của bạn
         </div>
-        <MenuShortcuts />
+        <MenuShortcuts session={session} />
       </div>
     )
   }
@@ -103,36 +111,7 @@ export default function Products({ session }: { session: SessionProviderProps['s
           </div>
         ))}
       </div>
-      <MenuShortcuts />
-    </div>
-  )
-}
-
-export function LoggedIn() {
-  return (
-    <div className=' container'>
-      <div className=" flex justify-between sticky top-[0px] bg-gray-50">
-        <p className=' font-semibold text-xl'>Giỏ hàng</p>
-        <Link href={`/shop/bag`}>
-          <Button color="primary" radius="full">Xem Giỏ hàng</Button>
-        </Link>
-      </div>
-      <div className=' pt-5 text-sm'>
-        {cartData.map((value, index) => (
-          <div className=" flex p-3" key={index}>
-            <Image
-              alt="img"
-              src={value.img}
-              width={70}
-              height={70}
-            />
-            <div className=" flex items-center pl-5 font-semibold text-xs">
-              <p>{`${value.name} - ${value.title}`}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <MenuShortcuts />
+      <MenuShortcuts session={session} />
     </div>
   )
 }

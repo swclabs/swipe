@@ -4,19 +4,17 @@ import { motion } from "framer-motion"
 import { Button } from "../ui/button";
 
 interface IStorageProps {
-  product: ProductDetail[];
-  version: number;
+  product: ProductDetail;
   color: number;
   specs: Specification;
-  setVersion: (version: number) => void;
   setColor: (color: number) => void;
   setSpecs: (specs: Specification) => void;
 }
-export default function AddToCart({ product, version, color, specs, setSpecs }: IStorageProps) {
+export default function AddToCart({ product, color, specs, setSpecs }: IStorageProps) {
   return (
     <>
       {
-        product[version] && product[version].color[color] && specs.ssd != "" ?
+        product && product.color[color] && specs.ssd != "" ?
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -25,11 +23,11 @@ export default function AddToCart({ product, version, color, specs, setSpecs }: 
             <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
               <div className=" container flex w-4/5 flex-col md:flex-row">
                 <div className=" container font-semibold text-3xl p-10">
-                  {product[version]?.name} mới của bạn.
+                  {product?.name} mới của bạn.
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[version]?.name} {specs.ssd} {product[version].color[color].name}</div>
+                  <div className=" mb-2">{product?.name} {specs.ssd} {product.color[color].name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">
@@ -50,11 +48,11 @@ export default function AddToCart({ product, version, color, specs, setSpecs }: 
             <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
               <div className=" container flex w-4/5 flex-col md:flex-row">
                 <div className=" container font-semibold text-3xl p-10">
-                  {product[0]?.name} mới của bạn.
+                  {product.name} mới của bạn.
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[0]?.name} {specs.ssd} {product[0]?.color[0].name}</div>
+                  <div className=" mb-2">{product.name} {specs.ssd} {product.color[0]?.name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">
@@ -74,20 +72,18 @@ export default function AddToCart({ product, version, color, specs, setSpecs }: 
 
 
 interface IConnectionProps {
-  product: ProductDetail[];
-  version: number;
+  product: ProductDetail;
   color: number;
   specs: Specification;
-  setVersion: (version: number) => void;
   setColor: (color: number) => void;
   setSpecs: (specs: Specification) => void;
 }
 
-export function AddWatchToCart({ product, version, color, specs, setSpecs }: IConnectionProps) {
+export function AddWatchToCart({ product, color, specs, setSpecs }: IConnectionProps) {
   return (
     <>
       {
-        product[version] && product[version].color[color] && specs.connection != "" ?
+        product && product.color[color] && specs.connection != "" ?
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,11 +92,11 @@ export function AddWatchToCart({ product, version, color, specs, setSpecs }: ICo
             <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
               <div className=" container flex w-4/5 flex-col md:flex-row">
                 <div className=" container font-semibold text-3xl p-10">
-                  {product[version]?.name} mới của bạn.
+                  {product?.name} mới của bạn.
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[version]?.name} {specs.connection} {product[version].color[color].name}</div>
+                  <div className=" mb-2">{product?.name} {specs.connection} {product.color[color].name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">
@@ -121,11 +117,11 @@ export function AddWatchToCart({ product, version, color, specs, setSpecs }: ICo
             <div className=" bg-gray-100 max-h-max mt-10 rounded-xl flex justify-center mb-5">
               <div className=" container flex w-4/5 flex-col md:flex-row">
                 <div className=" container font-semibold text-3xl p-10">
-                  {product[0]?.name} mới của bạn.
+                  {product?.name} mới của bạn.
                   <span className=" text-gray-400">Theo cách bạn muốn.</span>
                 </div>
                 <div className=" container p-10">
-                  <div className=" mb-2">{product[0]?.name} {specs.connection} {product[0]?.color[0].name}</div>
+                  <div className=" mb-2">{product?.name} {specs.connection} {product?.color[0].name}</div>
                   <div className=" font-semibold">Tổng cộng {specs.price}</div>
                 </div>
                 <div className=" container p-10">

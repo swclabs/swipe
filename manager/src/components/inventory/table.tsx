@@ -20,7 +20,6 @@ import {
 } from "@tanstack/react-table"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -39,59 +38,65 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { StockItem } from "@/types/inventory"
+import { StockItem, StockItemBody } from "@/types/inventory"
 import { Badge } from "@/components/ui/badge"
 import { ProductSpecsDialog } from "./dialog"
-// import { DeleteConfirmDialog, EditDialog, ResponsiveDialog } from "./responsive-dialog"
-// import { useState } from "react"
-// import { InventoryService } from "@/services/inventory";
+import { useInventory } from "@/state/inventory";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Stock } from "../products/upload"
 
-const data: StockItem[] = [
-  {
-    id: "1",
-    product_name: "iphone 16",
-    product_id: "1",
-    price: "12312313",
-    available: "1000",
-    currency_code: "USD",
-    status: "active",
-    specs: {
-      color: "black",
-      ram: "8GB",
-      ssd: "512GB",
-      color_image: "",
-      image: [
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-      ]
-    }
-  },
-  {
-    id: "2",
-    product_name: "xphone 15",
-    product_id: "1",
-    price: "1231231312312",
-    available: "1000",
-    status: "active",
-    currency_code: "USD",
-    specs: {
-      color: "",
-      ram: "",
-      ssd: "",
-      color_image: "",
-      image: [
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-        "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-      ]
-    }
-  }
-]
+// const data: StockItem[] = [
+//   {
+//     id: "1",
+//     product_name: "test1",
+//     product_id: "1",
+//     price: "12312313",
+//     available: "1000",
+//     currency_code: "USD",
+//     status: "active",
+//     specs: {
+//       color: "black",
+//       ram: "8GB",
+//       ssd: "512GB",
+//       color_image: "",
+//       image: [
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
+//       ]
+//     }
+//   },
+//   {
+//     id: "2",
+//     product_name: "test2",
+//     product_id: "2",
+//     price: "1231231312312",
+//     available: "1000",
+//     status: "active",
+//     currency_code: "USD",
+//     specs: {
+//       color: "",
+//       ram: "",
+//       ssd: "",
+//       color_image: "",
+//       image: [
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
+//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
+//       ]
+//     }
+//   }
+// ]
 
-export const columns: ColumnDef<StockItem>[] = [
+// StockItem[]
+// let data: StockItem[] = []
+
+
+
+export const columns: ColumnDef<StockItemBody>[] = [
   {
     id: "select",
     enableSorting: false,
@@ -161,26 +166,8 @@ export const columns: ColumnDef<StockItem>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const payment = row.original
-
-      // const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-      // const [idDelete, setIdDelete] = useState(-1);
-
-      // const deletefunc = (id: number) => {
-      //   console.log("Delete payment with ID: ", id);
-      //   const func = async (id: number) => {
-      //     const res = await InventoryService.DeleteInventory(id)
-      //   }
-      //   func(id)
-      // }
-
       return (
         <>
-          {/* <DeleteConfirmDialog
-            id={idDelete}
-            isOpen={isDeleteOpen}
-            setIsOpen={setIsDeleteOpen}
-            deletefunc={deletefunc}
-          /> */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="h-8 w-8 p-0">
@@ -191,23 +178,15 @@ export const columns: ColumnDef<StockItem>[] = [
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(payment.id)}
+                onClick={() => navigator.clipboard.writeText(payment.id.toString())}
               >
                 Copy payment ID
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>View customer</DropdownMenuItem>
               <DropdownMenuItem>View payment details</DropdownMenuItem>
-              {/* <DropdownMenuItem
-                onClick={() => {
-                  setIsDeleteOpen(!isDeleteOpen)
-                  setIdDelete(Number(row.id))
-                }}
-              >
-                <span className=" text-red-500">Delete</span>
-              </DropdownMenuItem> */}
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu >
         </>
       )
     },
@@ -215,6 +194,11 @@ export const columns: ColumnDef<StockItem>[] = [
 ]
 
 export function InventoryTableComponent() {
+  const { inventory, fetchInventory } = useInventory()
+  useEffect(() => {
+    fetchInventory()
+  }, [])
+  const [data, setData] = useState(() => inventory?.stock || []);
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -224,7 +208,7 @@ export function InventoryTableComponent() {
   const [rowSelection, setRowSelection] = React.useState({})
 
   const table = useReactTable({
-    data,
+    data: inventory?.stock || [],
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,

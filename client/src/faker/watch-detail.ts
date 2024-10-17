@@ -1,10 +1,10 @@
-import {ProductDetail } from "@/types/products";
+import { ProductDetail } from "@/types/products";
 
 const watchDetail: ProductDetail[] = [
     {
         name: "Apple Watch SE",
         screen: "40 mm",
-        img: [
+        image: [
             "/shop/watch/watch-se.jpg",
             "/shop/watch/watch-se-2.jpg",
             "/shop/watch/watch-se-3.jpg",
@@ -41,7 +41,7 @@ const watchDetail: ProductDetail[] = [
     {
         name: "Apple Watch SE",
         screen: "44 mm",
-        img: [
+        image: [
             "/shop/watch/watch-se.jpg",
             "/shop/watch/watch-se-2.jpg",
             "/shop/watch/watch-se-3.jpg",
@@ -63,7 +63,7 @@ const watchDetail: ProductDetail[] = [
                         price: "Từ 6.399.000đ",
                         ssd: "",
                         ram: "",
-                    }, 
+                    },
                     {
                         connection: "GPS + Cellular",
                         desc: "Gọi điện và gửi tin nhắn chỉ với Apple Watch.",

@@ -9,7 +9,7 @@ export default class APIEndpoint {
         SIGN_UP: `${APIEndpoint.BASE_URL}/auth/signup`,
         EMAIL: `${APIEndpoint.BASE_URL}/auth/email`,
         LOGOUT: `${APIEndpoint.BASE_URL}/auth/logout`,
-        OAuth2: `${APIEndpoint.BASE_URL}/oauth2`,
+        OAuth2: `${APIEndpoint.BASE_URL}/oauth2/google`,
     }
 
     static readonly PRODUCTS = {
