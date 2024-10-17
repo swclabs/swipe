@@ -14,10 +14,8 @@ import Comment from "@/components/shop/comment";
 export default function Page({ params }: { params: { slug: string } }) {
   const {
     details,
-    version,
     color,
     specs,
-    setVersion,
     setDetails,
     setColor,
     setSpecs,
@@ -26,80 +24,77 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   useEffect(() => {
     setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
-    setDetails(ipadDetail)
+    setDetails(ipadDetail[0])
   }, [])
-  // console.log(specs)
+  console.log(details)
   return (
     <div className=" container w-[87%] m-auto">
       <div className=" container pt-10">
         <div className=" text-red-500 font-medium pt-5">Mới</div>
         <div className=" font-semibold text-5xl pt-2">
-          Mua {version === -1 ? details[0]?.name : details[version]?.name}
+          Mua {details?.name}
         </div>
       </div>
 
       <div className="flex container flex-col md:flex-row pt-14 relative max-h-max">
         <div className="container md:pr-14 w-full md:w-2/3">
           <div className=" w-full sticky top-[100px]">
-            <ShopDeviceCarousel product={details}
-              version={version}
-              color={color}
-              setColor={setColor}
-              setVersion={setVersion}
-            />
+            {details &&
+              <ShopDeviceCarousel
+                product={details}
+                color={color}
+                setColor={setColor}
+              />
+            }
           </div>
 
         </div>
         <div className=" md:w-1/3 py-5 md:py-0">
-          <Version
-            product={details}
-            version={version}
-            setVersion={setVersion}
-          />
+          {details && <Version product={details} />}
 
           <div className=' mt-5 text-xs'>
             Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần đầu 20%.
             Có thêm tùy chọn thanh toán khi hoàn tất giao dịch.
           </div>
 
-          <Colors
-            product={details}
-            version={version}
-            color={color}
-            setColor={setColor}
-            setVersion={setVersion}
-          />
+          {details &&
+            <Colors
+              product={details}
+              color={color}
+              setColor={setColor}
+            />
+          }
 
-          <SpecMemory
-            product={details}
-            color={color}
-            version={version}
-            specs={specs}
-            setSpecs={setSpecs}
-            setColor={setColor}
-            setVersion={setVersion}
-          />
-
-          <SpecSSD
-            product={details}
-            version={version}
-            color={color}
-            specs={specs}
-            setColor={setColor}
-            setVersion={setVersion}
-            setSpecs={setSpecs}
-          />
+          {
+            details &&
+            <SpecMemory
+              product={details}
+              color={color}
+              specs={specs}
+              setSpecs={setSpecs}
+              setColor={setColor}
+            />
+          }
+          {details &&
+            <SpecSSD
+              product={details}
+              color={color}
+              specs={specs}
+              setColor={setColor}
+              setSpecs={setSpecs}
+            />
+          }
         </div>
       </div>
-      <AddToCart
-        product={details}
-        version={version}
-        color={color}
-        specs={specs}
-        setColor={setColor}
-        setVersion={setVersion}
-        setSpecs={setSpecs}
-      />
+      {details &&
+        <AddToCart
+          product={details}
+          color={color}
+          specs={specs}
+          setColor={setColor}
+          setSpecs={setSpecs}
+        />
+      }
       <Comment />
     </div>
   )

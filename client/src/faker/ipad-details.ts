@@ -4,7 +4,7 @@ const ipadDetail: ProductDetail[] = [
     {
         name: "iPad Pro 11 inch",
         screen: "6.1 inch",
-        img: [
+        image: [
             "/shop/ipad/ipad-pro-model-select-gallery-1-202405.webp",
             "/shop/ipad/ipad-pro-model-select-gallery-2-202405.webp",
 
@@ -93,7 +93,7 @@ const ipadDetail: ProductDetail[] = [
     {
         name: "iPad Pro 13 inch",
         screen: "6.7 inch",
-        img: [
+        image: [
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-1-202309.jpg",
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-2-202309.jpg",
             "/img/shop/iphone-15-pro/iphone-15-pro-finish-select.jpg",

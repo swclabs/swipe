@@ -39,10 +39,10 @@ export class Manager {
         return response;
     }
 
-    static async oauth2(): Promise<AxiosResponse<LoginRes>> {
+    static async oauth2(access_token: string): Promise<AxiosResponse<LoginRes>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<LoginRes> = await axiosInstance.get(
-            APIEndpoint.MANAGER.OAuth2,
+            `${APIEndpoint.MANAGER.OAuth2}?access_token=${access_token}`,
         );
         return response;
     }

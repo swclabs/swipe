@@ -6,10 +6,20 @@ import { FiTruck } from "react-icons/fi";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { Button } from '../ui/button';
+import { useProductsInStore } from '@/state/products';
+import { useEffect } from 'react';
 
 
 
 export default function Product() {
+
+  const { product, fetchProduct } = useProductsInStore();
+  useEffect(() => {
+    fetchProduct('phone');
+  }, [])
+
+  console.log('product', product)
+
   return (
     <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
       <div className="flex justify-center">
@@ -22,8 +32,8 @@ export default function Product() {
           <div className="shrink-0"></div>
         </div>
         <div className="grid lg:grid-cols-4 2xl:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
-          {iphone.map((value, index) => (
-            <div className="container mx-auto bg-gray-100 rounded-2xl relative" key={index}>
+          {product && product.map((value, index) => (
+            <div className="container mx-auto bg-gray-100 rounded-2xl relative h-[550px]" key={index}>
               <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4">
                 <div className=" w-full flex-1">
                   <div className=" w-full flex flex-col gap-y-3">
@@ -51,7 +61,7 @@ export default function Product() {
                       <Badge variant="outline" className="text-xs ">{value.specs.display}</Badge>
                     </div>
                     <div className="flex gap-2">
-                      {value.specs.SSD.map((item, idx) => (
+                      {value.specs.SSD && value.specs.SSD.map((item, idx) => (
                         <Badge variant="outline" className="text-xs " key={idx}>{item}</Badge>
                       ))}
                     </div>
@@ -61,8 +71,8 @@ export default function Product() {
                   </div>
                 </div>
 
-                <div className="w-full flex-1">
-                  <Link href={"shop/phone/" + value.name.toLowerCase().replaceAll(" ", "-")}>
+                <div className="w-[90%] flex-1 absolute bottom-3">
+                  <Link href={"shop/phone/" + value.id.toString()}>
                     <Button color="primary" className=" w-full">Mua</Button>
                   </Link>
                   <div className=" flex items-center pt-4">

@@ -1,11 +1,12 @@
 'use client';
-import { Button, Chip } from "@nextui-org/react";
 import './style.css'
 import iphone from "@/faker/iphone";
 import Link from "next/link";
 import { FiTruck } from "react-icons/fi";
 import ipad from "@/faker/ipad";
 import Image from "next/image";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 
 
 
@@ -24,8 +25,8 @@ export default function Product() {
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
           {ipad.map((value, index) => (
             <div className="container mx-auto w-full bg-gray-100 rounded-2xl relative" key={index}>
-              <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4">
-                <div className=" w-full flex-1">
+              <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4 h-[550px]">
+                <div className=" w-full">
                   <div className=" w-full flex flex-col gap-y-3">
                     <div className="h-full">
                       <p className="text-left font-semibold text-xl"> {value.name}</p>
@@ -35,29 +36,34 @@ export default function Product() {
                     </div>
                   </div>
                 </div>
-                <div className="pt-4 flex-1 min-h-[230px]">
+                <div className="pt-4 min-h-[150px]">
                   <Image
                     alt="img card"
-                    height={150}
-                    width={150}
+                    height={100}
+                    width={100}
                     src={value.image}
                   />
                 </div>
 
-
-                <div className="w-full flex-1 flex flex-col gap-y-3">
-                  <div className=" w-full flex flex-col gap-y-3">
+                <div className=" w-full flex-1">
+                  <div className=" w-full flex flex-col gap-y-2">
                     <div className="flex gap-2">
-                      <Chip radius="sm" className="text-xs">{value.specs.screen}</Chip>
-                      <Chip radius="sm" className="text-xs">{value.specs.display}</Chip>
+                      <Badge variant="outline" className="text-xs ">{value.specs.screen}</Badge>
+                      <Badge variant="outline" className="text-xs ">{value.specs.display}</Badge>
                     </div>
                     <div className="flex gap-2">
-                      {value.specs.SSD.map((item, idx) => (
-                        <Chip radius="sm" className="text-xs" key={idx}>{item}</Chip>
+                      {value.specs.SSD && value.specs.SSD.map((item, idx) => (
+                        <Badge variant="outline" className="text-xs " key={idx}>{item}</Badge>
                       ))}
                     </div>
+                    <div className="h-full">
+                      <h4 className="font-semibold text-lg text-left">{value.price}</h4>
+                    </div>
                   </div>
-                  <Link href={"/shop/tablet/" + value.name.toLowerCase().replaceAll(" ", "-")}>
+                </div>
+
+                <div className="w-[90%] flex-1 absolute bottom-3">
+                  <Link href={"shop/tablet/" + value.id.toString()}>
                     <Button color="primary" className=" w-full">Mua</Button>
                   </Link>
                   <div className=" flex items-center pt-4">

@@ -2,6 +2,7 @@ import { CredentialsSignin, NextAuthConfig } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialProvider from 'next-auth/providers/credentials';
 import { encrypt, getSession, login, updateAccessToken } from './auth';
+import { Manager } from '@/service/manager';
 
 class CustomError extends CredentialsSignin {
   code = "custom_error"
@@ -60,9 +61,11 @@ const authConfig = {
       if (account) {
         // Lưu dữ liệu người dùng vào cơ sở dữ liệu
         console.log('Account', account);
-        // if (account != null && user.email && account.access_token !== undefined) {
-        //   await updateAccessToken(account.access_token);
-        // }
+        if (account.access_token !== undefined) {
+          const access_token = account.access_token;
+          const resp = await Manager.oauth2(access_token);
+          await updateAccessToken(resp.data.token);
+        }
         // Thêm access token vào JWT
         console.log('Token', token);
       }

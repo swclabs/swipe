@@ -9,12 +9,12 @@ export interface Specification {
 export interface ProductDetail {
     name: string;
     screen: string;
-    img: string[]
+    image: string[]
     color: {
         name: string;
         img: string;
         product: string[];
-        specs?: Specification[];
+        specs: Specification[];
     }[];
 }
 

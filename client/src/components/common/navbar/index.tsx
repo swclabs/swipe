@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import Search from './search';
-import Products, { LoggedIn } from '@/components/common/cart';
+import Products from '@/components/common/cart';
 import NavbarItemStore from './store';
 import NavbarItemMac from './computer';
 import { NavbarItemIpad } from './tablet';

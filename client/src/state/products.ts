@@ -1,4 +1,3 @@
-import { laptop } from '@/faker/mac-detail';
 import { ProductDetail, ProductType, Specification } from '../types/products';
 import { create } from 'zustand'
 import { ProductService } from '@/service/products';
@@ -6,46 +5,47 @@ import { ProductService } from '@/service/products';
 
 interface Products {
     color: number;
-    version: number;
-    details: ProductDetail[];
+    details: ProductDetail | undefined;
     specs: Specification;
-    fetch(name: string): () => Promise<void>;
+    fetchProduct: (id: number) => Promise<void>;
     setColor: (color: number) => void;
-    setVersion: (version: number) => void;
-    setDetails: (details: ProductDetail[]) => void;
+    setDetails: (details: ProductDetail) => void;
     setSpecs: (specs: Specification) => void;
 }
 
-export const useProducts = create<Products>((set) => ({
-    version: -1,
+export const useProducts = create<Products>()((set): Products => ({
     color: -1,
-    details: [],
+    details: undefined,
     specs: {} as Specification,
     setColor: (color: number) => set({ color }),
-    setVersion: (version: number) => set({ version }),
-    setDetails: (details: ProductDetail[]) => set({ details: details }),
+    setDetails: (details: ProductDetail) => set({ details: details }),
     setSpecs: (specs: Specification) => set({ specs }),
-    fetch: (name: string) => async () => {
-        const resp = await ProductService.searchProductDetails(name);
-        if (resp.data != undefined) {
-            set({ details: resp.data });
-        }
+    fetchProduct: async (id: number) => {
+        const resp = await ProductService.getProductDetails(id);
+        return set((state) => {
+            return {
+                details: resp ? resp.data : undefined
+            }
+        })
     }
 }))
 
 interface ProductsInStore {
-    body: ProductType[];
-    fetch(name: string): () => Promise<void>;
-    setBody: (body: ProductType[]) => void;
+    product: ProductType[];
+    fetchProduct: (name: string) => Promise<void>;
+    setProduct: (body: ProductType[]) => void;
 }
 
-export const useProductsInStore = create<ProductsInStore>((set) => ({
-    body: [],
-    setBody: (body: ProductType[]) => set({ body }),
-    fetch: (name: string) => async () => {
+export const useProductsInStore = create<ProductsInStore>()((set): ProductsInStore => ({
+    product: [],
+    setProduct: (body: ProductType[]) => set({ product: body }),
+    fetchProduct: async (name: string) => {
+        console.log('name', name);
         const resp = await ProductService.getProductByType(name);
-        if (resp.data != undefined) {
-            set({ body: resp.data });
-        }
+        return set((state) => {
+            return {
+                product: resp ? resp.data : []
+            }
+        })
     }
 }))

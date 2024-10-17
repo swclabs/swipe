@@ -1,9 +1,8 @@
 'use client';
 import { Image } from "@nextui-org/react";
 import './style.css'
-import watch from "@/faker/watch";
-import { Link, Button } from "@nextui-org/react";
 import airpod from "@/faker/airpod";
+import { Button } from "../ui/button";
 
 export default function Product() {
   return (
@@ -43,7 +42,7 @@ export default function Product() {
                   {value.price}
                 </div>
                 <div className="w-full flex-1 relative">
-                  <Button color="primary" className=" w-full absolute bottom-0 left-0">Mua</Button>
+                  <Button className=" w-full absolute bottom-0 left-0">Mua</Button>
                 </div>
               </div>
             </div>
