@@ -1,5 +1,5 @@
 'use client';
-import { ShopAccessoryCarousel } from "@/components/shop/carousel";
+import ShopDeviceCarousel from "@/components/shop/carousel";
 import { Separator } from "@/components/ui/separator";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
@@ -13,28 +13,26 @@ import Comment from "@/components/shop/comment";
 export default function Page({ params }: { params: { slug: string } }) {
   const {
     details,
-    version,
     color,
     specs,
-    setVersion,
     setDetails,
     setColor,
     setSpecs,
   } = useProducts()
   useEffect(() => {
-    setDetails(watchDetail)
+    setDetails(watchDetail[0])
   }, [])
   return (
     <div className=" container w-[87%] m-auto">
       <div className="flex container flex-col md:flex-row pt-14 relative max-h-max my-5">
         <div className="container md:pr-14 w-full md:w-2/3">
           <div className=" w-full sticky top-[100px]">
-            <ShopAccessoryCarousel product={details}
-              version={version}
-              color={color}
-              setColor={setColor}
-              setVersion={setVersion}
-            />
+            {details &&
+              <ShopDeviceCarousel
+                product={details}
+                color={color}
+                setColor={setColor}
+              />}
           </div>
         </div>
         <div className=" md:w-1/3 p-5 md:py-0">

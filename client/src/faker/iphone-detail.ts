@@ -4,7 +4,7 @@ const iphoneDetail: ProductDetail[] = [
     {
         name: "iPhone 15 Pro",
         screen: "6.1 inch",
-        img: [
+        image: [
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-1-202309.jpg",
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-2-202309.jpg",
             "/img/shop/iphone-15-pro/iphone-15-pro-finish-select.jpg",
@@ -147,7 +147,7 @@ const iphoneDetail: ProductDetail[] = [
     {
         name: "iPhone 15 Pro Max",
         screen: "6.7 inch",
-        img: [
+        image: [
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-1-202309.jpg",
             "/img/shop/iphone-15-pro/unselect/iphone-15-pro-model-unselect-gallery-2-202309.jpg",
             "/img/shop/iphone-15-pro/iphone-15-pro-finish-select.jpg",

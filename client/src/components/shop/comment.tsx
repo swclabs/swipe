@@ -70,7 +70,7 @@ export default function Comment() {
         <Button className=" flex justify-center items-center gap-2"><Send /> Gửi</Button>
       </div>
       <ScrollArea className=" max-h-max">
-        <div className=" flex flex-col gap-y-4">
+        <div className=" flex flex-col gap-y-1">
           <Block level={0} />
           <Block level={1} />
           <Block level={1} />

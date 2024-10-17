@@ -1,7 +1,7 @@
-import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiTruck } from "react-icons/fi";
+import { Button } from "../ui/button";
 
 interface product {
   name: string;
@@ -94,7 +94,7 @@ const card = (product: product[]) => {
                   height={200}
                 />
               </div>
-              <div className="w-full flex-1 flex flex-col gap-y-3">
+              <div className="w-[90%] flex-1 absolute bottom-3 gap-y-3 flex flex-col">
                 <div className="h-full">
                   <h4 className="font-semibold text-lg text-left">{value.price}</h4>
                 </div>

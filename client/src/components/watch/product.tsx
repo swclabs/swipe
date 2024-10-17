@@ -2,7 +2,7 @@
 import { Image } from "@nextui-org/react";
 import './style.css'
 import watch from "@/faker/watch";
-import { Link, Button } from "@nextui-org/react";
+import { Button } from "../ui/button";
 
 export default function Product() {
   return (
@@ -38,7 +38,7 @@ export default function Product() {
                     src={value.image}
                   />
                 </div>
-                <div className="pt-4 flex-1 text-sm text-left">
+                <div className="pt-4 flex-1 text-sm text-left font-semibold">
                   {value.price}
                 </div>
                 <div className="w-full flex-1 relative">
