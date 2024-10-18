@@ -19,11 +19,11 @@ export default function Version({ product }: IVersionProps) {
           className={`border-[1.5px] rounded-xl mt-5 h-[100px] w-full text-left`}
         >
           <div className='flex justify-between p-4'>
-            <div className=' w-2/5 flex flex-col items-start justify-center'>
+            <div className=' w-3/5 flex flex-col items-start justify-center'>
               <div className=' font-semibold'>{product.name}</div>
               <div className=' text-xs'>Màn hình {product.screen}</div>
             </div>
-            <div className=' w-2/5 text-xs text-right'>
+            <div className='text-xs text-left items-center flex'>
               Từ {product.color[0]?.specs && product.color[0].specs[0].price}
             </div>
           </div>

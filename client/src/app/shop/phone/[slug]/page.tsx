@@ -6,7 +6,7 @@ import SpecSSD from "@/components/shop/spec-ssd";
 import Version from "@/components/shop/version";
 import iphoneDetail from "@/faker/iphone-detail";
 import { useProducts } from "@/state/products";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect } from "react";
 import AddToCart from "@/components/shop/add-to-cart";
 import Comment from "@/components/shop/comment";
 
@@ -22,7 +22,7 @@ export default function Page({ params }: { params: { slug: number } }) {
   } = useProducts()
 
   useEffect(() => {
-    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1 })
     fetchProduct(params.slug)
   }, [])
 

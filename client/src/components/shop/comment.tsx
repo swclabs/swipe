@@ -1,9 +1,9 @@
 import { ArrowDown, ArrowUp, ChevronDown, Reply, Send } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import moment from 'moment';
-import { Button } from "../ui/button";
-import { ScrollArea } from "../ui/scroll-area";
-import { Textarea } from "../ui/textarea";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Textarea } from "@/components/ui/textarea";
 
 const Level = ({ level }: { level: number }) => {
   return (

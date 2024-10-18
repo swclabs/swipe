@@ -26,6 +26,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -45,6 +46,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -52,6 +54,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -59,6 +62,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -66,6 +70,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -85,6 +90,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -92,6 +98,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -99,6 +106,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -106,6 +114,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -125,6 +134,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -132,6 +142,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -139,6 +150,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -169,6 +181,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -176,6 +189,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -183,6 +197,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -190,6 +205,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -209,6 +225,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -216,6 +233,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -223,6 +241,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -230,6 +249,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -249,6 +269,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -256,6 +277,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -263,6 +285,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -270,6 +293,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -289,6 +313,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -296,6 +321,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -303,6 +329,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -310,6 +337,7 @@ const iphoneDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },

@@ -7,7 +7,6 @@ const ipadDetail: ProductDetail[] = [
         image: [
             "/shop/ipad/ipad-pro-model-select-gallery-1-202405.webp",
             "/shop/ipad/ipad-pro-model-select-gallery-2-202405.webp",
-
         ],
         color: [
             {
@@ -25,6 +24,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 1
                     },
                     {
                         ram: "8GB",
@@ -32,6 +32,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 2
                     },
                     {
                         ram: "16GB",
@@ -39,6 +40,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 3
                     },
                     {
                         ram: "16GB",
@@ -46,6 +48,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 4
                     },
                 ]
             },
@@ -64,6 +67,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 5
                     },
                     {
                         ram: "8GB",
@@ -71,6 +75,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 6
                     },
                     {
                         ram: "16GB",
@@ -78,6 +83,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 7
                     },
                     {
                         ram: "16GB",
@@ -85,6 +91,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 8
                     },
                 ]
             },
@@ -115,6 +122,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 9
                     },
                     {
                         ram: "8GB",
@@ -122,6 +130,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -129,6 +138,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -136,6 +146,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -155,6 +166,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -162,6 +174,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -169,6 +182,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -176,6 +190,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -195,6 +210,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -202,6 +218,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -209,6 +226,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -216,6 +234,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },
@@ -235,6 +254,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "28.999.000đ hoặc 1.181.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "8GB",
@@ -242,6 +262,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "31.999.000đ hoặc 1.303.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -249,6 +270,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 37.999.000đ hoặc 1.547.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                     {
                         ram: "16GB",
@@ -256,6 +278,7 @@ const ipadDetail: ProductDetail[] = [
                         price: "Tổng cộng 43.999.000đ hoặc 1.791.000đ/tháng trong 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 10
                     },
                 ]
             },

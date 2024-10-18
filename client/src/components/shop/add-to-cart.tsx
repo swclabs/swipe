@@ -1,7 +1,7 @@
 import { ProductDetail, Specification } from "@/types/products";
 
 import { motion } from "framer-motion"
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 interface IStorageProps {
   product: ProductDetail;
@@ -11,6 +11,11 @@ interface IStorageProps {
   setSpecs: (specs: Specification) => void;
 }
 export default function AddToCart({ product, color, specs, setSpecs }: IStorageProps) {
+
+  const addToCart = () => {
+    console.log("Added to cart");
+  }
+
   return (
     <>
       {
@@ -35,7 +40,9 @@ export default function AddToCart({ product, color, specs, setSpecs }: IStorageP
                   <div className=" text-sm">Còn hàng</div>
                   <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
 
-                  <Button className=" w-full">Thêm vào giỏ hàng</Button>
+                  <Button className=" w-full" onClick={() => console.log(specs)}>
+                    Thêm vào giỏ hàng
+                  </Button>
                 </div>
               </div>
             </div>
@@ -60,7 +67,9 @@ export default function AddToCart({ product, color, specs, setSpecs }: IStorageP
                   <div className=" text-sm">Còn hàng</div>
                   <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
 
-                  <Button disabled className=" w-full">Thêm vào giỏ hàng</Button>
+                  <Button className=" w-full" onClick={() => console.log(specs)} disabled={specs.ssd === "" ? true : false}>
+                    Thêm vào giỏ hàng
+                  </Button>
                 </div>
               </div>
             </div>
@@ -129,7 +138,9 @@ export function AddWatchToCart({ product, color, specs, setSpecs }: IConnectionP
                   <div className=" text-sm">Còn hàng</div>
                   <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
 
-                  <Button disabled className=" w-full">Thêm vào giỏ hàng</Button>
+                  <Button disabled className=" w-full" onClick={() => console.log(specs)}>
+                    Thêm vào giỏ hàng
+                  </Button>
                 </div>
               </div>
             </div>

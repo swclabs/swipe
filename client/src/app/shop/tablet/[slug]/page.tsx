@@ -23,7 +23,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
 
   useEffect(() => {
-    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1 })
     setDetails(ipadDetail[0])
   }, [])
   console.log(details)

@@ -57,9 +57,15 @@ export async function logout() {
 }
 
 export async function getSession() {
-    const session = cookies().get("session")?.value;
-    if (!session) return null;
-    return await decrypt(session);
+    try {
+        const session = cookies().get("session")?.value;
+        if (!session) return null;
+        return await decrypt(session);
+    }
+    catch (e) {
+        // console.error("getSession failed", e);
+        return null;
+    }
 }
 
 export async function updateSession(request: NextRequest) {
@@ -67,14 +73,20 @@ export async function updateSession(request: NextRequest) {
     if (!session) return;
     // console.log("Session", session);
     // Refresh the session so it doesn't expire
-    const parsed = await decrypt(session);
-    parsed.expires = new Date(Date.now() + 2 * 3600 * 1000);
-    const res = NextResponse.next();
-    res.cookies.set({
-        name: "session",
-        value: await encrypt(parsed),
-        httpOnly: true,
-        expires: parsed.expires,
-    });
-    return res;
+    try {
+        const parsed = await decrypt(session);
+        parsed.expires = new Date(Date.now() + 2 * 3600 * 1000);
+        const res = NextResponse.next();
+        res.cookies.set({
+            name: "session",
+            value: await encrypt(parsed),
+            httpOnly: true,
+            expires: parsed.expires,
+        });
+        return res;
+    }
+    catch (e) {
+        console.error("updateSession failed", e);
+        // cookies().set("session", "", { expires: new Date(0) });
+    }
 }

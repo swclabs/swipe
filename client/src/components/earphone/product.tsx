@@ -2,7 +2,9 @@
 import { Image } from "@nextui-org/react";
 import './style.css'
 import airpod from "@/faker/airpod";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { FiTruck } from "react-icons/fi";
 
 export default function Product() {
   return (
@@ -38,11 +40,18 @@ export default function Product() {
                     src={value.image}
                   />
                 </div>
-                <div className=" flex-1 pt-4 text-sm">
-                  {value.price}
-                </div>
-                <div className="w-full flex-1 relative">
-                  <Button className=" w-full absolute bottom-0 left-0">Mua</Button>
+                <div className=" flex-1" />
+                <div className="w-[90%] flex-1 absolute bottom-3 flex flex-col gap-y-2">
+                  <div className="h-full">
+                    <h4 className="font-semibold text-lg text-left">{value.price}</h4>
+                  </div>
+                  <Link href={"shop/earphone/" + value.id.toString()}>
+                    <Button color="primary" className=" w-full">Mua</Button>
+                  </Link>
+                  <div className=" flex items-center pt-4">
+                    <FiTruck />
+                    <p className=" pl-2 text-left text-xs">Đặt hàng hôm nay, giao hàng đến Hồ Chí Minh</p>
+                  </div>
                 </div>
               </div>
             </div>

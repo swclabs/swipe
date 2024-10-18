@@ -2,7 +2,7 @@
 import iphone from "@/faker/iphone";;
 import Image from "next/image";
 import { accessory_iphone } from "@/faker/accessory-ip";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 
 export default function Accessory() {

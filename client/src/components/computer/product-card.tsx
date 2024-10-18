@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiTruck } from "react-icons/fi";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 interface product {
   name: string;
@@ -98,7 +98,7 @@ const card = (product: product[]) => {
                 <div className="h-full">
                   <h4 className="font-semibold text-lg text-left">{value.price}</h4>
                 </div>
-                <Link href={"/shop/computer/laptop/" + value.name.toLowerCase().replaceAll(" ", "-")}>
+                <Link href={"/shop/computer/" + value.name.toLowerCase().replaceAll(" ", "-")}>
                   <Button color="primary" className=" w-full">Mua</Button>
                 </Link>
                 <div className=" flex items-center pt-4">

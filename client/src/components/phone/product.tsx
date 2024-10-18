@@ -4,8 +4,8 @@ import iphone from "@/faker/iphone";
 import Link from "next/link";
 import { FiTruck } from "react-icons/fi";
 import Image from "next/image";
-import { Badge } from "../ui/badge";
-import { Button } from '../ui/button';
+import { Badge } from "@/components/ui/badge";
+import { Button } from '@/components/ui/button';
 import { useProductsInStore } from '@/state/products';
 import { useEffect } from 'react';
 
