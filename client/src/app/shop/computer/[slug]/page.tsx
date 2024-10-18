@@ -22,7 +22,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   } = useProducts()
 
   useEffect(() => {
-    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1 })
     setDetails(laptop[0])
   }, [])
 

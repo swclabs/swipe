@@ -4,7 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { TbCurrencyDong } from "react-icons/tb";
 import { RiBox3Line } from "react-icons/ri";
 import { CiCreditCard1 } from "react-icons/ci";
-import { Card, Services } from "../ui/service-cards-carousel";
+import { Card, Services } from "@/components/ui/service-cards-carousel";
 
 export default function ServiceCarousel() {
   const service = [

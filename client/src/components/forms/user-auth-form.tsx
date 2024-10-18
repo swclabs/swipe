@@ -10,13 +10,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/hooks/use-toast";
-import { login } from "@/lib/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { ToastAction } from "../ui/toast";
+import { ToastAction } from "@/components/ui/toast";
 import { LoaderCircle } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
@@ -46,7 +45,7 @@ export default function UserAuthForm() {
     const resp = await signIn('credentials', {
       email: data.email,
       password: data.pwd,
-      redirect: false,
+      redirect: true,
       callbackUrl: callbackUrl ?? '/'
     });
     console.log(resp);

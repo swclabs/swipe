@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { iphone_carousel } from "@/faker/iphone-carousel";
 import { ProductCarouselData } from "@/types/carousel";
-import { Card, ProductCarousel } from "../ui/product-cards-carousel";
+import { Card, ProductCarousel } from "@/components/ui/product-cards-carousel";
 
 export function ProductCardCarousel({ carousel }: { carousel: ProductCarouselData }) {
 

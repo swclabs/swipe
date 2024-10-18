@@ -31,7 +31,7 @@ export default function ConnectionDetail({ product, color, specs, setSpecs }: IS
                 <button
                   className={`container ${specs.connection === value.connection ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                   key={index}
-                  onClick={() => setSpecs({ connection: value.connection, desc: value.desc, price: value.price, ram: "", ssd: "" })}
+                  onClick={() => setSpecs({ connection: value.connection, desc: value.desc, price: value.price, ram: "", ssd: "", inventory_id: value.inventory_id })}
                 >
                   <div className='flex justify-between p-4'>
                     <div className=' w-2/5 flex flex-col items-start justify-center'>
@@ -66,7 +66,7 @@ export default function ConnectionDetail({ product, color, specs, setSpecs }: IS
                 <button
                   className={`container ${specs.connection === value.connection ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                   key={index}
-                  onClick={() => setSpecs({ connection: value.connection, desc: value.desc, price: value.price, ram: "", ssd: "" })}
+                  onClick={() => setSpecs({ connection: value.connection, desc: value.desc, price: value.price, ram: "", ssd: "", inventory_id: value.inventory_id })}
                 >
                   <div className='flex justify-between p-4'>
                     <div className=' w-2/5 flex flex-col items-start justify-center'>

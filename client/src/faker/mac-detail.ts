@@ -19,6 +19,7 @@ export const laptop: ProductDetail[] = [
                         price: "32.999.000đ hoặc 1.344.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -26,6 +27,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -33,6 +35,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -40,6 +43,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -47,6 +51,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -54,6 +59,7 @@ export const laptop: ProductDetail[] = [
                         price: "52.999.000đ hoặc 2.158.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -61,6 +67,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -68,6 +75,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -75,6 +83,7 @@ export const laptop: ProductDetail[] = [
                         price: "57.999.000đ hoặc 2.362.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                 ]
             },
@@ -89,6 +98,7 @@ export const laptop: ProductDetail[] = [
                         price: "32.999.000đ hoặc 1.344.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -96,6 +106,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -103,6 +114,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -110,6 +122,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -117,6 +130,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -124,6 +138,7 @@ export const laptop: ProductDetail[] = [
                         price: "52.999.000đ hoặc 2.158.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -131,6 +146,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -138,6 +154,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -145,6 +162,7 @@ export const laptop: ProductDetail[] = [
                         price: "57.999.000đ hoặc 2.362.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                 ]
             },
@@ -159,6 +177,7 @@ export const laptop: ProductDetail[] = [
                         price: "32.999.000đ hoặc 1.344.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -166,6 +185,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -173,6 +193,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -180,6 +201,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -187,6 +209,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -194,6 +217,7 @@ export const laptop: ProductDetail[] = [
                         price: "52.999.000đ hoặc 2.158.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -201,6 +225,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -208,6 +233,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -215,6 +241,7 @@ export const laptop: ProductDetail[] = [
                         price: "57.999.000đ hoặc 2.362.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                 ]
             },
@@ -229,6 +256,7 @@ export const laptop: ProductDetail[] = [
                         price: "32.999.000đ hoặc 1.344.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -236,6 +264,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "8GB",
@@ -243,6 +272,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -250,6 +280,7 @@ export const laptop: ProductDetail[] = [
                         price: "37.999.000đ hoặc 1.547.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -257,6 +288,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "16GB",
@@ -264,6 +296,7 @@ export const laptop: ProductDetail[] = [
                         price: "52.999.000đ hoặc 2.158.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -271,6 +304,7 @@ export const laptop: ProductDetail[] = [
                         price: "42.999.000đ hoặc 1.751.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -278,6 +312,7 @@ export const laptop: ProductDetail[] = [
                         price: "47.999.000đ hoặc 1.954.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                     {
                         ram: "24GB",
@@ -285,6 +320,7 @@ export const laptop: ProductDetail[] = [
                         price: "57.999.000đ hoặc 2.362.000đ/tháng mỗi tháng cho 24 tháng",
                         desc: "",
                         connection: "",
+                        inventory_id: 0
                     },
                 ]
             },

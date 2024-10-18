@@ -1,12 +1,9 @@
 "use client"
 import React from 'react';
-import Accessories from '@/components/computer/accessories';
 import Welcome from '@/components/common/welcome-section';
 import ComputerNavbar from '@/components/computer/navbar';
 import { motion } from "framer-motion"
 import { desktop, display, laptop } from '@/faker/mac';
-import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
-import { product_carousel } from '@/faker/accessory-carousel';
 import Accessory from '@/components/accessories';
 import { ProductDesktopCard, ProductDisplayCard, ProductLaptopCard } from '@/components/computer/product-card';
 

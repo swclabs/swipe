@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import cartData from "@/faker/cart";
-import { Button } from "@nextui-org/react";
-
+import { cartData } from "@/faker/cart";
+import { Button } from "@/components/ui/button"
 
 import { FiUser, FiLogOut } from "react-icons/fi";
 import { FiBookmark } from "react-icons/fi";
 import { FiBox } from "react-icons/fi";
 import { FiSettings } from "react-icons/fi";
-import { useEffect, useState } from "react";
 import { SessionProviderProps, signOut } from "next-auth/react";
+import { Badge } from "@/components/ui/badge";
+import { Trash } from "lucide-react";
+import { formatNumber } from "@/utils/fmt";
 
 
 
@@ -93,20 +94,37 @@ export default function Products({ session }: { session: SessionProviderProps['s
       <div className=" flex justify-between sticky top-[0px] bg-gray-50">
         <p className=' font-semibold text-xl'>Giỏ hàng</p>
         <Link href={`/shop/bag`}>
-          <Button color="primary" radius="full">Xem Giỏ hàng</Button>
+          <Button >Xem Giỏ hàng</Button>
         </Link>
       </div>
       <div className=' pt-5 text-sm'>
-        {cartData.map((value, index) => (
-          <div className=" flex p-3" key={index}>
-            <Image
-              alt="img"
-              src={value.img}
-              width={70}
-              height={70}
-            />
-            <div className=" flex items-center pl-5 font-semibold text-xs">
-              <p>{`${value.name} - ${value.title}`}</p>
+        {cartData.products.map((value, index) => (
+          <div className="flex p-3 justify-between" key={index}>
+            <div className=" flex items-center">
+              <Image
+                alt="img"
+                src={value.image}
+                width={50}
+                height={50}
+              />
+              <div className=" flex flex-col pl-5 text-xs gap-y-1 items-start">
+                <p className="font-semibold ">
+                  {`${value.name} - ${value.color}`}
+                </p>
+                <div className="flex items-center gap-2 font-semibold">
+                  {`x${value.quantity}`}
+                  {value.specs.ram !== "" && <Badge variant="outline">{value.specs.ram}</Badge>}
+                  {value.specs.ssd !== "" && <Badge variant="outline">{value.specs.ssd}</Badge>}
+                  {value.specs.connection !== "" && <Badge variant="outline">{value.specs.connection}</Badge>}
+                  {value.specs.desc !== "" && <Badge variant="outline">{value.specs.desc}</Badge>}
+                </div>
+                <p className="font-semibold">{`${formatNumber(parseInt(value.price))}`}đ</p>
+              </div>
+            </div>
+            <div className="m-1">
+              <button >
+                <Trash className=" w-4 text-red-600" />
+              </button>
             </div>
           </div>
         ))}

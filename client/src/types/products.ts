@@ -1,4 +1,5 @@
 export interface Specification {
+    inventory_id: number;
     price: string;
     ssd: string;
     ram: string;
@@ -51,4 +52,23 @@ export interface AccessoryShopCard {
     color: {
         img: string;
     }[];
+}
+
+export interface Cart {
+    name: string;
+    cart_id: number;
+    inventory_id: number;
+    product_id: number;
+    quantity: number;
+    color: string;
+    price: string;
+    currency_code: string;
+    image: string;
+    specs: Specification;
+    category: string;
+}
+
+export interface Carts {
+    user_id: number;
+    products: Cart[];
 }

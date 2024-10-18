@@ -2,8 +2,8 @@ import React from 'react';
 import { ProductDetail, Specification } from "@/types/products";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
-import { Badge } from '../ui/badge';
-import { Button } from '../ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -47,7 +47,7 @@ export default function SpecMemory({ product, color, specs, setSpecs }: IStorage
                   variant="outline"
                   className={cn("border-[1.5px]", specs.ram === value ? "border-blue-500" : "border-gray-400")}
                   key={index}
-                  onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "" })}
+                  onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "", inventory_id: -1 })}
                   disabled={color === -1 ? true : false}
                 >
                   {value}
@@ -58,7 +58,7 @@ export default function SpecMemory({ product, color, specs, setSpecs }: IStorage
                   variant="outline"
                   className={cn("border-[1.5px]", specs.ram === value ? "border-blue-500" : "border-gray-400")}
                   key={index}
-                  onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "" })}
+                  onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "", inventory_id: -1 })}
                   disabled={color === -1 ? true : false}
                 >
                   {value}
