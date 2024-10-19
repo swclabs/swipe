@@ -2,6 +2,7 @@
 import React from "react";
 // import { Input } from "@nextui-org/react";
 import { User } from "lucide-react";
+import { Button } from "@nextui-org/react";
 
 export default function AccountPage() {
 
@@ -60,6 +61,11 @@ export default function AccountPage() {
                             <div className="font-semibold">
                                 {user.phone_number}
                             </div>
+                        </div>
+                        <div className="flex flex-col justify-between">
+                            <Button color="primary">
+                                Edit Profile
+                            </Button>
                         </div>
                         {/* <p className=" font-semibold"> Last name : {user.last_name}</p>
                         <p className=" font-semibold">Email: {user.email}</p>
