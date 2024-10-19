@@ -1,18 +1,18 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/common/banner"
-import News from '@/components/phone/news';
-import Accessories from '@/components/phone/accessories';
-import Product from '@/components/accessories/product';
-import Welcome from '@/components/common/welcome-section';
+import Banner from "@/components/layout/banner"
+import News from '@/components/content/phone/news';
+import Accessories from '@/components/content/phone/accessories';
+import Product from '@/components/content/accessories/product';
+import Welcome from '@/components/layout/welcome-section';
 import posts from '@/faker/posts';
 import { Image } from '@nextui-org/react';
-import AccessoryIphone from '@/components/accessories/iphone-accessories';
-import AccessoryWatch from '@/components/accessories/watch-accessories';
-import AccessoryIpad from '@/components/accessories/ipad-accessories';
-import AccessoryMac from '@/components/accessories/mac-accessories';
-import AccessoryAirtag from '@/components/accessories/airtag-accessories';
-import ShortCut from '@/components/common/shortcut';
+import AccessoryIphone from '@/components/content/accessories/iphone-accessories';
+import AccessoryWatch from '@/components/content/accessories/watch-accessories';
+import AccessoryIpad from '@/components/content/accessories/ipad-accessories';
+import AccessoryMac from '@/components/content/accessories/mac-accessories';
+import AccessoryAirtag from '@/components/content/accessories/airtag-accessories';
+import ShortCut from '@/components/layout/shortcut';
 
 function AccessoriesPage() {
   return (

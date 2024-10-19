@@ -1,10 +1,10 @@
 'use client'
 
-import Banner from "@/components/common/banner"
-import ShortCut from "@/components/common/shortcut"
+import Banner from "@/components/layout/banner"
+import ShortCut from "@/components/layout/shortcut"
 import Link from "next/link"
 import React from "react"
-import HomePageCarousel, { HomePageBannerCarousel } from "@/components/home/carousel"
+import HomePageCarousel, { HomePageBannerCarousel } from "@/components/content/home/carousel"
 import Image from "next/image"
 
 export default function Home() {

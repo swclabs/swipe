@@ -29,9 +29,10 @@ function BagPage() {
 
           </div>
 
-          <div className="flex flex-col justify-center items-center mb-4 sticky">
+          <div className="flex flex-col justify-center items-center mb-4 sticky gap-y-3">
             <p className="text-xl sm:text-4xl font-semibold">Tổng giá trị giỏ hàng của bạn là {formatNumber(totalPrice)}</p>
-            <p className='text-base mt-4'>Vận chuyển miễn phí đối với mọi đơn hàng.</p>
+            <p className='text-base'>Vận chuyển miễn phí đối với mọi đơn hàng.</p>
+            <div className='text-sm'>Giao hàng đến </div>
             <Link href="#" className='w-72 mt-6 mb-12'>
               <Button color="primary" className="w-full">Thanh toán</Button>
             </Link>

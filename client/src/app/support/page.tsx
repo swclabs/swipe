@@ -1,8 +1,8 @@
 "use client"
 import React from 'react';
 import { Image } from '@nextui-org/react';
-import ProductBar from '@/components/support/product-bar';
-import Annoucement from '@/components/support/annoucement';
+import ProductBar from '@/components/content/support/product-bar';
+import Annoucement from '@/components/content/support/annoucement';
 
 function SupportPage() {
     return (

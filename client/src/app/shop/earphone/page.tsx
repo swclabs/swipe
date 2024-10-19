@@ -1,9 +1,9 @@
 "use client"
 import React from 'react';
-import Product from '@/components/earphone/product';
-import Welcome from '@/components/common/welcome-section';
-import {motion} from 'framer-motion';
-import ProductAirpodTypes from '@/components/earphone/product-types';
+import Product from '@/components/content/earphone/product';
+import Welcome from '@/components/layout/welcome-section';
+import { motion } from 'framer-motion';
+import ProductAirpodTypes from '@/components/content/earphone/product-types';
 
 
 export default function Page() {

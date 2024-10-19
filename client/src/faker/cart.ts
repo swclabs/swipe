@@ -1,4 +1,5 @@
-import { Carts } from "@/types/products";
+import { Carts } from "@/types/purchase";
+
 
 export const cartData: Carts = {
     user_id: 1,
