@@ -1,14 +1,14 @@
 'use client'
 import './style.css'
-import Banner from "@/components/common/banner"
+import Banner from "@/components/layout/banner"
 import React from "react"
-import ProductNavbar from "@/components/shop/navbar";
+import ProductNavbar from "@/components/content/shop/navbar";
 import { motion } from "framer-motion"
-import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
+import { ShopCardsCarousel } from '@/components/content/shop/cards-carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
-import ShortCut from '@/components/common/shortcut';;
-import ServiceCarousel from '@/components/shop/service';
-import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
+import ShortCut from '@/components/layout/shortcut';;
+import ServiceCarousel from '@/components/content/shop/service';
+import { ProductCardCarousel } from '@/components/content/shop/accessory-carousel';
 import { product_carousel } from '@/faker/accessory-carousel';
 
 export default function Store() {

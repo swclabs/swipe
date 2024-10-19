@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { Toaster } from "@/components/ui/toaster";
 import { SessionProvider, SessionProviderProps } from 'next-auth/react';
 import NextTopLoader from "nextjs-toploader";
-import NavbarComponent from "@/components/common/navbar";
-import FooterComponent from "@/components/common/footer";
+import NavbarComponent from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 
 const Providers = ({
   session,
@@ -46,7 +46,7 @@ const Providers = ({
             <NavbarComponent session={session} />
             {children}
             <Toaster />
-            <FooterComponent />
+            <Footer />
           </SessionProvider>
         </motion.div>
       </AnimatePresence>

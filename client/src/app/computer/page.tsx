@@ -1,12 +1,12 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/common/banner"
-import Welcome from '@/components/common/welcome-section';
-import { ComputerCardsCarousel } from '@/components/computer/cards-carousel';
+import Banner from "@/components/layout/banner"
+import Welcome from '@/components/layout/welcome-section';
+import { ComputerCardsCarousel } from '@/components/content/computer/cards-carousel';
 import { mac_carousel, mac_carousel_1, mac_carousel_2, mac_carousel_3 } from '@/faker/mac_carousel';
-import ShortCut from '@/components/common/shortcut';
+import ShortCut from '@/components/layout/shortcut';
 import { desktop, display, laptop } from '@/faker/mac';
-import { ProductDesktopCard, ProductDisplayCard, ProductLaptopCard } from '@/components/computer/product-card';
+import { ProductDesktopCard, ProductDisplayCard, ProductLaptopCard } from '@/components/content/computer/product-card';
 
 function ProductPage() {
   return (
