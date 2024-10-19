@@ -9,7 +9,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useState } from "react";
@@ -19,6 +18,7 @@ import { ToastAction } from "@/components/ui/toast";
 import { LoaderCircle } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Enter a valid email address" }),
@@ -41,25 +41,24 @@ export default function UserAuthForm() {
     defaultValues,
   });
   const onSubmit = async (data: UserFormValue) => {
-    // const ok = await login(data.email, data.pwd);
     const resp = await signIn('credentials', {
       email: data.email,
       password: data.pwd,
-      redirect: true,
+      redirect: false,
       callbackUrl: callbackUrl ?? '/'
     });
     console.log(resp);
     setLoading(true);
-    // if (!ok) {
-    //   toast({
-    //     variant: "destructive",
-    //     title: "Uh oh! Something went wrong.",
-    //     description: "There was a problem with your request.",
-    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //   })
-    //   setLoading(false);
-    // }
-    // else window.location.href = "/"
+    if (!resp || resp.error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      })
+      setLoading(false);
+    }
+    else window.location.href = "/"
   };
   const onClickGoogle = async () => {
     await signIn("google", { redirect: true, callbackUrl: callbackUrl ?? '/' });

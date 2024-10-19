@@ -12,6 +12,8 @@ import { SessionProviderProps, signOut } from "next-auth/react";
 import { Badge } from "@/components/ui/badge";
 import { Trash } from "lucide-react";
 import { formatNumber } from "@/utils/fmt";
+import { useEffect } from "react";
+import { useCart } from "@/state/purchase";
 
 
 
@@ -57,27 +59,17 @@ function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }
   )
 }
 
-interface Body {
-  user?: {
-    email: string
-  },
-  expires?: string,
-  iat?: number,
-  exp?: number
-}
 
 export default function Products({ session }: { session: SessionProviderProps['session'] }) {
-  // const [data, setData] = useState<Body>({});
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await fetch('/api/auth/session');
-  //     const body = await res.json();
-  //     if (typeof body !== 'object') {
-  //       setData(JSON.parse(body));
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  const {
+    carts,
+    setCart,
+    fetchCart,
+    addToCart
+  } = useCart();
+  useEffect(() => {
+    fetchCart();
+  }, []);
   if (!session) {
     return (
       <div className=' container'>
@@ -98,7 +90,7 @@ export default function Products({ session }: { session: SessionProviderProps['s
         </Link>
       </div>
       <div className=' pt-5 text-sm'>
-        {cartData.products.map((value, index) => (
+        {carts?.products.map((value, index) => (
           <div className="flex p-3 justify-between" key={index}>
             <div className=" flex items-center">
               <Image
