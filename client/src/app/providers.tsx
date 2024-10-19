@@ -27,7 +27,6 @@ const Providers = ({
           <SessionProvider session={session}>
             {children}
           </SessionProvider>
-          <Toaster />
         </AnimatePresence>
       </NextUIProvider>
     );
@@ -35,20 +34,19 @@ const Providers = ({
   return (
     <NextUIProvider>
       <AnimatePresence>
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ delay: 0.25 }}
-        >
-          <NextTopLoader showSpinner={false} />
-          <SessionProvider session={session}>
-            <NavbarComponent session={session} />
-            {children}
-            <Toaster />
-            <Footer />
-          </SessionProvider>
-        </motion.div>
+        > */}
+        <NextTopLoader showSpinner={false} />
+        <SessionProvider session={session}>
+          <NavbarComponent session={session} />
+          {children}
+          <Footer />
+        </SessionProvider>
+        {/* </motion.div> */}
       </AnimatePresence>
     </NextUIProvider>
   );
