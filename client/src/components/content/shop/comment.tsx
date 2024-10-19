@@ -64,7 +64,7 @@ const Block = ({ level }: { level: number }) => {
 export default function Comment() {
 
   return (
-    <div className="bg-gray-50 rounded-md p-2 md:p-10">
+    <div className="bg-gray-50 rounded-md p-2 md:p-10 mb-4">
       <div className=" flex flex-row gap-2 py-5">
         <Textarea placeholder="Type your message here." />
         <Button className=" flex justify-center items-center gap-2"><Send /> Gửi</Button>
