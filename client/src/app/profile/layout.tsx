@@ -21,7 +21,7 @@ export default function UserLayout({ children }: { children: React.ReactNode }) 
                         <h2 className="text-xl font-semibold">Địa chỉ</h2>
                         <p>Quản lý địa chỉ giao hàng của bạn</p>
                     </Link>
-                    <Link className="bg-white p-4 rounded-lg border" href="">
+                    <Link className="bg-white p-4 rounded-lg border" href="/profile/order">
                         <h2 className="text-xl font-semibold">Đơn hàng</h2>
                         <p>Xem lịch sử đơn hàng của bạn</p>
                     </Link>

@@ -75,25 +75,9 @@ export default function AccountPage() {
         }
     ]
 
-    const handleUpload = () => {
-        document.getElementById("image")?.click();
-    }
-
     return (
         <div className="mt-8 w-full bg-white mb-20">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-center w-full bg-gray-100 rounded-lg border p-8 gap-4 md:gap-36">
-                <Table>
-                    <TableHeader>
-                        <TableHeaderRow />
-                    </TableHeader>
-                    <TableBody>
-                        {order.map((order) => (
-                            <TableRow>
-                                <TableCell>{order.delevery_id}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
 
             </div>
         </div >
