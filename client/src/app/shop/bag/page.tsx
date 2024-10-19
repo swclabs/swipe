@@ -3,10 +3,11 @@ import { Link } from '@nextui-org/react';
 import { VscSymbolMethod } from "react-icons/vsc";
 import { cartData } from '@/faker/cart';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { useEffect, useState } from 'react';
 import { formatNumber } from '@/utils/fmt';
+import Image from 'next/image';
+import Delivery from '@/components/content/shop/delivery';
 
 function BagPage() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -33,6 +34,7 @@ function BagPage() {
             <p className="text-xl sm:text-4xl font-semibold">Tổng giá trị giỏ hàng của bạn là {formatNumber(totalPrice)}</p>
             <p className='text-base'>Vận chuyển miễn phí đối với mọi đơn hàng.</p>
             <div className='text-sm'>Giao hàng đến </div>
+            <Delivery />
             <Link href="#" className='w-72 mt-6 mb-12'>
               <Button color="primary" className="w-full">Thanh toán</Button>
             </Link>

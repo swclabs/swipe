@@ -16,9 +16,17 @@ import NavbarItemWatch from './watch';
 import NavbarItemAirPod from './earphone';
 import NavbarItemSupport from './support';
 import { SessionProviderProps } from 'next-auth/react';
+import { useCart } from '@/state/purchase';
 
 export default function NavbarComponent({ session }: { session: SessionProviderProps['session'] }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const {
+    carts,
+    fetchCart
+  } = useCart();
+  React.useEffect(() => {
+    fetchCart()
+  }, [])
 
   const menuItems = [
     "Cửa hàng",
@@ -107,7 +115,7 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
         <NavbarItem>
           <div className='cart-container'>
             <Link color="foreground" href="#">
-              <Badge content={3} color='primary'>
+              <Badge content={session ? carts?.products?.length : 0} color='primary'>
                 <IoBagOutline />
               </Badge>
             </Link>

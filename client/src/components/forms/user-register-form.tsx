@@ -16,8 +16,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { toast } from "../hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/hooks/use-toast";
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -44,6 +44,7 @@ export default function UserRegisterForm() {
   const [validEmail, setValidEmail] = useState(false);
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
   const form = useForm<UserRegisterFormValue>({
     resolver: zodResolver(formSchema),
   });

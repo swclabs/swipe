@@ -1,5 +1,5 @@
 'use client';
-import { AddWatchToCart } from "@/components/content/shop/add-to-cart";
+import AddToCart from "@/components/content/shop/add-to-cart";
 import ShopDeviceCarousel from "@/components/content/shop/carousel";
 import Colors from "@/components/content/shop/colors";
 import Comment from "@/components/content/shop/comment";
@@ -72,7 +72,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
       {
         details &&
-        <AddWatchToCart
+        <AddToCart
           product={details}
           color={color}
           specs={specs}
