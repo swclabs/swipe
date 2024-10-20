@@ -1,12 +1,9 @@
 "use client";
-import Image from "next/image";
-import React from "react";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import { iphone_carousel } from "@/faker/iphone-carousel";
+import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
 import { CarouselData } from "@/types/carousel";
+import Image from "next/image";
 
 export function ShopCardsCarousel({ carousel }: { carousel: CarouselData }) {
-
   const data = carousel.cards.map((card, index) => {
     return {
       category: card.category,
@@ -14,7 +11,7 @@ export function ShopCardsCarousel({ carousel }: { carousel: CarouselData }) {
       src: card.src,
       content: Contents(card.content),
     };
-  })
+  });
 
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
@@ -55,11 +52,11 @@ const Contents = (blocks: Content[]) => {
               className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
             />
           </div>
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};
 
 const DummyContent = () => {
   return (

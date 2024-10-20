@@ -19,7 +19,7 @@ export default async function RootLayout({
 }) {
   const session = await auth();
   return (
-    <html lang="en" className=" scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
         <Providers session={session}>
           <Toaster />
