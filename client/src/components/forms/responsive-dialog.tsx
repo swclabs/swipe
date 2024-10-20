@@ -69,7 +69,7 @@ export const EditDialog = ({
                         <Label htmlFor="name" className="text-left">
                             First Name
                         </Label>
-                        <Input placeholder="Type your message here." className="col-span-3" onChange={(e) => {
+                        <Input placeholder="Type your first name here." className="col-span-3" onChange={(e) => {
 
                         }} />
                     </div>
@@ -77,7 +77,7 @@ export const EditDialog = ({
                         <Label htmlFor="name" className="text-left">
                             Last Name
                         </Label>
-                        <Input placeholder="Type your message here." className="col-span-3" onChange={(e) => {
+                        <Input placeholder="Type your last name here." className="col-span-3" onChange={(e) => {
 
                         }} />
                     </div>
@@ -89,6 +89,7 @@ export const EditDialog = ({
                             id="name"
                             type="text"
                             className="col-span-3"
+                            placeholder="Type your email here."
                             // defaultValue={formik.values.price}
                             onChange={(e) => {
 
@@ -99,7 +100,7 @@ export const EditDialog = ({
                         <Label htmlFor="decripstion" className="text-left">
                             Phone Number
                         </Label>
-                        <Input placeholder="Type your message here." className="col-span-3" onChange={(e) => {
+                        <Input placeholder="Type your phone number here." className="col-span-3" onChange={(e) => {
 
                         }} />
                     </div>
