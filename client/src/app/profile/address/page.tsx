@@ -62,7 +62,7 @@ export default function HistoryPage() {
                 <div className="container mx-auto flex flex-col gap-4">
                     {listAddress.length === 0 ? <div> Chưa có địa chỉ nào </div> :
                         listAddress.map((address) => {
-                            return <div className="flex w-full items-center gap-2 bg-gray-100 p-4 border rounded-lg">
+                            return <div key={address.id} className="flex w-full items-center gap-2 bg-gray-100 p-4 border rounded-lg">
                                 <div>
                                     Image
                                 </div>
