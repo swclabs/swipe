@@ -100,7 +100,7 @@ const order = [
     }
 ]
 
-export default function AccountPage() {
+export default function OrderPage() {
     /*{
         "delevery_id": "<integer>",
         "product": [

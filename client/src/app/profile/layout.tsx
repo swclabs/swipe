@@ -14,10 +14,10 @@ export default function UserLayout({ children }: { children: React.ReactNode }) 
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <Link className="bg-white p-4 rounded-lg border" href="/profile/account">
-                        <h2 className="text-xl font-semibold">Thông tin cá nhân</h2>
-                        <p>Quản lý thông tin cá nhân của bạn</p>
+                        <h2 className="text-xl font-semibold flex justify-center items-center">Thông tin cá nhân</h2>
+                        <p className='flex justify-center items-center'>Quản lý thông tin cá nhân của bạn</p>
                     </Link>
-                    <Link className="bg-white p-4 rounded-lg border" href="">
+                    <Link className="bg-white p-4 rounded-lg border" href="/profile/address">
                         <h2 className="text-xl font-semibold">Địa chỉ</h2>
                         <p>Quản lý địa chỉ giao hàng của bạn</p>
                     </Link>
