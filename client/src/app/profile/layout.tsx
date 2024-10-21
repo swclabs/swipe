@@ -18,12 +18,12 @@ export default function UserLayout({ children }: { children: React.ReactNode }) 
                         <p className='flex justify-center items-center'>Quản lý thông tin cá nhân của bạn</p>
                     </Link>
                     <Link className="bg-white p-4 rounded-lg border" href="/profile/address">
-                        <h2 className="text-xl font-semibold">Địa chỉ</h2>
-                        <p>Quản lý địa chỉ giao hàng của bạn</p>
+                        <h2 className="text-xl font-semibold flex justify-center items-center">Địa chỉ</h2>
+                        <p className='flex justify-center items-center'>Quản lý địa chỉ giao hàng của bạn</p>
                     </Link>
                     <Link className="bg-white p-4 rounded-lg border" href="/profile/order">
-                        <h2 className="text-xl font-semibold">Đơn hàng</h2>
-                        <p>Xem lịch sử đơn hàng của bạn</p>
+                        <h2 className="text-xl font-semibold flex justify-center items-center">Đơn hàng</h2>
+                        <p className='flex justify-center items-center'>Xem lịch sử đơn hàng của bạn</p>
                     </Link>
                 </div>
             </div>

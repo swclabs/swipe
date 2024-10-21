@@ -1,11 +1,9 @@
 "use client"
 import React, { useEffect } from "react";
-// import { Input } from "@nextui-org/react";
-import { User } from "lucide-react";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
-import { EditDialog } from "@/components/forms/responsive-dialog";
-import { list } from "postcss";
+import { MapPin } from 'lucide-react';
+
 
 export default function HistoryPage() {
 
@@ -62,9 +60,10 @@ export default function HistoryPage() {
                 <div className="container mx-auto flex flex-col gap-4">
                     {listAddress.length === 0 ? <div> Chưa có địa chỉ nào </div> :
                         listAddress.map((address) => {
-                            return <div key={address.id} className="flex w-full items-center gap-2 bg-gray-100 p-4 border rounded-lg">
+                            return <div key={address.id} className="flex w-full items-center gap-4 bg-gray-100 p-4 border rounded-lg">
                                 <div>
-                                    Image
+                                    {/* Image */}
+                                    <MapPin size={30} />
                                 </div>
                                 <div className="flex flex-col">
                                     <div>Username</div>
