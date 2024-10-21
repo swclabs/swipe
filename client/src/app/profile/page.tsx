@@ -1,6 +1,4 @@
-
 "use client"
-
 import { useToast } from "@/hooks/use-toast"
 import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/components/ui/toast"
@@ -23,10 +21,10 @@ export function ToastDemo() {
   )
 }
 
-export default function Page() {
+export default function UserPage() {
   return (
     <div className=" h-screen">
       <ToastDemo />
     </div>
-  )
+  );
 }
