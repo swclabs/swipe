@@ -14,7 +14,6 @@ function IphonePage() {
       <Banner />
       <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
       <PhoneCardsCarousel carousel={iphone_carousel} />
-
       <Product />
       <Accessory />
       <ShortCut />

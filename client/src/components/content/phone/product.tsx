@@ -12,7 +12,6 @@ import { useEffect } from 'react';
 
 
 export default function Product() {
-
   const { product, fetchProduct } = useProductsInStore();
   useEffect(() => {
     fetchProduct('phone');

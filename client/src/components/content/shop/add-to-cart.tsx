@@ -1,29 +1,38 @@
 'use client'
-import { ProductDetail, Specification } from "@/types/products";
 import { Button } from "@/components/ui/button";
-import { useCart } from "@/state/purchase";
-import { useState } from "react";
-import { ToastAction } from "@/components/ui/toast";
-import { cn } from "@nextui-org/react";
 import { useToast } from "@/hooks/use-toast";
+import { useCart } from "@/state/purchase";
+import { ProductDetail, Specification } from "@/types/products";
+import { SessionProviderProps } from "next-auth/react";
+import { useState } from "react";
 interface IStorageProps {
   product: ProductDetail;
   color: number;
   specs: Specification;
   setColor: (color: number) => void;
   setSpecs: (specs: Specification) => void;
+  session: SessionProviderProps["session"];
 }
-export default function AddToCart({ product, color, specs, setSpecs }: IStorageProps) {
+export default function AddToCart({ product, color, specs, setSpecs, session }: IStorageProps) {
   const { addToCart } = useCart()
   const { toast } = useToast()
   const [loading, setLoading] = useState(false)
   const handleAddToCart = async (inventory_id: number, quantity: number) => {
     setLoading(true)
-    await addToCart(inventory_id, quantity)
-    toast({
-      title: "Success",
-      description: "Added to cart",
-    })
+    if (session) {
+      await addToCart(inventory_id, quantity)
+      toast({
+        title: "Success",
+        description: "Added to cart",
+      })
+    }
+    else {
+      toast({
+        variant: "destructive",
+        title: "Bạn cần đăng nhập",
+        description: "Đăng nhập để thêm vào giỏ hàng",
+      })
+    }
     setLoading(false)
   }
   return (
@@ -44,7 +53,7 @@ export default function AddToCart({ product, color, specs, setSpecs }: IStorageP
 
           <Button className=" w-full"
             onClick={() => { handleAddToCart(specs.inventory_id, 1) }}
-          // disabled={specs.ssd === "" ? true : false || loading}
+            disabled={specs.ssd === "" ? true : false || loading}
           >
             Thêm vào giỏ hàng
           </Button>

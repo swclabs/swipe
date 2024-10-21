@@ -6,7 +6,7 @@ export default function Welcome({ title, subtitle }: { title: string, subtitle: 
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="flex justify-center">
         <div className=" sm:w-4/5 sm:p-12 py-10">

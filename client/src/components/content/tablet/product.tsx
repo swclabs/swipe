@@ -1,16 +1,20 @@
 'use client';
-import './style.css'
-import iphone from "@/faker/iphone";
-import Link from "next/link";
-import { FiTruck } from "react-icons/fi";
-import ipad from "@/faker/ipad";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { useProductsInStore } from "@/state/products";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
+import { FiTruck } from "react-icons/fi";
+import './style.css';
 
 
 
 export default function Product() {
+  const { product, fetchProduct } = useProductsInStore();
+  useEffect(() => {
+    fetchProduct('tablet');
+  }, [])
   return (
     <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
       <div className="flex justify-center">
@@ -23,7 +27,7 @@ export default function Product() {
           <div className="shrink-0"></div>
         </div>
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 p-2">
-          {ipad.map((value, index) => (
+          {product?.map((value, index) => (
             <div className="container mx-auto w-full bg-gray-100 rounded-2xl relative" key={index}>
               <div className="p-5 flex flex-col justify-center items-center text-center gap-y-4 h-[550px]">
                 <div className=" w-full">

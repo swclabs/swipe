@@ -1,17 +1,11 @@
+import { Button } from "@/components/ui/button";
+import { ProductType } from "@/types/products";
 import Image from "next/image";
 import Link from "next/link";
 import { FiTruck } from "react-icons/fi";
-import { Button } from "@/components/ui/button";
-
-interface product {
-  name: string;
-  price: string;
-  image: string;
-  desc: string;
-}
 
 interface products {
-  product: product[];
+  product: ProductType[];
 }
 
 export function ProductLaptopCard({ product }: products) {
@@ -65,7 +59,7 @@ export function ProductDisplayCard({ product }: products) {
   )
 }
 
-const card = (product: product[]) => {
+const card = (product: ProductType[]) => {
   return (
     <div className=" w-full flex relative snap-x snap-mandatory 2xl:justify-between justify-center" >
       <div className=" sm:w-1/12 shrink-0 snap-center">
@@ -98,7 +92,7 @@ const card = (product: product[]) => {
                 <div className="h-full">
                   <h4 className="font-semibold text-lg text-left">{value.price}</h4>
                 </div>
-                <Link href={"/shop/computer/" + value.name.toLowerCase().replaceAll(" ", "-")}>
+                <Link href={"/shop/computer/" + value.id.toString()}>
                   <Button color="primary" className=" w-full">Mua</Button>
                 </Link>
                 <div className=" flex items-center pt-4">
