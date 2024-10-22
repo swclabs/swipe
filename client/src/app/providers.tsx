@@ -1,32 +1,29 @@
 "use client";
-import { NextUIProvider } from "@nextui-org/react";
-import { motion, AnimatePresence } from "framer-motion"
-import { usePathname } from "next/navigation";
-import { Toaster } from "@/components/ui/toaster";
-import { SessionProvider, SessionProviderProps } from 'next-auth/react';
-import NextTopLoader from "nextjs-toploader";
-import NavbarComponent from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import NavbarComponent from "@/components/layout/navbar";
+import { NextUIProvider } from "@nextui-org/react";
+import { AnimatePresence } from "framer-motion";
+import { SessionProvider, SessionProviderProps } from "next-auth/react";
+import { usePathname } from "next/navigation";
+import NextTopLoader from "nextjs-toploader";
 
 const Providers = ({
   session,
-  children
+  children,
 }: {
-  session: SessionProviderProps['session'];
+  session: SessionProviderProps["session"];
   children: React.ReactNode;
 }) => {
   const pathname = usePathname();
 
   // List of routes that should not use the layout
-  const noLayoutRoutes = ['/auth/sign-up', '/auth'];
+  const noLayoutRoutes = ["/auth/sign-up", "/auth"];
 
   if (noLayoutRoutes.includes(pathname)) {
     return (
       <NextUIProvider>
         <AnimatePresence>
-          <SessionProvider session={session}>
-            {children}
-          </SessionProvider>
+          <SessionProvider session={session}>{children}</SessionProvider>
         </AnimatePresence>
       </NextUIProvider>
     );
@@ -42,9 +39,11 @@ const Providers = ({
         > */}
         <NextTopLoader showSpinner={false} />
         <SessionProvider session={session}>
-          <NavbarComponent session={session} />
-          {children}
-          <Footer />
+          <main className="min-h-screen">
+            <NavbarComponent session={session} />
+            {children}
+            <Footer />
+          </main>
         </SessionProvider>
         {/* </motion.div> */}
       </AnimatePresence>
