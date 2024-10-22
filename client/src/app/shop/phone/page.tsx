@@ -1,17 +1,17 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/common/banner"
-import News from '@/components/phone/news';
-import Accessories from '@/components/phone/accessories';
-import ProductBar from '@/components/phone/product-bar';
-import Product from '@/components/phone/product';
-import Welcome from '@/components/common/welcome-section';
+import Banner from "@/components/layout/banner"
+import News from '@/components/content/phone/news';
+import Accessories from '@/components/content/phone/accessories';
+import ProductBar from '@/components/content/phone/product-bar';
+import Product from '@/components/content/phone/product';
+import Welcome from '@/components/layout/welcome-section';
 import posts from '@/faker/posts';
-import ProductIphoneTypes from '@/components/phone/product-types';
+import ProductIphoneTypes from '@/components/content/phone/product-types';
 import { motion } from "framer-motion"
-import { ProductCardCarousel } from '@/components/shop/accessory-carousel';
+import { ProductCardCarousel } from '@/components/content/shop/accessory-carousel';
 import { product_carousel } from '@/faker/accessory-carousel';
-import Accessory from '@/components/accessories';
+import Accessory from '@/components/content/accessories';
 
 function IphonePage() {
   return (

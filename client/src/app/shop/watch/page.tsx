@@ -1,14 +1,14 @@
 "use client"
 import React from 'react';
-import ShopCard from "@/components/common/shop-card";
-import AccessoryCard from '@/components/common/accesories-card';
+import ShopCard from "@/components/layout/shop-card";
+import AccessoryCard from '@/components/layout/accesories-card';
 import watch from '@/faker/watch';
-import Event from '@/components/shop/event';
+import Event from '@/components/content/shop/event';
 import { WatchAccessories } from '@/faker/watch-accessory';
-import Welcome from '@/components/common/welcome-section';
-import Product from '@/components/watch/product';
+import Welcome from '@/components/layout/welcome-section';
+import Product from '@/components/content/watch/product';
 import { motion } from "framer-motion";
-import ProductWatchTypes from '@/components/watch/product-types';
+import ProductWatchTypes from '@/components/content/watch/product-types';
 
 export default function Page() {
   return (

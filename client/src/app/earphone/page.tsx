@@ -1,12 +1,12 @@
 "use client"
 import React from 'react';
-import Banner from "@/components/common/banner"
-import Product from '@/components/earphone/product';
-import Welcome from '@/components/common/welcome-section';
-import { ShopCardsCarousel } from '@/components/shop/cards-carousel';
+import Banner from "@/components/layout/banner"
+import Product from '@/components/content/earphone/product';
+import Welcome from '@/components/layout/welcome-section';
+import { ShopCardsCarousel } from '@/components/content/shop/cards-carousel';
 import { shop_carousel } from '@/faker/shop_carousel';
-import ShortCut from '@/components/common/shortcut';
-import ServiceCarousel from '@/components/shop/service';
+import ShortCut from '@/components/layout/shortcut';
+import ServiceCarousel from '@/components/content/shop/service';
 
 function IphonePage() {
   return (

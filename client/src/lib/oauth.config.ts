@@ -62,9 +62,14 @@ const authConfig = {
         // Lưu dữ liệu người dùng vào cơ sở dữ liệu
         console.log('Account', account);
         if (account.access_token !== undefined) {
-          const access_token = account.access_token;
-          const resp = await Manager.oauth2(access_token);
-          await updateAccessToken(resp.data.token);
+          try {
+            const access_token = account.access_token;
+            const resp = await Manager.oauth2(access_token);
+            await updateAccessToken(resp.data.token);
+          }
+          catch (e) {
+            console.error("Update access token failed", e);
+          }
         }
         // Thêm access token vào JWT
         console.log('Token', token);

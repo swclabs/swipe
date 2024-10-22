@@ -1,4 +1,5 @@
 export interface Specification {
+    inventory_id: number;
     price: string;
     ssd: string;
     ram: string;

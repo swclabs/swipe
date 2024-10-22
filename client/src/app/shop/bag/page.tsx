@@ -1,172 +1,128 @@
 "use client"
-import React from 'react';
-import Banner from "@/components/common/banner"
-import { Button, Image } from '@nextui-org/react';
 import { Link } from '@nextui-org/react';
-import cartData from "@/faker/cart";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
 import { VscSymbolMethod } from "react-icons/vsc";
+import { cartData } from '@/faker/cart';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { useEffect, useState } from 'react';
+import { formatNumber } from '@/utils/fmt';
+import Image from 'next/image';
+import Delivery from '@/components/content/shop/delivery';
 
 function BagPage() {
-    const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    let totalPrice = 0;
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    let total = 0;
+    cartData.products.forEach((value) => {
+      total += parseFloat(value.price);
+    });
+    setTotalPrice(total);
+  }, []);
 
-    function formatNumber(totalPrice: number) {
-        const str = totalPrice.toString();
-        const result = [];
 
-        for (let i = str.length; i > 0; i -= 3) {
-            const start = Math.max(i - 3, 0);
-            result.unshift(str.slice(start, i));
-        }
+  return (
+    <>
+      <div className=" w-full bg-white">
+        <div className='w-4/5 m-auto'>
 
-        return result.join('.');
-    }
+          <div className="flex justify-center items-center mt-4 mb-12">
+            <p className="text-base">Xin lưu ý rằng chúng tôi không chấp nhận đổi trả đối với các đơn hàng trực tuyến.</p>
 
-    return (
-        <>
-            <div className=" w-full bg-white">
-                {/* <Banner /> */}
-                <div className='w-4/5 m-auto'>
+          </div>
 
-                    <div className="flex justify-center items-center mt-4 mb-12">
-                        <p className="text-base">Xin lưu ý rằng chúng tôi không chấp nhận đổi trả đối với các đơn hàng trực tuyến.</p>
+          <div className="flex flex-col justify-center items-center mb-4 sticky gap-y-3">
+            <p className="text-xl sm:text-4xl font-semibold">Tổng giá trị giỏ hàng của bạn là {formatNumber(totalPrice)}</p>
+            <p className='text-base'>Vận chuyển miễn phí đối với mọi đơn hàng.</p>
+            <div className='text-sm'>Giao hàng đến </div>
+            <Delivery />
+            <Link href="#" className='w-72 mt-6 mb-12'>
+              <Button color="primary" className="w-full">Thanh toán</Button>
+            </Link>
+          </div>
 
+          <div className=' flex flex-col gap-y-5'>
+            {cartData.products.map((value, index) => (
+              <div className="flex flex-col" key={index}>
+                <div className="flex lg:flex-row flex-col justify-between">
+                  <div className='flex items-center gap-10 lg:flex-row flex-col'>
+                    <Image
+                      alt="img"
+                      src={value.image}
+                      width={150}
+                      height={150}
+                    />
+                  </div>
+                  <div className='flex flex-col p-5 lg:w-2/3'>
+                    <div className='pb-4 border-b-1'>
+                      <div className='flex justify-between sticky py-2'>
+                        <p className='text-2xl font-medium'>{value.name}</p>
+                        <p className='text-2xl font-medium'>{formatNumber(parseInt(value.price))}đ</p>
+                      </div>
                     </div>
 
-                    <div className="flex flex-col justify-center items-center mb-4 sticky border-b-1">
-                        <p className="text-xl sm:text-4xl font-semibold">Tổng giá trị giỏ hàng của bạn là 46.999.000đ.</p>
-                        <p className='text-base mt-4'>Vận chuyển miễn phí đối với mọi đơn hàng.</p>
-                        <Link href="#" className='w-72 mt-6 mb-12'>
-                            <Button color="primary" radius="md" fullWidth>Thanh toán</Button>
-                        </Link>
+                    <div className=' flex flex-col gap-y-2'>
+                      <div className=' font-semibold text-sm gap-3 flex pt-3'>
+                        <Badge variant="outline">{value.category}</Badge>
+                        {value.specs.ram !== "" && <Badge variant="outline">{value.specs.ram}</Badge>}
+                        {value.specs.ssd !== "" && <Badge variant="outline">{value.specs.ssd}</Badge>}
+                        {value.specs.connection !== "" && <Badge variant="outline">{value.specs.connection}</Badge>}
+                        {value.specs.desc !== "" && <Badge variant="outline">{value.specs.desc}</Badge>}
+                      </div>
+                      <div className='flex flex-row gap-2 items-center'>
+                        <VscSymbolMethod size={20} />
+                        <p className=' text-sm'>Đặt hàng hôm nay. Giao hàng đến:</p>
+                        <Badge variant="secondary">Thành phố Hồ Chí Minh</Badge>
+                      </div>
+                      <p className='text-sm'>Th 2 20/05/2024 — Miễn Phí</p>
+                      <p className='text-sm font-semibold'>x{value.quantity}</p>
                     </div>
-
-
-                    {cartData.map((value, index) => (
-                        totalPrice += parseInt(value.price.replace(/\D/g, '')),
-                        <div className="flex flex-col" key={index}>
-                            <div className="h-[40vh] flex flex-row justify-around items-center border-b-1">
-                                <div className="h-full flex w-[25%]  pt-16 mr-2">
-                                    <Image
-                                        alt="img"
-                                        src={value.img}
-                                        className='w-full max-h-[400px] bg-gray-100 object-cover'
-                                    />
-                                </div>
-                                <div className='flex flex-col'>
-
-                                    <div className='pb-4 border-b-1'>
-                                        <div className='flex justify-between sticky py-2'>
-                                            <p className='text-2xl font-medium'>{value.name}</p>
-                                            <p className='text-2xl font-medium'>{value.price}</p>
-                                        </div>
-                                        <div className='flex justify-between sticky py-2'>
-                                            <p className='2xl:text-base text-sm font-light w-[80%]'>{value.desc}</p>
-                                            <p className='text-base font-light pl-4'>{value.subdesc}</p>
-                                        </div>
-                                    </div>
-
-                                    <div className='mt-8'>
-                                        <div className='flex flex-row gap-x-2'>
-                                            {/* <Image
-                                                alt="img"
-                                                src="/img/cart/logistics-delivery-truck-in-movement-svgrepo-com.svg"
-                                                className='h-6 w-6 object-contain'
-                                            /> */}
-                                            <div className='pt-1'>
-                                                <VscSymbolMethod />
-                                            </div>
-                                            <div className='flex flex-col'>
-                                                <p>Đặt hàng hôm nay. Giao hàng đến:</p>
-                                                <p className='font-semibold text-sm'>Th 2 20/05/2024 — Miễn Phí</p>
-                                            </div>
-
-                                            <Button onPress={onOpen}>Thành phố Hồ Chí Minh</Button>
-                                            <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                                                <ModalContent>
-                                                    {(onClose) => (
-                                                        <>
-                                                            <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
-                                                            <ModalBody>
-                                                                <p>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                    Nullam pulvinar risus non risus hendrerit venenatis.
-                                                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                                                                </p>
-                                                                <p>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                    Nullam pulvinar risus non risus hendrerit venenatis.
-                                                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                                                                </p>
-                                                                <p>
-                                                                    Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
-                                                                    dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
-                                                                    Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod.
-                                                                    Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur
-                                                                    proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
-                                                                </p>
-                                                            </ModalBody>
-                                                            <ModalFooter>
-                                                                <Button color="danger" variant="light" onPress={onClose}>
-                                                                    Close
-                                                                </Button>
-                                                                <Button color="primary" onPress={onClose}>
-                                                                    Action
-                                                                </Button>
-                                                            </ModalFooter>
-                                                        </>
-                                                    )}
-                                                </ModalContent>
-                                            </Modal>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    ))}
-
-                    <div className='flex flex-col w-full items-end'>
-                        <div className='flex flex-col w-3/4 mt-8 border-b-1 gap-y-2'>
-                            <div className='grid grid-cols-2'>
-                                <p className='text-base'>Tổng giá trị:</p>
-                                <div className='flex justify-end'>
-                                    <p className='text-base'>{formatNumber(totalPrice) + "đ"}</p>
-                                </div>
-                            </div>
-                            <div className='grid grid-cols-2 mb-2'>
-                                <p className='text-base'>Vận chuyển</p>
-                                <div className='flex justify-end'>
-                                    <p className='text-base'>MIỄN PHÍ</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col w-3/4 mt-4'>
-                            <div className='grid grid-cols-2'>
-                                <div>
-                                    <p className='text-2xl font-semibold'>Thanh toán toàn bộ</p>
-                                </div>
-                                <div className='flex flex-col items-end'>
-                                    <p className='text-2xl font-semibold'>{formatNumber(totalPrice) + "đ"}</p>
-                                </div>
-                            </div>
-                            <div className='flex justify-end'>
-                                <p className='text-sm font-light'>Bao gồm thuế GTGT 14.714.000đ</p>
-                            </div>
-                        </div>
-                        <div className='flex flex-col w-3/4 mt-4'>
-                            <div className='flex justify-end'>
-                                <Link href="#" className='w-72 mt-6 mb-12'>
-                                    <Button color="primary" radius="md" fullWidth>Thanh toán</Button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div >
-        </>
-    );
+              </div>
+            ))}
+          </div>
+
+          <div className='flex flex-col w-full items-end'>
+            <div className='flex flex-col w-3/4 mt-8 border-b-1 gap-y-2'>
+              <div className='grid grid-cols-2'>
+                <p className='text-base'>Tổng giá trị:</p>
+                <div className='flex justify-end'>
+                  <p className='text-base'>{formatNumber(totalPrice) + "đ"}</p>
+                </div>
+              </div>
+              <div className='grid grid-cols-2 mb-2'>
+                <p className='text-base'>Vận chuyển</p>
+                <div className='flex justify-end'>
+                  <p className='text-base'>MIỄN PHÍ</p>
+                </div>
+              </div>
+            </div>
+            <div className='flex flex-col w-3/4 mt-4'>
+              <div className='grid grid-cols-2'>
+                <div>
+                  <p className='text-2xl font-semibold'>Thanh toán toàn bộ</p>
+                </div>
+                <div className='flex flex-col items-end'>
+                  <p className='text-2xl font-semibold'>{formatNumber(totalPrice) + "đ"}</p>
+                </div>
+              </div>
+              <div className='flex justify-end'>
+                <p className='text-sm font-light'>Bao gồm thuế GTGT</p>
+              </div>
+            </div>
+
+            <div className='flex flex-col w-3/4 mt-4'>
+              <div className='flex justify-end'>
+                <Link href="#" className='w-72 mt-6 mb-12'>
+                  <Button color="primary" size="sm" className=' w-full'>Thanh toán</Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div >
+    </>
+  );
 }
 
 export default BagPage;

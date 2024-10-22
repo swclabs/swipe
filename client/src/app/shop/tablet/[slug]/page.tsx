@@ -1,14 +1,14 @@
 'use client';
-import ShopDeviceCarousel from "@/components/shop/carousel";
-import Colors from "@/components/shop/colors";
-import SpecMemory from "@/components/shop/spec-memory";
-import SpecSSD from "@/components/shop/spec-ssd";
-import Version from "@/components/shop/version";
+import ShopDeviceCarousel from "@/components/content/shop/carousel";
+import Colors from "@/components/content/shop/colors";
+import SpecMemory from "@/components/content/shop/spec-memory";
+import SpecSSD from "@/components/content/shop/spec-ssd";
+import Version from "@/components/content/shop/version";
 import ipadDetail from "@/faker/ipad-details";
 import { useProducts } from "@/state/products";
 import { useEffect } from "react";
-import AddToCart from "@/components/shop/add-to-cart";
-import Comment from "@/components/shop/comment";
+import AddToCart from "@/components/content/shop/add-to-cart";
+import Comment from "@/components/content/shop/comment";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -23,7 +23,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
 
   useEffect(() => {
-    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "" })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1 })
     setDetails(ipadDetail[0])
   }, [])
   console.log(details)

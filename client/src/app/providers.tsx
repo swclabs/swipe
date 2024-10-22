@@ -1,33 +1,29 @@
 "use client";
+import Footer from "@/components/layout/footer";
+import NavbarComponent from "@/components/layout/navbar";
 import { NextUIProvider } from "@nextui-org/react";
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion";
+import { SessionProvider, SessionProviderProps } from "next-auth/react";
 import { usePathname } from "next/navigation";
-import { Toaster } from "@/components/ui/toaster";
-import { SessionProvider, SessionProviderProps } from 'next-auth/react';
 import NextTopLoader from "nextjs-toploader";
-import NavbarComponent from "@/components/common/navbar";
-import FooterComponent from "@/components/common/footer";
 
 const Providers = ({
   session,
-  children
+  children,
 }: {
-  session: SessionProviderProps['session'];
+  session: SessionProviderProps["session"];
   children: React.ReactNode;
 }) => {
   const pathname = usePathname();
 
   // List of routes that should not use the layout
-  const noLayoutRoutes = ['/auth/sign-up', '/auth'];
+  const noLayoutRoutes = ["/auth/sign-up", "/auth"];
 
   if (noLayoutRoutes.includes(pathname)) {
     return (
       <NextUIProvider>
         <AnimatePresence>
-          <SessionProvider session={session}>
-            {children}
-          </SessionProvider>
-          <Toaster />
+          <SessionProvider session={session}>{children}</SessionProvider>
         </AnimatePresence>
       </NextUIProvider>
     );
@@ -35,20 +31,21 @@ const Providers = ({
   return (
     <NextUIProvider>
       <AnimatePresence>
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ delay: 0.25 }}
-        >
-          <NextTopLoader showSpinner={false} />
-          <SessionProvider session={session}>
+        > */}
+        <NextTopLoader showSpinner={false} />
+        <SessionProvider session={session}>
+          <main className="min-h-screen">
             <NavbarComponent session={session} />
             {children}
-            <Toaster />
-            <FooterComponent />
-          </SessionProvider>
-        </motion.div>
+            <Footer />
+          </main>
+        </SessionProvider>
+        {/* </motion.div> */}
       </AnimatePresence>
     </NextUIProvider>
   );

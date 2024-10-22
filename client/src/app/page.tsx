@@ -1,15 +1,21 @@
 'use client'
 
-import Banner from "@/components/common/banner"
-import ShortCut from "@/components/common/shortcut"
+import Banner from "@/components/layout/banner"
+import ShortCut from "@/components/layout/shortcut"
 import Link from "next/link"
 import React from "react"
-import HomePageCarousel, { HomePageBannerCarousel } from "@/components/home/carousel"
+import HomePageCarousel, { HomePageBannerCarousel } from "@/components/content/home/carousel"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ delay: 0.25 }}
+    >
       <Banner />
       <div className=" bg-gray-50 w-full">
         <div className=" flex justify-center items-center min-h-[70vh]">
@@ -38,6 +44,6 @@ export default function Home() {
         </div>
       </div >
       <ShortCut />
-    </div >
+    </motion.div>
   )
 }

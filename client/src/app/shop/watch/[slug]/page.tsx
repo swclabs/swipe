@@ -1,10 +1,10 @@
 'use client';
-import { AddWatchToCart } from "@/components/shop/add-to-cart";
-import ShopDeviceCarousel from "@/components/shop/carousel";
-import Colors from "@/components/shop/colors";
-import Comment from "@/components/shop/comment";
-import ConnectionDetail from "@/components/shop/connection";
-import Version from "@/components/shop/version";
+import AddToCart from "@/components/content/shop/add-to-cart";
+import ShopDeviceCarousel from "@/components/content/shop/carousel";
+import Colors from "@/components/content/shop/colors";
+import Comment from "@/components/content/shop/comment";
+import ConnectionDetail from "@/components/content/shop/connection";
+import Version from "@/components/content/shop/version";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
 import { useEffect } from "react";
@@ -72,7 +72,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
       {
         details &&
-        <AddWatchToCart
+        <AddToCart
           product={details}
           color={color}
           specs={specs}

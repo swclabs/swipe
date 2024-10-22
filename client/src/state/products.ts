@@ -21,12 +21,17 @@ export const useProducts = create<Products>()((set): Products => ({
     setDetails: (details: ProductDetail) => set({ details: details }),
     setSpecs: (specs: Specification) => set({ specs }),
     fetchProduct: async (id: number) => {
-        const resp = await ProductService.getProductDetails(id);
-        return set((state) => {
-            return {
-                details: resp ? resp.data : undefined
-            }
-        })
+        try {
+            const resp = await ProductService.getProductDetails(id);
+            return set((state) => {
+                return {
+                    details: resp ? resp.data : undefined
+                }
+            })
+        }
+        catch (e) {
+            return
+        }
     }
 }))
 
@@ -40,12 +45,16 @@ export const useProductsInStore = create<ProductsInStore>()((set): ProductsInSto
     product: [],
     setProduct: (body: ProductType[]) => set({ product: body }),
     fetchProduct: async (name: string) => {
-        console.log('name', name);
-        const resp = await ProductService.getProductByType(name);
-        return set((state) => {
-            return {
-                product: resp ? resp.data : []
-            }
-        })
+        try {
+            const resp = await ProductService.getProductByType(name);
+            return set((state) => {
+                return {
+                    product: resp ? resp.data : []
+                }
+            })
+        }
+        catch (e) {
+            return
+        }
     }
 }))
