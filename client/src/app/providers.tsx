@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/layout/footer";
 import NavbarComponent from "@/components/layout/navbar";
+import NavbarUser from "@/components/layout/navbar-user";
 import { NextUIProvider } from "@nextui-org/react";
 import { AnimatePresence } from "framer-motion";
 import { SessionProvider, SessionProviderProps } from "next-auth/react";
@@ -31,21 +32,15 @@ const Providers = ({
   return (
     <NextUIProvider>
       <AnimatePresence>
-        {/* <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ delay: 0.25 }}
-        > */}
         <NextTopLoader showSpinner={false} />
         <SessionProvider session={session}>
           <main className="min-h-screen">
+            <NavbarUser session={session} />
             <NavbarComponent session={session} />
             {children}
             <Footer />
           </main>
         </SessionProvider>
-        {/* </motion.div> */}
       </AnimatePresence>
     </NextUIProvider>
   );

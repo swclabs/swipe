@@ -9,6 +9,7 @@ export interface CardContent {
 }
 
 export interface Cart {
+    id: any;
     name: string;
     cart_id: number;
     inventory_id: number;

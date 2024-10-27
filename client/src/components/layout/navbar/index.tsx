@@ -1,22 +1,21 @@
 "use client"
-import './style.css'
-import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, Badge } from "@nextui-org/react";
+import Products from '@/components/layout/carts';
+import { useCart } from '@/state/purchase';
+import { Badge, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
+import { SessionProviderProps } from 'next-auth/react';
 import Image from 'next/image';
+import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
-import Search from './search';
-import Products from '@/components/layout/carts';
-import NavbarItemStore from './store';
-import NavbarItemMac from './computer';
-import { NavbarItemIpad } from './tablet';
-import { NavbarItemIphone } from './phone';
 import NavbarItemAccessory from './accessory';
-import NavbarItemWatch from './watch';
+import NavbarItemMac from './computer';
 import NavbarItemAirPod from './earphone';
-import NavbarItemSupport from './support';
-import { SessionProviderProps } from 'next-auth/react';
-import { useCart } from '@/state/purchase';
+import { NavbarItemIphone } from './phone';
+import Search from './search';
+import NavbarItemStore from './store';
+import './style.css';
+import { NavbarItemIpad } from './tablet';
+import NavbarItemWatch from './watch';
 
 export default function NavbarComponent({ session }: { session: SessionProviderProps['session'] }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -36,11 +35,11 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
     "Watch",
     "AirPods",
     "Phụ kiện",
-    "Hỗ trợ"
+    // "Hỗ trợ"
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} height={'2.8rem'} className="bg-gray-50" maxWidth="full">
+    <Navbar onMenuOpenChange={setIsMenuOpen} height={'2.8rem'} className=" bg-white" maxWidth="full">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -60,7 +59,7 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex md:gap-8  lg:gap-12" justify="center">
+      <NavbarContent className="hidden sm:flex md:gap-8 lg:gap-12 font-medium" justify="center">
         <NavbarItem>
           <Link href='/'>
             <Image
@@ -94,9 +93,9 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
         <NavbarItem>
           <NavbarItemAccessory />
         </NavbarItem>
-        <NavbarItem>
+        {/* <NavbarItem>
           <NavbarItemSupport />
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
           <div className='medium-container'>
             <Link color="foreground" href="#">

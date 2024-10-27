@@ -1,8 +1,8 @@
 'use client';
-import iphone from "@/faker/iphone";;
-import Image from "next/image";
-import { accessory_iphone } from "@/faker/accessory-ip";
 import { Button } from "@/components/ui/button";
+import { accessory_iphone } from "@/faker/accessory-ip";
+import { formatNumber } from "@/utils/fmt";
+import Image from "next/image";
 
 
 export default function Accessory() {
@@ -44,7 +44,7 @@ export default function Accessory() {
                 </div>
                 <div className="w-[90%] absolute bottom-3 flex-1 gap-y-3 flex flex-col">
                   <div className="pt-4 font-semibold text-left">
-                    {value.price}
+                    {formatNumber(parseInt(value.price))}
                   </div>
                   <Button className="w-full">Mua</Button>
                 </div>

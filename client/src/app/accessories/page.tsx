@@ -1,20 +1,14 @@
-"use client"
-import React from 'react';
-import Banner from "@/components/layout/banner"
-import News from '@/components/content/phone/news';
-import Accessories from '@/components/content/phone/accessories';
-import Product from '@/components/content/accessories/product';
-import Welcome from '@/components/layout/welcome-section';
-import posts from '@/faker/posts';
-import { Image } from '@nextui-org/react';
-import AccessoryIphone from '@/components/content/accessories/iphone-accessories';
-import AccessoryWatch from '@/components/content/accessories/watch-accessories';
-import AccessoryIpad from '@/components/content/accessories/ipad-accessories';
-import AccessoryMac from '@/components/content/accessories/mac-accessories';
-import AccessoryAirtag from '@/components/content/accessories/airtag-accessories';
+import AccessoryAirtag from './_components/airtag-accessories';
+import AccessoryIpad from '@/app/accessories/_components/ipad-accessories';
+import AccessoryIphone from '@/app/accessories/_components/iphone-accessories';
+import AccessoryMac from '@/app/accessories/_components/mac-accessories';
+import Product from '@/app/accessories/_components/product';
+import AccessoryWatch from '@/app/accessories/_components/watch-accessories';
+import Banner from "@/components/layout/banner";
 import ShortCut from '@/components/layout/shortcut';
+import { Image } from '@nextui-org/react';
 
-function AccessoriesPage() {
+export default function Page() {
   return (
     <>
       <div className=" w-full bg-gray-50">
@@ -89,5 +83,3 @@ function AccessoriesPage() {
     </>
   );
 }
-
-export default AccessoriesPage;

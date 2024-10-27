@@ -1,11 +1,10 @@
 'use client'
-import AddToCart from "@/components/content/shop/add-to-cart";
-import ShopDeviceCarousel from "@/components/content/shop/carousel";
-import Colors from "@/components/content/shop/colors";
-import Comment from "@/components/content/shop/comment";
-import SpecMemory from "@/components/content/shop/spec-memory";
-import SpecSSD from "@/components/content/shop/spec-ssd";
-import Version from "@/components/content/shop/version";
+import AddToCart from "@/app/shop/_components/add-to-cart";
+import ShopDeviceCarousel from "@/app/shop/_components/carousel";
+import Colors from "@/app/shop/_components/colors";
+import SpecMemory from "@/app/shop/_components/spec-memory";
+import SpecSSD from "@/app/shop/_components/spec-ssd";
+import Version from "@/app/shop/_components/version";
 import { useProducts } from "@/state/products";
 import { SessionProviderProps } from "next-auth/react";
 import { useEffect } from "react";
@@ -94,7 +93,7 @@ export default function TabletPageBody({ session, id }: { session: SessionProvid
           setSpecs={setSpecs}
         />
       }
-      <Comment />
+      {/* <Comment /> */}
     </div>
   )
 }

@@ -5,7 +5,7 @@ export default function NavbarItemStore() {
   return (
     <div className='medium-container'>
       <Link color="foreground" href="/shop">
-        <p className=" text-xs">Cửa hàng</p>
+        <p className=" text-xs ">Cửa hàng</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex  absolute'>

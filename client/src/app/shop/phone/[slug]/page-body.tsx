@@ -1,12 +1,14 @@
 'use client';
-import AddToCart from "@/components/content/shop/add-to-cart";
-import ShopDeviceCarousel from "@/components/content/shop/carousel";
-import Colors from "@/components/content/shop/colors";
-import Comment from "@/components/content/shop/comment";
-import SpecMemory from "@/components/content/shop/spec-memory";
-import SpecSSD from "@/components/content/shop/spec-ssd";
-import Version from "@/components/content/shop/version";
+import AddToCart from "@/app/shop/_components/add-to-cart";
+import ShopDeviceCarousel from "@/app/shop/_components/carousel";
+import Colors from "@/app/shop/_components/colors";
+import SpecMemory from "@/app/shop/_components/spec-memory";
+import SpecSSD from "@/app/shop/_components/spec-ssd";
+import Version from "@/app/shop/_components/version";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useProducts } from "@/state/products";
+import { Star } from "lucide-react";
 import { SessionProviderProps } from "next-auth/react";
 import { useEffect } from "react";
 
@@ -46,13 +48,35 @@ export default function PhonePageBody({ session, id }: { session: SessionProvide
               }
             </div>
           </div>
-          <div className=" md:w-1/3 py-5 md:py-0">
+          <div className=" md:w-1/3 py-5 md:py-0 flex flex-col gap-y-8">
             {details &&
               <Version
                 product={details}
               />
             }
+            <div className="flex gap-x-1 items-center">
+              <p className=" text-xs">Bạn đã mua sản phẩm, đánh giá ngay</p>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="icon" variant="ghost"><Star /></Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader>
+                    <DialogTitle>Edit profile</DialogTitle>
+                    <DialogDescription>
+                      Make changes to your profile here. Click save when you are done.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="grid gap-4 py-4">
 
+                  </div>
+                  <DialogFooter>
+                    <Button type="submit">Send</Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
+
+            </div>
             {/* <div className=' mt-5 text-xs'>
             Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần đầu 20%.
             Có thêm tùy chọn thanh toán khi hoàn tất giao dịch.
@@ -97,7 +121,7 @@ export default function PhonePageBody({ session, id }: { session: SessionProvide
             setSpecs={setSpecs}
           />
         }
-        <Comment />
+        {/* <Comment /> */}
       </div>
     </div >
   )

@@ -6,7 +6,6 @@ export default function Search() {
     <div className="">
       <Input
         variant="underlined"
-        className="bg-gray-50"
         // size="lg"
         type="text"
         placeholder="Tìm kiếm trên Swipe"
