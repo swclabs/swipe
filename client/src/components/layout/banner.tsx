@@ -1,3 +1,4 @@
+'use client';
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react"
 import Autoplay from "embla-carousel-autoplay"
@@ -20,14 +21,14 @@ export default function Banner() {
         plugins={[
           plugin.current
         ]}
-        className="w-full"
+        className="w-full bg-gray-100"
       >
         <CarouselContent>
           <CarouselItem>
             <div className="p-1">
-              <div className={`relative transition duration-1000 ease-in-out h-[70px]`}>
+              <div className={`relative transition duration-1000 ease-in-out h-[50px]`}>
                 <div className="flex justify-center h-full">
-                  <p className="text-xs pl-6 pr-6 flex items-center">
+                  <p className="text-xs px-6 flex items-center">
                     Nhận 4.500.000 - 25.200.000đ dưới hình thức điểm tín dụng để mua iPhone 15 hoặc iPhone 15 Pro khi bạn trao đổi iPhone 11 trở lên.
                   </p>
                 </div>
@@ -36,9 +37,9 @@ export default function Banner() {
           </CarouselItem>
           <CarouselItem>
             <div className="p-1">
-              <div className={`relative transition duration-1000 ease-in-out h-[70px]`}>
+              <div className={`relative transition duration-1000 ease-in-out h-[50px]`}>
                 <div className="flex justify-center h-full">
-                  <p className="text-xs pl-6 pr-6 flex items-center">
+                  <p className="text-xs px-6 flex items-center">
                     Nhận 4.500.000 - 25.200.000đ dưới hình thức điểm tín dụng để mua iPhone 15 hoặc iPhone 15 Pro khi bạn trao đổi iPhone 11 trở lên.
                   </p>
                 </div>

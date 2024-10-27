@@ -1,13 +1,12 @@
 'use client';
-import ShopDeviceCarousel from "@/components/content/shop/carousel";
+import ShopDeviceCarousel from "@/app/shop/_components/carousel";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
 import { Button } from "@nextui-org/react";
-import { CiDeliveryTruck } from "react-icons/ci";
 import { useEffect } from "react";
-import { Badge } from "@/components/ui/badge";
-import Comment from "@/components/content/shop/comment";
+import { CiDeliveryTruck } from "react-icons/ci";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -66,7 +65,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-      <Comment />
+      {/* <Comment /> */}
     </div>
   )
 }

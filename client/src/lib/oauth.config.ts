@@ -2,7 +2,7 @@ import { CredentialsSignin, NextAuthConfig } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialProvider from 'next-auth/providers/credentials';
 import { encrypt, getSession, login, updateAccessToken } from './auth';
-import { Manager } from '@/service/manager';
+import { Authentication } from '@/service/authentication';
 
 class CustomError extends CredentialsSignin {
   code = "custom_error"
@@ -41,7 +41,7 @@ const authConfig = {
         if (!ok) throw new CustomError();
         if (user) {
           // Any object returned will be saved in `user` property of the JWT
-          console.log('User', user);
+          // console.log('User', user);
           return user;
         } else {
           // If you return null then an error will be displayed advising the user to check their details.
@@ -60,11 +60,11 @@ const authConfig = {
       // Nếu có account (khi đăng nhập lần đầu)
       if (account) {
         // Lưu dữ liệu người dùng vào cơ sở dữ liệu
-        console.log('Account', account);
+        // console.log('Account', account);
         if (account.access_token !== undefined) {
           try {
             const access_token = account.access_token;
-            const resp = await Manager.oauth2(access_token);
+            const resp = await Authentication.oauth2(access_token);
             await updateAccessToken(resp.data.token);
           }
           catch (e) {
@@ -72,7 +72,7 @@ const authConfig = {
           }
         }
         // Thêm access token vào JWT
-        console.log('Token', token);
+        // console.log('Token', token);
       }
 
       // Trả về token tùy chỉnh
@@ -83,7 +83,7 @@ const authConfig = {
       // console.log('Token', token);
       // session.accessToken = token.accessToken;
       const sess = await getSession();
-      console.log(sess)
+      // console.log(sess)
       return session;
     },
   },

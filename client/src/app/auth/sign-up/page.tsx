@@ -1,9 +1,9 @@
-import { Metadata } from "next";
-import Link from "next/link";
+import UserRegisterForm from "@/app/auth/_components/user-register-form";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Metadata } from "next";
 import Image from "next/image";
-import UserRegisterForm from "@/components/forms/user-register-form";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Authentication",

@@ -1,27 +1,16 @@
 "use client"
-import React from 'react';
-import Banner from "@/components/layout/banner"
-import ProductBar from '@/components/content/tablet/product-bar';
-import News from '@/components/content/tablet/news';
-import Accessories from '@/components/content/tablet/accessories';
 import Product from '@/components/content/tablet/product';
-import Welcome from '@/components/layout/welcome-section';
-import ProductIpadTypes from '@/components/content/tablet/product-types';
-import { motion } from "framer-motion"
-import { Link } from '@nextui-org/react';
-import { ShopCardsCarousel } from '@/components/content/shop/cards-carousel';
-import { shop_carousel } from '@/faker/shop_carousel';
-import ShortCut from '@/components/layout/shortcut';
-import ipad from '@/faker/ipad';
-import { iPhoneAccessories } from '@/faker/iphone-accessory';
-import AccessoryCard from '@/components/layout/accesories-card';
-import ShopTablet from '@/components/content/tablet/shop-card';
 import Accessory from '@/components/content/accessories';
+import { ShopCardsCarousel } from '@/app/shop/_components/cards-carousel';
+import Banner from "@/components/layout/banner";
+import ShortCut from '@/components/layout/shortcut';
+import Welcome from '@/components/layout/welcome-section';
+import { shop_carousel } from '@/faker/shop_carousel';
 
 function Page() {
   return (
     <>
-      <div className=" w-full bg-gray-50">
+      <div className=" w-full">
         {/* <div className=' w-full flex justify-center p-5'>
           <motion.div
             initial={{ opacity: 0, x: 100 }}

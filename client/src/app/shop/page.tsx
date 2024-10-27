@@ -1,23 +1,20 @@
 "use client";
-import { ProductCardCarousel } from "@/components/content/shop/accessory-carousel";
-import { ShopCardsCarousel } from "@/components/content/shop/cards-carousel";
 import ProductNavbar from "@/components/content/shop/navbar";
+import { AccessoryCard, DesktopCard, DisplayCard, EarphoneCard, LaptopCard, PhoneCard, TabletCard, WatchCard } from "@/app/shop/_components/product";
 import ServiceCarousel from "@/components/content/shop/service";
 import Banner from "@/components/layout/banner";
 import ShortCut from "@/components/layout/shortcut";
-import { product_carousel } from "@/faker/accessory-carousel";
-import { shop_carousel } from "@/faker/shop_carousel";
 import { motion } from "framer-motion";
 import "./style.css";
 export default function Store() {
   return (
     <>
       <Banner />
-      <div className=" w-full bg-gray-50">
+      <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75 }}
+          transition={{ duration: 0.5 }}
         >
           <div className="flex justify-center">
             <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
@@ -35,9 +32,18 @@ export default function Store() {
         </motion.div>
 
         <ProductNavbar />
-        <ShopCardsCarousel carousel={shop_carousel} />
+        {/* <ShopCardsCarousel carousel={shop_carousel} /> */}
+
+        <PhoneCard />
+        <TabletCard />
+        <WatchCard />
+        <LaptopCard />
+        <DisplayCard />
+        <DesktopCard />
+        <EarphoneCard />
+        <AccessoryCard />
         <ServiceCarousel />
-        <ProductCardCarousel carousel={product_carousel} />
+        {/* <ProductCardCarousel carousel={product_carousel} /> */}
         <ShortCut />
       </div>
     </>

@@ -1,19 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { cartData } from "@/faker/cart";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
-import { FiUser, FiLogOut } from "react-icons/fi";
-import { FiBookmark } from "react-icons/fi";
-import { FiBox } from "react-icons/fi";
-import { FiSettings } from "react-icons/fi";
-import { SessionProviderProps, signOut } from "next-auth/react";
 import { Badge } from "@/components/ui/badge";
-import { Trash } from "lucide-react";
-import { formatNumber } from "@/utils/fmt";
-import { useEffect } from "react";
 import { useCart } from "@/state/purchase";
+import { formatNumber } from "@/utils/fmt";
+import { Trash } from "lucide-react";
+import { SessionProviderProps, signOut } from "next-auth/react";
+import { useEffect } from "react";
+import { FiBookmark, FiBox, FiLogOut, FiSettings, FiUser } from "react-icons/fi";
 
 
 
@@ -22,13 +18,13 @@ function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }
     <div className=' container pt-10 text-xs'>
       <p>Hồ sơ của tôi</p>
       <div className=' container flex flex-col'>
-        <a className=' pt-2 font-semibold flex items-center'>
+        <a className=' pt-2 font-semibold flex items-center' href="/orders">
           <FiBox />
           <p className="pl-2">
             Đơn hàng
           </p>
         </a>
-        <a className=' pt-2 font-semibold flex items-center'>
+        <a className=' pt-2 font-semibold flex items-center' href="/favorite">
           <FiBookmark />
           <p className=" pl-2">
             Mục đã lưu
@@ -70,6 +66,15 @@ export default function Products({ session }: { session: SessionProviderProps['s
   useEffect(() => {
     fetchCart();
   }, []);
+
+  const handleDelete = (cart_id: number) => {
+    if (carts) {
+      setCart({
+        user_id: carts.user_id,
+        products: carts.products.filter((value) => value.cart_id !== cart_id)
+      });
+    }
+  }
   if (!session) {
     return (
       <div className=' container'>
@@ -83,9 +88,9 @@ export default function Products({ session }: { session: SessionProviderProps['s
   }
   return (
     <div className=' container'>
-      <div className=" flex justify-between sticky top-[0px] bg-gray-50">
+      <div className=" flex justify-between sticky top-[0px]">
         <p className=' font-semibold text-xl'>Giỏ hàng</p>
-        <Link href={`/shop/bag`}>
+        <Link href={`/cart`}>
           <Button >Xem Giỏ hàng</Button>
         </Link>
       </div>
@@ -114,7 +119,7 @@ export default function Products({ session }: { session: SessionProviderProps['s
               </div>
             </div>
             <div className="m-1">
-              <button >
+              <button onClick={() => handleDelete(value.cart_id)}>
                 <Trash className=" w-4 text-red-600" />
               </button>
             </div>

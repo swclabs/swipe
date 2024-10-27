@@ -22,7 +22,8 @@ export const cartData: Carts = {
                 inventory_id: 0,
                 price: ""
             },
-            category: "phone"
+            category: "phone",
+            id: undefined
         },
         {
             name: "iPhone 15 Pro Max",
@@ -42,7 +43,8 @@ export const cartData: Carts = {
                 inventory_id: 0,
                 price: ""
             },
-            category: "phone"
+            category: "phone",
+            id: undefined
         },
         {
             name: "iPhone 15 Pro Max",
@@ -62,7 +64,8 @@ export const cartData: Carts = {
                 inventory_id: 0,
                 price: ""
             },
-            category: "phone"
+            category: "phone",
+            id: undefined
         },
         {
             name: "iPhone 15 Pro Max",
@@ -82,7 +85,8 @@ export const cartData: Carts = {
                 inventory_id: 0,
                 price: ""
             },
-            category: "phone"
+            category: "phone",
+            id: undefined
         }
     ]
 }
