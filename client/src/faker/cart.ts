@@ -15,6 +15,7 @@ export const cartData: Carts = {
             currency_code: "VND",
             image: "https://res.cloudinary.com/dqsiqqz7q/image/upload/v1729073891/swc-storage/abfblfwgqqjqnhkzhhbj.png",
             specs: {
+                favorite: false,
                 ssd: "512GB",
                 ram: "16GB",
                 desc: "",
@@ -41,7 +42,8 @@ export const cartData: Carts = {
                 desc: "",
                 connection: "",
                 inventory_id: 0,
-                price: ""
+                price: "",
+                favorite: false
             },
             category: "phone",
             id: undefined
@@ -62,7 +64,8 @@ export const cartData: Carts = {
                 desc: "",
                 connection: "",
                 inventory_id: 0,
-                price: ""
+                price: "",
+                favorite: false
             },
             category: "phone",
             id: undefined
@@ -83,7 +86,8 @@ export const cartData: Carts = {
                 desc: "",
                 connection: "",
                 inventory_id: 0,
-                price: ""
+                price: "",
+                favorite: false
             },
             category: "phone",
             id: undefined

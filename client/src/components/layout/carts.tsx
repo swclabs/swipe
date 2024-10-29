@@ -10,6 +10,8 @@ import { Trash } from "lucide-react";
 import { SessionProviderProps, signOut } from "next-auth/react";
 import { useEffect } from "react";
 import { FiBookmark, FiBox, FiLogOut, FiSettings, FiUser } from "react-icons/fi";
+import { PurchaseService } from "@/service/purchase";
+import { logout } from "@/lib/auth";
 
 
 
@@ -37,7 +39,10 @@ function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }
           </p>
         </a>
         {session ?
-          <button className=' pt-2 font-semibold flex items-center' onClick={() => signOut()}>
+          <button className=' pt-2 font-semibold flex items-center' onClick={() => {
+            signOut()
+            logout()
+          }}>
             <FiLogOut />
             <p className=" pl-2">
               Đăng xuất
@@ -51,7 +56,7 @@ function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }
             </p>
           </a>}
       </div>
-    </div>
+    </div >
   )
 }
 
@@ -61,13 +66,18 @@ export default function Products({ session }: { session: SessionProviderProps['s
     carts,
     setCart,
     fetchCart,
-    addToCart
   } = useCart();
   useEffect(() => {
     fetchCart();
   }, []);
 
-  const handleDelete = (cart_id: number) => {
+  const handleDelete = async (cart_id: number, inventory_id: number) => {
+    try {
+      await PurchaseService.deleteCart(inventory_id);
+    }
+    catch (e) {
+      console.log(e);
+    }
     if (carts) {
       setCart({
         user_id: carts.user_id,
@@ -119,7 +129,7 @@ export default function Products({ session }: { session: SessionProviderProps['s
               </div>
             </div>
             <div className="m-1">
-              <button onClick={() => handleDelete(value.cart_id)}>
+              <button onClick={() => handleDelete(value.cart_id, value.inventory_id)}>
                 <Trash className=" w-4 text-red-600" />
               </button>
             </div>

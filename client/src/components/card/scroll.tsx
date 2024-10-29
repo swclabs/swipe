@@ -3,24 +3,24 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 
-export default function ProductCard({ product, href }: { product: ProductType[], href: string }) {
+export default function CardScroll({ product, href }: { product: ProductType[], href: string }) {
   return (
-    <div className="flex flex-col justify-center w-full pb-[10px] overflow-hidden">
-      <div className="flex justify-center">
-        <div className=" sm:w-4/5 pt-10 pb-10">
-          <span className=" text-xl sm:text-4xl font-semibold">Tất cả sản phẩm.</span>
-        </div>
+    <div className="flex flex-col justify-center w-full py-10 overflow-hidden">
+      <div className="px-4 flex justify-between w-full max-w-7xl mx-auto text-xl md:text-4xl font-semibold text-neutral-800 dark:text-neutral-200 font-sans">
+        <span className="font-medium">Tất cả sản phẩm.</span>
+        <a className="font-medium" href={href}>Cửa hàng</a>
       </div>
-      <div className=" relative flex snap-x snap-mandatory 2xl:justify-between w-full justify-center">
-        <div className=" sm:w-1/12 shrink-0 snap-center">
-          <div className="shrink-0"></div>
-        </div>
-        <div className="grid lg:grid-cols-3 2xl:grid-cols-6 sm:grid-cols-2 grid-cols-2 gap-4 p-2 w-full">
+      <ScrollArea className="whitespace-nowrap rounded-md">
+        <div className="flex w-max space-x-4 p-4">
+          <div className="lg:w-[45px] shrink-0 snap-center">
+            <div className="shrink-0"></div>
+          </div>
           {product?.map((value, index) => (
             <Link
-              className="container mx-auto rounded-2xl relative lg:h-[530px] h-[370px]" key={index}
+              className="mx-auto rounded-2xl lg:h-[530px] h-[370px] shrink-0 lg:w-[370px] w-[200px]" key={index}
               href={href + value.id.toString()}
             >
               <div className="flex flex-col justify-center items-center text-center gap-y-4" key={index}>
@@ -35,8 +35,8 @@ export default function ProductCard({ product, href }: { product: ProductType[],
                     />
                   </div>
                 </div>
-                <div className=" w-full flex-1">
-                  <div className=" w-full flex flex-col gap-y-2">
+                <div className="flex-1 w-full max-w-full">
+                  <div className=" w-full flex flex-col gap-y-1">
                     <div className="h-full flex items-center justify-between">
                       <p className="text-left font-semibold lg:text-xl text-base"> {value.name}</p>
                       <div className=" flex gap-y-3 items-center">
@@ -44,13 +44,11 @@ export default function ProductCard({ product, href }: { product: ProductType[],
                         <p>5.0</p>
                       </div>
                     </div>
-                    <div className="h-full">
-                      <p className="text-left font-semibold text-gray-600 text-xs lg:text-sm"> {value.desc}</p>
-                    </div>
-                    <div className="lg:flex gap-2 hidden font-semibold text-gray-600 text-xs lg:text-sm">
+                    <div className="text-left font-medium text-gray-600 lg:text-sm text-xs break-words w-full max-w-full "> {value.desc}</div>
+                    <div className="lg:flex gap-2 hidden font-medium text-gray-600 lg:text-sm text-xs">
                       {value.specs.screen} {value.specs.display}
                     </div>
-                    <div className="flex gap-2 font-semibold text-gray-600 text-xs lg:text-sm">
+                    <div className="flex gap-2 font-medium text-gray-600 lg:text-sm text-xs">
                       {value.specs.SSD && value.specs.SSD.map((item, idx) => (
                         <div key={idx}>{item}</div>
                       ))}
@@ -60,24 +58,15 @@ export default function ProductCard({ product, href }: { product: ProductType[],
                     </div>
                   </div>
                 </div>
-
-                {/* <div className=" w-full flex-1 absolute bottom-0">
-                  <Link href={"shop/phone/" + value.id.toString()}>
-                    <Button variant="secondary" className=" w-full" size="sm">Mua</Button>
-                  </Link>
-                  <div className=" lg:flex items-center pt-4 hidden">
-                    <FiTruck />
-                    <p className=" pl-2 text-left text-xs">Đặt hàng hôm nay, giao hàng đến Hồ Chí Minh</p>
-                  </div>
-                </div> */}
               </div>
             </Link>
           ))}
+          <div className=" sm:w-1/12 shrink-0 snap-center">
+            <div className="shrink-0"></div>
+          </div>
         </div>
-        <div className=" sm:w-1/12 shrink-0 snap-center">
-          <div className="shrink-0"></div>
-        </div>
-      </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
     </div>
   )
 }

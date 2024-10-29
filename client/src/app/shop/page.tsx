@@ -6,33 +6,18 @@ import Banner from "@/components/layout/banner";
 import ShortCut from "@/components/layout/shortcut";
 import { motion } from "framer-motion";
 import "./style.css";
+import Welcome from "@/components/layout/welcome-section";
+import { ShopCardsCarousel } from "./_components/cards-carousel";
+import { shop_carousel } from "@/faker/shop_carousel";
 export default function Store() {
   return (
     <>
       <Banner />
       <div className="w-full">
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex justify-center">
-            <div className=" sm:w-4/5 sm:p-12 pt-10 pb-10">
-              <span className=" text-xl sm:text-5xl font-medium">
-                Cửa hàng.
-              </span>
-              <span className=" text-xl sm:text-5xl font-medium text-gray-500">
-                Cách tốt nhất để
-              </span>
-              <p className=" text-xl sm:text-5xl font-medium text-gray-500">
-                Mua sản phẩm mà bạn thích
-              </p>
-            </div>
-          </div>
-        </motion.div>
+        <Welcome title="Cửa hàng" subtitle="Cách tốt nhất để mua sản phẩm mà bạn thích" />
 
         <ProductNavbar />
-        {/* <ShopCardsCarousel carousel={shop_carousel} /> */}
+        <ShopCardsCarousel carousel={shop_carousel} />
 
         <PhoneCard />
         <TabletCard />

@@ -45,9 +45,9 @@ export default function SpecMemory({ product, color, specs, setSpecs }: IStorage
               GetByRam(product, 0)?.map((value, index) =>
                 <Button
                   variant="outline"
-                  className={cn("border-[1.5px]", specs.ram === value ? "border-blue-500" : "border-gray-400")}
+                  className={cn("border-[1.5px]", specs.ram === value ? "border-black" : "border-gray-300")}
                   key={index}
-                  onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "", inventory_id: -1 })}
+                  onClick={() => setSpecs({ ...specs, ram: value })}
                   disabled={color === -1 ? true : false}
                 >
                   {value}
@@ -56,9 +56,9 @@ export default function SpecMemory({ product, color, specs, setSpecs }: IStorage
               GetByRam(product, color)?.map((value, index) =>
                 <Button
                   variant="outline"
-                  className={cn("border-[1.5px]", specs.ram === value ? "border-blue-500" : "border-gray-400")}
+                  className={cn("border-[1.5px]", specs.ram === value ? "border-black" : "border-gray-300")}
                   key={index}
-                  onClick={() => setSpecs({ ram: value, ssd: '', price: '', connection: "", desc: "", inventory_id: -1 })}
+                  onClick={() => setSpecs({ ...specs, ram: value })}
                   disabled={color === -1 ? true : false}
                 >
                   {value}

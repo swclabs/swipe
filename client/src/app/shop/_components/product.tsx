@@ -1,5 +1,6 @@
 'use client';
 import ProductCard from "@/components/card";
+import CardScroll from "@/components/card/scroll";
 import ListCard from "@/components/layout/card-section";
 import productNews from "@/faker/product-news";
 import { ProductService } from "@/service/products";
@@ -26,7 +27,7 @@ export function PhoneCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/phone/" />
+  return <CardScroll product={product} href="/shop/phone/" />
 }
 
 export function TabletCard() {
@@ -43,7 +44,7 @@ export function TabletCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/tablet/" />
+  return <CardScroll product={product} href="/shop/tablet/" />
 }
 
 export function WatchCard() {
@@ -60,7 +61,7 @@ export function WatchCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/watch/" />
+  return <CardScroll product={product} href="/shop/watch/" />
 }
 
 export function AccessoryCard() {
@@ -77,7 +78,7 @@ export function AccessoryCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/accessories/" />
+  return <CardScroll product={product} href="/shop/accessories/" />
 }
 
 export function DesktopCard() {
@@ -94,7 +95,7 @@ export function DesktopCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/computer/" />
+  return <CardScroll product={product} href="/shop/computer/" />
 }
 
 export function DisplayCard() {
@@ -111,7 +112,7 @@ export function DisplayCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/computer/" />
+  return <CardScroll product={product} href="/shop/computer/" />
 }
 
 export function LaptopCard() {
@@ -128,7 +129,7 @@ export function LaptopCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/computer/" />
+  return <CardScroll product={product} href="/shop/computer/" />
 }
 
 export function EarphoneCard() {
@@ -145,5 +146,5 @@ export function EarphoneCard() {
     }
     f();
   }, []);
-  return <ProductCard product={product} href="/shop/earphone/" />
+  return <CardScroll product={product} href="/shop/earphone/" />
 }

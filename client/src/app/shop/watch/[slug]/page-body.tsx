@@ -42,19 +42,15 @@ export default function WatchPageBody({ session, id }: { session: SessionProvide
           </div>
 
         </div>
-        <div className=" md:w-1/3 py-5 md:py-0">
+        <div className=" md:w-1/3 py-5 md:py-0 flex flex-col space-y-5">
           {details && <Version product={details} />}
-
-          <div className=' mt-5 text-xs'>
-            Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần đầu 20%.
-            Có thêm tùy chọn thanh toán khi hoàn tất giao dịch.
-          </div>
 
           {details &&
             <Colors
               product={details}
               color={color}
               setColor={setColor}
+              setSpecs={setSpecs}
             />
           }
 

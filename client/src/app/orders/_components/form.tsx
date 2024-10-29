@@ -104,7 +104,7 @@ export default function OrderForm() {
     }
   }
 
-  const { carts } = useCart();
+  const { carts, coupon } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
 
@@ -412,12 +412,12 @@ export default function OrderForm() {
             </div>
             <div className="w-full flex justify-between font-medium">
               <p className="">Discount</p>
-              <p className="">0đ</p>
+              <p className="">-{formatNumber(totalPrice * coupon.discount / 100)}đ</p>
             </div>
             <div className=" text-sm flex flex-col gap-y-2 border-y-1 py-5">
               <div className="w-full flex justify-between font-medium">
                 <p className="">Total</p>
-                <p className="">{formatNumber(totalPrice)}đ</p>
+                <p className="">{formatNumber(totalPrice - totalPrice * coupon.discount / 100)}đ</p>
               </div>
             </div>
             <Button type="submit">Submit</Button>
