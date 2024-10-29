@@ -1,10 +1,12 @@
 'use client'
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
+import { PurchaseService } from "@/service/purchase";
 import { useCart } from "@/state/purchase";
 import { ProductDetail, Specification } from "@/types/products";
 import { formatNumber } from "@/utils/fmt";
-import { Bookmark, ShoppingCart } from "lucide-react";
+import { Bookmark, BookmarkCheck, ShoppingCart } from "lucide-react";
 import { SessionProviderProps } from "next-auth/react";
 import { useState } from "react";
 interface IStorageProps {
@@ -17,8 +19,25 @@ interface IStorageProps {
 }
 export default function AddToCart({ product, color, specs, setSpecs, session }: IStorageProps) {
   const { addToCart } = useCart()
-  const { toast } = useToast()
   const [loading, setLoading] = useState(false)
+  const { toast } = useToast()
+  const save = async (inventory_id: number) => {
+    try {
+      await PurchaseService.addToFavorite(inventory_id);
+      toast({
+        title: "Success",
+        description: "Saved to favorite",
+      })
+      setSpecs({ ...specs, favorite: !specs.favorite })
+    }
+    catch (e) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to save to favorite",
+      })
+    }
+  }
   const handleAddToCart = async (inventory_id: number, quantity: number) => {
     setLoading(true)
     if (session) {
@@ -62,8 +81,19 @@ export default function AddToCart({ product, color, specs, setSpecs, session }: 
           <Button className=" w-full mt-2 gap-x-2 justify-between"
             variant="outline"
             disabled={specs.ssd === "" ? true : false || loading}
+            onClick={() => save(specs.inventory_id)}
           >
-            Lưu sản phẩm <Bookmark />
+            {specs.favorite ?
+              <>
+                Đã lưu
+                <BookmarkCheck />
+              </>
+              :
+              <>
+                Lưu sản phẩm
+                <Bookmark />
+              </>
+            }
           </Button>
         </div>
       </div>
@@ -118,7 +148,6 @@ export function AddWatchToCart({ product, color, specs, setSpecs }: IConnectionP
                 <div className=" font-semibold">Giao hàng:</div>
                 <div className=" text-sm">Còn hàng</div>
                 <div className=" text-sm mb-10">Vận chuyển miễn phí</div>
-
                 <Button disabled className=" w-full" onClick={() => console.log(specs)}>
                   Thêm vào giỏ hàng
                 </Button>

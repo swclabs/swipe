@@ -19,6 +19,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 1,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -27,6 +28,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -35,6 +37,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -43,6 +46,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -51,6 +55,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -59,6 +64,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -67,6 +73,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -75,6 +82,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -83,6 +91,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
         ],
       },
@@ -98,6 +107,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -106,6 +116,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -114,6 +125,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -122,6 +134,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -130,6 +143,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -138,6 +152,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -146,6 +161,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -154,6 +170,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -162,6 +179,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
         ],
       },
@@ -177,6 +195,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -185,6 +204,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -193,6 +213,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -201,6 +222,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -209,6 +231,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -217,6 +240,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -225,6 +249,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -233,6 +258,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -241,6 +267,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
         ],
       },
@@ -256,6 +283,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -264,6 +292,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "8GB",
@@ -272,6 +301,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -280,6 +310,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -288,6 +319,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "16GB",
@@ -296,6 +328,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -304,6 +337,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -312,6 +346,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
           {
             ram: "24GB",
@@ -320,6 +355,7 @@ export const laptop: ProductDetail[] = [
             desc: "",
             connection: "",
             inventory_id: 0,
+            favorite: false
           },
         ],
       },

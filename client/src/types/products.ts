@@ -1,4 +1,5 @@
 export interface Specification {
+    favorite: boolean;
     inventory_id: number;
     price: string;
     ssd: string;

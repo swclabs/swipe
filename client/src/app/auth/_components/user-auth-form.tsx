@@ -44,7 +44,7 @@ export default function UserAuthForm() {
     });
     setLoading(true);
     if (!resp || resp.error) {
-      console.log(resp);
+      // console.log(resp);
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",

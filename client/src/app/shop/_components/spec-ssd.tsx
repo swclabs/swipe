@@ -25,9 +25,9 @@ export default function SpecSSD({ product, color, specs, setSpecs }: IStoragePro
               product.color[0]?.specs?.filter(spec => spec.ram === "8GB").map((value, index) =>
                 <Button
                   variant="outline"
-                  className={`container ${specs.ssd === value.ssd ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
+                  className={`container ${specs.ssd === value.ssd ? "border-black" : "border-gray-300"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                   key={index}
-                  onClick={() => setSpecs({ inventory_id: specs.inventory_id, ram: specs.ram, ssd: value.ssd, price: value.price, connection: "", desc: "" })}
+                  onClick={() => setSpecs({ ...value })}
                   disabled={specs.ram === "" ? true : false}
                 >
                   <div className='flex gap-11 justify-between w-full h-full items-center'>
@@ -43,9 +43,9 @@ export default function SpecSSD({ product, color, specs, setSpecs }: IStoragePro
               product.color[color].specs?.filter(spec => spec.ram === specs.ram).map((value, index) =>
                 <Button
                   variant="outline"
-                  className={`container ${specs.ssd === value.ssd ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
+                  className={`container ${specs.ssd === value.ssd ? "border-black" : "border-gray-300"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                   key={index}
-                  onClick={() => setSpecs({ inventory_id: value.inventory_id, ram: value.ram, ssd: value.ssd, price: value.price, connection: "", desc: "" })}
+                  onClick={() => setSpecs({ ...value })}
                   disabled={specs.ram === "" ? true : false}
                 >
                   <div className='flex gap-11 justify-between max-w-full w-full h-full items-center'>

@@ -21,7 +21,10 @@ export default class APIEndpoint {
 
   static readonly PURCHASE = {
     CARTS: `${APIEndpoint.BASE_URL}/purchase/carts`,
+    COUPONS: `${APIEndpoint.BASE_URL}/purchase/coupons`,
+    FAVORITE: `${APIEndpoint.BASE_URL}/favorite`,
   };
+
 
   static readonly ORDERS = {
     ORDERS: `${APIEndpoint.BASE_URL}/purchase/orders`,

@@ -22,12 +22,12 @@ export default function PhonePageBody({ session, id }: { session: SessionProvide
     fetchProduct
   } = useProducts()
   useEffect(() => {
-    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1 })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1, favorite: false })
     fetchProduct(id)
   }, [])
 
   return (
-    <div className=" flex justify-center">
+    <div className=" flex justify-center max-h-max">
       <div className=" flex flex-col gap-2">
         <div className=" container pt-10">
           <div className=" text-red-500 font-medium pt-5">Mới</div>
@@ -87,6 +87,7 @@ export default function PhonePageBody({ session, id }: { session: SessionProvide
                 product={details}
                 color={color}
                 setColor={setColor}
+                setSpecs={setSpecs}
               />
             }
 

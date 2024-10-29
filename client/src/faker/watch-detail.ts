@@ -26,7 +26,8 @@ const watchDetail: ProductDetail[] = [
                         price: "Từ 6.399.000đ",
                         ssd: "",
                         ram: "",
-                        inventory_id: 0
+                        inventory_id: 0,
+                        favorite: false
                     },
                     {
                         connection: "GPS + Cellular",
@@ -34,7 +35,8 @@ const watchDetail: ProductDetail[] = [
                         price: "Từ 7.699.000đ",
                         ssd: "",
                         ram: "",
-                        inventory_id: 0
+                        inventory_id: 0,
+                        favorite: false
                     }
                 ]
             },
@@ -65,7 +67,8 @@ const watchDetail: ProductDetail[] = [
                         price: "Từ 6.399.000đ",
                         ssd: "",
                         ram: "",
-                        inventory_id: 0
+                        inventory_id: 0,
+                        favorite: false
                     },
                     {
                         connection: "GPS + Cellular",
@@ -73,7 +76,8 @@ const watchDetail: ProductDetail[] = [
                         price: "Từ 7.699.000đ",
                         ssd: "",
                         ram: "",
-                        inventory_id: 0
+                        inventory_id: 0,
+                        favorite: false
                     }
                 ]
             },

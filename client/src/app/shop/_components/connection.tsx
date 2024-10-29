@@ -22,7 +22,7 @@ export default function ConnectionDetail({ product, color, specs, setSpecs }: IS
           transition={{ duration: 0.25 }}
         >
 
-          <div className=" container mt-10" id='RAM'>
+          <div className=" container" id='RAM'>
             <div className=' font-semibold text-2xl'>
               Kết Nối. <span className=' text-gray-400'>Duy trì kết nối mạng kể cả khi có hay không có điện thoại ở bên.</span>
             </div>
@@ -32,7 +32,7 @@ export default function ConnectionDetail({ product, color, specs, setSpecs }: IS
                 <button
                   className={`container ${specs.connection === value.connection ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                   key={index}
-                  onClick={() => setSpecs({ connection: value.connection, desc: value.desc, price: value.price, ram: "", ssd: "", inventory_id: value.inventory_id })}
+                  onClick={() => setSpecs({ ...value })}
                 >
                   <div className='flex justify-between p-4'>
                     <div className=' w-2/5 flex flex-col items-start justify-center'>
@@ -57,7 +57,7 @@ export default function ConnectionDetail({ product, color, specs, setSpecs }: IS
           transition={{ duration: 0.25 }}
         >
 
-          <div className=" container mt-10" id='RAM'>
+          <div className=" container" id='RAM'>
             <div className=' font-semibold text-2xl'>
               Kết Nối. <span className=' text-gray-400'>Duy trì kết nối mạng kể cả khi có hay không có điện thoại ở bên.</span>
             </div>
@@ -67,7 +67,7 @@ export default function ConnectionDetail({ product, color, specs, setSpecs }: IS
                 <button
                   className={`container ${specs.connection === value.connection ? "border-blue-500" : "border-gray-400"} border-[1.5px] rounded-xl mt-5 h-[100px]`}
                   key={index}
-                  onClick={() => setSpecs({ connection: value.connection, desc: value.desc, price: value.price, ram: "", ssd: "", inventory_id: value.inventory_id })}
+                  onClick={() => setSpecs({ ...value })}
                 >
                   <div className='flex justify-between p-4'>
                     <div className=' w-2/5 flex flex-col items-start justify-center'>
