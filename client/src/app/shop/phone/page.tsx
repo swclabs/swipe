@@ -1,23 +1,14 @@
 "use client"
-import React from 'react';
-import Banner from "@/components/layout/banner"
-import News from '@/components/content/phone/news';
-import Accessories from '@/components/content/phone/accessories';
-import ProductBar from '@/components/content/phone/product-bar';
-import Product from '@/components/content/phone/product';
-import Welcome from '@/components/layout/welcome-section';
-import posts from '@/faker/posts';
-import ProductIphoneTypes from '@/components/content/phone/product-types';
-import { motion } from "framer-motion"
-import { ProductCardCarousel } from '@/components/content/shop/accessory-carousel';
-import { product_carousel } from '@/faker/accessory-carousel';
+import Product from '@/app/phone/_components/product';
 import Accessory from '@/components/content/accessories';
+import Banner from "@/components/layout/banner";
+import Welcome from '@/components/layout/welcome-section';
 
-function IphonePage() {
+export default function Page() {
   return (
     <>
-      <div className=" w-full bg-gray-50">
-        <div className=' w-full flex justify-center p-5 bg-gray-50'>
+      <div className=" w-full">
+        {/* <div className=' w-full flex justify-center p-5 bg-gray-50'>
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -26,7 +17,7 @@ function IphonePage() {
           >
             <ProductIphoneTypes />
           </motion.div>
-        </div>
+        </div> */}
         <Banner />
 
         <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
@@ -38,5 +29,3 @@ function IphonePage() {
     </>
   );
 }
-
-export default IphonePage;

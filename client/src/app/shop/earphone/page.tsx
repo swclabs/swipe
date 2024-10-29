@@ -1,15 +1,13 @@
 "use client"
-import React from 'react';
-import Product from '@/components/content/earphone/product';
+import Product from '@/app/earphone/_components/product';
+import Banner from '@/components/layout/banner';
 import Welcome from '@/components/layout/welcome-section';
-import { motion } from 'framer-motion';
-import ProductAirpodTypes from '@/components/content/earphone/product-types';
 
 
 export default function Page() {
   return (
-    <div className=' bg-gray-50'>
-      <div className=' w-full flex justify-center p-5 bg-gray-50'>
+    <div className='w-full'>
+      {/* <div className=' w-full flex justify-center p-5 bg-gray-50'>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -18,7 +16,8 @@ export default function Page() {
         >
           <ProductAirpodTypes />
         </motion.div>
-      </div>
+      </div> */}
+      <Banner />
       <Welcome title='AirPods' subtitle='Tất cả các phiên bản' />
       <Product />
     </div>

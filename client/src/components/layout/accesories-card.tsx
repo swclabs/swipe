@@ -2,6 +2,7 @@ import { Button, Image } from "@nextui-org/react";
 import { AccessoryShopCard } from "@/types/products"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { formatNumber } from "@/utils/fmt";
 
 export default function AccessoryCard({ data }: { data: AccessoryShopCard[] }) {
   return (
@@ -38,7 +39,7 @@ export default function AccessoryCard({ data }: { data: AccessoryShopCard[] }) {
                     <p className="h-4 mb-2 text-sm text-red-500">{value.tag}</p>
                     <p className="h-16 text-base font-semibold">{value.title}</p>
                     <p className="h-4 text-sm w-[90%] mt-4">
-                      {value.price}
+                      {formatNumber(parseInt(value.price))}
                     </p>
                   </div>
                 </CardFooter>

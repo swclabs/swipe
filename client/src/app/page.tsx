@@ -4,7 +4,7 @@ import Banner from "@/components/layout/banner"
 import ShortCut from "@/components/layout/shortcut"
 import Link from "next/link"
 import React from "react"
-import HomePageCarousel, { HomePageBannerCarousel } from "@/components/content/home/carousel"
+import HomePageCarousel, { HomePageBannerCarousel } from "@/components/carousel"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
@@ -17,7 +17,7 @@ export default function Home() {
       transition={{ delay: 0.25 }}
     >
       <Banner />
-      <div className=" bg-gray-50 w-full">
+      <div className="w-full">
         <div className=" flex justify-center items-center min-h-[70vh]">
           <div className="flex-col">
             <div className="w-full flex justify-center max-h-max">

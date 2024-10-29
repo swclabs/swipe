@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import { auth } from "@/lib/oauth";
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin", 'vietnamese'] });
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin', 'vietnamese'],
+})
 
 export const metadata: Metadata = {
   title: "Swipe",

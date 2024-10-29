@@ -1,16 +1,14 @@
 "use client"
-import React from 'react';
-import Welcome from '@/components/layout/welcome-section';
-import ComputerNavbar from '@/components/content/computer/navbar';
-import { motion } from "framer-motion"
-import { desktop, display, laptop } from '@/faker/mac';
+import { ProductDesktopCard, ProductDisplayCard, ProductLaptopCard } from '@/app/computer/_components/product-card';
 import Accessory from '@/components/content/accessories';
-import { ProductDesktopCard, ProductDisplayCard, ProductLaptopCard } from '@/components/content/computer/product-card';
+import Banner from '@/components/layout/banner';
+import Welcome from '@/components/layout/welcome-section';
+import { desktop, display, laptop } from '@/faker/mac';
 
-function ProductPage() {
+export default function Page() {
   return (
-    <div className=' w-full bg-gray-50'>
-      <div className=' w-full flex justify-center p-2'>
+    <div className=' w-full'>
+      {/* <div className=' w-full flex justify-center p-2'>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -19,7 +17,8 @@ function ProductPage() {
         >
           <ComputerNavbar />
         </motion.div>
-      </div>
+      </div> */}
+      <Banner />
       <Welcome title='Shop Mac' subtitle='If you can dream it, Mac can do it' />
 
       {/* <ProductTabs /> */}
@@ -68,5 +67,3 @@ function ProductPage() {
     </div>
   )
 }
-
-export default ProductPage;

@@ -1,5 +1,5 @@
 "use server";
-import { Manager } from "@/service/manager";
+import { Authentication } from "@/service/authentication";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
@@ -26,7 +26,7 @@ export async function login(email: string, password: string): Promise<boolean> {
     // Verify credentials && get the user
     const user = { email: email };
     try {
-        const resp = await Manager.login({ email, password });
+        const resp = await Authentication.login({ email, password });
         const access_token = resp.data.token;
         // console.log("Login", resp.data);
         // Create the session
