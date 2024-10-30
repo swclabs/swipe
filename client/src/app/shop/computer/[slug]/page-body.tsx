@@ -7,6 +7,7 @@ import SpecSSD from "@/app/shop/_components/spec-ssd";
 import Version from "@/app/shop/_components/version";
 import { laptop } from "@/faker/mac-detail";
 import { useProducts } from "@/state/products";
+import { LoaderCircle } from "lucide-react";
 import { SessionProviderProps } from "next-auth/react";
 import { useEffect } from "react";
 
@@ -25,6 +26,14 @@ export default function ComputerPageBody({ session, id }: { session: SessionProv
     setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1, favorite: false })
     setDetails(laptop[0])
   }, [])
+
+  if (!details) {
+    return (
+      <div className=" h-screen w-full flex justify-center items-center">
+        <LoaderCircle className="animate-spin" />
+      </div>
+    )
+  }
 
   return (
     <div className=" container w-[87%] m-auto">

@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
 import { Button } from "@nextui-org/react";
+import { LoaderCircle } from "lucide-react";
 import { useEffect } from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
 
@@ -21,6 +22,15 @@ export default function Page({ params }: { params: { slug: string } }) {
   useEffect(() => {
     setDetails(watchDetail[0])
   }, [])
+
+  if (!details) {
+    return (
+      <div className=" h-screen w-full flex justify-center items-center">
+        <LoaderCircle className="animate-spin" />
+      </div>
+    )
+  }
+
   return (
     <div className=" container w-[87%] m-auto">
       <div className="flex container flex-col md:flex-row pt-14 relative max-h-max my-5">

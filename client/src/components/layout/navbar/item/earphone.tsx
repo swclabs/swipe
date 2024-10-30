@@ -4,8 +4,8 @@ import { Link } from "@nextui-org/react";
 export default function NavbarItemAirPod() {
   return (
     <div className='medium-container'>
-      <Link color="foreground" href="/earphone">
-        <p className=" text-xs">AirPods</p>
+      <Link color="foreground" href="/earphone" className="pb-[2px] hover:border-b-2 hover:pb-0 hover:border-black">
+        <p className="text-sm font-semibold">AirPods</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex absolute'>

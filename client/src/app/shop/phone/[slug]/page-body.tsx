@@ -8,7 +8,7 @@ import Version from "@/app/shop/_components/version";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useProducts } from "@/state/products";
-import { Star } from "lucide-react";
+import { LoaderCircle, Star } from "lucide-react";
 import { SessionProviderProps } from "next-auth/react";
 import { useEffect } from "react";
 
@@ -25,6 +25,14 @@ export default function PhonePageBody({ session, id }: { session: SessionProvide
     setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1, favorite: false })
     fetchProduct(id)
   }, [])
+
+  if (!details) {
+    return (
+      <div className=" h-screen w-full flex justify-center items-center">
+        <LoaderCircle className="animate-spin" />
+      </div>
+    )
+  }
 
   return (
     <div className=" flex justify-center max-h-max">

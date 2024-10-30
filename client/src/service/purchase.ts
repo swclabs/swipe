@@ -3,6 +3,7 @@ import APIEndpoint from "@/providers/endpoint";
 import { OK } from "@/types";
 import Coupon from "@/types/coupons";
 import { Carts } from "@/types/purchase";
+import { SearchProduct } from "@/types/search";
 import { AxiosResponse } from "axios";
 
 export class PurchaseService {

@@ -22,8 +22,8 @@ export default function NavbarUser({ session }: { session: SessionProviderProps[
             <p>Welcome {session.user?.name} 👋 </p>
             |
             <button className='font-semibold flex items-center gap-x-2' onClick={() => {
-              signOut()
               logout()
+              signOut({ callbackUrl: '/', redirect: true })
             }}>
               <p>
                 LogOut

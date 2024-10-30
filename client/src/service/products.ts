@@ -2,15 +2,16 @@ import APIEndpoint from "@/providers/endpoint";
 import { ProductDetail, ProductType } from "@/types/products";
 import createAxiosInstance from "@/lib/axios";
 import { AxiosResponse } from "axios";
+import { SearchProduct } from "@/types/search";
 
 
 export class ProductService {
-    static async searchProductDetails(key: string): Promise<AxiosResponse<ProductDetail[]>> {
+    static async search(key: string): Promise<AxiosResponse<SearchProduct[]>> {
         const axiosInstance = await createAxiosInstance();
-        const resp: AxiosResponse<ProductDetail[]> = await axiosInstance.get(
-            `${APIEndpoint.PRODUCTS.SEARCH_DETAIL}?key=${key}`
+        const response: AxiosResponse<SearchProduct[]> = await axiosInstance.get(
+            `${APIEndpoint.PRODUCTS.SEARCH}?keyword=${key}`
         );
-        return resp;
+        return response;
     }
 
     static async getProductDetails(id: number): Promise<AxiosResponse<ProductDetail>> {

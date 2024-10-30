@@ -4,8 +4,8 @@ import { Link } from "@nextui-org/react";
 export default function NavbarItemSupport() {
   return (
     <div className='medium-container'>
-      <Link color="foreground" href="/support">
-        <p className=" text-xs">Hỗ trợ</p>
+      <Link color="foreground" href="/support" className="pb-[2px] hover:border-b-2 hover:pb-0 hover:border-black">
+        <p className=" text-sm font-semibold">Hỗ trợ</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex absolute'>

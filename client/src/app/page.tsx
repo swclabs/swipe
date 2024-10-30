@@ -43,7 +43,7 @@ export default function Home() {
           <HomePageBannerCarousel />
         </div>
       </div >
-      <ShortCut />
+      {/* <ShortCut /> */}
     </motion.div>
   )
 }

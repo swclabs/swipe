@@ -40,8 +40,8 @@ function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }
         </a>
         {session ?
           <button className=' pt-2 font-semibold flex items-center' onClick={() => {
-            signOut()
             logout()
+            signOut({ callbackUrl: '/', redirect: true })
           }}>
             <FiLogOut />
             <p className=" pl-2">

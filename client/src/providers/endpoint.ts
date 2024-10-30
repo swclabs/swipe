@@ -17,6 +17,7 @@ export default class APIEndpoint {
     PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
     SEARCH_DETAIL: `${APIEndpoint.BASE_URL}/search/details`,
     INVENTORY: `${APIEndpoint.BASE_URL}/inventories`,
+    SEARCH: `${APIEndpoint.BASE_URL}/search`,
   };
 
   static readonly PURCHASE = {

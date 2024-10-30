@@ -4,8 +4,8 @@ export default function NavbarItemAccessory() {
   return (
 
     <div className='medium-container'>
-      <Link color="foreground" href="/accessories">
-        <p className=" text-xs">Phụ kiện</p>
+      <Link color="foreground" href="/accessories" className="pb-[2px] hover:border-b-2 hover:pb-0 hover:border-black">
+        <p className=" text-sm font-semibold">Phụ kiện</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex absolute'>
