@@ -22,7 +22,7 @@ export default function ComputerPageBody({ session, id }: { session: SessionProv
   } = useProducts()
 
   useEffect(() => {
-    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1 })
+    setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1, favorite: false })
     setDetails(laptop[0])
   }, [])
 
@@ -57,6 +57,7 @@ export default function ComputerPageBody({ session, id }: { session: SessionProv
               product={details}
               color={color}
               setColor={setColor}
+              setSpecs={setSpecs}
             />
           }
 

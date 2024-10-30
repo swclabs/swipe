@@ -2,8 +2,15 @@ import { PurchaseService } from "@/service/purchase";
 import { Carts } from "@/types/purchase";
 import { create } from "zustand";
 
+interface Coupon {
+  code: string;
+  discount: number;
+}
+
 interface Cart {
   carts: Carts | undefined;
+  coupon: Coupon;
+  setCoupon: (coupon: Coupon) => void;
   setCart: (carts: Carts) => void;
   fetchCart: () => Promise<void>;
   addToCart: (inventory_id: number, quantity: number) => Promise<void>;
@@ -12,6 +19,8 @@ interface Cart {
 export const useCart = create<Cart>()(
   (set): Cart => ({
     carts: undefined,
+    coupon: { code: "", discount: 0 },
+    setCoupon: (coupon: Coupon) => set({ coupon }),
     setCart: (carts: Carts) => set({ carts }),
     fetchCart: async () => {
       try {
@@ -19,6 +28,7 @@ export const useCart = create<Cart>()(
         return set((state) => {
           return {
             carts: resp ? resp.data : undefined,
+            coupon: state.coupon,
           };
         });
       } catch (e) {
@@ -32,6 +42,7 @@ export const useCart = create<Cart>()(
         return set((state) => {
           return {
             carts: resp ? resp.data : undefined,
+            coupon: state.coupon,
           };
         });
       } catch (e) {

@@ -14,7 +14,7 @@ export default function Version({ product }: IVersionProps) {
         Phiên bản. <span className=' text-gray-400'> phù hợp nhất với bạn?</span>
       </div>
 
-      <div className='pt-5'>
+      <div className='pt-2'>
         <button
           className={`border-[1.5px] rounded-xl mt-5 h-[100px] w-full text-left`}
         >

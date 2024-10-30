@@ -59,7 +59,7 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex md:gap-8 lg:gap-12 font-medium" justify="center">
+      <NavbarContent className="hidden sm:flex md:gap-8 lg:gap-12" justify="center">
         <NavbarItem>
           <Link href='/'>
             <Image

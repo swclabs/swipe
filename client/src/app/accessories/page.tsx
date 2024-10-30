@@ -2,10 +2,10 @@ import AccessoryAirtag from './_components/airtag-accessories';
 import AccessoryIpad from '@/app/accessories/_components/ipad-accessories';
 import AccessoryIphone from '@/app/accessories/_components/iphone-accessories';
 import AccessoryMac from '@/app/accessories/_components/mac-accessories';
-import Product from '@/app/accessories/_components/product';
 import AccessoryWatch from '@/app/accessories/_components/watch-accessories';
 import Banner from "@/components/layout/banner";
 import ShortCut from '@/components/layout/shortcut';
+import Welcome from '@/components/layout/welcome-section';
 import { Image } from '@nextui-org/react';
 
 export default function Page() {
@@ -14,15 +14,8 @@ export default function Page() {
       <div className=" w-full bg-gray-50">
         {/* <ProductBar /> */}
         <Banner />
-        <Product />
 
-
-        {/* Section Accessories */}
-        <div className="flex justify-center mt-12">
-          <div className=" pt-12 pb-12">
-            <span className=" text-xl sm:text-5xl font-medium">Phụ kiện iPhone nổi bật</span>
-          </div>
-        </div>
+        <Welcome title='Phụ Kiện' subtitle='Tìm phụ kiện cho thiết bị của bạn' />
 
         <AccessoryIphone />
 

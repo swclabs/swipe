@@ -2,22 +2,25 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PurchaseService } from "@/service/purchase";
 import { useCart } from "@/state/purchase";
 import { formatNumber } from "@/utils/fmt";
 import { Minus, Plus, Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Coupons from "./_components/coupons";
 
 
 export default function Page() {
-  const { carts, fetchCart, setCart } = useCart();
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+
+  const { carts, fetchCart, setCart, coupon, setCoupon } = useCart();
+
   useEffect(() => {
     fetchCart();
   }, []);
-  
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     const { total, quantity } = carts?.products?.reduce(
@@ -32,15 +35,6 @@ export default function Page() {
     setQuantity(quantity);
     setTotalPrice(total);
   }, [carts]);
-
-  const handleDelete = (cart_id: number) => {
-    if (carts) {
-      setCart({
-        user_id: carts.user_id,
-        products: carts.products.filter((value) => value.cart_id !== cart_id)
-      });
-    }
-  }
 
   const up = (cart_id: number) => {
     if (carts) {
@@ -71,8 +65,23 @@ export default function Page() {
     }
   }
 
+  const handleDelete = async (cart_id: number, inventory_id: number) => {
+    try {
+      await PurchaseService.deleteCart(inventory_id);
+    }
+    catch (e) {
+      console.log(e);
+    }
+    if (carts) {
+      setCart({
+        user_id: carts.user_id,
+        products: carts.products.filter((value) => value.cart_id !== cart_id)
+      });
+    }
+  }
+
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen mb-10">
       <div className=" flex lg:pt-10">
         <div className=" sm:w-1/12 shrink-0 snap-center">
           <div className="shrink-0"></div>
@@ -122,7 +131,7 @@ export default function Page() {
                             </Button>
                           </div>
                           <Button variant="ghost" size="icon" onClick={() => {
-                            handleDelete(value.cart_id);
+                            handleDelete(value.cart_id, value.inventory_id);
                           }}>
                             <Trash size={13} className=" text-red-600" />
                           </Button>
@@ -153,16 +162,16 @@ export default function Page() {
             </div>
             <div className="w-full flex justify-between font-medium">
               <p className="">Discount</p>
-              <p className="">0đ</p>
+              <p className="">-{formatNumber((totalPrice * coupon.discount) / 100)}đ</p>
             </div>
             <div className=" text-sm flex flex-col gap-y-2 border-y-1 py-5">
               <div className="w-full flex justify-between font-medium">
                 <p className="">Total</p>
-                <p className="">{formatNumber(totalPrice)}đ</p>
+                <p className="">{formatNumber(totalPrice - (totalPrice * coupon.discount) / 100)}đ</p>
               </div>
             </div>
-            <Input placeholder="Add coupon" />
-            <Button variant="secondary" type="submit">Add Coupon</Button>
+            <Input placeholder="Add coupon" defaultValue={coupon.code} disabled />
+            <Coupons coupon={coupon} setCoupon={setCoupon} />
             <Link href="/orders/new"><Button className=" w-full">Thanh Toán</Button></Link>
           </div>
         </div>

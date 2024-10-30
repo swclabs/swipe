@@ -1,3 +1,4 @@
+import { logout } from "@/lib/auth"
 import { SessionProviderProps, signOut } from "next-auth/react"
 import Link from "next/link"
 import { FiLogOut } from "react-icons/fi"
@@ -20,9 +21,12 @@ export default function NavbarUser({ session }: { session: SessionProviderProps[
           <div className="flex gap-x-2 items-center">
             <p>Welcome {session.user?.name} 👋 </p>
             |
-            <button className='font-semibold flex items-center gap-x-2' onClick={() => signOut()}>
+            <button className='font-semibold flex items-center gap-x-2' onClick={() => {
+              signOut()
+              logout()
+            }}>
               <p>
-                Log out
+                LogOut
               </p>
               <FiLogOut />
             </button>

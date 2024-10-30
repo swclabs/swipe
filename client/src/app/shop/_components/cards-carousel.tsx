@@ -18,8 +18,8 @@ export function ShopCardsCarousel({ carousel }: { carousel: CarouselData }) {
   ));
 
   return (
-    <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-4xl font-semibold text-neutral-800 dark:text-neutral-200 font-sans">
+    <div className="w-full h-full py-10">
+      <h2 className="max-w-7xl mx-auto text-xl md:text-4xl font-semibold text-neutral-800 dark:text-neutral-200 font-sans">
         {carousel.headline}
       </h2>
       <Carousel items={cards} />
