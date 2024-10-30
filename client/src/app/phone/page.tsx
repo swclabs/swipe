@@ -9,7 +9,7 @@ import { iphone_carousel } from '@/faker/iphone-carousel';
 
 export default function Page() {
   return (
-    <div className=" w-full">
+    <div className="w-full">
       <Banner />
       <Welcome title='iPhone' subtitle='Được thiết kế mà ai cũng mê' />
       <PhoneCardsCarousel carousel={iphone_carousel} />

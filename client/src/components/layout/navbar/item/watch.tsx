@@ -3,8 +3,8 @@ import { Link } from "@nextui-org/react";
 export default function NavbarItemWatch() {
   return (
     <div className='medium-container'>
-      <Link color="foreground" href="/watch">
-        <p className=" text-xs">Watch</p>
+      <Link color="foreground" href="/watch" className="pb-[2px] hover:border-b-2 hover:pb-0 hover:border-black">
+        <p className=" text-sm font-semibold">Watch</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex absolute'>

@@ -6,6 +6,7 @@ import ConnectionDetail from "@/app/shop/_components/connection";
 import Version from "@/app/shop/_components/version";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
+import { LoaderCircle } from "lucide-react";
 import { SessionProviderProps } from "next-auth/react";
 import { useEffect } from "react";
 
@@ -21,6 +22,13 @@ export default function WatchPageBody({ session, id }: { session: SessionProvide
   useEffect(() => {
     setDetails(watchDetail[0])
   }, [])
+  if (!details) {
+    return (
+      <div className=" h-screen w-full flex justify-center items-center">
+        <LoaderCircle className="animate-spin" />
+      </div>
+    )
+  }
   return (
     <div className=" container w-[87%] m-auto">
       <div className=" container pt-10">

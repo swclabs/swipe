@@ -4,8 +4,8 @@ import { Link } from "@nextui-org/react";
 export function NavbarItemIpad() {
   return (
     <div className='large-container'>
-      <Link color="foreground" href="/tablet">
-        <p className=" text-xs">iPad</p>
+      <Link color="foreground" href="/tablet" className="pb-[2px] hover:border-b-2 hover:pb-0 hover:border-black">
+        <p className=" font-semibold text-sm">iPad</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex absolute'>

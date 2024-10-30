@@ -4,8 +4,8 @@ import { Link } from "@nextui-org/react";
 export function NavbarItemIphone() {
   return (
     <div className='medium-container'>
-      <Link color="foreground" href="/phone">
-        <p className=" text-xs">iPhone</p>
+      <Link color="foreground" href="/phone" className="pb-[2px] hover:border-b-2 hover:pb-0 hover:border-black">
+        <p className="text-sm font-semibold">iPhone</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex absolute'>

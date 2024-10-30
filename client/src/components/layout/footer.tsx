@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 export default function Footer() {
   return (
-    <div className="w-full flex justify-center bg-gray-50">
+    <div className="w-full flex justify-center">
       <div className=" max-h-max w-4/5">
         <div className="flex py-16 gap-5 max-h-max flex-col-reverse md:flex-row justify-between">
           <div className=" max-w-max">
