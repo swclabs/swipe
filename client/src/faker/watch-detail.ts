@@ -23,7 +23,7 @@ const watchDetail: ProductDetail[] = [
                     {
                         connection: "GPS",
                         desc: "Gọi điện và gửi tin nhắn với iPhone gần bạn",
-                        price: "Từ 6.399.000đ",
+                        price: "6399000",
                         ssd: "",
                         ram: "",
                         inventory_id: 0,
@@ -32,7 +32,7 @@ const watchDetail: ProductDetail[] = [
                     {
                         connection: "GPS + Cellular",
                         desc: "Gọi điện và gửi tin nhắn chỉ với Apple Watch.",
-                        price: "Từ 7.699.000đ",
+                        price: "7699000",
                         ssd: "",
                         ram: "",
                         inventory_id: 0,
@@ -64,7 +64,7 @@ const watchDetail: ProductDetail[] = [
                     {
                         connection: "GPS",
                         desc: "Gọi điện và gửi tin nhắn với iPhone gần bạn",
-                        price: "Từ 6.399.000đ",
+                        price: "6399000",
                         ssd: "",
                         ram: "",
                         inventory_id: 0,
@@ -73,7 +73,7 @@ const watchDetail: ProductDetail[] = [
                     {
                         connection: "GPS + Cellular",
                         desc: "Gọi điện và gửi tin nhắn chỉ với Apple Watch.",
-                        price: "Từ 7.699.000đ",
+                        price: "7699000",
                         ssd: "",
                         ram: "",
                         inventory_id: 0,

@@ -62,33 +62,8 @@ export default function PhonePageBody({ session, id }: { session: SessionProvide
                 product={details}
               />
             }
-            <div className="flex gap-x-1 items-center">
-              <p className=" text-xs">Bạn đã mua sản phẩm, đánh giá ngay</p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button size="icon" variant="ghost"><Star /></Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Edit profile</DialogTitle>
-                    <DialogDescription>
-                      Make changes to your profile here. Click save when you are done.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid gap-4 py-4">
 
-                  </div>
-                  <DialogFooter>
-                    <Button type="submit">Send</Button>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
 
-            </div>
-            {/* <div className=' mt-5 text-xs'>
-            Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần đầu 20%.
-            Có thêm tùy chọn thanh toán khi hoàn tất giao dịch.
-          </div> */}
 
             {details &&
               <Colors

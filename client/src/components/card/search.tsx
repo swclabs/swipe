@@ -54,12 +54,12 @@ export default function SearchCard({ product }: { product: SearchProduct[] }) {
                       <div className="h-full flex items-center justify-between">
                         <p className="text-left font-semibold lg:text-xl text-base"> {value.name}</p>
                         <div className=" flex gap-y-3 items-center">
-                          <Button size="icon" variant="ghost"><Star /></Button>
-                          <p>5.0</p>
+                          <Button size="icon" variant="ghost"><Star className="w-5" /></Button>
+                          <p className=" font-semibold">5.0</p>
                         </div>
                       </div>
                       <div className="h-full">
-                        <h4 className="font-semibold lg:text-base text-xs text-left">{value.price}</h4>
+                        <h4 className="font-semibold lg:text-base text-xs text-left text-[#707072]">{value.price}</h4>
                       </div>
                     </div>
                   </div>

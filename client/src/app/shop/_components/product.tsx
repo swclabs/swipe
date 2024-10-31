@@ -1,17 +1,9 @@
 'use client';
-import ProductCard from "@/components/card";
 import CardScroll from "@/components/card/scroll";
-import ListCard from "@/components/layout/card-section";
-import productNews from "@/faker/product-news";
 import { ProductService } from "@/service/products";
 import { ProductType } from "@/types/products";
 import { useEffect, useState } from "react";
 
-export default function Product() {
-  return (
-    <ListCard data={productNews} />
-  )
-}
 
 export function PhoneCard() {
   const [product, setProduct] = useState<ProductType[]>([]);

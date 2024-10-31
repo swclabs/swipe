@@ -13,7 +13,11 @@ export default function CardScroll({ product, href }: { product: ProductType[], 
     <div className="flex flex-col justify-center w-full py-10 overflow-hidden">
       <div className="px-4 flex justify-between w-full max-w-7xl mx-auto text-xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-200 font-sans">
         <span className="font-medium">Tất cả sản phẩm.</span>
-        <a className="font-medium" href={href}>Cửa hàng</a>
+        <Link className="font-medium" href={href}>
+          <Button className=" rounded-full" variant="outline">
+            Cửa hàng
+          </Button>
+        </Link>
       </div>
       <ScrollArea className="whitespace-nowrap rounded-md">
         <div className="flex space-x-4 p-4 w-full">
@@ -62,7 +66,7 @@ export default function CardScroll({ product, href }: { product: ProductType[], 
                           <div className="h-full flex items-center justify-between">
                             <p className="text-left font-semibold lg:text-xl text-base"> {value.name}</p>
                             <div className=" flex gap-y-3 items-center">
-                              <Button size="icon" variant="ghost"><Star /></Button>
+                              <Button size="icon" variant="ghost"><Star className="w-5" /></Button>
                               <p>5.0</p>
                             </div>
                           </div>

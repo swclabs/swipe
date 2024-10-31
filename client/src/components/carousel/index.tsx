@@ -69,12 +69,12 @@ export const HomePageBannerCarousel = () => {
   )
   return (
     <>
-      <div className=" flex text-xl font-medium">
+      {/* <div className=" flex text-xl font-medium">
         <div className=" sm:w-1/12 shrink-0 snap-center">
           <div className="shrink-0"></div>
         </div>
         Classics Spotlight
-      </div>
+      </div> */}
       <Carousel
         className="w-full"
         opts={{ loop: true }}
@@ -82,29 +82,29 @@ export const HomePageBannerCarousel = () => {
           plugin.current
         ]}
         onMouseEnter={plugin.current.stop}
-        onMouseLeave={() => plugin.current.play(1)}
+      onMouseLeave={() => plugin.current.play(1)}
       >
         <CarouselContent>
           {HomePageBannerCarouselData.map((value, index) => (
-            <CarouselItem key={index} className="md:basis-1/5">
+            <CarouselItem key={index} className="md:basis-1/4 basis-1/2">
               <motion.div
                 className="box"
                 whileHover={{ scale: 1.03 }}
               >
-                <div className="p-1">
-                  <Card className=" border-none bg-gray-100">
-                    <CardContent className="flex aspect-video items-center justify-center min-h-max">
-                      <div className="flex items-center justify-between">
-                        <div className="items-center w-full flex justify-center">
+                <div className="relative">
+                  <Card className=" border-none bg-gray-100 max-h-max">
+                    <CardContent className="flex aspect-video items-center justify-center min-h-max p-1 px-2 lg:px-6">
+                      <div className="flex items-center justify-between w-full">
+                        <div className="items-center flex justify-center h-full">
                           <Image
-                            className="w-[50px] lg:w-[70px]"
+                            className="w-[40px] lg:w-[90px]"
                             alt="img card"
                             height={150}
                             width={150}
                             src={value.image}
                           />
                         </div>
-                        <div className="lg:text-2xl font-semibold">
+                        <div className="lg:text-2xl text-xs font-semibold">
                           {value.title}
                         </div>
                       </div>
