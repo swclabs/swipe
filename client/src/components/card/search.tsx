@@ -35,7 +35,11 @@ export default function SearchCard({ product }: { product: SearchProduct[] }) {
             >
               <Link
                 key={index}
-                href={`/shop/${value.category}/${value.id.toString()}`}
+                href={
+                  value.category === "laptop" || value.category === "desktop" || value.category === "display"
+                    ? `/shop/computer/${value.category}/${value.id}`
+                    : `/shop/${value.category}/${value.id}`
+                }
               >
                 <div className="flex flex-col justify-center items-center text-center gap-y-4" key={index}>
                   <div className=" bg-gray-100 lg:h-[250px] h-[150px] flex items-center w-full">

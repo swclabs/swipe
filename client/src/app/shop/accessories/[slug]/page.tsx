@@ -3,7 +3,7 @@ import ShopDeviceCarousel from "@/app/shop/_components/carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import watchDetail from "@/faker/watch-detail";
+import { accessory_iphone } from "@/faker/accessory-details";
 import { useProducts } from "@/state/products";
 import { formatNumber } from "@/utils/fmt";
 import { LoaderCircle, Truck } from "lucide-react";
@@ -20,7 +20,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     setSpecs,
   } = useProducts()
   useEffect(() => {
-    setDetails(watchDetail[0])
+    setDetails(accessory_iphone[0])
   }, [])
 
   if (!details) {

@@ -11,6 +11,8 @@ export interface Specification {
 export interface ProductDetail {
     name: string;
     screen: string;
+    display: string;
+    rating: number;
     image: string[]
     color: {
         name: string;
