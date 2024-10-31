@@ -4,7 +4,6 @@ export const laptop: ProductDetail[] = [
   {
     name: "MacBook Air 13”",
     screen: "13.3-inch Retina display",
-    // chip: "M1 chip",
     image: ["/img/mac/mba13-midnight-select-202402.jpg"],
     color: [
       {
@@ -360,5 +359,31 @@ export const laptop: ProductDetail[] = [
         ],
       },
     ],
+    display: "",
+    rating: 0
   },
 ];
+
+export const display: ProductDetail[] = [
+  {
+    name: "Studio Display",
+    image: ["/img/product/studiodisplay.png"],
+    screen: "",
+    display: "",
+    rating: 0,
+    color: [{
+      name: "White",
+      img: "",
+      product: ["/img/product/studiodisplay.png"],
+      specs: [{
+        favorite: false,
+        inventory_id: 0,
+        price: "16990000",
+        ssd: "",
+        ram: "",
+        desc: "",
+        connection: ""
+      }]
+    }]
+  },
+]
