@@ -1,7 +1,7 @@
 import { logout } from "@/lib/auth"
+import { LogOut } from "lucide-react"
 import { SessionProviderProps, signOut } from "next-auth/react"
 import Link from "next/link"
-import { FiLogOut } from "react-icons/fi"
 
 export default function NavbarUser({ session }: { session: SessionProviderProps["session"] }) {
   return (
@@ -28,7 +28,7 @@ export default function NavbarUser({ session }: { session: SessionProviderProps[
               <p>
                 LogOut
               </p>
-              <FiLogOut />
+              <LogOut className=" w-3" />
             </button>
           </div>
         }

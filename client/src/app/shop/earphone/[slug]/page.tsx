@@ -1,13 +1,12 @@
 'use client';
 import ShopDeviceCarousel from "@/app/shop/_components/carousel";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import watchDetail from "@/faker/watch-detail";
 import { useProducts } from "@/state/products";
-import { Button } from "@nextui-org/react";
-import { LoaderCircle } from "lucide-react";
+import { LoaderCircle, Truck } from "lucide-react";
 import { useEffect } from "react";
-import { CiDeliveryTruck } from "react-icons/ci";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -48,7 +47,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           <h1 className=" font-semibold text-3xl py-4">
             AirPods (thế hệ thứ 2)
           </h1>
-          <div className=" text-xl">
+          <div className=" text-xl font-semibold">
             3.499.000đ
           </div>
           <div className=" flex gap-3 pt-4">
@@ -56,22 +55,22 @@ export default function Page({ params }: { params: { slug: string } }) {
             <Badge variant="secondary">Airpods</Badge>
           </div>
           <Separator className="my-5" />
-          <div className=" flex w-full items-center gap-5 mt-5">
-            <CiDeliveryTruck size={50} className=" font-light" />
+          <div className=" flex w-full gap-5 mt-5">
+            <Truck size={25} />
             <div className=" text-left flex-1">
               <p className=" font-semibold">
                 Giao hàng:
               </p>
-              <p className=" text-sm font-light">
+              <p className=" text-sm">
                 Còn hàng
               </p>
-              <p className=" text-sm font-light">
+              <p className=" text-sm">
                 Vận chuyển miễn phí
               </p>
             </div>
           </div>
           <div className=" flex w-full mt-5">
-            <Button color="primary" fullWidth >Thêm vào giỏ hàng</Button>
+            <Button className=" w-full" >Thêm vào giỏ hàng</Button>
           </div>
         </div>
       </div>

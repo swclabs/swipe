@@ -20,8 +20,8 @@ export default function Footer() {
               <div className="shrink-0"></div>
             </div>
             <div className="container">
-              <p className=" text-xs font-semibold">Shop</p>
-              <ul className=" pt-3 font-normal text-xs">
+              <p className=" text-sm font-semibold">Shop</p>
+              <ul className=" pt-3 font-semibold text-xs text-[#707072]">
                 <li>Mac</li>
                 <li>iPad</li>
                 <li>iPhone</li>
@@ -32,8 +32,8 @@ export default function Footer() {
             </div>
 
             <div className="container">
-              <p className=" text-xs font-semibold">Help</p>
-              <ul className=" pt-3 font-normal text-xs">
+              <p className=" text-sm font-semibold">Help</p>
+              <ul className=" pt-3 font-semibold text-xs text-[#707072]">
                 <li>Mac</li>
                 <li>iPad</li>
                 <li>iPhone</li>
@@ -44,8 +44,8 @@ export default function Footer() {
             </div>
 
             <div className="container">
-              <p className=" text-xs font-semibold">About Swipe</p>
-              <ul className=" pt-3 font-normal text-xs">
+              <p className=" text-sm font-semibold">About Swipe</p>
+              <ul className=" pt-3 font-semibold text-xs text-[#707072]">
                 <li>Mac</li>
                 <li>iPad</li>
                 <li>iPhone</li>

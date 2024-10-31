@@ -1,5 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ProductDetail, Specification } from "@/types/products";
-import { Button } from "@nextui-org/react";
 import Image from "next/image";
 
 interface IColorProps {
@@ -20,10 +21,9 @@ export default function Colors({ product, color, setColor, setSpecs }: IColorPro
         <div className='pt-5 flex gap-4'>
           {product.color.map((value, index) => (
             <Button
-              isIconOnly
-              radius="full"
-              variant={`${color === index ? "bordered" : "solid"}`}
-              color="primary"
+              size="icon"
+              className={cn("rounded-full border-black", color === index ? "border-[2px]" : "border-0")}
+              variant={`${color === index ? "outline" : "ghost"}`}
               onClick={() => {
                 setColor(index);
                 setSpecs({ ram: "", ssd: "", connection: "", price: "", inventory_id: -1, favorite: false, desc: "" });
@@ -33,7 +33,9 @@ export default function Colors({ product, color, setColor, setSpecs }: IColorPro
               <Image
                 alt="img"
                 src={value.img}
-                fill
+                className="rounded-full"
+                height={40}
+                width={40}
               />
             </Button>
           ))}

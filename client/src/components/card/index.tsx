@@ -62,7 +62,7 @@ export default function ProductCard({ product, href }: { product: ProductType[],
                         <div className="h-full flex items-center justify-between">
                           <p className="text-left font-semibold lg:text-xl text-base"> {value.name}</p>
                           <div className=" flex gap-y-3 items-center">
-                            <Button size="icon" variant="ghost"><Star /></Button>
+                            <Button size="icon" variant="ghost"><Star className="w-5" /></Button>
                             <p>5.0</p>
                           </div>
                         </div>

@@ -5,7 +5,6 @@ import { Badge, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu
 import { SessionProviderProps } from 'next-auth/react';
 import Image from 'next/image';
 import React from "react";
-import { IoBagOutline } from "react-icons/io5";
 import NavbarItemAccessory from './item/accessory';
 import NavbarItemMac from './item/computer';
 import NavbarItemAirPod from './item/earphone';
