@@ -8,7 +8,6 @@ const watchDetail: ProductDetail[] = [
             "/shop/watch/watch-se.jpg",
             "/shop/watch/watch-se-2.jpg",
             "/shop/watch/watch-se-3.jpg",
-
         ],
         color: [
             {
@@ -40,7 +39,9 @@ const watchDetail: ProductDetail[] = [
                     }
                 ]
             },
-        ]
+        ],
+        display: "",
+        rating: 0
     },
     {
         name: "Apple Watch SE",
@@ -49,7 +50,6 @@ const watchDetail: ProductDetail[] = [
             "/shop/watch/watch-se.jpg",
             "/shop/watch/watch-se-2.jpg",
             "/shop/watch/watch-se-3.jpg",
-
         ],
         color: [
             {
@@ -81,7 +81,9 @@ const watchDetail: ProductDetail[] = [
                     }
                 ]
             },
-        ]
+        ],
+        display: "",
+        rating: 0
     },
 ]
 
