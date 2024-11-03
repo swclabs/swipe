@@ -7,7 +7,7 @@ export class Address {
     static async GetProvinces(): Promise<AxiosResponse<DTO<Province>>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<DTO<Province>> = await axiosInstance.get(
-            APIEndpoint.ADDRESS.PROVICE,
+            APIEndpoint.ADDRESS.PROVINCE,
         );
         return response;
     }
