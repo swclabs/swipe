@@ -1,18 +1,14 @@
 import createAxiosInstance from "@/lib/axios";
 import APIEndpoint from "@/providers/endpoint";
-import { OK } from "@/types";
+import {OK} from "@/types";
 import Coupon from "@/types/coupons";
-import { Carts } from "@/types/purchase";
-import { SearchProduct } from "@/types/search";
-import { AxiosResponse } from "axios";
+import {Carts} from "@/types/purchase";
+import {AxiosResponse} from "axios";
 
 export class PurchaseService {
     static async getCart(): Promise<AxiosResponse<Carts>> {
         const axiosInstance = await createAxiosInstance();
-        const response: AxiosResponse<Carts> = await axiosInstance.get(
-            APIEndpoint.PURCHASE.CARTS,
-        );
-        return response;
+        return await axiosInstance.get(APIEndpoint.PURCHASE.CARTS);
     }
 
     static async addCart(productId: number, quantity: number): Promise<AxiosResponse<OK>> {

@@ -5,6 +5,7 @@ import { GeistMono } from 'geist/font/mono'
 import { auth } from "@/lib/oauth";
 import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Swipe",
