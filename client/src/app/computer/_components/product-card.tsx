@@ -17,7 +17,7 @@ export function ProductLaptopCard({ product }: products) {
           <p className=' text-sm font-light'>Nhanh và tiện lợi</p>
         </div>
       </div>
-      <ProductCard product={product} href="/shop/computer/" />
+      <ProductCard product={product} href="/shop/computer/laptop/" />
     </div>
   )
 }
@@ -34,7 +34,7 @@ export function ProductDesktopCard({ product }: products) {
           <p className=' text-sm font-light'>Sức mạnh tối đa</p>
         </div>
       </div>
-      <ProductCard product={product} href="/shop/computer/" />
+      <ProductCard product={product} href="/shop/computer/desktop/" />
     </div>
   )
 }
@@ -51,7 +51,7 @@ export function ProductDisplayCard({ product }: products) {
           <p className=' text-sm font-light'>Sắc màu rực rỡ</p>
         </div>
       </div>
-      <ProductCard product={product} href="/shop/computer/" />
+      <ProductCard product={product} href="/shop/computer/display/" />
     </div>
   )
 }

@@ -4,8 +4,8 @@ import { Link } from "@nextui-org/react";
 export default function NavbarItemMac() {
   return (
     <div className='large-container'>
-      <Link color="foreground" href="/computer">
-        <p className=" text-xs">Mac</p>
+      <Link color="foreground" href="/computer" className="pb-[2px] hover:border-b-2 hover:pb-0 hover:border-black">
+        <p className=" text-sm font-semibold">Mac</p>
       </Link>
       <div className="overlay">
         <div className=' container p-8 flex absolute'>

@@ -102,9 +102,14 @@ export default function Page() {
                           {value.color.specs.connection !== "" && <Badge variant="outline">{value.color.specs.connection}</Badge>}
                           {value.color.specs.desc !== "" && <Badge variant="outline">{value.color.specs.desc}</Badge>}
                         </div>
-                        <Link href={`/shop/${value.category}/${value.product_id}`}>
-                          <p className=" font-medium underline">Đi tới cửa hàng</p>
-                        </Link>
+                        {(value.category === "laptop" || value.category === "desktop" || value.category === "display") ?
+                          <Link href={`/shop/computer/${value.category}/${value.product_id}`}>
+                            <p className=" font-medium underline">Đi tới cửa hàng</p>
+                          </Link> :
+                          <Link href={`/shop/${value.category}/${value.product_id}`}>
+                            <p className=" font-medium underline">Đi tới cửa hàng</p>
+                          </Link>
+                        }
                       </div>
                       <div className='text-sm font-semibold flex gap-3 items-center'>
                         <Button variant="ghost" size="icon" onClick={() => save(value.color.specs.inventory_id)}>

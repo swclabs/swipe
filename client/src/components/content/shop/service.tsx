@@ -1,31 +1,28 @@
 "use client";
 import React from "react";
-import { IoCartOutline } from "react-icons/io5";
-import { TbCurrencyDong } from "react-icons/tb";
-import { RiBox3Line } from "react-icons/ri";
-import { CiCreditCard1 } from "react-icons/ci";
 import { Card, Services } from "@/components/ui/service-cards-carousel";
+import { Box, CreditCard, ShoppingCart, Wallet } from "lucide-react";
 
 export default function ServiceCarousel() {
   const service = [
     {
       title: <span>Trải nghiệm <span className=' text-blue-600'>mua sắm</span> được <span className=' text-blue-600'>cá nhân hóa</span> bởi ứng dụng <span className=' text-blue-600'>Swipe</span></span>,
-      ico: IoCartOutline,
+      ico: ShoppingCart,
       color: "text-blue-600",
     },
     {
       title: <span>Thanh toán <span className=" text-purple-500">lãi suất thấp</span> thời hạn đến 24 tháng</span>,
-      ico: TbCurrencyDong,
+      ico: Wallet,
       color: "text-purple-500",
     },
     {
       title: <span>Giao hàng <span className=" text-green-500">miễn phí</span></span>,
-      ico: RiBox3Line,
+      ico: Box,
       color: "text-green-500",
     },
     {
       title: <span>Mua hàng <span className=" text-red-500">nhận điểm tín dụng</span> để mua thiết bị mới</span>,
-      ico: CiCreditCard1,
+      ico: CreditCard,
       color: "text-red-500",
     }
   ].map((card, i) => (

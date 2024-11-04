@@ -5,17 +5,16 @@ import { Badge, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu
 import { SessionProviderProps } from 'next-auth/react';
 import Image from 'next/image';
 import React from "react";
-import { CiSearch } from "react-icons/ci";
-import { IoBagOutline } from "react-icons/io5";
-import NavbarItemAccessory from './accessory';
-import NavbarItemMac from './computer';
-import NavbarItemAirPod from './earphone';
-import { NavbarItemIphone } from './phone';
-import Search from './search';
-import NavbarItemStore from './store';
+import NavbarItemAccessory from './item/accessory';
+import NavbarItemMac from './item/computer';
+import NavbarItemAirPod from './item/earphone';
+import { NavbarItemIphone } from './item/phone';
+import SearchComponent from './search';
+import NavbarItemStore from './item/store';
 import './style.css';
-import { NavbarItemIpad } from './tablet';
-import NavbarItemWatch from './watch';
+import { NavbarItemIpad } from './item/tablet';
+import NavbarItemWatch from './item/watch';
+import { Search, ShoppingBag } from 'lucide-react';
 
 export default function NavbarComponent({ session }: { session: SessionProviderProps['session'] }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -39,7 +38,7 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} height={'2.8rem'} className=" bg-white" maxWidth="full">
+    <Navbar onMenuOpenChange={setIsMenuOpen} height={'60px'} className=" bg-white items-center" maxWidth="full">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -97,17 +96,12 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
           <NavbarItemSupport />
         </NavbarItem> */}
         <NavbarItem>
-          <div className='medium-container'>
+          <div className='large-container'>
             <Link color="foreground" href="#">
-              <CiSearch />
+              <Search className='text-gray-600 w-5' />
             </Link>
-            <div className="overlay">
-              <div className=' container p-8 flex absolute'>
-                <div className=' container'>
-                  <Search />
-                  <p className=' text-xs pt-3'>Liên kết nhanh</p>
-                </div>
-              </div>
+            <div className="overlay w-full">
+              <SearchComponent />
             </div>
           </div>
         </NavbarItem>
@@ -115,7 +109,7 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
           <div className='cart-container'>
             <Link color="foreground" href="#">
               <Badge content={session ? carts?.products?.length : 0} color='primary'>
-                <IoBagOutline />
+                <ShoppingBag className=' w-5 text-gray-600' />
               </Badge>
             </Link>
             <div className="overlay">
@@ -127,17 +121,14 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end" className='sm:flex'>
-        <NavbarItem className=' sm:hidden'>
-          <div className='medium-container'>
+        <NavbarItem className='sm:hidden'>
+          <div className='large-container'>
             <Link color="foreground" href="#">
-              <CiSearch />
+              <Search className='w-5 text-gray-600' />
             </Link>
-            <div className="overlay">
-              <div className=' container p-8 flex absolute'>
-                <div className=' container'>
-                  <Search />
-                  <p className=' text-xs pt-3'>Liên kết nhanh</p>
-                </div>
+            <div className="overlay w-full z-auto">
+              <div className='flex absolute w-full'>
+                <SearchComponent />
               </div>
             </div>
           </div>
@@ -145,8 +136,8 @@ export default function NavbarComponent({ session }: { session: SessionProviderP
         <NavbarItem>
           <div className='cart-container sm:hidden'>
             <Link color="foreground" href="#">
-              <Badge content={3} color='primary'>
-                <IoBagOutline />
+              <Badge content={session ? carts?.products?.length : 0} color='primary'>
+                <ShoppingBag className=' w-5 text-gray-600' />
               </Badge>
             </Link>
             <div className="overlay">

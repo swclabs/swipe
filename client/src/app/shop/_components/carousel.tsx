@@ -25,16 +25,16 @@ export default function ShopDeviceCarousel({ product, color, setColor }: IDevice
   //h-56 sm:h-64 xl:h-[500px] 2xl:h-[500px]
   return (
     <div className="container flex justify-center">
-      <Carousel className="w-4/5 md:w-full">
+      <Carousel className="w-full lg:max-w-[50vw] max-w-[65vw]">
         <CarouselContent>
           {images?.map((value, index) => (
             <CarouselItem key={index}>
-              <div className=" h-full w-full " key={index}>
+              <div className="w-full flex justify-center" key={index}>
                 <Image
                   key={index}
                   removeWrapper
                   alt="Card background"
-                  className="z-0 w-full h-full object-cover"
+                  className=""
                   src={value}
                 />
               </div>

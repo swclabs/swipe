@@ -11,7 +11,7 @@ import { Image } from '@nextui-org/react';
 export default function Page() {
   return (
     <>
-      <div className=" w-full bg-gray-50">
+      <div className=" w-full">
         {/* <ProductBar /> */}
         <Banner />
 

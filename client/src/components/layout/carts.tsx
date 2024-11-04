@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/state/purchase";
 import { formatNumber } from "@/utils/fmt";
-import { Trash } from "lucide-react";
+import { Bookmark, Box, LogOut, Settings, Trash, User } from "lucide-react";
 import { SessionProviderProps, signOut } from "next-auth/react";
 import { useEffect } from "react";
-import { FiBookmark, FiBox, FiLogOut, FiSettings, FiUser } from "react-icons/fi";
 import { PurchaseService } from "@/service/purchase";
 import { logout } from "@/lib/auth";
 
@@ -18,42 +17,32 @@ import { logout } from "@/lib/auth";
 function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }) {
   return (
     <div className=' container pt-10 text-xs'>
-      <p>Hồ sơ của tôi</p>
+      <p className=" font-semibold text-[#707072]">Hồ sơ của tôi</p>
       <div className=' container flex flex-col'>
-        <a className=' pt-2 font-semibold flex items-center' href="/orders">
-          <FiBox />
-          <p className="pl-2">
-            Đơn hàng
-          </p>
+        <a className='font-semibold flex gap-x-1 items-center' href="/orders">
+          <Box className=" w-3" />
+          Đơn hàng
         </a>
-        <a className=' pt-2 font-semibold flex items-center' href="/favorite">
-          <FiBookmark />
-          <p className=" pl-2">
-            Mục đã lưu
-          </p>
+        <a className='font-semibold flex items-center gap-x-1' href="/favorite">
+          <Bookmark className=" w-3" />
+          Mục đã lưu
         </a>
-        <a className=' pt-2 font-semibold flex items-center' href="/profile">
-          <FiUser />
-          <p className=" pl-2">
-            Tài khoản
-          </p>
+        <a className='font-semibold flex items-center gap-x-1' href="/profile">
+          <User className=" w-3" />
+          Tài khoản
         </a>
         {session ?
-          <button className=' pt-2 font-semibold flex items-center' onClick={() => {
-            signOut()
+          <button className='font-semibold flex items-center gap-x-1' onClick={() => {
             logout()
+            signOut({ callbackUrl: '/', redirect: true })
           }}>
-            <FiLogOut />
-            <p className=" pl-2">
-              Đăng xuất
-            </p>
+            <LogOut className=" w-3" />
+            Đăng xuất
           </button>
           :
-          <a className=' pt-2 font-semibold flex items-center' href="/auth">
-            <FiSettings />
-            <p className=" pl-2">
-              Đăng nhập
-            </p>
+          <a className='font-semibold flex items-center gap-x-1' href="/auth">
+            <Settings className=" w-3" />
+            Đăng nhập
           </a>}
       </div>
     </div >
@@ -89,8 +78,12 @@ export default function Products({ session }: { session: SessionProviderProps['s
     return (
       <div className=' container'>
         <p className=' font-semibold text-xl'>Túi của bạn trống.</p>
-        <div className=' pt-5 text-sm'>
-          <Link href='/auth' className=' text-sm underline font-semibold'>Đăng nhập</Link> để xem sản phẩm của bạn
+        <div className=' pt-5 text-sm font-semibold flex gap-x-1'>
+          <Link href='/auth' className=' text-sm underline font-semibold'>Đăng nhập</Link>
+
+          <p className=" text-[#707072]">
+            để xem sản phẩm của bạn
+          </p>
         </div>
         <MenuShortcuts session={session} />
       </div>

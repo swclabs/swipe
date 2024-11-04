@@ -11,12 +11,17 @@ export default class APIEndpoint {
     OAuth2: `${APIEndpoint.BASE_URL}/oauth2/google`,
   };
 
+  static readonly USER = {
+    USER : `${APIEndpoint.BASE_URL}/users`,
+  }
+
   static readonly PRODUCTS = {
     NEWSLETTERS: `${APIEndpoint.BASE_URL}/newsletters`,
     CATEGORIES: `${APIEndpoint.BASE_URL}/categories`,
     PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
     SEARCH_DETAIL: `${APIEndpoint.BASE_URL}/search/details`,
     INVENTORY: `${APIEndpoint.BASE_URL}/inventories`,
+    SEARCH: `${APIEndpoint.BASE_URL}/search`,
   };
 
   static readonly PURCHASE = {
@@ -25,13 +30,12 @@ export default class APIEndpoint {
     FAVORITE: `${APIEndpoint.BASE_URL}/favorite`,
   };
 
-
   static readonly ORDERS = {
     ORDERS: `${APIEndpoint.BASE_URL}/purchase/orders`,
   };
 
   static readonly ADDRESS = {
-    PROVICE: `${APIEndpoint.BASE_URL}/address/province`,
+    PROVINCE: `${APIEndpoint.BASE_URL}/address/province`,
     DISTRICT: `${APIEndpoint.BASE_URL}/address/district`,
     WARD: `${APIEndpoint.BASE_URL}/address/ward`,
   }

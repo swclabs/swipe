@@ -166,7 +166,9 @@ const iphoneDetail: ProductDetail[] = [
                     },
                 ]
             },
-        ]
+        ],
+        display: "",
+        rating: 0
     },
     {
         name: "iPhone 15 Pro Max",
@@ -369,7 +371,9 @@ const iphoneDetail: ProductDetail[] = [
                     },
                 ]
             },
-        ]
+        ],
+        display: "",
+        rating: 0
     },
 ]
 
