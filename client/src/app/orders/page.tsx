@@ -112,7 +112,7 @@ export default function Page() {
                           <div className=" text-sm flex flex-col gap-y-2 border-b-1 py-5 items-center">
                             <div className="w-full flex justify-between items-center">
                               <p className="">Street</p>
-                              <p className="font-medium"></p>
+                              <p className="font-medium">{item?.address.street}</p>
                             </div>
                             <div className="w-full flex justify-between items-center">
                               <p className="">Ward</p>
@@ -162,13 +162,13 @@ export default function Page() {
                             </div>
                             <div className="w-full flex justify-between items-center">
                               <p className="">Discount</p>
-                              <p className="font-medium">0đ</p>
+                              <p className="font-medium">-{formatNumber(sumary(item).total - parseInt(item.total_amount))}đ</p>
                             </div>
                           </div>
                           <div className=" text-sm flex flex-col gap-y-2 border-b-1 py-5 items-center">
                             <div className="w-full flex justify-between items-center">
                               <p className="">Total</p>
-                              <p className="font-medium">{formatNumber(sumary(item).total)}đ</p>
+                              <p className="font-medium">{formatNumber(parseInt(item.total_amount))}đ</p>
                             </div>
                           </div>
                         </div>
