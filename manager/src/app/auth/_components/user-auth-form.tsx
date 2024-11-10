@@ -9,16 +9,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { LoaderCircle } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import GoogleSignInButton from "@/components/dashboard/github-auth-button";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Enter a valid email address" }),
+  pwd: z.string().min(2),
 });
 
 type UserFormValue = z.infer<typeof formSchema>;
@@ -26,22 +29,37 @@ type UserFormValue = z.infer<typeof formSchema>;
 export default function UserAuthForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl");
+  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const defaultValues = {
-    email: "demo@gmail.com",
-  };
   const form = useForm<UserFormValue>({
-    resolver: zodResolver(formSchema),
-    defaultValues,
+    resolver: zodResolver(formSchema)
   });
-
   const onSubmit = async (data: UserFormValue) => {
-    signIn("credentials", {
+    const resp = await signIn("credentials", {
       email: data.email,
+      password: data.pwd,
+      redirect: false,
       callbackUrl: callbackUrl ?? "/dashboard",
     });
+    setLoading(true);
+    if (!resp || resp.error) {
+      // console.log(resp);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+      setLoading(false);
+      return
+    }
+    setTimeout(() => {
+      window.location.href = '/dashboard';
+    }, 1000);
   };
-
+  const onClickGoogle = async () => {
+    await signIn("google", { redirect: true, callbackUrl: callbackUrl ?? "/" });
+  };
   return (
     <>
       <Form {...form}>
@@ -68,22 +86,36 @@ export default function UserAuthForm() {
             )}
           />
 
-          <Button disabled={loading} className="ml-auto w-full" type="submit">
-            Continue With Email
+          <FormField
+            control={form.control}
+            name="pwd"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <Input
+                    type="password"
+                    placeholder="Enter your password..."
+                    disabled={loading}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <Button
+            disabled={loading}
+            className="ml-auto w-full gap-1"
+            type="submit"
+            size="sm"
+          >
+            Login
+            {loading && <LoaderCircle className="h-4 w-4 animate-spin" />}
           </Button>
         </form>
       </Form>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
-        </div>
-      </div>
-      <GoogleSignInButton />
     </>
   );
 }

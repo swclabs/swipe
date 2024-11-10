@@ -1,6 +1,5 @@
 'use client'
-import { SelectDemo } from "@/components/inventory/select";
-import { InventoryTableComponent } from "@/components/inventory/table";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,6 +18,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { useInventory } from "@/state/inventory";
 import { useEffect } from "react";
+import { InventoryTableComponent } from "./_components/table";
 
 
 
@@ -38,8 +38,8 @@ export default function Page() {
 
   return (
     <ScrollArea className="h-full bg-muted/40">
-      <div className="container">
-        <div className=" container">
+      <div className="w-full px-6">
+        <div className="w-full">
           <div className="flex items-center justify-between py-3">
             <h1 className=" text-2xl font-semibold">Inventory</h1>
           </div>
@@ -189,7 +189,7 @@ export default function Page() {
             </Card>
           </div>
         </div>
-        <div className=" container py-5">
+        <div className="py-5 w-full">
           <div className=" text-sm font-semibold text-gray-500 flex space-x-3">
             <Badge variant={"secondary"}>All</Badge>
             <Badge variant={"default"}>Active</Badge>
