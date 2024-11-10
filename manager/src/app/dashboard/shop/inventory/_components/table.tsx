@@ -44,7 +44,6 @@ import { ProductSpecsDialog } from "./dialog"
 import { useInventory } from "@/state/inventory";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Stock } from "../products/upload"
 
 // const data: StockItem[] = [
 //   {
