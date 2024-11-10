@@ -1,27 +1,16 @@
-
-export interface DTO<T> {
-    code: string;
-    message: string;
-    data: T[];
-}
-
 export interface Province {
-    ProvinceID: number;
-    ProvinceName: string;
-    Code: string;
+    id: string;
+    name: string;
 }
 
 export interface District {
-    Code: string;
-    DistrictID: number;
-    DistrictName: string;
-    ProvinceID: number;
-    SupportType: number;
-    Type: number;
+    id: string;
+    name: string;
+    province_id: string;
 }
 
 export interface Ward {
-    DistrictID: number;
-    WardCode: string;
-    WardName: string;
+    district_id: string;
+    name: string;
+    id: string;
 }

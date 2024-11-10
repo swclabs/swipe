@@ -7,16 +7,13 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { Address } from "@/service/address";
 import { Orders } from "@/service/orders";
 import { useAddress } from "@/state/address";
 import { useCart } from "@/state/purchase";
-import { Province } from "@/types/address";
 import { formatNumber } from "@/utils/fmt";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, ChevronsUpDown } from "lucide-react";
-import { redirect } from "next/dist/server/api-utils";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -45,17 +42,6 @@ const formSchema = z.object({
 
 type OrderFormSchema = z.infer<typeof formSchema>
 
-const languages = [
-  { label: "English", value: "en" },
-  { label: "French", value: "fr" },
-  { label: "German", value: "de" },
-  { label: "Spanish", value: "es" },
-  { label: "Portuguese", value: "pt" },
-  { label: "Russian", value: "ru" },
-  { label: "Japanese", value: "ja" },
-  { label: "Korean", value: "ko" },
-  { label: "Chinese", value: "zh" },
-] as const
 
 export default function OrderForm() {
   const { toast } = useToast()
@@ -66,6 +52,7 @@ export default function OrderForm() {
     try {
       if (carts && carts.products.length > 0) {
         await Orders.createOrders({
+          coupon_code: coupon.code,
           address: {
             street: values.street,
             ward: values.ward,
@@ -89,7 +76,9 @@ export default function OrderForm() {
             quantity: product.quantity,
           }))
         })
-        window.location.href = "/orders"
+        setTimeout(() => {
+          window.location.href = "/orders"
+        }, 2000)
         return
       }
       throw new Error("No product in cart")
@@ -140,13 +129,13 @@ export default function OrderForm() {
   }, [])
 
   useEffect(() => {
-    if (province !== -1) {
+    if (province !== "-1") {
       fetchDistricts(province)
     }
   }, [province])
 
   useEffect(() => {
-    if (district !== -1) {
+    if (district !== "-1") {
       fetchWards(district)
     }
   }, [district])
@@ -199,8 +188,8 @@ export default function OrderForm() {
                           >
                             {field.value
                               ? provinces.find(
-                                (province) => province.ProvinceName === field.value
-                              )?.ProvinceName
+                                (province) => province.name === field.value
+                              )?.name
                               : "Select Province"}
                             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                           </Button>
@@ -214,22 +203,22 @@ export default function OrderForm() {
                             <CommandGroup>
                               {provinces.map((province) => (
                                 <CommandItem
-                                  value={province.ProvinceName}
-                                  key={province.ProvinceID}
+                                  value={province.name}
+                                  key={province.id}
                                   onSelect={() => {
-                                    setProvince(province.ProvinceID)
-                                    form.setValue("province", province.ProvinceName)
+                                    setProvince(province.id)
+                                    form.setValue("province", province.name)
                                   }}
                                 >
                                   <Check
                                     className={cn(
                                       "mr-2 h-4 w-4",
-                                      province.ProvinceName === field.value
+                                      province.name === field.value
                                         ? "opacity-100"
                                         : "opacity-0"
                                     )}
                                   />
-                                  {province.ProvinceName}
+                                  {province.name}
                                 </CommandItem>
                               ))}
                             </CommandGroup>
@@ -258,8 +247,8 @@ export default function OrderForm() {
                           >
                             {field.value
                               ? districts.find(
-                                (district) => district.DistrictName === field.value
-                              )?.DistrictName
+                                (district) => district.name === field.value
+                              )?.name
                               : "Select district"}
                             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                           </Button>
@@ -273,22 +262,22 @@ export default function OrderForm() {
                             <CommandGroup>
                               {districts.map((district) => (
                                 <CommandItem
-                                  value={district.DistrictName}
-                                  key={district.DistrictID}
+                                  value={district.name}
+                                  key={district.id}
                                   onSelect={() => {
-                                    setDistrict(district.DistrictID)
-                                    form.setValue("district", district.DistrictName)
+                                    setDistrict(district.id)
+                                    form.setValue("district", district.name)
                                   }}
                                 >
                                   <Check
                                     className={cn(
                                       "mr-2 h-4 w-4",
-                                      district.DistrictName === field.value
+                                      district.name === field.value
                                         ? "opacity-100"
                                         : "opacity-0"
                                     )}
                                   />
-                                  {district.DistrictName}
+                                  {district.name}
                                 </CommandItem>
                               ))}
                             </CommandGroup>
@@ -317,8 +306,8 @@ export default function OrderForm() {
                           >
                             {field.value
                               ? wards.find(
-                                (ward) => ward.WardName === field.value
-                              )?.WardName
+                                (ward) => ward.name === field.value
+                              )?.name
                               : "Select ward"}
                             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                           </Button>
@@ -332,21 +321,21 @@ export default function OrderForm() {
                             <CommandGroup>
                               {wards.map((ward) => (
                                 <CommandItem
-                                  value={ward.WardName}
-                                  key={ward.WardCode}
+                                  value={ward.name}
+                                  key={ward.id}
                                   onSelect={() => {
-                                    form.setValue("ward", ward.WardName)
+                                    form.setValue("ward", ward.name)
                                   }}
                                 >
                                   <Check
                                     className={cn(
                                       "mr-2 h-4 w-4",
-                                      ward.WardName === field.value
+                                      ward.name === field.value
                                         ? "opacity-100"
                                         : "opacity-0"
                                     )}
                                   />
-                                  {ward.WardName}
+                                  {ward.name}
                                 </CommandItem>
                               ))}
                             </CommandGroup>
