@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { Authentication } from "@/service/authentication";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -52,29 +53,56 @@ export default function UserRegisterForm() {
 
   const onSubmit = async (data: UserRegisterFormValue) => {
     setLoading(true);
-    // console.log(data);
+    if(data.pwd !== data.confirm_pwd) {
+      toast({
+        variant: "destructive",
+        title: "Password does not match",
+        description: "Please try again.",
+      })
+      return
+    }
+    try{
+      await Authentication.signUp({
+        email: email,
+        password: data.pwd,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        phone_number: data.phone
+      })
+      toast({
+        variant: "default",
+        title: "Success",
+        description: "You have successfully registered.",
+      })
+      // set time out redirect to login page
+      setLoading(false);
+      setTimeout(() => {
+        window.location.href = "/auth"
+      }, 2000);
+    }
+    catch{
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Please try again.",
+      })
+    }
   };
 
   const emailSubmit = async (data: UserCheckEmailValue) => {
-    // const resp = await Manager.auth(data.email);
-    // if (resp.status === 200) {
-    //   setValidEmail(true);
-    //   setEmail(data.email);
-    // }
-    // else {
-    //   toast({
-    //     variant: "destructive",
-    //     title: "Email is already registered",
-    //     description: "Please try again with a different email.",
-    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //   })
-    // }
-    toast({
-      variant: "destructive",
-      title: "Email is already registered",
-      description: "Please try again with a different email.",
-      action: <ToastAction altText="Try again">Try again</ToastAction>,
-    })
+    try{
+      await Authentication.auth(data.email);
+      setValidEmail(true);
+      setEmail(data.email);
+    }
+    catch{
+      toast({
+        variant: "destructive",
+        title: "Email is already registered",
+        description: "Please try again with a different email.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      })
+    }
   }
 
   return (
