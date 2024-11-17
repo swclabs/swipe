@@ -35,10 +35,17 @@ export default class APIEndpoint {
     }
 
     static readonly ORDERS = {
-        ORDERS_ADMIN: `${APIEndpoint.BASE_URL}/purchase/admin/orders`,
+        ADMIN: `${APIEndpoint.BASE_URL}/purchase/admin/orders`,
+        STATUS: `${APIEndpoint.BASE_URL}/purchase/orders/status`,
     }
 
     static readonly USERS = {
         GET_USERS: `${APIEndpoint.BASE_URL}/users`,
+    }
+
+    static readonly ADDRESS = {
+        PROVINCE: `${APIEndpoint.BASE_URL}/address/province`,
+        DISTRICT: `${APIEndpoint.BASE_URL}/address/district`,
+        WARD: `${APIEndpoint.BASE_URL}/address/ward`,
     }
 }

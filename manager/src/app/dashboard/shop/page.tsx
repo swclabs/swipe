@@ -1,5 +1,5 @@
 'use client';
-import { CategoryCard, OrdersCard, ProductCard, SupplierCard } from "@/components/products/card";
+import { CategoryCard, OrdersCard, ProductCard, SupplierCard } from "@/app/dashboard/shop/product/_components/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
