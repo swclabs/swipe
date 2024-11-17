@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Order } from "@/types/orders";
 import { filterDatesByCurrentMonth, filterDatesByCurrentWeek } from "@/utils/date";
 import { formatNumber } from "@/utils/fmt";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Header({ orders }: { orders: Order[] }) {
@@ -34,7 +35,7 @@ export default function Header({ orders }: { orders: Order[] }) {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <Button>Create New Order</Button>
+          <Link href="/dashboard/sales/orders/new"><Button>Create New Order</Button></Link>
         </CardFooter>
       </Card>
       <Card x-chunk="dashboard-05-chunk-1">

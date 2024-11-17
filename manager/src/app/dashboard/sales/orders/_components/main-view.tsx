@@ -13,7 +13,7 @@ export default function MainView() {
   useEffect(() => {
     const f = async () => {
       try {
-        const response = await Orders.getOrderLimit(10);
+        const response = await Orders.getOrderLimit(100);
         setOrders(response.data);
       }
       catch (error) {
@@ -23,13 +23,19 @@ export default function MainView() {
     f();
   }, []);
 
+  useEffect(() => {
+    if (order) {
+      setOrders(orders.map((o) => o.uuid === order.uuid ? order : o));
+    }
+  }, [order]);
+
   return (
     <>
       <div className="grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
         <Header orders={orders} />
         <Content orders={orders} setOrder={setOrder} setOrders={setOrders} />
       </div>
-      {order && <CardInfo order={order} />}
+      {order && <CardInfo order={order} setOrder={setOrder} />}
     </>
   )
 }
