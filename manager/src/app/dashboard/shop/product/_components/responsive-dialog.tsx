@@ -14,6 +14,9 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
+import { Delete, Trash } from 'lucide-react';
+import { ProductService } from '@/services/products';
+import { useToast } from '@/hooks/use-toast';
 
 export function ResponsiveDialog({
   children,
@@ -44,40 +47,6 @@ export function ResponsiveDialog({
       </DialogContent>
     </Dialog>
   );
-
-  // if (isDesktop) {
-  //   return (
-  //     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-  //       <DialogContent className="sm:max-w-[425px]">
-  //         <DialogHeader>
-  //           <DialogTitle>{title}</DialogTitle>
-  //           {description && (
-  //             <DialogDescription>{description}</DialogDescription>
-  //           )}
-  //         </DialogHeader>
-  //         {children}
-  //       </DialogContent>
-  //     </Dialog>
-  //   );
-  // }
-
-
-  // return (
-  //   <Drawer open={isOpen} onOpenChange={setIsOpen}>
-  //     <DrawerContent>
-  //       <DrawerHeader className="text-left">
-  //         <DrawerTitle>{title}</DrawerTitle>
-  //         {description && <DialogDescription>{description}</DialogDescription>}
-  //       </DrawerHeader>
-  //       {children}
-  //       <DrawerFooter className="pt-2">
-  //         <DrawerClose asChild>
-  //           <Button variant="outline">Cancel</Button>
-  //         </DrawerClose>
-  //       </DrawerFooter>
-  //     </DrawerContent>
-  //   </Drawer>
-  // );
 }
 
 export const EditDialog = ({
@@ -202,45 +171,64 @@ export const EditDialog = ({
   )
 }
 
-export const DeleteConfirmDialog = ({
-  id,
-  isOpen,
-  setIsOpen,
-  deletefunc,
-}: {
-  id: number,
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  deletefunc: (id: number) => void;
-}) => {
+export const DeleteConfirmDialog = ({ id }: { id: number }) => {
+  const [open, setOpen] = React.useState(false)
+  const {toast} = useToast()
+  const deleteItem = (id: number) => {
+    const func = async (id: number) => {
+      try{
+        await ProductService.DeleteProduct(id)
+        toast({
+          variant: "default",
+          title: "Success",
+          description: "You have successfully delete item.",
+        })
+      }
+      catch{
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: "Please try again.",
+        })
+      }
+    }
+    func(id)
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000)
+  }
   return (
-    <ResponsiveDialog
-      isOpen={isOpen}
-      setIsOpen={setIsOpen}
-      title="Edit Product"
-    >
-      <DialogHeader>
-        <DialogDescription>
-          Delete Confirm Delete Product
-        </DialogDescription>
-      </DialogHeader>
-      <DialogFooter>
-        <Button
-          variant={"destructive"}
-          onClick={() => {
-            deletefunc(id);
-            window.location.reload();
-          }}
-        >
-          Delete
-        </Button>
-        <Button
-          variant={"outline"}
-          onClick={() => setIsOpen(!isOpen)}
-        >
+    <>
+      <Button size="icon" variant="ghost" onClick={() => setOpen(!open)}> 
+        <Trash className=' w-4'/>
+      </Button>
+      <ResponsiveDialog
+        title="Edit Product"
+        isOpen={open}
+        setIsOpen={setOpen}
+      >
+        <DialogHeader>
+          <DialogDescription>
+            Delete Confirm Delete Product
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <Button
+            variant={"destructive"}
+            onClick={() => {
+              deleteItem(id);
+            }}
+          >
+            Delete
+          </Button>
+          <Button
+            variant={"outline"}
+            onClick={() => setOpen(!open)}
+          >
 
-          Cancel</Button>
-      </DialogFooter>
-    </ResponsiveDialog>
+            Cancel</Button>
+        </DialogFooter>
+      </ResponsiveDialog>
+    </>
   )
 }

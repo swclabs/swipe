@@ -102,7 +102,7 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
             </Button>
           </div>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[60%]">
+        <DialogContent className="sm:max-w-[70%] h-[70vh]">
           <DialogHeader>
             <DialogTitle>{src.product_name}</DialogTitle>
             <DialogDescription>
@@ -113,18 +113,13 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
           <form onSubmit={formik.handleSubmit}>
             <div className="flex px-10">
               <div className="w-1/2">
-                <Carousel className="w-full max-w-xs">
+                <Carousel className="w-full md:max-w-md sm:max-w-sm">
                   <CarouselContent>
                     {src.image.map((value, index) => (
                       <CarouselItem key={index}>
                         <div className="p-1">
                           <Card>
                             <CardContent className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-xl">
-                              {/* <Image
-                                src={value}
-                                width={500}
-                                height={500}
-                              /> */}
                               <Image loader={() => value} src={value} alt="Product Image" width={500} height={500} />
                             </CardContent>
                           </Card>

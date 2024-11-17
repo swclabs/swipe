@@ -1,11 +1,4 @@
 "use client"
-
-import * as React from "react"
-import {
-  CaretSortIcon,
-  ChevronDownIcon,
-  DotsHorizontalIcon,
-} from "@radix-ui/react-icons"
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -18,8 +11,10 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
+import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -38,146 +33,104 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { StockItem, StockItemBody } from "@/types/inventory"
+import { CaretSortIcon } from "@radix-ui/react-icons"
+import { Product, ProductResp } from "@/types/products"
+import { useProduct } from "@/state/products"
+import { useEffect, useState } from "react"
+import { ProductService } from "@/services/products"
+import { DeleteConfirmDialog } from "./responsive-dialog"
 import { Badge } from "@/components/ui/badge"
-import { ProductSpecsDialog } from "./dialog"
-import { useInventory } from "@/state/inventory";
-import { useEffect } from "react";
-import { useState } from "react";
 
-// const data: StockItem[] = [
-//   {
-//     id: "1",
-//     product_name: "test1",
-//     product_id: "1",
-//     price: "12312313",
-//     available: "1000",
-//     currency_code: "USD",
-//     status: "active",
-//     specs: {
-//       color: "black",
-//       ram: "8GB",
-//       ssd: "512GB",
-//       color_image: "",
-//       image: [
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-//       ]
-//     }
-//   },
-//   {
-//     id: "2",
-//     product_name: "test2",
-//     product_id: "2",
-//     price: "1231231312312",
-//     available: "1000",
-//     status: "active",
-//     currency_code: "USD",
-//     specs: {
-//       color: "",
-//       ram: "",
-//       ssd: "",
-//       color_image: "",
-//       image: [
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-//       ]
-//     }
-//   }
-// ]
-
-// StockItem[]
-// let data: StockItem[] = []
-
-
-
-export const columns: ColumnDef<StockItemBody>[] = [
+export const columns: ColumnDef<ProductResp>[] = [
   {
-    id: "select",
-    enableSorting: false,
-    enableHiding: false,
-  },
-  {
-    accessorKey: "product_id",
-    header: "PID",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("product_id")}</div>
-    ),
-  },
-  {
-    accessorKey: "product_name",
-    header: "Name",
-    cell: ({ row }) => (
-      <div className="capitalize">
-        <ProductSpecsDialog src={row.original} />
-      </div>
-    ),
-  },
-  {
-    accessorKey: "price",
+    accessorKey: "id",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Price
+          ID
           <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("price"))
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "VND",
-      }).format(amount)
-
-      return <div className="font-base">{formatted}</div>
-    },
+    cell: ({ row }) => (
+      <div className="lowercase ml-4">{row.getValue("id")}</div>
+    ),
   },
   {
-    accessorKey: "available",
-    header: "Available",
+    accessorKey: "name",
+    header: "Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("available")}</div>
+      <div className="capitalize">{row.getValue("name")}</div>
     ),
+  },
+  {
+    accessorKey: "price",
+    header: "Price",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("price")}</div>
+    ),
+  },
+  {
+    accessorKey: "category",
+    header: "Category",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("category")}</div>
+    ),
+  },
+  {
+    accessorKey: "created",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className=" text-left"
+        >
+          Created
+          <CaretSortIcon className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+    cell: ({ row }) => <div className="lowercase">{row.getValue("created")}</div>,
   },
   {
     accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => (
-      <div className="capitalize">
-        <Badge variant={"default"}>
-          {row.getValue("status")}
-        </Badge>
-      </div>
-    ),
+    header: () => <div className="text-left">Status</div>,
+    cell: ({ row }) => {
+      return <Badge variant={'outline'}>{row.getValue("status")}</Badge>
+    },
+  },
+  {
+    id: "delete",
+    enableHiding: false,
+    header: () => <div className="text-left">Actions</div>,
+    cell: ({ row }) => {
+      return (
+        <DeleteConfirmDialog id={parseInt(row.getValue("id"))}/>
+      )
+    },
   },
 ]
 
-export function InventoryTableComponent() {
-  const { inventory, fetchInventory } = useInventory()
+export function ProductDataTable() {
+  const { product, fetchProduct } = useProduct()
   useEffect(() => {
-    fetchInventory()
+    fetchProduct();
   }, [])
-  const [data, setData] = useState(() => inventory?.stock || []);
-  const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
     []
   )
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
+    useState<VisibilityState>({})
+  const [rowSelection, setRowSelection] = useState({})
 
   const table = useReactTable({
-    data: inventory?.stock || [],
+    data: product?.body || [],
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
@@ -200,16 +153,16 @@ export function InventoryTableComponent() {
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter name..."
-          value={(table.getColumn("product_name")?.getFilterValue() as string) ?? ""}
+          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("product_name")?.setFilterValue(event.target.value)
+            table.getColumn("name")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
+              Columns <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -284,6 +237,10 @@ export function InventoryTableComponent() {
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
+        <div className="flex-1 text-sm text-muted-foreground">
+          {table.getFilteredSelectedRowModel().rows.length} of{" "}
+          {table.getFilteredRowModel().rows.length} row(s) selected.
+        </div>
         <div className="space-x-2">
           <Button
             variant="outline"

@@ -62,13 +62,7 @@ export interface ProductResp {
     name: string;
     status: string;
     created: string;
-    is_spec: boolean,
-    spec: {
-        screen: string,
-        display: string;
-        SSD: number[],
-        RAM: number[],
-    }
+    category: string;
 }
 export interface ProductDTO {
     body: ProductResp[];

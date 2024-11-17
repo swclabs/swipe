@@ -48,7 +48,7 @@ interface UseProduct {
 export const useProduct = create<UseProduct>()((set): UseProduct => ({
     product: null,
     fetchProduct: async () => {
-        const productRes = await ProductService.GetProduct(10)
+        const productRes = await ProductService.GetProduct(100)
         return set((state) => {
             return {
                 product: productRes ? productRes.data : null
