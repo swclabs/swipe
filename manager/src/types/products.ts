@@ -56,7 +56,7 @@ export interface Categories {
 
 export interface ProductResp {
     id: number;
-    image: string[];
+    image: string;
     price: string;
     description: string;
     name: string;

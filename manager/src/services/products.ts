@@ -1,5 +1,5 @@
 import APIEndpoint from "@/providers/endpoint";
-import { BaseResponse, Categories, CategoryReq, NewProductRes, Product, ProductDTO, Supplier, SupplierReq, Suppliers } from "@/types/products";
+import { BaseResponse, Categories, CategoryReq, NewProductRes, Product, ProductDTO, ProductResp, Supplier, SupplierReq, Suppliers } from "@/types/products";
 import createAxiosInstance from "@/lib/axios";
 import { AxiosResponse } from "axios";
 
@@ -26,6 +26,15 @@ export class ProductService {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<BaseResponse> = await axiosInstance.delete(
             `${APIEndpoint.PRODUCTS.GET_PRODUCTS}?pid=${id}`
+        );
+        return response;
+    }
+
+    static async UpdateProduct(data: ProductResp): Promise<AxiosResponse<BaseResponse>> {
+        const axiosInstance = await createAxiosInstance();
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
+            `${APIEndpoint.PRODUCTS.GET_PRODUCTS}`, 
+            data
         );
         return response;
     }

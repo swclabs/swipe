@@ -25,8 +25,10 @@ import { InventoryService } from "@/services/inventory"
 import { DeleteConfirmDialog } from "./responsive-dialog"
 import React from "react"
 import { useFormik } from "formik"
-import { useToast } from "@/components/ui/use-toast";
 import { spec } from "node:test/reporters"
+import { Pencil } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
@@ -38,52 +40,44 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
     }
     func(id)
   }
+  const onStatusChange = (status: string) => {
+    formik.setFieldValue("status", status)
+  }
   const { toast } = useToast()
   const formik = useFormik({
-    /*
-      "id": "<string>",
-      "available": "<string>",
-      "currency_code": "<string>",
-      "price": "<string>",
-      "product_id": "<string>",
-      "status": "<string>"
-     */
     initialValues: {
       id: src.id,
-      product_name: '',
+      product_name: src.product_name,
       price: src.price,
       available: src.available,
-      status: 'active',
+      status: src.status,
       product_id: src.product_id,
-      currency_code: 'VND',
+      currency_code: src.currency_code,
       image: [],
-      color_img: 'https://res.cloudinary.com/dqsiqqz7q/image/upload/v1728696770/swc-storage/l2er9ptyweeoxyx2zqmu.jpg',
-      color: 'Black Titanium',
-      specs: {
-        ram: '16GB',
-        ssd: '512GB',
-        connection: '',
-        desc: '',
-      }
+      color_img: src.color_img,
+      color: src.color,
+      specs: src.specs
     },
-    onSubmit: values => {
+    onSubmit: async (values) => {
       // Fetch API to update the inventory
       values.id = values.id.toString();
       values.product_id = values.product_id.toString();
-      const updateInventory = async () => {
-        const res = await InventoryService.UpdateInventory(values);
-        res.status === 200 ?
-          toast({
-            title: "Inventory updated",
-            description: "The inventory has been updated successfully",
-          }) :
-          toast({
-            title: "Error",
-            description: "An error occurred while updating the inventory",
-          });
-      };
-      updateInventory();
-    },
+      console.log(values);
+      try {
+        const resp = await InventoryService.UpdateInventory(values);
+        toast({
+          title: "Inventory updated",
+          description: "The inventory has been updated successfully",
+        })
+      }
+      catch (e) {
+        console.log(e);
+        toast({
+          title: "Error",
+          description: "An error occurred while updating the inventory",
+        });
+      }
+    }
   });
 
   return (
@@ -97,9 +91,7 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
       <Dialog>
         <DialogTrigger asChild>
           <div className=" flex items-center">
-            <Button variant="ghost" className="justify-start">
-              {src.product_name}
-            </Button>
+            <Button size="icon" variant="outline"><Pencil className=" text-blue-500" /></Button>
           </div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[70%] h-[70vh]">
@@ -138,15 +130,27 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
                     id="id"
                     defaultValue={src.id}
                     className="col-span-2 h-8"
+                    disabled
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
-                  <Label htmlFor="available">Available</Label>
+                  <Label htmlFor="name">Name</Label>
                   <Input
-                    id="available"
+                    id="name"
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
-                    value={formik.values.available}
+                    value={formik.values.product_name}
+                    disabled
+                  />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Label htmlFor="color">Color</Label>
+                  <Input
+                    id="color"
+                    className="col-span-2 h-8"
+                    onChange={formik.handleChange}
+                    value={formik.values.color}
+                    disabled
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
@@ -156,6 +160,7 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
                     value={formik.values.currency_code}
+                    disabled
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
@@ -168,32 +173,32 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
-                  <Label htmlFor="status">Status</Label>
+                  <Label htmlFor="available">Available</Label>
                   <Input
-                    id="status"
+                    id="available"
                     className="col-span-2 h-8"
                     onChange={formik.handleChange}
-                    value={formik.values.status}
+                    value={formik.values.available}
+
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
-                  <Label htmlFor="status">Product ID</Label>
-                  <Input
-                    id="product_id"
-                    className="col-span-2 h-8"
-                    onChange={formik.handleChange}
-                    value={formik.values.product_id}
-                  />
+                  <Label htmlFor="status">Status</Label>
+                  <Select onValueChange={onStatusChange} defaultValue={formik.values.status}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a verified email to display" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="active">Active</SelectItem>
+                      <SelectItem value="disabled">Disabled</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
             </div>
 
             <DialogFooter>
-              <Button
-                onClick={() => {
-                  window.location.reload();
-                }}
-              >
+              <Button type="submit">
                 Save changes
               </Button>
               <Button
