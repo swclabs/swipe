@@ -44,55 +44,9 @@ import { ProductSpecsDialog } from "./dialog"
 import { useInventory } from "@/state/inventory";
 import { useEffect } from "react";
 import { useState } from "react";
-
-// const data: StockItem[] = [
-//   {
-//     id: "1",
-//     product_name: "test1",
-//     product_id: "1",
-//     price: "12312313",
-//     available: "1000",
-//     currency_code: "USD",
-//     status: "active",
-//     specs: {
-//       color: "black",
-//       ram: "8GB",
-//       ssd: "512GB",
-//       color_image: "",
-//       image: [
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-//       ]
-//     }
-//   },
-//   {
-//     id: "2",
-//     product_name: "test2",
-//     product_id: "2",
-//     price: "1231231312312",
-//     available: "1000",
-//     status: "active",
-//     currency_code: "USD",
-//     specs: {
-//       color: "",
-//       ram: "",
-//       ssd: "",
-//       color_image: "",
-//       image: [
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.jpg",
-//         "/img/shop/iphone-15-pro/6-1/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.jpg",
-//       ]
-//     }
-//   }
-// ]
-
-// StockItem[]
-// let data: StockItem[] = []
-
+import { Pencil, Plus, Settings2, Trash } from "lucide-react"
+import FilterBox from "./filter-box"
+import Link from "next/link"
 
 
 export const columns: ColumnDef<StockItemBody>[] = [
@@ -113,8 +67,15 @@ export const columns: ColumnDef<StockItemBody>[] = [
     header: "Name",
     cell: ({ row }) => (
       <div className="capitalize">
-        <ProductSpecsDialog src={row.original} />
+        <div className="capitalize">{row.getValue("product_name")}</div>
       </div>
+    ),
+  },
+  {
+    accessorKey: "color",
+    header: "Color",
+    cell: ({ row }) => (
+      <Badge className="capitalize" variant="outline">{row.getValue("color")}</Badge>
     ),
   },
   {
@@ -154,11 +115,24 @@ export const columns: ColumnDef<StockItemBody>[] = [
     header: "Status",
     cell: ({ row }) => (
       <div className="capitalize">
-        <Badge variant={"default"}>
+        <Badge variant={row.getValue("status") === "active" ? "default" : "destructive"}>
           {row.getValue("status")}
         </Badge>
       </div>
     ),
+  },
+  {
+    id: "actions",
+    enableHiding: false,
+    header: () => <div className=" text-right">Actions</div>,
+    cell: ({ row }) => {
+      return (
+        <div className=" flex space-x-2 w-full justify-end">
+          <ProductSpecsDialog src={row.original} />
+          {/* <Button size="icon" variant="outline"><Trash className=" text-red-500" /></Button> */}
+        </div>
+      )
+    },
   },
 ]
 
@@ -196,113 +170,115 @@ export function InventoryTableComponent() {
   })
 
   return (
-    <div className="w-full">
-      <div className="flex items-center py-4">
-        <Input
-          placeholder="Filter name..."
-          value={(table.getColumn("product_name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("product_name")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                )
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                    </TableHead>
-                  )
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
+    <>
+      <FilterBox table={table} />
+      <div className="w-full">
+        <div className="flex justify-end items-center py-4">
+          <div className=" flex space-x-3">
+            <Link href="/dashboard/shop/inventory/upload">
+              <Button size="icon" variant="outline" className=" border-blue-600">
+                <Plus className=" text-blue-600" />
+              </Button>
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="ml-auto">
+                  Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {table
+                  .getAllColumns()
+                  .filter((column) => column.getCanHide())
+                  .map((column) => {
+                    return (
+                      <DropdownMenuCheckboxItem
+                        key={column.id}
+                        className="capitalize"
+                        checked={column.getIsVisible()}
+                        onCheckedChange={(value) =>
+                          column.toggleVisibility(!!value)
+                        }
+                      >
+                        {column.id}
+                      </DropdownMenuCheckboxItem>
+                    )
+                  })}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+        <div className="rounded-md border bg-white">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <TableHead key={header.id}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                      </TableHead>
+                    )
+                  })}
                 </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+        <div className="flex items-center justify-end space-x-2 py-4">
+          <div className="space-x-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              Next
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

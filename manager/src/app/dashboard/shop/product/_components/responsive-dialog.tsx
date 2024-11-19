@@ -173,10 +173,10 @@ export const EditDialog = ({
 
 export const DeleteConfirmDialog = ({ id }: { id: number }) => {
   const [open, setOpen] = React.useState(false)
-  const {toast} = useToast()
+  const { toast } = useToast()
   const deleteItem = (id: number) => {
     const func = async (id: number) => {
-      try{
+      try {
         await ProductService.DeleteProduct(id)
         toast({
           variant: "default",
@@ -184,7 +184,7 @@ export const DeleteConfirmDialog = ({ id }: { id: number }) => {
           description: "You have successfully delete item.",
         })
       }
-      catch{
+      catch {
         toast({
           variant: "destructive",
           title: "Error",
@@ -199,8 +199,8 @@ export const DeleteConfirmDialog = ({ id }: { id: number }) => {
   }
   return (
     <>
-      <Button size="icon" variant="ghost" onClick={() => setOpen(!open)}> 
-        <Trash className=' w-4'/>
+      <Button size="icon" variant="outline" onClick={() => setOpen(!open)}>
+        <Trash className=" text-red-500" />
       </Button>
       <ResponsiveDialog
         title="Edit Product"

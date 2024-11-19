@@ -46,8 +46,6 @@ import { useCategories, useSuppliers } from "@/state/products";
 import { useToast } from "@/components/ui/use-toast";
 import { ProductService } from "@/services/products";
 
-const breadcrumbItems = [{ title: "Products", link: "/dashboard/shop" }, { title: "Upload", link: "/dashboard/product/upload" }];
-
 export default function Page() {
   const [ssdcount, setSsdCount] = useState<number[]>([]);
   const AddSsdItem = () => {
@@ -94,7 +92,7 @@ export default function Page() {
       price: "17.000.000đ - 18.000.000đ",
       category_id: 0,
       supplier_id: 0,
-      status: "draft",
+      status: "active",
       display: "6.1",
       screen: "OLED",
       RAM: [
@@ -136,24 +134,14 @@ export default function Page() {
 
   return (
     <ScrollArea className="h-full">
-      <div className=" pl-6 pt-6 bg-muted/40">
-        <BreadCrumb items={breadcrumbItems} />
-      </div>
       <form onSubmit={formik.handleSubmit}>
         <div className="flex min-h-screen w-full flex-col bg-muted/40 p-5">
           <div className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
             <div className="mx-auto grid max-w-[1000px] w-full flex-1 auto-rows-max gap-4">
               <div className="flex items-center gap-4">
-                <Button variant="outline" size="icon" className="h-7 w-7">
-                  <ChevronLeft className="h-4 w-4" />
-                  <span className="sr-only">Back</span>
-                </Button>
                 <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
                   Upload New Product
                 </h1>
-                <Badge variant="outline" className="ml-auto sm:ml-0">
-                  products
-                </Badge>
                 <div className="hidden items-center gap-2 md:ml-auto md:flex">
                   <Dialog>
                     <DialogTrigger asChild>
@@ -427,7 +415,6 @@ export default function Page() {
                         <div className="grid gap-3">
                           <Label htmlFor="status">Status</Label>
                           <Select
-                            disabled
                             value={formik.values.status}
                             onValueChange={(value) => {
                               formik.setFieldValue("status", value);
@@ -437,9 +424,8 @@ export default function Page() {
                               <SelectValue placeholder="Select status" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="draft">Draft</SelectItem>
                               <SelectItem value="active">Active</SelectItem>
-                              <SelectItem value="archived">Archived</SelectItem>
+                              <SelectItem value="disabled">Disabled</SelectItem>
                             </SelectContent>
                           </Select>
                           <Label htmlFor="supplier">Suppliers</Label>
