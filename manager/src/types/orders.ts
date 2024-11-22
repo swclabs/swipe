@@ -52,3 +52,8 @@ export interface Order {
     address: Address;
     items: Item[];
 }
+
+export interface OrderStatus {
+    order_code: string
+    status: string
+}

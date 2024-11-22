@@ -46,7 +46,7 @@ import SearchByEmail from "../search"
 interface IContentProps {
   orders: Order[]
   setOrder: (orders: Order) => void
-  setOrders : (orders: Order[]) => void
+  setOrders: (orders: Order[]) => void
 }
 
 export default function Content({ orders, setOrder, setOrders }: IContentProps) {
@@ -68,7 +68,7 @@ export default function Content({ orders, setOrder, setOrders }: IContentProps) 
           <TabsTrigger value="month">Month</TabsTrigger>
         </TabsList>
         <div className="ml-auto flex items-center gap-2">
-        <SearchByEmail orders={orders} setOrders={setOrders} />
+          <SearchByEmail orders={orders} setOrders={setOrders} />
         </div>
       </div>
       <TabsContent value="all">
@@ -98,9 +98,11 @@ export default function Content({ orders, setOrder, setOrders }: IContentProps) 
               </TableHeader>
               <TableBody>
                 {orders.map((order, index) => (
-                  <TableRow className="cursor-pointer	" key={index} onClick={() => {
-                    setOrder(order)
-                  }}>
+                  <TableRow className="cursor-pointer	" key={index}
+                    onClick={() => {
+                      setOrder(order)
+                    }}
+                  >
                     <TableCell>
                       <div className="font-medium">{order.user.first_name} {order.user.last_name}</div>
                       <div className="hidden text-sm text-muted-foreground md:inline">
