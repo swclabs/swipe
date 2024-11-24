@@ -4,10 +4,12 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CouponsResp } from "@/types/coupons";
 import { ProductResp } from "@/types/products";
 import { Table } from "@tanstack/react-table";
 import { Car, RefreshCcw } from "lucide-react";
 import { useState } from "react";
+
 
 export interface FilterBoxState {
   name: string;
@@ -15,14 +17,14 @@ export interface FilterBoxState {
   status: string;
 }
 
-export default function FilterBox({ table }: { table: Table<ProductResp> }) {
+export default function FilterBox({ table }: { table: Table<CouponsResp> }) {
   const [state, setState] = useState<FilterBoxState>({ name: "", category: "", status: "" })
-  const search = (table: Table<ProductResp>) => {
+  const search = (table: Table<CouponsResp>) => {
     table.getColumn("name")?.setFilterValue(state.name)
     table.getColumn("category")?.setFilterValue(state.category)
     table.getColumn("status")?.setFilterValue(state.status)
   }
-  const reset = (table: Table<ProductResp>) => {
+  const reset = (table: Table<CouponsResp>) => {
     table.getColumn("name")?.setFilterValue("")
     table.getColumn("category")?.setFilterValue("")
     table.getColumn("status")?.setFilterValue("")

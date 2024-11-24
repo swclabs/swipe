@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Delete, Trash } from 'lucide-react';
 import { ProductService } from '@/services/products';
 import { useToast } from '@/hooks/use-toast';
+import { CouponsService } from '@/services/coupons';
 
 export function ResponsiveDialog({
   children,
@@ -170,17 +171,17 @@ export const EditDialog = ({
   )
 }
 
-export const DeleteConfirmDialog = ({ id }: { id: number }) => {
+export const DeleteConfirmDialog = ({ code }: { code: string }) => {
   const [open, setOpen] = React.useState(false)
   const { toast } = useToast()
-  const deleteItem = (id: number) => {
-    const func = async (id: number) => {
+  const deleteItem = (code: string) => {
+    const func = async (code: string) => {
       try {
-        await ProductService.DeleteProduct(id)
+        await CouponsService.deleteCoupons(code)
         toast({
           variant: "default",
           title: "Success",
-          description: "You have successfully delete item.",
+          description: "You have successfully delete coupon code.",
         })
       }
       catch {
@@ -191,7 +192,7 @@ export const DeleteConfirmDialog = ({ id }: { id: number }) => {
         })
       }
     }
-    func(id)
+    func(code)
     setTimeout(() => {
       window.location.reload();
     }, 2000)
@@ -215,7 +216,7 @@ export const DeleteConfirmDialog = ({ id }: { id: number }) => {
           <Button
             variant={"destructive"}
             onClick={() => {
-              deleteItem(id);
+              deleteItem(code);
             }}
           >
             Delete

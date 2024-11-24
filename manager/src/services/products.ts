@@ -8,8 +8,16 @@ export class ProductService {
     static async NewProduct(data: Product): Promise<AxiosResponse<NewProductRes>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<NewProductRes> = await axiosInstance.post(
-            APIEndpoint.PRODUCTS.POST_PRODUCTS,
+            APIEndpoint.PRODUCTS.PRODUCTS,
             data
+        );
+        return response;
+    }
+
+    static async GetProductInfo(id: number): Promise<AxiosResponse<ProductResp>> {
+        const axiosInstance = await createAxiosInstance();
+        const response: AxiosResponse<ProductResp> = await axiosInstance.get(
+            `${APIEndpoint.PRODUCTS.PRODUCTS_INFO}?id=${id}`
         );
         return response;
     }
@@ -17,7 +25,7 @@ export class ProductService {
     static async GetProduct(limit: number): Promise<AxiosResponse<ProductDTO>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<ProductDTO> = await axiosInstance.get(
-            `${APIEndpoint.PRODUCTS.GET_PRODUCTS}?limit=${limit}`
+            `${APIEndpoint.PRODUCTS.PRODUCTS}?limit=${limit}`
         );
         return response;
     }
@@ -25,7 +33,7 @@ export class ProductService {
     static async DeleteProduct(id: number): Promise<AxiosResponse<BaseResponse>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<BaseResponse> = await axiosInstance.delete(
-            `${APIEndpoint.PRODUCTS.GET_PRODUCTS}?pid=${id}`
+            `${APIEndpoint.PRODUCTS.PRODUCTS}?pid=${id}`
         );
         return response;
     }
@@ -33,7 +41,7 @@ export class ProductService {
     static async UpdateProduct(data: ProductResp): Promise<AxiosResponse<BaseResponse>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
-            `${APIEndpoint.PRODUCTS.GET_PRODUCTS}`, 
+            `${APIEndpoint.PRODUCTS.PRODUCTS}`, 
             data
         );
         return response;
@@ -48,8 +56,25 @@ export class ProductService {
                 'content-type': 'multipart/form-data'
             }
         }
-        const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
-            `${APIEndpoint.PRODUCTS.POST_PRODUCTS_IMG}?id=${id}`,
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
+            `${APIEndpoint.PRODUCTS.PRODUCTS_IMAGE}?id=${id}`,
+            form,
+            config
+        );
+        return response;
+    }
+
+    static async NewProductThumbnail(files: File[], id: string): Promise<AxiosResponse<BaseResponse>> {
+        const form = new FormData();
+        files.map((value) => form.append("img", value))
+        const axiosInstance = await createAxiosInstance();
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
+            `${APIEndpoint.PRODUCTS.PRODUCTS_THUMBNAIL}?id=${id}`,
             form,
             config
         );
@@ -59,7 +84,7 @@ export class ProductService {
     static async GetSuppliers(limit: number): Promise<AxiosResponse<Suppliers>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<Suppliers> = await axiosInstance.get(
-            `${APIEndpoint.PRODUCTS.GET_SUPPLIERS}?limit=${limit}`,
+            `${APIEndpoint.PRODUCTS.SUPPLIERS}?limit=${limit}`,
         );
         return response;
     }
@@ -67,7 +92,7 @@ export class ProductService {
     static async PostSuppliers(supplier: SupplierReq): Promise<AxiosResponse<BaseResponse>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
-            `${APIEndpoint.PRODUCTS.POST_SUPPLIERS}`,
+            `${APIEndpoint.PRODUCTS.SUPPLIERS}`,
             supplier,
         );
         return response;
@@ -76,7 +101,7 @@ export class ProductService {
     static async GetCategory(limit: number): Promise<AxiosResponse<Categories>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<Categories> = await axiosInstance.get(
-            `${APIEndpoint.PRODUCTS.GET_CATEGORIES}?limit=${limit}`,
+            `${APIEndpoint.PRODUCTS.CATEGORIES}?limit=${limit}`,
         );
         return response;
     }
@@ -84,7 +109,7 @@ export class ProductService {
     static async PostCategory(category: CategoryReq): Promise<AxiosResponse<BaseResponse>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<BaseResponse> = await axiosInstance.post(
-            `${APIEndpoint.PRODUCTS.POST_CATEGORIES}`,
+            `${APIEndpoint.PRODUCTS.CATEGORIES}`,
             category
         );
         return response;
