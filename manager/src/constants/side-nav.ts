@@ -9,20 +9,27 @@ export const NavItems: NavItemWithChildren[] = [
     color: "text-sky-500",
   },
   {
-    title: "Sales",
-    href: "/",
+    title: "Orders",
+    href: "/dashboard/sales/orders",
     icon: ShoppingBag,
     color: "text-sky-500",
-    isChidren: true,
-    children: [
-      {
-        title: "Orders",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/sales/orders"
-      },
-    ]
+
   },
+  // {
+  //   title: "Sales",
+  //   href: "/",
+  //   icon: ShoppingBag,
+  //   color: "text-sky-500",
+  //   isChidren: true,
+  //   children: [
+  //     {
+  //       title: "Orders",
+  //       icon: CircleDot,
+  //       color: "text-red-500",
+  //       href: "/dashboard/sales/orders"
+  //     },
+  //   ]
+  // },
   {
     title: "Shop",
     href: "/dashboard/shop",
@@ -57,19 +64,10 @@ export const NavItems: NavItemWithChildren[] = [
     ],
   },
   {
-    title: "Promotions",
-    href: "/",
+    title: "Coupons",
+    href: "/dashboard/coupons",
     icon: TicketPercent,
     color: "text-sky-500",
-    isChidren: true,
-    children: [
-      {
-        title: "Users",
-        icon: CircleDot,
-        color: "text-red-500",
-        href: "/dashboard/sales/orders"
-      },
-    ]
   },
   // {
   //   title: "Site",

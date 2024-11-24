@@ -7,7 +7,7 @@ export class InventoryService {
     static async GetInventoryStock(page: number, limit: number): Promise<AxiosResponse<InventoryStockSchema>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<InventoryStockSchema> = await axiosInstance.get(
-            `${APIEndpoint.INVENTORY.GET_STOCK}?page=${page}&limit=${limit}`
+            `${APIEndpoint.INVENTORY.INVENTORY}?page=${page}&limit=${limit}`
         );
         return response;
     }
@@ -15,7 +15,7 @@ export class InventoryService {
     static async DeleteInventory(id: string): Promise<AxiosResponse<BaseResponse>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<BaseResponse> = await axiosInstance.delete(
-            `${APIEndpoint.INVENTORY.GET_STOCK}?id=${id}`
+            `${APIEndpoint.INVENTORY.INVENTORY}?id=${id}`
         );
         return response;
     }
@@ -23,7 +23,7 @@ export class InventoryService {
     static async NewInventory(data: StockItem): Promise<AxiosResponse<NewInventoryRes>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<NewInventoryRes> = await axiosInstance.post(
-            APIEndpoint.INVENTORY.POST_STOCK,
+            APIEndpoint.INVENTORY.INVENTORY,
             data
         );
         return response;
@@ -32,7 +32,7 @@ export class InventoryService {
     static async UpdateInventory(data: StockItemBody): Promise<AxiosResponse<NewInventoryRes>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<NewInventoryRes> = await axiosInstance.put(
-            APIEndpoint.INVENTORY.PUT_STOCK,
+            APIEndpoint.INVENTORY.INVENTORY,
             data
         );
         return response;
@@ -48,7 +48,7 @@ export class InventoryService {
             }
         }
         const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
-            `${APIEndpoint.INVENTORY.PUT_INVENTORIES_IMG}`,
+            `${APIEndpoint.INVENTORY.INVENTORIES_IMG}`,
             form,
             config
         );
@@ -65,7 +65,7 @@ export class InventoryService {
             }
         }
         const response: AxiosResponse<BaseResponse> = await axiosInstance.put(
-            `${APIEndpoint.INVENTORY.PUT_INVENTORIES_COLOR_IMG}`,
+            `${APIEndpoint.INVENTORY.INVENTORIES_COLOR_IMG}`,
             form,
             config
         );

@@ -114,6 +114,11 @@ export const columns: ColumnDef<ProductResp>[] = [
       return (
         <div className=" flex space-x-2 w-full justify-end">
           <ProductSpecsDialog original={row.original} />
+          <Link href={`/dashboard/shop/inventory/upload/${row.original.id}`}>
+            <Button size="icon" variant="outline">
+              <Plus className=" text-blue-600" />
+            </Button>
+          </Link>
           <DeleteConfirmDialog id={parseInt(row.getValue("id"))} />
         </div>
       )
@@ -162,7 +167,7 @@ export function ProductDataTable() {
           <div className=" flex space-x-3">
             <Link href="/dashboard/shop/product/upload">
               <Button size="icon" variant="outline" className=" border-blue-600">
-                <Plus className=" text-blue-600"/>
+                <Plus className=" text-blue-600" />
               </Button>
             </Link>
             <DropdownMenu>

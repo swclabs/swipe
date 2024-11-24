@@ -6,13 +6,6 @@ import { AxiosResponse } from "axios";
 
 
 export class Orders {
-    // static async getOrders(code: string): Promise<AxiosResponse<Order>> {
-    //     const axiosInstance = await createAxiosInstance();
-    //     const response: AxiosResponse<Order> = await axiosInstance.get(
-    //         `${APIEndpoint.ORDERS.ORDERS_ADMIN}/${code}`,
-    //     );
-    //     return response;
-    // }
 
     static async getOrderLimit(limit: number): Promise<AxiosResponse<Order[]>> {
         const axiosInstance = await createAxiosInstance();

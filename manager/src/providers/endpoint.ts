@@ -4,15 +4,13 @@ export default class APIEndpoint {
     static readonly STORE_KEY: string = ''
 
     static readonly PRODUCTS = {
-        POST_PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
-        GET_PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
-
-        POST_PRODUCTS_IMG: `${APIEndpoint.BASE_URL}/products/img`,
-        POST_SUPPLIERS: `${APIEndpoint.BASE_URL}/suppliers`,
-        POST_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`,
-
-        GET_SUPPLIERS: `${APIEndpoint.BASE_URL}/suppliers`,
-        GET_CATEGORIES: `${APIEndpoint.BASE_URL}/categories`
+        PRODUCTS: `${APIEndpoint.BASE_URL}/products`,
+        PRODUCTS_INFO: `${APIEndpoint.BASE_URL}/products/info`,
+        PRODUCTS_IMAGE: `${APIEndpoint.BASE_URL}/products/images`,
+        PRODUCTS_THUMBNAIL: `${APIEndpoint.BASE_URL}/products/thumbnail`,
+        
+        SUPPLIERS: `${APIEndpoint.BASE_URL}/suppliers`,
+        CATEGORIES: `${APIEndpoint.BASE_URL}/categories`,
     }
 
     static readonly MANAGER = {
@@ -26,12 +24,13 @@ export default class APIEndpoint {
 
 
     static readonly INVENTORY = {
-        POST_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
-        GET_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
-        PUT_STOCK: `${APIEndpoint.BASE_URL}/inventories`,
+        INVENTORY: `${APIEndpoint.BASE_URL}/inventories`,
+        INVENTORIES_IMG: `${APIEndpoint.BASE_URL}/inventories/image`,
+        INVENTORIES_COLOR_IMG: `${APIEndpoint.BASE_URL}/inventories/image/color`
+    }
 
-        PUT_INVENTORIES_IMG: `${APIEndpoint.BASE_URL}/inventories/image`,
-        PUT_INVENTORIES_COLOR_IMG: `${APIEndpoint.BASE_URL}/inventories/image/color`
+    static readonly PURCHASE = {
+        COUPONS : `${APIEndpoint.BASE_URL}/purchase/coupons`,
     }
 
     static readonly ORDERS = {
@@ -40,7 +39,7 @@ export default class APIEndpoint {
     }
 
     static readonly USERS = {
-        GET_USERS: `${APIEndpoint.BASE_URL}/users`,
+        USERS: `${APIEndpoint.BASE_URL}/users`,
     }
 
     static readonly ADDRESS = {
