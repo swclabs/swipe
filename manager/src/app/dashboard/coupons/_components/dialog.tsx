@@ -17,38 +17,43 @@ import { InventoryService } from "@/services/inventory"
 import { DeleteConfirmDialog } from "./responsive-dialog"
 import React from "react"
 import { useFormik } from "formik"
-import { Pencil } from "lucide-react"
+import { Pencil, Plus } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ProductResp } from "@/types/products"
 import { ProductService } from "@/services/products";
 import { Textarea } from "@/components/ui/textarea";
+import { CouponsReq, CouponsResp } from "@/types/coupons";
+import { CouponsService } from "@/services/coupons";
 
-export function ProductSpecsDialog({ original }: { original: ProductResp }) {
+
+
+export function CreateCouponsDialog() {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const [idDelete, setIdDelete] = useState("");
 
   const deletefunc = (id: string) => {
-    const func = async (id: string) => {
-      const res = await InventoryService.DeleteInventory(id)
-    }
-    func(id)
+
   }
   const onStatusChange = (status: string) => {
     formik.setFieldValue("status", status)
   }
   const { toast } = useToast()
-  const formik = useFormik({
+  const formik = useFormik<CouponsReq>({
     initialValues: {
-      ...original,
+      description: "",
+      discount: 0,
+      max_day: 0,
+      max_use: 0,
+      status: "disabled"
     },
     onSubmit: async (values) => {
       try {
-        await ProductService.UpdateProduct(values);
+        await CouponsService.createCoupons(values);
         console.log(values);
         toast({
-          title: "Product updated",
-          description: "The product has been updated successfully",
+          title: "Coupons created",
+          description: "The coupons has been created successfully",
         })
       }
       catch (e) {
@@ -56,9 +61,13 @@ export function ProductSpecsDialog({ original }: { original: ProductResp }) {
         toast({
           title: "Error",
           variant: "destructive",
-          description: "An error occurred while updating the inventory",
+          description: "An error occurred while creating the coupons",
         });
       }
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     }
   });
 
@@ -67,12 +76,12 @@ export function ProductSpecsDialog({ original }: { original: ProductResp }) {
       <Dialog>
         <DialogTrigger asChild>
           <div className=" flex items-center">
-            <Button size="icon" variant="outline"><Pencil className=" text-blue-500" /></Button>
+            <Button size="icon" variant="outline"><Plus className=" text-blue-500" /></Button>
           </div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[50%] min-h-[50vh] max-h-max">
           <DialogHeader>
-            <DialogTitle>{original.name}</DialogTitle>
+            <DialogTitle>Create Coupons</DialogTitle>
             <DialogDescription>
               Product Specification
             </DialogDescription>
@@ -80,34 +89,16 @@ export function ProductSpecsDialog({ original }: { original: ProductResp }) {
 
           <form onSubmit={formik.handleSubmit}>
             <div className="flex px-10 justify-between">
-              <div className="flex aspect-square items-center justify-center p-6 rounded-xl w-1/2">
-                <Image
-                  loader={() => original.image}
-                  src={original.image}
-                  alt="Product Image"
-                  width={100}
-                  height={100}
-                  className=" w-full"
-                />
-              </div>
               <div className=" container w-full">
                 <div className="grid p-5 gap-2">
                   <div className="grid grid-cols-3 items-center gap-4">
-                    <Label htmlFor="id">ID</Label>
+                    <Label htmlFor="discount">Discount</Label>
                     <Input
-                      id="id"
-                      defaultValue={formik.values.id}
-                      className="col-span-2 h-8"
-                      disabled
-                    />
-                  </div>
-                  <div className="grid grid-cols-3 items-center gap-4">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
+                      id="discount"
+                      type="number"
                       className="col-span-2 h-8"
                       onChange={formik.handleChange}
-                      value={formik.values.name}
+                      value={formik.values.discount}
                     />
                   </div>
                   <div className="grid grid-cols-3 items-center gap-4">
@@ -120,13 +111,24 @@ export function ProductSpecsDialog({ original }: { original: ProductResp }) {
                     />
                   </div>
                   <div className="grid grid-cols-3 items-center gap-4">
-                    <Label htmlFor="price">Price</Label>
+                    <Label htmlFor="max_day">Max day</Label>
                     <Input
-                      id="price"
+                      id="max_day"
+                      type="number"
                       className="col-span-2 h-8"
                       onChange={formik.handleChange}
-                      value={formik.values.price}
+                      value={formik.values.max_day}
                     />
+                  </div>
+                  <div className="grid grid-cols-3 items-center gap-4">
+                    <Label htmlFor="max_use">Max use</Label>
+                    <Input
+                      id="max_use"
+                      type="number"
+                      className="col-span-2 h-8"
+                      onChange={formik.handleChange}
+                      value={formik.values.max_use}
+                    />  
                   </div>
                   <div className="grid grid-cols-3 items-center gap-4">
                     <Label htmlFor="status">Status</Label>
@@ -147,16 +149,6 @@ export function ProductSpecsDialog({ original }: { original: ProductResp }) {
             <DialogFooter>
               <Button type="submit">
                 Save changes
-              </Button>
-              <Button
-                type="button"
-                variant={"destructive"}
-                onClick={() => {
-                  setIsDeleteOpen(!isDeleteOpen)
-                  setIdDelete(original.id.toString())
-                }}
-              >
-                Delete
               </Button>
             </DialogFooter>
           </form>

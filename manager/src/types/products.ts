@@ -5,10 +5,12 @@ export interface Product {
     supplier_id: number;
     category_id: number;
     status: string;
-    RAM: number[];
-    SSD: number[];
-    display: string;
-    screen: string;
+    specs : {
+        RAM: number[];
+        SSD: number[];
+        display: string;
+        screen: string;
+    } | null;
 }
 
 export interface BaseResponse {

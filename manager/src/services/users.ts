@@ -7,7 +7,7 @@ export class UserService {
     static async GetUser(): Promise<AxiosResponse<User>> {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<User> = await axiosInstance.get(
-            `${APIEndpoint.USERS.GET_USERS}`
+            `${APIEndpoint.USERS.USERS}`
         );
         return response;
     }

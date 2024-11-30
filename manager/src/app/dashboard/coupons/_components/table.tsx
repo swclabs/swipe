@@ -1,11 +1,4 @@
 "use client"
-
-import * as React from "react"
-import {
-  CaretSortIcon,
-  ChevronDownIcon,
-  DotsHorizontalIcon,
-} from "@radix-ui/react-icons"
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -18,8 +11,10 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
+import { ArrowUpDown, ChevronDown, MoreHorizontal, Plus, Trash } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -38,88 +33,81 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { StockItem, StockItemBody } from "@/types/inventory"
+import { CaretSortIcon } from "@radix-ui/react-icons"
+import { Product, ProductResp } from "@/types/products"
+import { useProduct } from "@/state/products"
+import { useEffect, useState } from "react"
+import { DeleteConfirmDialog } from "./responsive-dialog"
 import { Badge } from "@/components/ui/badge"
-import { ProductSpecsDialog } from "./dialog"
-import { useInventory } from "@/state/inventory";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Pencil, Plus, Settings2, Trash } from "lucide-react"
 import FilterBox from "./filter-box"
 import Link from "next/link"
+import { CreateCouponsDialog } from "./dialog"
+import { CouponsResp } from "@/types/coupons"
+import { CouponsService } from "@/services/coupons"
+import CopyButton from "./copy-btn"
 
-
-export const columns: ColumnDef<StockItemBody>[] = [
+export const columns: ColumnDef<CouponsResp>[] = [
   {
-    id: "select",
-    enableSorting: false,
-    enableHiding: false,
-  },
-  {
-    accessorKey: "product_id",
-    header: "PID",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("product_id")}</div>
-    ),
-  },
-  {
-    accessorKey: "product_name",
-    header: "Name",
-    cell: ({ row }) => (
-      <div className="capitalize">
-        <div className="capitalize">{row.getValue("product_name")}</div>
-      </div>
-    ),
-  },
-  {
-    accessorKey: "color",
-    header: "Color",
-    cell: ({ row }) => (
-      <Badge className="capitalize" variant="outline">{row.getValue("color")}</Badge>
-    ),
-  },
-  {
-    accessorKey: "price",
+    accessorKey: "id",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Price
+          ID
           <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("price"))
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "VND",
-      }).format(amount)
-
-      return <div className="font-base">{formatted}</div>
-    },
+    cell: ({ row }) => (
+      <div className="lowercase ml-4">{row.getValue("id")}</div>
+    ),
   },
   {
-    accessorKey: "available",
-    header: "Available",
+    accessorKey: "code",
+    header: "Code",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("available")}</div>
+      // <div className="capitalize">{row.getValue("code")}</div>
+      <CopyButton textToCopy={row.getValue("code")} />
     ),
+  },
+  {
+    accessorKey: "discount",
+    header: "Discount",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("discount")}%</div>
+    ),
+  },
+  {
+    accessorKey: "description",
+    header: "Description",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("description")}</div>
+    ),
+  },
+  {
+    accessorKey: "expired_at",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className=" text-left"
+        >
+          Expired at
+          <CaretSortIcon className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+    cell: ({ row }) => <div className="lowercase">{row.getValue("expired_at")}</div>,
   },
   {
     accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => (
-      <div className="capitalize">
-        <Badge variant={row.getValue("status") === "active" ? "default" : "destructive"}>
-          {row.getValue("status")}
-        </Badge>
-      </div>
-    ),
+    header: () => <div className="text-left">Status</div>,
+    cell: ({ row }) => {
+      return <Badge variant={row.getValue("status") === "active" ? "default" : "destructive"}>{row.getValue("status")}</Badge>
+    },
   },
   {
     id: "actions",
@@ -128,29 +116,44 @@ export const columns: ColumnDef<StockItemBody>[] = [
     cell: ({ row }) => {
       return (
         <div className=" flex space-x-2 w-full justify-end">
-          <ProductSpecsDialog src={row.original} />
-          {/* <Button size="icon" variant="outline"><Trash className=" text-red-500" /></Button> */}
+          {/* <CouponsDialog original={row.original} /> */}
+          {/* <Link href={`/dashboard/shop/inventory/upload/${row.original.id}`}>
+            <Button size="icon" variant="outline">
+              <Plus className=" text-blue-600" />
+            </Button>
+          </Link> */}
+          <DeleteConfirmDialog code={row.original.code} />
         </div>
       )
     },
   },
 ]
 
-export function InventoryTableComponent() {
-  const { inventory, fetchInventory } = useInventory()
+export function CouponsDataTable() {
+  const [coupons, setCoupons] = useState<CouponsResp[]>([])
   useEffect(() => {
-    fetchInventory()
+    const func = async () => {
+      try {
+        const res = await CouponsService.getCoupons()
+        setCoupons(res.data)
+      }
+      catch (e) {
+        console.log(e)
+      }
+    }
+    func()
   }, [])
-  const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
     []
   )
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
+    useState<VisibilityState>({})
+  const [rowSelection, setRowSelection] = useState({})
 
   const table = useReactTable({
-    data: inventory?.stock ?? [],
+    data: coupons,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
@@ -174,10 +177,11 @@ export function InventoryTableComponent() {
       <div className="w-full">
         <div className="flex justify-end items-center py-4">
           <div className=" flex space-x-3">
+            <CreateCouponsDialog />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="ml-auto">
-                  Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
+                  Columns <ChevronDown />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -202,7 +206,7 @@ export function InventoryTableComponent() {
             </DropdownMenu>
           </div>
         </div>
-        <div className="rounded-md border bg-white">
+        <div className="rounded-md border">
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -253,6 +257,10 @@ export function InventoryTableComponent() {
           </Table>
         </div>
         <div className="flex items-center justify-end space-x-2 py-4">
+          <div className="flex-1 text-sm text-muted-foreground">
+            {table.getFilteredSelectedRowModel().rows.length} of{" "}
+            {table.getFilteredRowModel().rows.length} row(s) selected.
+          </div>
           <div className="space-x-2">
             <Button
               variant="outline"
