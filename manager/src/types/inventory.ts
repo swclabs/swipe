@@ -22,6 +22,11 @@ export interface BaseResponse {
     msg: string;
 }
 
+export interface ObjectID {
+    msg: string;
+    id: number;
+}
+
 export interface NewInventoryRes extends BaseResponse {
     id: string;
 }

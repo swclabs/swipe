@@ -25,7 +25,7 @@ export default function CardScroll({ product, href }: { product: ProductType[], 
             <div className="shrink-0"></div>
           </div>
           {
-            product.length > 0 ?
+            product?.length > 0 ?
               product.map((value, index) => (
                 <motion.div
                   initial={{

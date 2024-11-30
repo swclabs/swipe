@@ -2,6 +2,7 @@
 
 import {
   ChevronLeft,
+  LoaderCircle,
   Plus,
   Trash2,
 } from "lucide-react"
@@ -41,16 +42,14 @@ import { useFormik } from "formik"
 import { useEffect, useState } from "react";
 import { Dialog } from "@radix-ui/react-dialog";
 import { DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { useCategories, useSuppliers } from "@/state/products";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { ProductService } from "@/services/products";
 import { InventoryService } from "@/services/inventory";
 import { ProductResp } from "@/types/products";
 
 export default function Page({ params }: { params: { id: string } }) {
   const [product, setProduct] = useState<ProductResp>();
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const f = async () => {
       try {
@@ -66,39 +65,49 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const { toast } = useToast()
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [uploadColor, setUploadColor] = useState<File[]>([]);
   const formik = useFormik({
     initialValues: {
       product_name: '',
       price: '',
       available: '',
       status: 'active',
-      product_id: 0,
+      product_id: parseInt(params.id),
       currency_code: 'VND',
       image: [],
       color_img: '',
       color: '',
-      specs: {
-        ram: '',
-        ssd: '',
-        connection: '',
-        desc: '',
-      }
+      // specs: {
+      //   ram: '',
+      //   ssd: '',
+      //   connection: '',
+      //   desc: '',
+      // }
+      ram: '',
+      ssd: '',
+      connection: '',
+      desc: '',
     },
-    onSubmit: values => {
-      const postNewInventory = async () => {
-        const newInventoryRes = await InventoryService.NewInventory(values);
-        newInventoryRes.status === 201 ?
-          toast({
-            title: "Update products information",
-            description: newInventoryRes.data.msg,
-          }) :
-          toast({
-            title: "Update products information",
-            description: "Failure",
-          });
-      };
-      postNewInventory();
-      window.history.back();
+    onSubmit: async (values) => {
+      setLoading(true);
+      try {
+        const newInventoryRes = await InventoryService.NewInventory({...values, specs: { ram: values.ram, ssd: values.ssd, desc: values.desc, connection: values.connection }});
+        await InventoryService.NewInventoryImage(uploadedFiles, newInventoryRes.data.id);
+        await InventoryService.InventoryColorImage(uploadColor, newInventoryRes.data.id);
+        toast({
+          title: "Update products information",
+          description: newInventoryRes.data.msg,
+        })
+      }
+      catch (e) {
+        console.error(e);
+        toast({
+          variant: "destructive",
+          title: "Update products information",
+          description: "Failure",
+        });
+      }
+      setLoading(false);
     },
   });
 
@@ -148,8 +157,9 @@ export default function Page({ params }: { params: { id: string } }) {
                   <Button
                     size="sm"
                     type="submit"
+                    disabled={loading}
                   >
-                    Save
+                    Save {loading && <LoaderCircle className="h-4 w-4 animate-spin" />}
                   </Button>
                 </div>
               </div>
@@ -256,7 +266,7 @@ export default function Page({ params }: { params: { id: string } }) {
                                 </Label>
                                 <Input
                                   id="ssd"
-                                  defaultValue={formik.values.specs.ssd}
+                                  defaultValue={formik.values.ssd}
                                   className="w-full"
                                   onChange={(e) => {
                                     formik.setFieldValue("ssd", e.target.value);
@@ -274,7 +284,7 @@ export default function Page({ params }: { params: { id: string } }) {
                                 </Label>
                                 <Input
                                   id="ram"
-                                  defaultValue={formik.values.specs.ram}
+                                  defaultValue={formik.values.ram}
                                   className="w-full"
                                   onChange={(e) => {
                                     formik.setFieldValue("ram", e.target.value);
@@ -315,8 +325,8 @@ export default function Page({ params }: { params: { id: string } }) {
                     <CardContent>
                       <div className="grid gap-2">
                         <ImageUploader
-                          uploadedFiles={uploadedFiles}
-                          setUploadedFiles={setUploadedFiles}
+                          uploadedFiles={uploadColor}
+                          setUploadedFiles={setUploadColor}
                         />
                       </div>
                     </CardContent>
