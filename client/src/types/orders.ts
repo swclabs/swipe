@@ -37,6 +37,7 @@ interface Product {
 
 export interface OrderDTO {
     coupon_code: string;
+    payment_method: string;
     address: Address;
     customer: User;
     delivery: Delivery;
@@ -46,9 +47,14 @@ export interface OrderDTO {
 export interface Order {
     uuid: string;
     time: string;
+    payment_method: string;
     user: User;
     total_amount: string;
     delivery: Delivery;
     address: Address;
     items: Item[];
+}
+
+export interface OrderResponse {
+    order_code : string;
 }

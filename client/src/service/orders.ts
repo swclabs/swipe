@@ -1,7 +1,7 @@
 import createAxiosInstance from "@/lib/axios";
 import APIEndpoint from "@/providers/endpoint";
 import { OK } from "@/types";
-import { Order, OrderDTO } from "@/types/orders";
+import { Order, OrderDTO, OrderResponse } from "@/types/orders";
 import { AxiosResponse } from "axios";
 
 
@@ -22,9 +22,9 @@ export class Orders {
         return response;
     }
 
-    static async createOrders(orders: OrderDTO): Promise<AxiosResponse<OK>> {
+    static async createOrders(orders: OrderDTO): Promise<AxiosResponse<OrderResponse>> {
         const axiosInstance = await createAxiosInstance();
-        const response: AxiosResponse<OK> = await axiosInstance.post(
+        const response: AxiosResponse<OrderResponse> = await axiosInstance.post(
             `${APIEndpoint.ORDERS.ORDERS}`, orders,
         );
         return response;
