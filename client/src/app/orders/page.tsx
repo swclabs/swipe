@@ -49,7 +49,7 @@ export default function Page() {
             Đơn hàng của bạn
           </div>
           <div className=" flex flex-col">
-            {order.map((item, index) => (
+            {order?.map((item, index) => (
               <Accordion type="single" collapsible key={index}>
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
@@ -169,6 +169,10 @@ export default function Page() {
                             <div className="w-full flex justify-between items-center">
                               <p className="">Total</p>
                               <p className="font-medium">{formatNumber(parseInt(item.total_amount))}đ</p>
+                            </div>
+                            <div className="w-full flex justify-between items-center">
+                              <p className="">Phương thức thanh toán</p>
+                              <p className="font-medium">{item?.payment_method}</p>
                             </div>
                           </div>
                         </div>

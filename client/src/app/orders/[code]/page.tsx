@@ -158,6 +158,10 @@ export default function Page({ params }: { params: { code: string } }) {
                   <p className="">Total</p>
                   <p className="font-medium">{formatNumber(totalPrice)}đ</p>
                 </div>
+                <div className="w-full flex justify-between items-center">
+                  <p className="">Phương thức thanh toán</p>
+                  <p className="font-medium">{order?.payment_method}</p>
+                </div>
               </div>
             </div>
           </div>

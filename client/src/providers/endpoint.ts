@@ -39,4 +39,8 @@ export default class APIEndpoint {
     DISTRICT: `${APIEndpoint.BASE_URL}/address/district`,
     WARD: `${APIEndpoint.BASE_URL}/address/ward`,
   }
+
+  static readonly PAYMENT = {
+    PAYMENT: `${APIEndpoint.BASE_URL}/payment`,
+  }
 }

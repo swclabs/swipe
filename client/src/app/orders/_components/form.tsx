@@ -16,6 +16,16 @@ import { Check, ChevronsUpDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { PaymentService } from "@/service/payment";
 
 const formSchema = z.object({
   firstname: z.string().min(2, {
@@ -38,6 +48,7 @@ const formSchema = z.object({
   }),
   email: z.string().email(),
   phone: z.string(),
+  payment_method: z.string(),
 })
 
 type OrderFormSchema = z.infer<typeof formSchema>
@@ -51,7 +62,8 @@ export default function OrderForm() {
   async function onSubmit(values: OrderFormSchema) {
     try {
       if (carts && carts.products.length > 0) {
-        await Orders.createOrders({
+        const orderReq = {
+          payment_method: values.payment_method,
           coupon_code: coupon.code,
           address: {
             street: values.street,
@@ -67,7 +79,7 @@ export default function OrderForm() {
           },
           delivery: {
             status: "pending",
-            method: "COD",
+            method: "standard",
             note: "",
             sent_date: "",
           },
@@ -75,7 +87,21 @@ export default function OrderForm() {
             code: `${product.category}#${product.inventory_id}`,
             quantity: product.quantity,
           }))
-        })
+        }
+        const orderResp = await Orders.createOrders(orderReq)
+        if (orderReq.payment_method === "VNPAY") {
+          const paymentResp = await PaymentService.CreatePayment({
+            amount: totalPrice - totalPrice * coupon.discount / 100,
+            order_id: `${orderResp.data.order_code}`,
+            order_type: "other",
+            order_desc: `thanh toan hoa don ${orderResp.data.order_code}`,
+            language: "vn",
+            bank_code: "",
+            ip_address: "",
+          })
+          window.location.href = paymentResp.data.payment_url
+          return
+        }
         setTimeout(() => {
           window.location.href = "/orders"
         }, 2000)
@@ -408,9 +434,34 @@ export default function OrderForm() {
                 <p className="">Total</p>
                 <p className="">{formatNumber(totalPrice - totalPrice * coupon.discount / 100)}đ</p>
               </div>
+              <div className="w-full flex justify-between font-medium">
+                <p className="">Phương thức thanh toán</p>
+                <FormField
+                  control={form.control}
+                  name="payment_method"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Select defaultValue="COD" onValueChange={field.onChange}>
+                          <SelectTrigger className="w-[280px]">
+                            <SelectValue placeholder="Chọn phương thức thanh toán" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectGroup>
+                              <SelectItem value="COD">Thanh Toán Khi Nhận Hàng</SelectItem>
+                              <SelectItem value="VNPAY">VNPAY QR</SelectItem>
+                            </SelectGroup>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
             <Button type="submit">Submit</Button>
           </div>
+
         </div>
       </form>
     </Form>
