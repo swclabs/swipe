@@ -18,10 +18,15 @@ export default function WatchPageBody({ session, id }: { session: SessionProvide
     setDetails,
     setColor,
     setSpecs,
+    fetchProduct,
   } = useProducts()
   useEffect(() => {
-    setDetails(watchDetail[0])
+    fetchProduct(id);
+    if (details) {
+      setDetails(details)
+    }
   }, [])
+
   if (!details) {
     return (
       <div className=" h-screen w-full flex justify-center items-center">

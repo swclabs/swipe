@@ -24,11 +24,15 @@ export default function ComputerPageBody({ session, id, type }: { session: Sessi
     setDetails,
     setColor,
     setSpecs,
+    fetchProduct,
   } = useProducts()
 
   useEffect(() => {
     setSpecs({ ram: "", ssd: "", price: "", connection: "", desc: "", inventory_id: -1, favorite: false })
-    setDetails(laptop[0])
+    fetchProduct(id);
+    if(details){
+      setDetails(details);
+    }
   }, [])
 
   if (!details) {
@@ -105,7 +109,7 @@ export default function ComputerPageBody({ session, id, type }: { session: Sessi
         <div className="w-full">
           <div className=" text-red-500 font-medium pt-5">Mới</div>
           <div className=" font-semibold text-5xl pt-2">Mua {details?.name}</div>
-          {details?.color[0].specs !== undefined &&
+          {details?.color[0]?.specs !== undefined &&
             <div className=" font-base text-xs pt-2">{details?.color[0].specs[0]?.price}</div>
           }
         </div>

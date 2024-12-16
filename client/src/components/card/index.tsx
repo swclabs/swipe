@@ -20,7 +20,7 @@ export default function ProductCard({ product, href }: { product: ProductType[],
         <div className=" sm:w-1/12 shrink-0 snap-center">
           <div className="shrink-0"></div>
         </div>
-        {product.length > 0 ?
+        {product?.length > 0 ?
           <div className="grid lg:grid-cols-3 2xl:grid-cols-4 sm:grid-cols-2 grid-cols-2 gap-4 p-2 w-full">
             {product.map((value, index) => (
               <motion.div

@@ -3,7 +3,7 @@ import { ProductType } from "@/types/products";
 export const laptop: ProductType[] = [
     {
         name: "MacBook Air 13”",
-        price: "Từ $999 hoặc $83.25/tháng trong 12 tháng.*",
+        price: "Từ $999",
         desc: "Chiếc laptop Mac giá cả phải chăng nhất để hoàn thành công việc khi di chuyển.",
         image: "/img/product/mac13.png",
         id: 1,
@@ -17,7 +17,7 @@ export const laptop: ProductType[] = [
     },
     {
         name: "MacBook Air 13” và 15”",
-        price: "Từ $1099 hoặc $91.58/tháng trong 12 tháng.*",
+        price: "Từ $1099",
         desc: "Mỏng và nhanh đến mức bạn có thể làm việc, chơi hoặc sáng tạo ở bất cứ đâu.",
         image: "/img/product/mac13-15.png",
         id: 0,
@@ -31,7 +31,7 @@ export const laptop: ProductType[] = [
     },
     {
         name: "MacBook Pro 14” và 16”",
-        price: "Từ $1599 hoặc $133.25/tháng trong 12 tháng.*",
+        price: "Từ $1599",
         desc: "Những chiếc laptop Mac tiên tiến nhất cho các quy trình làm việc đòi hỏi cao.",
         image: "/img/product/mac14-16.png",
         id: 0,
@@ -45,7 +45,7 @@ export const laptop: ProductType[] = [
     },
     {
         name: "MacBook Pro 14” và 16”",
-        price: "Từ $1599 hoặc $133.25/tháng trong 12 tháng.*",
+        price: "Từ $1599",
         desc: "Những chiếc laptop Mac tiên tiến nhất cho các quy trình làm việc đòi hỏi cao.",
         image: "/img/product/mac14-16.png",
         id: 0,
@@ -59,7 +59,7 @@ export const laptop: ProductType[] = [
     },
     {
         name: "MacBook Pro 14” và 16”",
-        price: "Từ $1599 hoặc $133.25/tháng trong 12 tháng.*",
+        price: "Từ $1599",
         desc: "Những chiếc laptop Mac tiên tiến nhất cho các quy trình làm việc đòi hỏi cao.",
         image: "/img/product/mac14-16.png",
         id: 0,

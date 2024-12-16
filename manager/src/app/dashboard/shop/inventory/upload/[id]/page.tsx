@@ -91,7 +91,7 @@ export default function Page({ params }: { params: { id: string } }) {
     onSubmit: async (values) => {
       setLoading(true);
       try {
-        const newInventoryRes = await InventoryService.NewInventory({...values, specs: { ram: values.ram, ssd: values.ssd, desc: values.desc, connection: values.connection }});
+        const newInventoryRes = await InventoryService.NewInventory({ ...values, specs: { ram: values.ram, ssd: values.ssd, desc: values.desc, connection: values.connection } });
         await InventoryService.NewInventoryImage(uploadedFiles, newInventoryRes.data.id);
         await InventoryService.InventoryColorImage(uploadColor, newInventoryRes.data.id);
         toast({
@@ -239,7 +239,7 @@ export default function Page({ params }: { params: { id: string } }) {
                       </div>
                     </CardContent>
                   </Card>
-                  {product && ['tablet', 'phone', 'laptop', 'desktop'].includes(product.category) &&
+                  {product && ['tablet', 'phone', 'laptop', 'desktop', 'watch'].includes(product.category) &&
                     <Card x-chunk="dashboard-07-chunk-2">
                       <CardHeader>
                         <CardTitle>Specification</CardTitle>
@@ -258,36 +258,36 @@ export default function Page({ params }: { params: { id: string } }) {
                           <TableBody>
                             <TableRow>
                               <TableCell className="font-semibold">
-                                SSD
+                                Connection
                               </TableCell>
                               <TableCell>
                                 <Label htmlFor="stock-3" className="sr-only">
-                                  SSD
+                                  Connection
                                 </Label>
                                 <Input
-                                  id="ssd"
-                                  defaultValue={formik.values.ssd}
+                                  id="connection"
+                                  defaultValue={formik.values.connection}
                                   className="w-full"
                                   onChange={(e) => {
-                                    formik.setFieldValue("ssd", e.target.value);
+                                    formik.setFieldValue("connection", e.target.value);
                                   }}
                                 />
                               </TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-semibold">
-                                RAM
+                                Description
                               </TableCell>
                               <TableCell>
                                 <Label htmlFor="stock-3" className="sr-only">
-                                  RAM
+                                  Description
                                 </Label>
                                 <Input
-                                  id="ram"
-                                  defaultValue={formik.values.ram}
+                                  id="description"
+                                  defaultValue={formik.values.desc}
                                   className="w-full"
                                   onChange={(e) => {
-                                    formik.setFieldValue("ram", e.target.value);
+                                    formik.setFieldValue("desc", e.target.value);
                                   }}
                                 />
                               </TableCell>

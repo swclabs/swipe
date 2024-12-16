@@ -87,7 +87,7 @@ export function DesktopCard() {
     }
     f();
   }, []);
-  return <CardScroll product={product} href="/shop/computer/" />
+  return <CardScroll product={product} href="/shop/computer/desktop/" />
 }
 
 export function DisplayCard() {
@@ -104,7 +104,7 @@ export function DisplayCard() {
     }
     f();
   }, []);
-  return <CardScroll product={product} href="/shop/computer/" />
+  return <CardScroll product={product} href="/shop/computer/display/" />
 }
 
 export function LaptopCard() {
@@ -121,7 +121,7 @@ export function LaptopCard() {
     }
     f();
   }, []);
-  return <CardScroll product={product} href="/shop/computer/" />
+  return <CardScroll product={product} href="/shop/computer/laptop/" />
 }
 
 export function EarphoneCard() {

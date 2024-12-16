@@ -18,9 +18,13 @@ export default function Page({ params }: { params: { slug: string } }) {
     setDetails,
     setColor,
     setSpecs,
+    fetchProduct,
   } = useProducts()
   useEffect(() => {
-    setDetails(watchDetail[0])
+    fetchProduct(parseInt(params.slug));
+    if(details){
+      setDetails(details);
+    }
   }, [])
 
   if (!details) {
@@ -53,7 +57,8 @@ export default function Page({ params }: { params: { slug: string } }) {
               {details.name}
             </h1>
             <div className=" text-xl font-semibold">
-              {formatNumber(parseInt(details?.color[0]?.specs[0]?.price))}đ
+              {/* {formatNumber(parseInt(details?.color[0]?.specs[0]?.price))}đ */}
+              {details.price}
             </div>
             <div className=" flex gap-3 pt-4">
               <Badge variant="secondary">Phụ kiện</Badge>

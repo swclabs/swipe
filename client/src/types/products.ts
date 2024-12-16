@@ -13,7 +13,8 @@ export interface ProductDetail {
     screen: string;
     display: string;
     rating: number;
-    image: string[]
+    image: string[];
+    price: string;
     color: {
         name: string;
         img: string;
