@@ -74,7 +74,7 @@ export function ProductSpecsDialog({ original }: { original: ProductResp }) {
           <DialogHeader>
             <DialogTitle>{original.name}</DialogTitle>
             <DialogDescription>
-              Product Specification
+              Thông số kỹ thuật sản phẩm
             </DialogDescription>
           </DialogHeader>
 

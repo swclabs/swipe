@@ -31,9 +31,9 @@ export default function FilterBox({ table }: { table: Table<ProductResp> }) {
     <Card className="w-full">
       <CardContent className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 p-5">
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="name">Tên sản phẩm</Label>
           <Input
-            type="text" id="name" placeholder="Name"
+            type="text" id="name" placeholder="Tên sản phẩm"
             value={state.name}
             onChange={(event) =>
               // table.getColumn("product_name")?.setFilterValue(event.target.value)
@@ -42,8 +42,8 @@ export default function FilterBox({ table }: { table: Table<ProductResp> }) {
           />
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="price">Category</Label>
-          <Input type="text" id="price" placeholder="Category"
+          <Label htmlFor="price">Danh mục sản phẩm</Label>
+          <Input type="text" id="price" placeholder="Danh mục sản phẩm"
             value={state.category}
             onChange={(event) =>
               // table.getColumn("product_name")?.setFilterValue(event.target.value)
@@ -52,10 +52,10 @@ export default function FilterBox({ table }: { table: Table<ProductResp> }) {
           />
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="status">Status</Label>
-          <Select onValueChange={(value) => setState({...state, status: value})}>
+          <Label htmlFor="status">Trạng thái</Label>
+          <Select onValueChange={(value) => setState({ ...state, status: value })}>
             <SelectTrigger>
-              <SelectValue placeholder="Select status" />
+              <SelectValue placeholder="Chọn trạng thái" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="active">Active</SelectItem>

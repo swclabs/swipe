@@ -64,21 +64,21 @@ export const columns: ColumnDef<ProductResp>[] = [
   },
   {
     accessorKey: "name",
-    header: "Name",
+    header: "Tên sản phẩm",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("name")}</div>
     ),
   },
   {
     accessorKey: "price",
-    header: "Price",
+    header: "Giá thành",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("price")}</div>
     ),
   },
   {
     accessorKey: "category",
-    header: "Category",
+    header: "Phân loại",
     cell: ({ row }) => (
       <Badge className="capitalize" variant="outline">{row.getValue("category")}</Badge>
     ),
@@ -92,7 +92,7 @@ export const columns: ColumnDef<ProductResp>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           className=" text-left"
         >
-          Created
+          Ngày được thêm
           <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       )
@@ -101,7 +101,7 @@ export const columns: ColumnDef<ProductResp>[] = [
   },
   {
     accessorKey: "status",
-    header: () => <div className="text-left">Status</div>,
+    header: () => <div className="text-left">Trạng thái</div>,
     cell: ({ row }) => {
       return <Badge variant={row.getValue("status") === "active" ? "default" : "destructive"}>{row.getValue("status")}</Badge>
     },

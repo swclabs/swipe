@@ -98,7 +98,7 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
           <DialogHeader>
             <DialogTitle>{src.product_name}</DialogTitle>
             <DialogDescription>
-              Product Specification
+              Thông số kỹ thuật sản phẩm
             </DialogDescription>
           </DialogHeader>
 
@@ -109,11 +109,11 @@ export function ProductSpecsDialog({ src }: { src: StockItemBody }) {
                   <CarouselContent>
                     {src.image.map((value, index) => (
                       <CarouselItem key={index}>
-                          <Card>
-                            <CardContent className="flex aspect-square items-center justify-center bg-gray-100 rounded-xl">
-                              <Image loader={() => value} src={value} alt="Product Image" width={500} height={500} />
-                            </CardContent>
-                          </Card>
+                        <Card>
+                          <CardContent className="flex aspect-square items-center justify-center bg-gray-100 rounded-xl">
+                            <Image loader={() => value} src={value} alt="Product Image" width={500} height={500} />
+                          </CardContent>
+                        </Card>
                       </CarouselItem>
                     ))}
                   </CarouselContent>

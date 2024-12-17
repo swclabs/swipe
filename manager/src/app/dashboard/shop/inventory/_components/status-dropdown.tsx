@@ -50,7 +50,7 @@ export function StatusBox({ state, setState }: StatusBoxProps) {
         >
           {state.status
             ? status.find((status) => status.value === state.status)?.label
-            : "Select Status..."}
+            : "Chọn trạng thái..."}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -63,7 +63,7 @@ export function StatusBox({ state, setState }: StatusBoxProps) {
                   key={stt.value}
                   value={stt.value}
                   onSelect={(currentValue) => {
-                    setState(currentValue === state.status ? {...state} : {...state, status: currentValue})
+                    setState(currentValue === state.status ? { ...state } : { ...state, status: currentValue })
                     setOpen(false)
                   }}
                 >
