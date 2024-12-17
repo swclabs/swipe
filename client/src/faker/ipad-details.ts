@@ -105,7 +105,8 @@ const ipadDetail: ProductDetail[] = [
             },
         ],
         display: "",
-        rating: 0
+        rating: 0,
+        price: ""
     },
     {
         name: "iPad Pro 13 inch",
@@ -310,7 +311,8 @@ const ipadDetail: ProductDetail[] = [
             },
         ],
         display: "",
-        rating: 0
+        rating: 0,
+        price: ""
     },
 ]
 

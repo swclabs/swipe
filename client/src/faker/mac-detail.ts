@@ -360,7 +360,8 @@ export const laptop: ProductDetail[] = [
       },
     ],
     display: "",
-    rating: 0
+    rating: 0,
+    price: ""
   },
 ];
 
@@ -384,6 +385,7 @@ export const display: ProductDetail[] = [
         desc: "",
         connection: ""
       }]
-    }]
+    }],
+    price: ""
   },
 ]

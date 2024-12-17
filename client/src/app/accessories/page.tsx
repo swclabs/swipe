@@ -1,6 +1,6 @@
 import AccessoryAirtag from './_components/airtag-accessories';
 import AccessoryIpad from '@/app/accessories/_components/ipad-accessories';
-import AccessoryIphone from '@/app/accessories/_components/iphone-accessories';
+import Accessory from '@/app/accessories/_components/iphone-accessories';
 import AccessoryMac from '@/app/accessories/_components/mac-accessories';
 import AccessoryWatch from '@/app/accessories/_components/watch-accessories';
 import Banner from "@/components/layout/banner";
@@ -17,39 +17,8 @@ export default function Page() {
 
         <Welcome title='Phụ Kiện' subtitle='Tìm phụ kiện cho thiết bị của bạn' />
 
-        <AccessoryIphone />
+        <Accessory />
 
-        <div className="flex justify-center mt-12">
-          <div className=" pt-12 pb-12">
-            <span className=" text-xl sm:text-5xl font-medium">Dây Đeo Apple Watch</span>
-          </div>
-        </div>
-
-        <AccessoryWatch />
-
-        <div className="flex justify-center mt-12">
-          <div className=" pt-12 pb-12">
-            <span className=" text-xl sm:text-5xl font-medium">Phụ Kiện iPad Nổi Bật</span>
-          </div>
-        </div>
-
-        <AccessoryIpad />
-
-        <div className="flex justify-center mt-12">
-          <div className=" pt-12 pb-12">
-            <span className=" text-xl sm:text-5xl font-medium">Các Phụ Kiện Mac Nổi Bật</span>
-          </div>
-        </div>
-
-        <AccessoryMac />
-
-        <div className="flex justify-center mt-12">
-          <div className=" pt-12 pb-12">
-            <span className=" text-xl sm:text-5xl font-medium">AirTag</span>
-          </div>
-        </div>
-
-        <AccessoryAirtag />
         <ShortCut />
         <div className='w-full bg-gray-100'>
           <div className='w-1/2 m-auto mt-12'>

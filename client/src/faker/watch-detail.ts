@@ -41,7 +41,8 @@ const watchDetail: ProductDetail[] = [
             },
         ],
         display: "",
-        rating: 0
+        rating: 0,
+        price: ""
     },
     {
         name: "Apple Watch SE",
@@ -83,7 +84,8 @@ const watchDetail: ProductDetail[] = [
             },
         ],
         display: "",
-        rating: 0
+        rating: 0,
+        price: ""
     },
 ]
 
