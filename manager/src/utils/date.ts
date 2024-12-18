@@ -5,7 +5,7 @@ export function filterDatesByCurrentWeek(orders: Order[]): Order[] {
     const startOfWeek = getStartOfWeek(now);
     const endOfWeek = getEndOfWeek(now);
 
-    return orders.filter(order => {
+    return orders?.filter(order => {
         const orderDate = new Date(order.time);
         return orderDate >= startOfWeek && orderDate <= endOfWeek;
     });
@@ -15,10 +15,10 @@ export function filterDatesByCurrentMonth(orders: Order[]): Order[] {
     const now = new Date();
     const currentYear = now.getFullYear();
     const currentMonth = now.getMonth();
-  
-    return orders.filter(order => {
-      const orderDate = new Date(order.time);
-      return orderDate.getFullYear() === currentYear && orderDate.getMonth() === currentMonth;
+
+    return orders?.filter(order => {
+        const orderDate = new Date(order.time);
+        return orderDate.getFullYear() === currentYear && orderDate.getMonth() === currentMonth;
     });
 }
 

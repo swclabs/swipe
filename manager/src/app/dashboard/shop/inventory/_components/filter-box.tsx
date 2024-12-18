@@ -65,7 +65,7 @@ export default function FilterBox({ table }: { table: Table<StockItemBody> }) {
           />
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="status">Chọn trạng thái</Label>
+          <Label htmlFor="status">Trạng thái</Label>
           {/* <Input type="text" id="status" placeholder="Status"
             value={state.status}
             onChange={(event) =>

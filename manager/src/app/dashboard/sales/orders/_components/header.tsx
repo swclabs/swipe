@@ -15,8 +15,8 @@ export default function Header({ orders }: { orders: Order[] }) {
     const week = filterDatesByCurrentWeek(orders)
     const month = filterDatesByCurrentMonth(orders)
 
-    const sumOfWeek = week.reduce((acc, item) => acc + parseInt(item.total_amount), 0)
-    const sumOfMonth = month.reduce((acc, item) => acc + parseInt(item.total_amount), 0)
+    const sumOfWeek = week?.reduce((acc, item) => acc + parseInt(item.total_amount), 0)
+    const sumOfMonth = month?.reduce((acc, item) => acc + parseInt(item.total_amount), 0)
 
     setTotalWeek(sumOfWeek)
     setTotalMonth(sumOfMonth)
@@ -28,19 +28,19 @@ export default function Header({ orders }: { orders: Order[] }) {
         className="sm:col-span-2" x-chunk="dashboard-05-chunk-0"
       >
         <CardHeader className="pb-3">
-          <CardTitle>Your Orders</CardTitle>
+          <CardTitle>Đơn hàng của bạn</CardTitle>
           <CardDescription className="max-w-lg text-balance leading-relaxed">
-            Introducing Our Dynamic Orders Dashboard for Seamless
-            Management and Insightful Analysis.
+            Giới thiệu Bảng điều khiển đơn hàng động của chúng tôi
+            để quản lý liền mạch và phân tích sâu sắc.
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <Link href="/dashboard/sales/orders/new"><Button>Create New Order</Button></Link>
+          <Link href="/dashboard/sales/orders/new"><Button>Đơn hàng mới</Button></Link>
         </CardFooter>
       </Card>
       <Card x-chunk="dashboard-05-chunk-1">
         <CardHeader className="pb-2">
-          <CardDescription>This Week</CardDescription>
+          <CardDescription>Tuần này</CardDescription>
           <CardTitle className="text-2xl">{formatNumber(totalWeek)}đ</CardTitle>
           <CardContent className=" p-0">
             <div className="text-xs text-muted-foreground">
@@ -51,7 +51,7 @@ export default function Header({ orders }: { orders: Order[] }) {
       </Card>
       <Card x-chunk="dashboard-05-chunk-2">
         <CardHeader className="pb-2">
-          <CardDescription>This Month</CardDescription>
+          <CardDescription>Tháng này</CardDescription>
           <CardTitle className="text-2xl">{formatNumber(totalMonth)}đ</CardTitle>
           <CardContent className=" p-0">
             <div className="text-xs text-muted-foreground">
