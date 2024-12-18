@@ -1,5 +1,5 @@
 export const mac_carousel = {
-    headline: "Get to know your Mac.",
+    headline: "Hiểu hơn về Mac của bạn.",
     cards: [
         {
             category: "iPhone 15 Pro",
@@ -66,7 +66,7 @@ export const mac_carousel = {
 
 
 export const mac_carousel_1 = {
-    headline: "Ways to save. Find what works for you.",
+    headline: "Cách tiết kiệm. Tìm cách phù hợp với bạn.",
     cards: [
         {
             category: "LOW MONTHLY PAYMENTS",

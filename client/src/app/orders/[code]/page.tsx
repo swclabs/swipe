@@ -137,25 +137,25 @@ export default function Page({ params }: { params: { code: string } }) {
               </div>
               <div className=" text-sm flex flex-col gap-y-2 border-b-1 py-5 items-center">
                 <div className="w-full flex justify-between items-center">
-                  <p className="">Subtotal</p>
+                  <p className="">Tổng cộng</p>
                   <p className="font-medium">{formatNumber(totalPrice)}đ</p>
                 </div>
                 <div className="w-full flex justify-between items-center">
-                  <p className="">Quantity</p>
+                  <p className="">Số lượng</p>
                   <p className="font-medium">{quantity}</p>
                 </div>
                 <div className="w-full flex justify-between items-center">
-                  <p className="">Estimate Delivery</p>
+                  <p className="">Phí vận chuyển</p>
                   <p className="font-medium">0đ</p>
                 </div>
                 <div className="w-full flex justify-between items-center">
-                  <p className="">Discount</p>
+                  <p className="">Khuyến mãi</p>
                   <p className="font-medium">0đ</p>
                 </div>
               </div>
               <div className=" text-sm flex flex-col gap-y-2 border-b-1 py-5 items-center">
                 <div className="w-full flex justify-between items-center">
-                  <p className="">Total</p>
+                  <p className="">Tổng phải trả</p>
                   <p className="font-medium">{formatNumber(totalPrice)}đ</p>
                 </div>
                 <div className="w-full flex justify-between items-center">

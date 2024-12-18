@@ -36,7 +36,7 @@ export default function Page() {
   return (
     <div className='w-full'>
       <Banner />
-      <Welcome title='Mac' subtitle='If you can dream it, Mac can do it' />
+      <Welcome title='Mac' subtitle='Nếu bạn dám mơ, Mac có thể thực hiện' />
       <ComputerCardsCarousel carousel={mac_carousel} />
       <ProductLaptopCard product={laptop} />
       <ProductDesktopCard product={desktop} />

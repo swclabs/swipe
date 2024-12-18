@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <div className=' w-full'>
       <Banner />
-      <Welcome title='Shop Mac' subtitle='If you can dream it, Mac can do it' />
+      <Welcome title='Shop Mac' subtitle='Nếu bạn dám mơ, Mac có thể thực hiện' />
       <ProductLaptopCard product={laptop} />
       <ProductDesktopCard product={desktop} />
       <ProductDisplayCard product={display} />

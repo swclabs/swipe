@@ -88,7 +88,7 @@ export default function Page() {
         </div>
         <div className=" flex w-full">
           <div className=" lg:w-3/5 py-5 flex-col flex">
-            <h2 className=" py-5 font-semibold text-lg">Bag</h2>
+            <h2 className=" py-5 font-semibold text-lg">Giỏ hàng</h2>
             <div className="space-y-5">
               {carts?.products.map((value, index) => (
                 <div className="flex flex-col" key={index}>
@@ -149,24 +149,24 @@ export default function Page() {
           <div className=" text-sm flex flex-col gap-y-2 py-5 lg:w-2/5">
             <h2 className=" font-semibold text-lg py-5">Summary</h2>
             <div className="w-full flex justify-between font-medium">
-              <p className="">Subtotal</p>
+              <p className="">Tổng cộng</p>
               <p className="">{formatNumber(totalPrice)}đ</p>
             </div>
             <div className="w-full flex justify-between font-medium">
-              <p className="">Quantity</p>
+              <p className="">Số lượng</p>
               <p className="">{quantity}</p>
             </div>
             <div className="w-full flex justify-between font-medium">
-              <p className="">Estimate Delivery</p>
+              <p className="">Phí vận chuyển</p>
               <p className="">0đ</p>
             </div>
             <div className="w-full flex justify-between font-medium">
-              <p className="">Discount</p>
+              <p className="">Khuyến mãi</p>
               <p className="">-{formatNumber((totalPrice * coupon.discount) / 100)}đ</p>
             </div>
             <div className=" text-sm flex flex-col gap-y-2 border-y-1 py-5">
               <div className="w-full flex justify-between font-medium">
-                <p className="">Total</p>
+                <p className="">Tổng phải trả</p>
                 <p className="">{formatNumber(totalPrice - (totalPrice * coupon.discount) / 100)}đ</p>
               </div>
             </div>
