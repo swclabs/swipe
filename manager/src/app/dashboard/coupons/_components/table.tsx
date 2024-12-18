@@ -66,7 +66,7 @@ export const columns: ColumnDef<CouponsResp>[] = [
   },
   {
     accessorKey: "code",
-    header: "Code",
+    header: "Mã",
     cell: ({ row }) => (
       // <div className="capitalize">{row.getValue("code")}</div>
       <CopyButton textToCopy={row.getValue("code")} />
@@ -74,14 +74,14 @@ export const columns: ColumnDef<CouponsResp>[] = [
   },
   {
     accessorKey: "discount",
-    header: "Discount",
+    header: "Giảm giá",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("discount")}%</div>
     ),
   },
   {
     accessorKey: "description",
-    header: "Description",
+    header: "Mô tả",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("description")}</div>
     ),
@@ -95,7 +95,7 @@ export const columns: ColumnDef<CouponsResp>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           className=" text-left"
         >
-          Expired at
+          Hạn sử dụng
           <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       )
@@ -104,7 +104,7 @@ export const columns: ColumnDef<CouponsResp>[] = [
   },
   {
     accessorKey: "status",
-    header: () => <div className="text-left">Status</div>,
+    header: () => <div className="text-left">Trạng thái</div>,
     cell: ({ row }) => {
       return <Badge variant={row.getValue("status") === "active" ? "default" : "destructive"}>{row.getValue("status")}</Badge>
     },
@@ -112,7 +112,7 @@ export const columns: ColumnDef<CouponsResp>[] = [
   {
     id: "actions",
     enableHiding: false,
-    header: () => <div className=" text-right">Actions</div>,
+    header: () => <div className=" text-right">Hành động</div>,
     cell: ({ row }) => {
       return (
         <div className=" flex space-x-2 w-full justify-end">

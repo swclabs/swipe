@@ -10,7 +10,7 @@ interface SearchByEmailProps {
 }
 
 
-export default function SearchByEmail({orders, setOrders}: SearchByEmailProps) {
+export default function SearchByEmail({ orders, setOrders }: SearchByEmailProps) {
 
   const [email, setEmail] = useState<string>("");
 
@@ -49,7 +49,7 @@ export default function SearchByEmail({orders, setOrders}: SearchByEmailProps) {
       <input
         className=" font-normal w-full border-none focus:border-transparent focus:outline-none mx-2 bg-gray-100"
         type="text"
-        placeholder="Type email to search"
+        placeholder="Nhập email để tìm kiếm"
         onChange={(e) => setEmail(e.target.value)}
       />
     </div>

@@ -109,7 +109,7 @@ export const columns: ColumnDef<ProductResp>[] = [
   {
     id: "actions",
     enableHiding: false,
-    header: () => <div className=" text-right">Actions</div>,
+    header: () => <div className=" text-right">Hành động</div>,
     cell: ({ row }) => {
       return (
         <div className=" flex space-x-2 w-full justify-end">
