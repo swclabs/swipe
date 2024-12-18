@@ -74,30 +74,30 @@ export default function Content({ orders, setOrder, setOrders }: IContentProps) 
       <TabsContent value="all">
         <Card x-chunk="dashboard-05-chunk-3">
           <CardHeader className="px-7">
-            <CardTitle>Orders</CardTitle>
+            <CardTitle>Đơn hàng</CardTitle>
             <CardDescription>
-              Recent orders from your store.
+              Những đơn hàng gần đây từ cửa hàng.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Customer</TableHead>
+                  <TableHead>Khách hàng</TableHead>
                   <TableHead className="hidden sm:table-cell">
-                    Type
+                    Hình thức
                   </TableHead>
                   <TableHead className="hidden sm:table-cell">
-                    Status
+                    Trạng thái
                   </TableHead>
                   <TableHead className="hidden md:table-cell">
-                    Date
+                    Ngày tạo đơn
                   </TableHead>
-                  <TableHead className="text-right">Amount</TableHead>
+                  <TableHead className="text-right">Tổng cộng</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {orders.map((order, index) => (
+                {orders?.map((order, index) => (
                   <TableRow className="cursor-pointer	" key={index}
                     onClick={() => {
                       setOrder(order)
@@ -131,30 +131,31 @@ export default function Content({ orders, setOrder, setOrders }: IContentProps) 
       <TabsContent value="week">
         <Card x-chunk="dashboard-05-chunk-3">
           <CardHeader className="px-7">
-            <CardTitle>Orders</CardTitle>
+            <CardTitle>Đơn hàng</CardTitle>
             <CardDescription>
-              Recent orders from your store.
+              Những đơn hàng gần đây từ cửa hàng.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Customer</TableHead>
+                  <TableHead>Khách hàng</TableHead>
                   <TableHead className="hidden sm:table-cell">
-                    Type
+                    Hình thức
                   </TableHead>
                   <TableHead className="hidden sm:table-cell">
-                    Status
+                    Trạng thái
                   </TableHead>
                   <TableHead className="hidden md:table-cell">
-                    Date
+                    Ngày tạo đơn
                   </TableHead>
-                  <TableHead className="text-right">Amount</TableHead>
+                  <TableHead className="text-right">Tổng cộng
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {orderWeek.map((order, index) => (
+                {orderWeek?.map((order, index) => (
                   <TableRow key={index} onClick={() => {
                     setOrder(order)
                   }}>
@@ -186,30 +187,31 @@ export default function Content({ orders, setOrder, setOrders }: IContentProps) 
       <TabsContent value="month">
         <Card x-chunk="dashboard-05-chunk-3">
           <CardHeader className="px-7">
-            <CardTitle>Orders</CardTitle>
+            <CardTitle>Đơn hàng</CardTitle>
             <CardDescription>
-              Recent orders from your store.
+              Những đơn hàng gần đây từ cửa hàng.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Customer</TableHead>
+                  <TableHead>Khách hàng</TableHead>
                   <TableHead className="hidden sm:table-cell">
-                    Type
+                    Hình thức
                   </TableHead>
                   <TableHead className="hidden sm:table-cell">
-                    Status
+                    Trạng thái
                   </TableHead>
                   <TableHead className="hidden md:table-cell">
-                    Date
+                    Ngày tạo đơn
                   </TableHead>
-                  <TableHead className="text-right">Amount</TableHead>
+                  <TableHead className="text-right">Tổng cộng
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {orderMonth.map((order, index) => (
+                {orderMonth?.map((order, index) => (
                   <TableRow key={index} onClick={() => {
                     setOrder(order)
                   }}>

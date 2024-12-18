@@ -18,7 +18,7 @@ export default function page() {
       <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
         <div className="flex items-center justify-between space-y-2">
           <h2 className="text-3xl font-bold tracking-tight">
-            Hi, Welcome back 👋
+            Chào mừng bạn trở lại 👋
           </h2>
           <div className="hidden md:flex items-center space-x-2">
             <CalendarDateRangePicker />
@@ -37,7 +37,7 @@ export default function page() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
-                    Total Revenue
+                    Tổng doanh thu
                   </CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,14 +55,14 @@ export default function page() {
                 <CardContent>
                   <div className="text-2xl font-bold">$45,231.89</div>
                   <p className="text-xs text-muted-foreground">
-                    +20.1% from last month
+                    +20,1% so với tháng trước
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
-                    Subscriptions
+                    Lượt đăng ký
                   </CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,13 +82,13 @@ export default function page() {
                 <CardContent>
                   <div className="text-2xl font-bold">+2350</div>
                   <p className="text-xs text-muted-foreground">
-                    +180.1% from last month
+                    +180,1% so với tháng trước
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Sales</CardTitle>
+                  <CardTitle className="text-sm font-medium">Lượt bán</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -106,14 +106,14 @@ export default function page() {
                 <CardContent>
                   <div className="text-2xl font-bold">+12,234</div>
                   <p className="text-xs text-muted-foreground">
-                    +19% from last month
+                    +19% so với tháng trước
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
-                    Active Now
+                    Đang hoạt động
                   </CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +131,7 @@ export default function page() {
                 <CardContent>
                   <div className="text-2xl font-bold">+573</div>
                   <p className="text-xs text-muted-foreground">
-                    +201 since last hour
+                    +201 kể từ giờ trước
                   </p>
                 </CardContent>
               </Card>
@@ -147,9 +147,9 @@ export default function page() {
               </Card>
               <Card className="col-span-4 md:col-span-3">
                 <CardHeader>
-                  <CardTitle>Recent Sales</CardTitle>
+                  <CardTitle>Doanh thu gần đây</CardTitle>
                   <CardDescription>
-                    You made 265 sales this month.
+                    Bạn đã thực hiện được 265 lần bán hàng trong tháng này.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
