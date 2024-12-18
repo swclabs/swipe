@@ -123,14 +123,14 @@ export default function Page({ params }: { params: { id: string } }) {
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button variant="outline" size="sm" type="button">
-                        Discard
+                        Hủy bỏ
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md">
                       <DialogHeader>
-                        <DialogTitle>Confirm Discard</DialogTitle>
+                        <DialogTitle>Xác nhận hủy bỏ</DialogTitle>
                         <DialogDescription>
-                          Delete all items from the forms
+                          Xóa mọi thông tin trong biểu mẫu
                         </DialogDescription>
                       </DialogHeader>
                       <DialogFooter className="sm:justify-end">
@@ -159,7 +159,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     type="submit"
                     disabled={loading}
                   >
-                    Save {loading && <LoaderCircle className="h-4 w-4 animate-spin" />}
+                    Lưu {loading && <LoaderCircle className="h-4 w-4 animate-spin" />}
                   </Button>
                 </div>
               </div>
@@ -169,7 +169,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     <CardHeader>
                       <CardTitle>Inventory Details</CardTitle>
                       <CardDescription>
-                        Lipsum dolor sit amet, consectetur adipiscing elit
+                        Chi tiết kho hàng
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -244,7 +244,7 @@ export default function Page({ params }: { params: { id: string } }) {
                       <CardHeader>
                         <CardTitle>Specification</CardTitle>
                         <CardDescription>
-                          Lipsum dolor sit amet, consectetur adipiscing elit
+                          Thông số kỹ thuật
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
@@ -303,7 +303,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     <CardHeader x-chunk="dashboard-07-chunk-1">
                       <CardTitle>Inventory Images</CardTitle>
                       <CardDescription>
-                        Lipsum dolor sit amet, consectetur adipiscing elit
+                        Hình ảnh sản phẩm
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -319,7 +319,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     <CardHeader x-chunk="dashboard-07-chunk-1">
                       <CardTitle>Color Images</CardTitle>
                       <CardDescription>
-                        Lipsum dolor sit amet, consectetur adipiscing elit
+                        Ảnh màu sắc
                       </CardDescription>
                     </CardHeader>
                     <CardContent>

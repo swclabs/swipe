@@ -64,7 +64,7 @@ export const columns: ColumnDef<StockItemBody>[] = [
   },
   {
     accessorKey: "product_name",
-    header: "Name",
+    header: "Tên sản phẩm",
     cell: ({ row }) => (
       <div className="capitalize">
         <div className="capitalize">{row.getValue("product_name")}</div>
@@ -73,7 +73,7 @@ export const columns: ColumnDef<StockItemBody>[] = [
   },
   {
     accessorKey: "color",
-    header: "Color",
+    header: "Màu sắc",
     cell: ({ row }) => (
       <Badge className="capitalize" variant="outline">{row.getValue("color")}</Badge>
     ),
@@ -86,7 +86,7 @@ export const columns: ColumnDef<StockItemBody>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Price
+          Giá thành
           <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       )
@@ -105,14 +105,14 @@ export const columns: ColumnDef<StockItemBody>[] = [
   },
   {
     accessorKey: "available",
-    header: "Available",
+    header: "Còn lại",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("available")}</div>
     ),
   },
   {
     accessorKey: "status",
-    header: "Status",
+    header: "Trạng thái",
     cell: ({ row }) => (
       <div className="capitalize">
         <Badge variant={row.getValue("status") === "active" ? "default" : "destructive"}>
