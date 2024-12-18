@@ -1,5 +1,5 @@
 import APIEndpoint from "@/providers/endpoint";
-import { ProductDetail, ProductType } from "@/types/products";
+import { ProductDetail, ProductItem, Products, ProductType } from "@/types/products";
 import createAxiosInstance from "@/lib/axios";
 import { AxiosResponse } from "axios";
 import { SearchProduct } from "@/types/search";
@@ -26,6 +26,14 @@ export class ProductService {
         const axiosInstance = await createAxiosInstance();
         const response: AxiosResponse<ProductType[]> = await axiosInstance.get(
             `${APIEndpoint.PRODUCTS.PRODUCTS}/${type}`
+        );
+        return response;
+    }
+
+    static async getListProduct(): Promise<AxiosResponse<Products>> {
+        const axiosInstance = await createAxiosInstance();
+        const response: AxiosResponse<Products> = await axiosInstance.get(
+            `${APIEndpoint.PRODUCTS.PRODUCTS}?limit=100`
         );
         return response;
     }

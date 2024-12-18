@@ -79,7 +79,7 @@ export default function Page() {
     update.splice(index, 1)
     console.log(update)
     setSsdCount(update)
-    formik.setFieldValue("SSD", [...update])
+    formik.setFieldValue("specs.SSD", [...update])
   }
 
   const deleteRamItem = (index: number) => {
@@ -87,7 +87,7 @@ export default function Page() {
     update.splice(index, 1)
     console.log(update)
     setRamCount(update)
-    formik.setFieldValue("RAM", [...update])
+    formik.setFieldValue("specs.RAM", [...update])
   }
 
   const { supplier, fetchSupplier } = useSuppliers()
@@ -331,7 +331,7 @@ export default function Page() {
                                 type="text"
                                 defaultValue={formik.values.specs?.screen ?? ""}
                                 onChange={(e) => {
-                                  formik.setFieldValue("screen", e.target.value);
+                                  formik.setFieldValue("specs.screen", e.target.value);
                                 }}
                               />
                             </TableCell>
@@ -349,7 +349,7 @@ export default function Page() {
                                 type="text"
                                 defaultValue={formik.values.specs?.display ?? ""}
                                 onChange={(e) => {
-                                  formik.setFieldValue("display", e.target.value);
+                                  formik.setFieldValue("specs.display", e.target.value);
                                 }}
                               />
                             </TableCell>
@@ -373,13 +373,13 @@ export default function Page() {
                                           if (!formik.values.specs) return
                                           if (formik.values.specs.SSD.length < index || formik.values.specs.SSD.length === 0) {
                                             formik.values.specs.SSD.length !== 0 ?
-                                              formik.setFieldValue("SSD", [...formik.values.specs.SSD].push(parseInt(e.target.value))) :
-                                              formik.setFieldValue("SSD", [parseInt(e.target.value)])
+                                              formik.setFieldValue("specs.SSD", [...formik.values.specs.SSD].push(parseInt(e.target.value))) :
+                                              formik.setFieldValue("specs.SSD", [parseInt(e.target.value)])
                                             return
                                           }
                                           const update = [...formik.values.specs.SSD]
                                           update.splice(index, 1, parseInt(e.target.value));
-                                          formik.setFieldValue("SSD", [...update])
+                                          formik.setFieldValue("specs.SSD", [...update])
                                         }}
                                       />
                                       <ToggleGroup type="single">
@@ -427,13 +427,13 @@ export default function Page() {
                                           if (!formik.values.specs) return
                                           if (formik.values.specs.RAM.length < index || formik.values.specs.RAM.length === 0) {
                                             formik.values.specs.RAM.length !== 0 ?
-                                              formik.setFieldValue("RAM", [...formik.values.specs.RAM].push(parseInt(e.target.value))) :
-                                              formik.setFieldValue("RAM", [parseInt(e.target.value)])
+                                              formik.setFieldValue("specs.RAM", [...formik.values.specs.RAM].push(parseInt(e.target.value))) :
+                                              formik.setFieldValue("specs.RAM", [parseInt(e.target.value)])
                                             return
                                           }
                                           const update = [...formik.values.specs.RAM]
                                           update.splice(index, 1, parseInt(e.target.value));
-                                          formik.setFieldValue("RAM", [...update])
+                                          formik.setFieldValue("specs.RAM", [...update])
                                         }}
                                       />
                                       <ToggleGroup type="single">

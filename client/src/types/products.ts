@@ -57,3 +57,22 @@ export interface AccessoryShopCard {
         img: string;
     }[];
 }
+
+export interface ProductItem {
+    id: number;
+    name: string;
+    price: string;
+    image: string;
+    category: string;
+    description: string;
+    specs: {
+        RAM: number[];
+        SSD: number[];
+        display: string;
+        screen: string;
+    }
+}
+
+export interface Products {
+    body: ProductItem[];
+}

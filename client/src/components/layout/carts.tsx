@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/state/purchase";
 import { formatNumber } from "@/utils/fmt";
-import { Bookmark, Box, LogOut, Settings, Trash, User } from "lucide-react";
+import { Bookmark, Box, LogOut, Settings, SquareSlash, Trash, User } from "lucide-react";
 import { SessionProviderProps, signOut } from "next-auth/react";
 import { useEffect } from "react";
 import { PurchaseService } from "@/service/purchase";
@@ -30,6 +30,10 @@ function MenuShortcuts({ session }: { session: SessionProviderProps['session'] }
         <a className='font-semibold flex items-center gap-x-1' href="/profile">
           <User className=" w-3" />
           Tài khoản
+        </a>
+        <a className='font-semibold flex items-center gap-x-1' href="/compare">
+          <SquareSlash className=" w-3" />
+          So sánh
         </a>
         {session ?
           <button className='font-semibold flex items-center gap-x-1' onClick={() => {
