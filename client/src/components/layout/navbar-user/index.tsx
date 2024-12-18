@@ -14,19 +14,19 @@ export default function NavbarUser({ session }: { session: SessionProviderProps[
             </Link>
             |
             <Link href="/auth">
-              Sign In
+              Đăng nhập
             </Link>
           </div>
           :
           <div className="flex gap-x-2 items-center">
-            <p>Welcome {session.user?.name} 👋 </p>
+            <p>Chào mừng {session.user?.name} 👋 </p>
             |
             <button className='font-semibold flex items-center gap-x-2' onClick={() => {
               logout()
               signOut({ callbackUrl: '/', redirect: true })
             }}>
               <p>
-                LogOut
+                Đăng xuất
               </p>
               <LogOut className=" w-3" />
             </button>

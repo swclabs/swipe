@@ -108,7 +108,7 @@ export default function UserAuthForm() {
             type="submit"
             size="sm"
           >
-            Login
+            Đăng nhập
             {loading && <LoaderCircle className="h-4 w-4 animate-spin" />}
           </Button>
         </form>
@@ -128,7 +128,7 @@ export default function UserAuthForm() {
           type="submit"
           size="sm"
         >
-          Register
+          Đăng ký
         </Button>
       </Link>
       <Button
@@ -164,7 +164,7 @@ export default function UserAuthForm() {
             <path fill="none" d="M1 1h22v22H1z"></path>
           </svg>
         </div>
-        Continue with Google
+        Đăng nhập bằng Google
       </Button>
     </>
   );

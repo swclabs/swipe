@@ -14,7 +14,7 @@ export default function Page() {
     <>
       <div className=" w-full">
         <Banner />
-        <Welcome title='Apple Watch' subtitle='To wear it is to love it.' />
+        <Welcome title='Apple Watch' subtitle='Đeo và bạn sẽ thích nó.' />
         <ShopCardsCarousel carousel={shop_carousel} />
         <Product />
         <ServiceCarousel />

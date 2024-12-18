@@ -45,27 +45,27 @@ export default async function Page() {
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Login
+              Đăng nhập
             </h1>
             <p className="text-sm text-muted-foreground">
-              Enter your email below to create your account
+              Nhập email của bạn bên dưới để tạo tài khoản
             </p>
           </div>
           <UserAuthForm />
           <p className="px-8 text-center text-sm text-muted-foreground">
-            By clicking continue, you agree to our{" "}
+            Bằng cách nhấp vào tiếp tục, bạn đồng ý với{" "}
             <Link
               href="/terms"
               className="underline underline-offset-4 hover:text-primary"
             >
-              Terms of Service
+              Điều khoản dịch vụ
             </Link>{" "}
-            and{" "}
+            và{" "}
             <Link
               href="/privacy"
               className="underline underline-offset-4 hover:text-primary"
             >
-              Privacy Policy
+              Chính sách bảo mật của chúng tôi
             </Link>
             .
           </p>
